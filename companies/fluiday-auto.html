@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fluiday Auto — Advanced solutions for the automotive sector</title>
+<meta name="title-ar" content="فلودي أوتو — حلول متقدمة لقطاع السيارات" />
+<meta name="description" content="Fluiday Auto — applied automotive chemistry. Coolants and antifreeze, AdBlue, radiator-circuit cleaner and spare parts, engineered to German standards for Middle East operating conditions. A Sky Global company." />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+/* =====================================================================
+   FLUIDAY AUTO — dedicated page  ·  brand: red #ed1c24 / black / white
+   Rebuilt for a clear, single visual hierarchy.
+
+   IMAGE / VIDEO / LOGO SLOTS  — swap in real media without touching layout.
+   Every not-yet-final asset is a <figure class="slot" data-slot="ID">.
+   To fill: add <img src…> OR <video …> as the FIRST child of the <figure>
+   (or add class "is-filled"). `.slot:has(>img)` / `.slot:has(>video)` hides
+   the placeholder. The <figure> owns size / aspect-ratio / grid position,
+   so restyling a section never disturbs a slot.
+   Slot ids:
+     hero-visual (image OR video) · about-image ·
+     prod-coolants · prod-adblue · prod-cleaner · prod-spare-parts ·
+     motorsport-1 · motorsport-2 · motorsport-3 · distribution-map ·
+     partner-1 · partner-2 · partner-3 · partner-4
+   Target files live under  assets/img/fl/  (and assets/video/fl/ for video).
+   ===================================================================== */
+
+:root{
+  --fl-red:#ed1c24; --fl-red-d:#c1141b; --fl-red-l:#ff5057;
+  --fl-ink:#141414; --fl-ink-2:#222225; --fl-ink-3:#3a3a3e;
+  --fl-paper:#ffffff; --fl-paper-2:#f5f5f6;
+  --fl-line:rgba(20,20,20,.14); --fl-line-2:rgba(20,20,20,.07);
+  --fl-line-d:rgba(255,255,255,.16);
+  --mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;
+  --fl-hdr:72px;
+}
+body{background:var(--fl-paper);color:var(--fl-ink)}
+html{scroll-padding-top:var(--fl-hdr)}
+::selection{background:var(--fl-red);color:#fff}
+.fl .display em,.fl .display i{color:var(--fl-red)}
+html[dir="rtl"] .fl .display em,html[dir="rtl"] .fl .display i{color:inherit}
+
+/* ---------- one section-header system ---------- */
+.fl .section{padding-block:clamp(66px,8.5vw,124px)}
+.fl .section.dark{background:var(--fl-ink);color:#e7e7e9}
+.fl .section.tint{background:var(--fl-paper-2)}
+.fl-wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+.fl-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
+  margin-bottom:clamp(2.6rem,4.5vw,4rem)}
+.fl-kicker{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fl-red);display:inline-flex;align-items:center;gap:.9em;margin-bottom:1.3rem}
+html[dir="rtl"] .fl-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:.92rem}
+.fl-kicker .n{border:1px solid color-mix(in srgb,var(--fl-red) 42%,transparent);border-radius:2px;
+  padding:2px 7px;font-size:.7rem;letter-spacing:.08em}
+.fl .dark .fl-kicker{color:var(--fl-red-l)}
+.fl-h2{font-family:var(--serif);font-weight:400;font-size:var(--s4);line-height:1.08;letter-spacing:-.015em;max-width:19ch}
+html[dir="rtl"] .fl-h2{font-family:var(--ar);font-weight:700;line-height:1.28;letter-spacing:0;max-width:24ch}
+.fl .dark .fl-h2{color:#fff}
+.fl-lead{font-size:var(--s1);color:var(--ink-soft);font-weight:400;max-width:56ch;margin-top:1.2rem}
+html[dir="rtl"] .fl-lead{line-height:1.9}
+.fl .dark .fl-lead{color:#c4c4c8}
+.fl-body-p{color:var(--ink-soft);max-width:54ch}
+.fl-body-p + .fl-body-p{margin-top:1rem}
+.fl .dark .fl-body-p{color:#bcbcc0}
+
+.tech{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--fl-red)}
+html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
+
+/* ---------- buttons ---------- */
+.fl .btn-primary{background:var(--fl-red);color:#fff}
+.fl .btn-primary:hover{background:var(--fl-red-d);color:#fff}
+.fl .btn-solid{background:var(--fl-ink);color:#fff}
+.fl .btn-solid:hover{background:var(--fl-red)}
+.fl .btn-line:hover{border-color:var(--fl-red);color:var(--fl-red)}
+
+/* ============================================================
+   HEADER  —  normal nav bar (the big logo lives in the hero, not here)
+   ============================================================ */
+.fl-hdr{position:fixed;inset-block-start:0;inset-inline:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
+  padding:16px var(--gutter);
+  transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s var(--ease)}
+.fl-hdr::after{content:"";position:absolute;inset-inline:0;inset-block-end:0;height:1px;background:rgba(255,255,255,.12);opacity:1;transition:opacity .4s}
+.fl-hdr.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding-block:10px;box-shadow:0 6px 24px -14px rgba(0,0,0,.25)}
+.fl-hdr.scrolled::after{background:var(--fl-line);opacity:1}
+
+.fl-hdr-logo{flex:none;display:flex;align-items:center}
+.fl-hdr-logo img{height:30px;width:auto;transition:height .4s var(--ease)}
+.fl-hdr.scrolled .fl-hdr-logo img{height:27px}
+
+.fl-nav{display:flex;gap:28px;align-items:center}
+.fl-nav a{font-size:.9rem;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.86);
+  padding:8px 2px;position:relative;transition:color .3s}
+html[dir="rtl"] .fl-nav a{font-weight:700;font-size:1rem}
+.fl-hdr.scrolled .fl-nav a{color:var(--fl-ink-2)}
+.fl-nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:0;width:0;height:2px;
+  background:var(--fl-red);transition:width .3s var(--ease)}
+.fl-nav a:hover{color:#fff}
+.fl-hdr.scrolled .fl-nav a:hover{color:var(--fl-red)}
+.fl-nav a:hover::after,.fl-nav a.here::after{width:100%}
+
+.fl-hdr-r{flex:none;display:flex;align-items:center;gap:12px}
+.fl-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:.82rem;padding:9px 15px}
+.fl-hdr.scrolled .fl-hdr-r .lang{color:var(--fl-ink);border-color:var(--fl-line)}
+.fl-hdr-r .lang:hover{border-color:var(--fl-red);color:var(--fl-red)}
+.fl-hdr-r .btn-ghost{padding:10px 20px;font-size:.84rem}
+.fl-hdr.scrolled .fl-hdr-r .btn-ghost{border-color:var(--fl-line);color:var(--fl-ink)}
+.fl-hdr.scrolled .fl-hdr-r .btn-ghost:hover{background:var(--fl-red);border-color:var(--fl-red);color:#fff}
+.fl-menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:#fff}
+.fl-hdr.scrolled .fl-menu-toggle{color:var(--fl-ink)}
+
+.fl-back{position:absolute;inset-block-start:calc(var(--fl-hdr) + 14px);inset-inline-start:var(--gutter);z-index:6;
+  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.62);
+  display:inline-flex;align-items:center;gap:.55em;transition:color .3s}
+html[dir="rtl"] .fl-back{font-family:var(--ar);letter-spacing:0;font-weight:700}
+.fl-back:hover{color:#fff}
+.fl-back svg{width:14px;height:14px}
+html[dir="rtl"] .fl-back svg{transform:scaleX(-1)}
+
+.fl-mobile{position:fixed;inset:0;z-index:98;background:var(--fl-ink);color:#fff;display:flex;flex-direction:column;
+  justify-content:center;gap:2px;padding:var(--gutter);transform:translateY(-100%);transition:transform .5s var(--ease);overflow-y:auto}
+.fl-mobile.open{transform:none}
+.fl-mobile a{font-size:1.35rem;font-weight:400;padding:14px 0;border-bottom:1px solid var(--fl-line-d)}
+.fl-mobile .btn{align-self:flex-start;margin-top:22px}
+
+@media (max-width:1040px){
+  .fl-nav{display:none}
+  .fl-menu-toggle{display:flex}
+  .fl-hdr-r .btn-ghost{display:none}
+}
+
+/* ============================================================
+   SLOT SYSTEM
+   ============================================================ */
+.slot{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;isolation:isolate;
+  border:1px dashed var(--fl-line);border-radius:8px;min-height:120px;
+  background:repeating-linear-gradient(135deg,var(--fl-paper-2) 0 11px,transparent 11px 22px),var(--fl-paper)}
+.slot > img,.slot > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.slot.contain > img,.slot.contain > video{object-fit:contain;padding:6%}
+.slot:has(> img),.slot:has(> video),.slot.is-filled{border-style:solid;border-color:var(--fl-line-2);background:var(--fl-paper-2)}
+.slot:has(> img) .slot-ph,.slot:has(> video) .slot-ph,.slot.is-filled .slot-ph{display:none}
+.slot-ph{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:22px}
+.slot-ph svg{width:26px;height:26px;color:var(--fl-red);opacity:.55}
+.slot-ph .slot-l{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fl-ink-3)}
+html[dir="rtl"] .slot-ph .slot-l{letter-spacing:0;text-transform:none;font-size:.86rem}
+.slot-ph .slot-f{font-family:var(--mono);font-size:.64rem;color:#a4a4a8;word-break:break-all}
+.slot[data-tone="dark"]{border-color:var(--fl-line-d);
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.045) 0 11px,transparent 11px 22px),var(--fl-ink-2)}
+.slot[data-tone="dark"] .slot-ph .slot-l{color:rgba(255,255,255,.74)}
+.slot[data-tone="dark"] .slot-ph .slot-f{color:rgba(255,255,255,.42)}
+
+/* ============================================================
+   HERO — full-bleed video · centred logo · tagline · one CTA
+   ============================================================ */
+.fl-hero{position:relative;min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;overflow:hidden;
+  background:var(--fl-ink);color:#fff;
+  padding:calc(var(--fl-hdr) + 44px) var(--gutter) 92px}
+.fl-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:var(--fl-ink)}
+.fl-hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(180deg,rgba(8,8,9,.62) 0%,rgba(8,8,9,.34) 34%,rgba(8,8,9,.4) 62%,rgba(8,8,9,.82) 100%),
+  radial-gradient(80% 65% at 50% 46%,rgba(8,8,9,.12),rgba(8,8,9,.55))}
+.fl-hero-overlay::after{content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;
+  background-image:linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:clamp(80px,9vw,130px) 100%}
+
+.fl-hero-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
+  gap:clamp(1.4rem,3.2vw,2.2rem);max-width:660px}
+.fl-hero-logo{width:min(80vw,440px);height:auto;filter:drop-shadow(0 16px 46px rgba(0,0,0,.45))}
+.fl-hero-tagline{font-size:var(--s1);font-weight:400;line-height:1.5;color:rgba(255,255,255,.94);
+  max-width:46ch;text-shadow:0 2px 22px rgba(0,0,0,.55)}
+html[dir="rtl"] .fl-hero-tagline{line-height:1.9}
+.fl-hero-center .btn{font-size:.96rem;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(237,28,36,.6)}
+
+.fl-hero-scroll{position:absolute;z-index:2;inset-block-end:24px;inset-inline:0;margin-inline:auto;
+  width:34px;height:34px;display:grid;place-items:center;color:rgba(255,255,255,.65);
+  border:1px solid rgba(255,255,255,.25);border-radius:999px;transition:color .3s,border-color .3s}
+.fl-hero-scroll:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.fl-hero-scroll svg{width:15px;height:15px;animation:flbob 2s var(--ease) infinite}
+@keyframes flbob{0%,100%{transform:translateY(-2px)}50%{transform:translateY(2px)}}
+@media (prefers-reduced-motion:reduce){.fl-hero-scroll svg{animation:none}}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.fl-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,84px);align-items:center;
+  max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.fl-about .slot{aspect-ratio:5/4;border-radius:10px}
+.fl-about-cells{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--fl-line);border:1px solid var(--fl-line);
+  border-radius:8px;overflow:hidden;margin-top:2.2rem}
+.fl-about-cells div{background:var(--fl-paper);padding:22px 24px}
+.fl-about-cells b{font-family:var(--mono);font-size:1.7rem;font-weight:600;color:var(--fl-red);display:block;line-height:1}
+html[dir="rtl"] .fl-about-cells b{font-family:var(--ar);font-weight:700}
+.fl-about-cells span{font-size:.82rem;color:var(--gray);display:block;margin-top:.55rem}
+
+/* ============================================================
+   PRODUCTS — 4 equal cards, one row
+   ============================================================ */
+.fl-prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.fl-prod{border:1px solid var(--fl-line);border-radius:9px;overflow:hidden;display:flex;flex-direction:column;background:var(--fl-paper);
+  transition:border-color .3s,transform .35s var(--ease),box-shadow .35s var(--ease)}
+.fl-prod:hover{border-color:var(--fl-red);transform:translateY(-4px);box-shadow:0 26px 54px -26px rgba(237,28,36,.3)}
+.fl-prod .slot{aspect-ratio:1/1;border:0;border-radius:0;border-bottom:1px solid var(--fl-line-2)}
+.fl-prod-b{padding:clamp(20px,2vw,26px);display:flex;flex-direction:column;gap:.7rem;flex:1}
+.fl-prod-tag{align-self:flex-start;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--fl-red);border:1px solid color-mix(in srgb,var(--fl-red) 34%,transparent);border-radius:2px;padding:3px 7px}
+html[dir="rtl"] .fl-prod-tag{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.fl-prod h3{font-size:1.14rem;font-weight:700;line-height:1.2}
+.fl-prod ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-top:.1rem}
+.fl-prod li{font-size:.85rem;color:var(--ink-soft);padding-inline-start:1.05em;position:relative;line-height:1.5}
+.fl-prod li::before{content:"";position:absolute;inset-inline-start:0;inset-block-start:.5em;width:5px;height:5px;background:var(--fl-red);border-radius:1px}
+.fl-prod-variants{display:flex;flex-wrap:wrap;gap:5px;margin-top:.2rem}
+.fl-prod-variants span{font-family:var(--mono);font-size:.64rem;font-weight:500;color:var(--fl-ink-2);
+  background:var(--fl-paper-2);border:1px solid var(--fl-line-2);border-radius:2px;padding:2px 6px}
+html[dir="rtl"] .fl-prod-variants span{font-family:var(--ar);font-weight:600}
+/* coolants range — understated supporting row */
+.fl-cool-range{max-width:var(--maxw);margin:clamp(2.4rem,4vw,3.4rem) auto 0;padding-inline:var(--gutter)}
+.fl-cool-range .tech{display:block;margin-bottom:1.1rem;color:var(--fl-red)}
+.fl-cool-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.fl-cool-thumb{border:1px solid var(--fl-line-2);border-radius:6px;overflow:hidden;background:var(--fl-paper)}
+.fl-cool-thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.fl-cool-thumb figcaption{font-family:var(--mono);font-size:.66rem;font-weight:500;color:var(--fl-ink-2);
+  padding:9px 6px;text-align:center;border-top:1px solid var(--fl-line-2)}
+html[dir="rtl"] .fl-cool-thumb figcaption{font-family:var(--ar);font-weight:600}
+@media (max-width:600px){.fl-cool-thumbs{grid-template-columns:1fr 1fr}}
+
+/* ============================================================
+   WHY
+   ============================================================ */
+.fl-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--fl-line);border:1px solid var(--fl-line);
+  border-radius:9px;overflow:hidden;max-width:var(--maxw);margin-inline:auto}
+.fl-why{background:var(--fl-paper);padding:clamp(24px,2.6vw,34px);transition:background .4s var(--ease)}
+.fl-why:hover{background:var(--fl-ink)}
+.fl-why .fl-why-n{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--gray);display:block;margin-bottom:1rem;transition:color .4s}
+.fl-why:hover .fl-why-n{color:rgba(255,255,255,.5)}
+.fl-why svg{width:24px;height:24px;color:var(--fl-red);margin-bottom:14px}
+.fl-why h3{font-size:1.04rem;font-weight:700;margin-bottom:.5rem;transition:color .4s}
+.fl-why:hover h3{color:#fff}
+.fl-why p{font-size:.87rem;color:var(--ink-soft);transition:color .4s;line-height:1.6}
+.fl-why:hover p{color:rgba(255,255,255,.78)}
+
+/* ============================================================
+   SUSTAINABILITY
+   ============================================================ */
+.fl-eco{border:1px solid var(--fl-line);border-radius:9px;padding:clamp(24px,3vw,38px);background:var(--fl-paper-2)}
+.fl-eco .tech{color:var(--fl-red)}
+.fl-eco p{margin-top:.9rem;font-size:.96rem;color:var(--ink-soft);line-height:1.7}
+
+/* ============================================================
+   MOTORSPORT
+   ============================================================ */
+.fl-moto{position:relative;overflow:hidden}
+.fl-moto .fl-moto-diag{position:absolute;inset-block:0;inset-inline-end:-10%;width:42%;
+  background:linear-gradient(120deg,transparent,rgba(237,28,36,.14));transform:skewX(-12deg)}
+.fl-moto > *{position:relative;z-index:1}
+.fl-moto-tag{font-family:var(--serif);font-style:italic;font-size:var(--s2);color:#fff;max-width:20ch;margin-top:1.5rem}
+html[dir="rtl"] .fl-moto-tag{font-family:var(--ar);font-style:normal;line-height:1.6}
+.fl-moto-strip{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:14px;
+  max-width:var(--maxw);margin:clamp(2.6rem,4vw,3.6rem) auto 0;padding-inline:var(--gutter)}
+.fl-moto-strip .slot{aspect-ratio:16/10;border-radius:9px}
+.fl-moto-strip .slot:first-child{aspect-ratio:auto}
+
+/* ============================================================
+   DISTRIBUTION
+   ============================================================ */
+.fl-dist .slot{aspect-ratio:4/3;border-radius:9px}
+.fl-regions{display:flex;flex-direction:column;border-block-start:1px solid var(--fl-line)}
+.fl-region{padding:17px 0;border-block-end:1px solid var(--fl-line);display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline}
+.fl-region .r-name{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fl-red)}
+html[dir="rtl"] .fl-region .r-name{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
+.fl-region .r-cities{font-size:.98rem;color:var(--ink-soft);line-height:1.6}
+.fl-dist-note{margin-top:1.5rem;font-size:.86rem;color:var(--gray)}
+
+/* ============================================================
+   PARTNERS
+   ============================================================ */
+.fl-partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.fl-partner .slot{aspect-ratio:3/2;border-radius:9px}
+.fl-partner .fl-partner-name{margin-top:.8rem;font-size:.82rem;font-weight:600;color:var(--ink-soft);text-align:center}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.fl-contact-rows{margin-top:1.7rem;border-block-start:1px solid var(--fl-line)}
+.fl-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--fl-line);font-size:.98rem}
+.fl-contact-rows .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .fl-contact-rows .k{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.fl-contact-rows .v{font-weight:600;text-align:end}
+.fl-phones{display:flex;flex-direction:column;gap:.3rem}
+
+/* ---------- footer ---------- */
+.fl-ft{background:var(--fl-ink);color:#96969a;padding-block:58px 26px;font-size:.9rem}
+.fl-ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--fl-line-d)}
+.fl-ft .fl-logo{height:40px;margin-bottom:1rem}
+.fl-ft p{max-width:40ch}
+.fl-ft h4{color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+html[dir="rtl"] .fl-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.fl-ft ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.fl-ft a:hover{color:#fff}
+.fl-ft-bot{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:#67676b}
+
+/* ---------- responsive ---------- */
+/* ---- ABOUT spec strip (moved out of the hero) ---- */
+.fl-specrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--fl-line);
+  border:1px solid var(--fl-line);border-radius:8px;overflow:hidden;
+  max-width:var(--maxw);margin:0 auto clamp(2.6rem,4vw,3.6rem)}
+.fl-specrow div{background:var(--fl-paper);padding:18px 22px}
+.fl-specrow .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.78rem}
+.fl-specrow .v{font-size:1.02rem;font-weight:700;margin-top:5px}
+.fl-specrow .v b{color:var(--fl-red)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1040px){
+  .fl-two{grid-template-columns:1fr}
+  .fl-specrow{grid-template-columns:1fr 1fr}
+  .fl-why-grid,.fl-prod-grid,.fl-partners-grid{grid-template-columns:1fr 1fr}
+  .fl-moto-strip{grid-template-columns:1fr 1fr}
+  .fl-ft-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .fl-specrow{grid-template-columns:1fr}
+  .fl-why-grid,.fl-prod-grid,.fl-partners-grid,.fl-moto-strip,.fl-about-cells{grid-template-columns:1fr}
+  .fl-region{grid-template-columns:1fr;gap:4px}
+  .fl-ft-top{grid-template-columns:1fr}
+  .fl-contact-rows div{flex-direction:column;gap:2px}
+  .fl-contact-rows .v{text-align:start}
+  .fl-hero-logo{width:82vw}
+}
+</style>
+</head>
+<body id="top" class="fl">
+
+<svg class="sg-defs" aria-hidden="true"><defs>
+  <linearGradient id="sgGrad" x1="0" y1="0" x2="1476.09" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#7C8AD0"/><stop offset="1" stop-color="#33469C"/>
+  </linearGradient>
+  <symbol id="sgMark" viewBox="0 0 1476.09 1343.36">
+    <path d="M 128.27 0.00 C 57.43 0.00 0.00 57.43 0.00 128.25 L 0.00 128.25 L 0.00 595.00 C 0.00 665.84 57.43 723.28 128.27 723.28 L 128.27 723.28 L 281.90 723.28 L 281.90 951.25 C 281.90 1000.30 321.66 1040.06 370.71 1040.06 L 370.71 1040.06 L 1105.38 1040.06 C 1154.42 1040.06 1194.18 1000.30 1194.18 951.25 L 1194.18 951.25 L 1194.18 837.23 L 1068.89 837.23 L 1068.89 914.77 L 407.19 914.77 L 407.19 403.51 L 1068.89 403.51 L 1068.89 482.59 L 1194.18 482.59 L 1194.18 367.03 C 1194.18 317.98 1154.42 278.22 1105.38 278.22 L 1105.38 278.22 L 370.71 278.22 C 321.66 278.22 281.90 317.98 281.90 367.03 L 281.90 367.03 L 281.90 595.00 L 128.27 595.00 L 128.27 128.25 L 1347.81 128.25 L 1347.81 356.95 L 1287.60 356.95 L 1287.60 483.39 L 1476.09 483.39 L 1476.09 128.25 C 1476.09 57.43 1418.65 0.00 1347.81 0.00 L 1347.81 0.00 Z"/>
+    <path d="M 501.41 595.00 L 501.41 723.28 L 1347.81 723.28 L 1347.81 1186.17 L 128.27 1186.17 L 128.27 961.85 L 187.66 961.85 L 187.66 835.39 L 0.00 835.39 L 0.00 1215.09 C 0.00 1285.93 57.43 1343.36 128.27 1343.36 L 128.27 1343.36 L 1347.81 1343.36 C 1418.65 1343.36 1476.09 1285.93 1476.09 1215.09 L 1476.09 1215.09 L 1476.09 723.28 C 1476.09 687.84 1461.73 655.79 1438.52 632.56 L 1438.52 632.56 C 1415.30 609.36 1383.24 595.00 1347.81 595.00 L 1347.81 595.00 Z"/>
+  </symbol>
+</defs></svg>
+
+<header class="fl-hdr" id="flHdr">
+  <a href="#top" class="fl-hdr-logo" aria-label="Fluiday Auto — home">
+    <img src="../assets/img/logo-fluiday.svg" alt="Fluiday Auto" />
+  </a>
+  <nav class="fl-nav" aria-label="Fluiday Auto sections">
+    <a href="#about" data-en="About Us" data-ar="من نحن">About Us</a>
+    <a href="#products" data-en="Products" data-ar="المنتجات">Products</a>
+    <a href="#motorsport" data-en="Motorsport" data-ar="رياضة المحركات">Motorsport</a>
+    <a href="#partners" data-en="Partners" data-ar="شركاؤنا">Partners</a>
+  </nav>
+  <div class="fl-hdr-r">
+    <button class="lang" id="langBtn" aria-label="Switch language">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.7 3.8 6 3.8 9S14.5 18.3 12 21M12 3C9.5 5.7 8.2 9 8.2 12S9.5 18.3 12 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="lbl" id="langLabel">العربية</span>
+    </button>
+    <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+    <button class="fl-menu-toggle" id="flMenuToggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="fl-mobile" id="flMobile">
+  <a href="#about" data-en="About Fluiday" data-ar="من نحن">About Fluiday</a>
+  <a href="#products" data-en="Products" data-ar="المنتجات">Products</a>
+  <a href="#why" data-en="Why Fluiday" data-ar="لماذا فلودي">Why Fluiday</a>
+  <a href="#motorsport" data-en="Motorsport" data-ar="رياضة المحركات">Motorsport</a>
+  <a href="#distribution" data-en="Distribution" data-ar="التوزيع">Distribution</a>
+  <a href="#partners" data-en="Success Partners" data-ar="شركاء النجاح">Success Partners</a>
+  <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+</div>
+
+<a href="../index.html#companies" class="fl-back" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">Sky Global Holding</span>
+</a>
+
+<!-- ================= HERO — full-bleed Corniche brand film ================= -->
+<section class="fl-hero" id="hero">
+  <!-- VIDEO SLOT: Corniche branding video at  assets/video/fl/hero.mp4  (add a .webm sibling + a <source> for it to save bandwidth). -->
+  <video class="fl-hero-video" autoplay muted loop playsinline preload="auto"
+         poster="../assets/img/fl/hero-poster.jpg" aria-hidden="true"
+         data-slot="hero-video">
+    <source src="../assets/video/fl/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="fl-hero-overlay" aria-hidden="true"></div>
+
+  <div class="fl-hero-center" data-load>
+    <img class="fl-hero-logo" src="../assets/img/logo-fluiday.svg" alt="Fluiday Auto" />
+    <p class="fl-hero-tagline"
+       data-en="Applied automotive chemistry since 2018 — coolants, AdBlue, radiator care and spare parts, engineered to German standards for Middle East conditions."
+       data-ar="الهندسة الكيميائية التطبيقية للسيارات منذ 2018 — سوائل تبريد، أدبلو، العناية بالرديتر وقطع غيار، بمعايير ألمانية تراعي ظروف التشغيل في الشرق الأوسط.">Applied automotive chemistry since 2018 — engineered to German standards for the region.</p>
+    <a href="#products" class="btn btn-primary" data-en="Explore products" data-ar="استعرض المنتجات">Explore products
+      <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+
+  <a class="fl-hero-scroll" href="#about" aria-label="Scroll to About Us">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14m0 0-6-6m6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="fl-specrow reveal">
+    <div><div class="k" data-en="Founded" data-ar="التأسيس">Founded</div><div class="v tnum">2018</div></div>
+    <div><div class="k" data-en="Engineering" data-ar="الهندسة">Engineering</div><div class="v"><b data-en="German" data-ar="ألمانية">German</b> <span data-en="standards" data-ar="معايير">standards</span></div></div>
+    <div><div class="k" data-en="AdBlue" data-ar="أدبلو">AdBlue</div><div class="v">ISO 22241 · <b>Euro 5/6</b></div></div>
+    <div><div class="k" data-en="Supply" data-ar="الإمداد">Supply</div><div class="v" data-en="KSA &amp; the GCC" data-ar="المملكة والخليج">KSA &amp; the GCC</div></div>
+  </div>
+  <div class="fl-two fl-about">
+    <div>
+      <p class="fl-kicker"><span class="n">01</span> <span data-en="About" data-ar="من نحن">About</span></p>
+      <h2 class="fl-h2 display reveal" data-en="More than engine fluids" data-ar="أكثر من سوائل للمحركات">More than engine fluids</h2>
+      <p class="fl-lead reveal" data-en="At Fluiday Auto, automotive fluids and spare parts are core elements of a vehicle's efficiency and continued performance — not consumables."
+         data-ar="في فلودي أوتو، ننظر إلى سوائل السيارات وقطع الغيار باعتبارها عناصر أساسية في كفاءة المركبة واستمرارية أدائها، وليست مجرد منتجات استهلاكية.">Core elements of a vehicle's performance — not consumables.</p>
+      <p class="fl-body-p reveal" style="margin-top:1.2rem" data-en="We provide integrated solutions that protect engine systems, reduce the likelihood of failures, and improve operating efficiency — committing to international standards and drawing on advanced technology."
+         data-ar="نوفر حلولًا متكاملة تساعد على حماية أنظمة المحرك، تقليل احتمالية الأعطال، وتحسين كفاءة التشغيل، مع الالتزام بالمعايير العالمية والاستفادة من التقنيات المتقدمة.">Integrated solutions that protect engine systems and improve efficiency.</p>
+      <div class="fl-about-cells reveal">
+        <div><b class="tnum">2018</b><span data-en="Year founded" data-ar="سنة التأسيس">Year founded</span></div>
+        <div><b>4</b><span data-en="Product families" data-ar="عائلات منتجات">Product families</span></div>
+      </div>
+    </div>
+    <figure class="slot reveal" data-slot="about-image">
+      <figcaption class="slot-ph">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m3 15 5-4 4 3 4-5 5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="9" r="1.6" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="slot-l" data-en="Image — lab / production / facility" data-ar="صورة — مختبر / إنتاج / منشأة">Image — lab / production / facility</span>
+        <span class="slot-f">assets/img/fl/about-image.jpg</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="section tint" id="products">
+  <div class="fl-head">
+    <p class="fl-kicker"><span class="n">02</span> <span data-en="Products" data-ar="المنتجات">Products</span></p>
+    <h2 class="fl-h2 display reveal" data-en="Solutions engineered for every vehicle need" data-ar="حلول مصممة لمختلف احتياجات المركبات">Solutions engineered for every vehicle need</h2>
+    <p class="fl-lead reveal" data-en="Four product families, each built to a clear purpose in the vehicle."
+       data-ar="أربع عائلات منتجات، لكلٍّ منها دور واضح في المركبة.">Four product families, each built to a clear purpose.</p>
+  </div>
+
+  <div class="fl-prod-grid" data-stagger>
+
+    <article class="fl-prod reveal">
+      <figure class="slot" data-slot="prod-coolants">
+        <img src="../assets/img/fl/prod-coolants.jpg" alt="Fluiday Auto Antifreeze &amp; Coolant 50/50" loading="lazy" decoding="async" />
+        <figcaption class="slot-ph">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3h6M10 3v3.5L6.5 15A3.5 3.5 0 0010 20h4a3.5 3.5 0 003.5-4.5L14 6.5V3M7.5 13h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="slot-l" data-en="Product image — coolant" data-ar="صورة المنتج — سائل التبريد">Product image — coolant</span>
+          <span class="slot-f">assets/img/fl/prod-coolants.jpg</span>
+        </figcaption>
+      </figure>
+      <div class="fl-prod-b">
+        <span class="fl-prod-tag" data-en="Cooling systems" data-ar="أنظمة التبريد">Cooling systems</span>
+        <h3 data-en="Coolants &amp; antifreeze" data-ar="سوائل التبريد ومضادات التجمد">Coolants &amp; antifreeze</h3>
+        <div class="fl-prod-variants">
+          <span>50 / 50</span><span>100 / 100</span><span>20 / 80</span>
+          <span data-en="EV" data-ar="كهربائية">EV</span><span data-en="Radiator water 5 L" data-ar="مياه رديتر 5 لتر">Radiator water 5 L</span>
+        </div>
+        <ul>
+          <li data-en="Ethylene-glycol base with anti-rust, anti-corrosion and anti-scale additives" data-ar="تعتمد على جلايكول الإيثيلين وإضافات مقاومة للصدأ والتآكل والترسبات">Ethylene-glycol base, anti-rust / corrosion / scale additives</li>
+          <li data-en="Dedicated formulation for electric vehicles" data-ar="تركيبة مخصصة للمركبات الكهربائية">Dedicated formulation for electric vehicles</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fl-prod reveal">
+      <figure class="slot" data-slot="prod-adblue">
+        <img src="../assets/img/fl/prod-adblue.jpg" alt="Fluiday AdBlue 10 L" loading="lazy" decoding="async" />
+        <figcaption class="slot-ph">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span class="slot-l" data-en="Product image — AdBlue" data-ar="صورة المنتج — أدبلو">Product image — AdBlue</span>
+          <span class="slot-f">assets/img/fl/prod-adblue.jpg</span>
+        </figcaption>
+      </figure>
+      <div class="fl-prod-b">
+        <span class="fl-prod-tag">ISO 22241 · Euro 5/6</span>
+        <h3>Fluiday AdBlue</h3>
+        <ul>
+          <li data-en="32.5% urea solution for SCR diesel exhaust treatment" data-ar="محلول يوريا 32.5% لمعالجة عوادم الديزل بتقنية SCR">32.5% urea solution for SCR diesel treatment</li>
+          <li data-en="Reduces emissions, supports exhaust-system efficiency" data-ar="يقلل الانبعاثات ويدعم كفاءة نظام العادم">Reduces emissions, supports exhaust efficiency</li>
+          <li data-en="Manufactured to ISO 22241, Euro 5 / Euro 6 compatible" data-ar="مصنّع وفق ISO 22241 ومتوافق مع Euro 5 وEuro 6">To ISO 22241 · Euro 5 / 6 compatible</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fl-prod reveal">
+      <figure class="slot" data-slot="prod-cleaner">
+        <figcaption class="slot-ph">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 21h10M9 21V8m6 13V8M6 8h12l-1-4H7L6 8Zm4-4V2h4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="slot-l" data-en="Product image — radiator cleaner" data-ar="صورة المنتج — منظف الرديتر">Product image — radiator cleaner</span>
+          <span class="slot-f">assets/img/fl/prod-cleaner.jpg</span>
+        </figcaption>
+      </figure>
+      <div class="fl-prod-b">
+        <span class="fl-prod-tag" data-en="All systems" data-ar="لكل الأنظمة">All systems</span>
+        <h3 data-en="Radiator-circuit cleaner" data-ar="منظف دورة الرديتر">Radiator-circuit cleaner</h3>
+        <ul>
+          <li data-en="Cleans the cooling system before a coolant change" data-ar="يُنظّف نظام التبريد قبل تغيير سائل التبريد">Cleans the system before a coolant change</li>
+          <li data-en="Removes deposits and rust, improves cooling efficiency" data-ar="يزيل الرواسب والصدأ ويحسّن كفاءة التبريد">Removes deposits and rust, improves efficiency</li>
+          <li data-en="For aluminium, copper and plastic systems" data-ar="لأنظمة الألمنيوم والنحاس والبلاستيك">For aluminium, copper and plastic systems</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fl-prod reveal">
+      <figure class="slot" data-slot="prod-spare-parts">
+        <figcaption class="slot-ph">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8Zm0-5v3m0 12v3M4.2 6.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3m12 0h3M4.2 17.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="slot-l" data-en="Product image — spare parts" data-ar="صورة المنتج — قطع الغيار">Product image — spare parts</span>
+          <span class="slot-f">assets/img/fl/prod-spare-parts.jpg</span>
+        </figcaption>
+      </figure>
+      <div class="fl-prod-b">
+        <span class="fl-prod-tag" data-en="OEM &amp; aftermarket" data-ar="أصلية وبديلة">OEM &amp; aftermarket</span>
+        <h3 data-en="Automotive spare parts" data-ar="قطع غيار السيارات">Automotive spare parts</h3>
+        <ul>
+          <li data-en="Original (OEM) and high-quality aftermarket parts" data-ar="قطع غيار أصلية وبديلة عالية الجودة">Original (OEM) and high-quality aftermarket parts</li>
+          <li data-en="Part of an integrated offer for the automotive sector" data-ar="ضمن توجه الشركة نحو حلول متكاملة لقطاع السيارات">Part of an integrated offer for the sector</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="fl-cool-range reveal">
+    <p class="tech" data-en="The coolants range" data-ar="مجموعة سوائل التبريد">The coolants range</p>
+    <div class="fl-cool-thumbs">
+      <figure class="fl-cool-thumb"><img src="../assets/img/fl/co-5050.jpg" alt="Fluiday Antifreeze &amp; Coolant 50/50" loading="lazy" decoding="async"><figcaption>50 / 50</figcaption></figure>
+      <figure class="fl-cool-thumb"><img src="../assets/img/fl/co-5050-ev.jpg" alt="Fluiday Antifreeze &amp; Coolant 50/50 for electric vehicles" loading="lazy" decoding="async"><figcaption><span data-en="50/50 · EV" data-ar="50/50 · كهربائية">50/50 · EV</span></figcaption></figure>
+      <figure class="fl-cool-thumb"><img src="../assets/img/fl/co-100100.jpg" alt="Fluiday Antifreeze &amp; Coolant 100/100" loading="lazy" decoding="async"><figcaption>100 / 100</figcaption></figure>
+      <figure class="fl-cool-thumb"><img src="../assets/img/fl/co-radiator-water.jpg" alt="Fluiday Coolant — Radiator Water 5 L" loading="lazy" decoding="async"><figcaption><span data-en="Radiator water 5 L" data-ar="مياه رديتر 5 لتر">Radiator water 5 L</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="section" id="why">
+  <div class="fl-head">
+    <p class="fl-kicker"><span class="n">03</span> <span data-en="Why Fluiday" data-ar="لماذا فلودي">Why Fluiday</span></p>
+    <h2 class="fl-h2 display reveal" data-en="Quality you can rely on" data-ar="جودة يمكن الاعتماد عليها">Quality you can rely on</h2>
+  </div>
+  <div class="fl-why-grid" data-stagger>
+    <div class="fl-why reveal">
+      <span class="fl-why-n">01</span>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3 data-en="Standards &amp; testing" data-ar="معايير واختبارات">Standards &amp; testing</h3>
+      <p data-en="Quality backed by laboratory testing and analysis, and compliance with the relevant standards and regulatory bodies."
+         data-ar="جودة مدعومة بالاختبارات والتحاليل المخبرية والتوافق مع المعايير والجهات التنظيمية ذات الصلة.">Backed by lab testing and compliance with the relevant standards.</p>
+    </div>
+    <div class="fl-why reveal">
+      <span class="fl-why-n">02</span>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <h3 data-en="Proven performance" data-ar="أداء مثبت">Proven performance</h3>
+      <p data-en="Field-tested under high-pressure, high-temperature conditions — including motorsport participation."
+         data-ar="اختبار ميداني في ظروف تشغيل عالية الضغط ودرجات الحرارة، بما في ذلك مشاركات في رياضة المحركات.">Field-tested under high-pressure, high-temperature conditions.</p>
+    </div>
+    <div class="fl-why reveal">
+      <span class="fl-why-n">03</span>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3V7Zm6-3v13m6-10v13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3 data-en="Regional supply" data-ar="إمداد إقليمي">Regional supply</h3>
+      <p data-en="A supply network across the GCC and the Middle East, focused on distribution speed, flexibility, and large commercial orders."
+         data-ar="شبكة إمداد تمتد عبر دول الخليج والشرق الأوسط، مع توجه لتعزيز سرعة ومرونة التوزيع وتلبية الطلبات التجارية الكبرى.">A supply network across the GCC and the Middle East.</p>
+    </div>
+    <div class="fl-why reveal">
+      <span class="fl-why-n">04</span>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3v4M15 3v4M12 21a5 5 0 005-5V9a5 5 0 00-10 0v7a5 5 0 005 5Zm0 0v-6m-2-2h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3 data-en="Integrated solutions" data-ar="حلول متكاملة">Integrated solutions</h3>
+      <p data-en="Not just selling a product — solutions that cut maintenance costs and improve operational continuity and vehicle efficiency."
+         data-ar="لا نركز على بيع المنتج فقط، بل على حلول تساعد العملاء على تقليل تكاليف الصيانة وتحسين استمرارية التشغيل وكفاءة المركبات.">Solutions that cut maintenance costs and improve continuity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUSTAINABILITY ================= -->
+<section class="section tint" id="sustainability">
+  <div class="fl-two">
+    <div>
+      <p class="fl-kicker"><span class="n">04</span> <span data-en="Sustainability" data-ar="الاستدامة">Sustainability</span></p>
+      <h2 class="fl-h2 display reveal" data-en="Better performance, lower impact" data-ar="أداء أفضل، وأثر أقل">Better performance, lower impact</h2>
+      <p class="fl-body-p reveal" style="margin-top:1.2rem" data-en="Fluiday Auto supports sustainability through solutions that improve operating efficiency, reduce emissions, and support compliance with environmental standards."
+         data-ar="تدعم فلودي أوتو توجهات الاستدامة من خلال حلول تساعد على تحسين كفاءة التشغيل، تقليل الانبعاثات، ودعم الامتثال للمعايير البيئية.">Solutions that improve efficiency, reduce emissions and support compliance.</p>
+    </div>
+    <div class="fl-eco reveal">
+      <p class="tech" data-en="Fluiday AdBlue" data-ar="فلودي أدبلو">Fluiday AdBlue</p>
+      <p data-en="A key product supporting diesel exhaust after-treatment systems, helping meet emissions requirements under the Euro 5 and Euro 6 standards."
+         data-ar="أحد أهم منتجاتنا الداعمة لأنظمة معالجة عوادم محركات الديزل، ويساعد على تحقيق متطلبات الانبعاثات وفق معياري Euro 5 وEuro 6.">Supports diesel exhaust after-treatment and Euro 5/6 emissions requirements.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MOTORSPORT ================= -->
+<section class="section dark fl-moto" id="motorsport">
+  <div class="fl-moto-diag" aria-hidden="true"></div>
+  <div class="fl-head">
+    <p class="fl-kicker"><span class="n">05</span> <span data-en="Motorsport" data-ar="رياضة المحركات">Motorsport</span></p>
+    <h2 class="fl-h2 display reveal" data-en="Real performance is tested under pressure" data-ar="الأداء الحقيقي يُختبر تحت الضغط">Real performance is tested under pressure</h2>
+    <p class="fl-lead reveal" data-en="Fluiday Auto has taken part as a technical partner and sponsor in motorsport events, with its products tested in conditions that demand high levels of performance and thermal endurance — and aims to expand its motorsport partnerships across the region."
+       data-ar="شاركت فلودي أوتو كشريك تقني وراعٍ في فعاليات رياضة السيارات، واختُبرت منتجاتها في ظروف تتطلب مستويات عالية من الأداء والتحمل الحراري، وتستهدف التوسع في شراكاتها ضمن رياضات المحركات في المنطقة.">Technical partner and sponsor in motorsport events across the region.</p>
+    <p class="fl-moto-tag reveal">From the road to the track. Performance without compromise.</p>
+  </div>
+
+  <div class="fl-moto-strip">
+    <figure class="slot reveal" data-slot="motorsport-1" data-tone="dark" style="min-height:230px">
+      <figcaption class="slot-ph">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 17h18M6 17V9l3-4h6l3 4v8M8 13h8M7 21v-2m10 2v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="slot-l" data-en="Motorsport photo / video — primary" data-ar="صورة / فيديو رياضة محركات — رئيسي">Motorsport photo / video — primary</span>
+        <span class="slot-f">assets/img/fl/motorsport-1.jpg</span>
+      </figcaption>
+    </figure>
+    <figure class="slot reveal" data-slot="motorsport-2" data-tone="dark">
+      <figcaption class="slot-ph">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v4l-4 3 4 3v4H5v-4l4-3-4-3V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="slot-l" data-en="Motorsport photo 2" data-ar="صورة رياضة محركات 2">Motorsport photo 2</span>
+        <span class="slot-f">assets/img/fl/motorsport-2.jpg</span>
+      </figcaption>
+    </figure>
+    <figure class="slot reveal" data-slot="motorsport-3" data-tone="dark">
+      <figcaption class="slot-ph">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="slot-l" data-en="Motorsport photo 3" data-ar="صورة رياضة محركات 3">Motorsport photo 3</span>
+        <span class="slot-f">assets/img/fl/motorsport-3.jpg</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= DISTRIBUTION ================= -->
+<section class="section" id="distribution">
+  <div class="fl-head">
+    <p class="fl-kicker"><span class="n">06</span> <span data-en="Distribution" data-ar="التوزيع">Distribution</span></p>
+    <h2 class="fl-h2 display reveal" data-en="A distribution network across the Kingdom and the region" data-ar="شبكة توزيع تمتد عبر المملكة والمنطقة">A distribution network across the Kingdom and the region</h2>
+  </div>
+  <div class="fl-two fl-dist">
+    <figure class="slot reveal" data-slot="distribution-map">
+      <figcaption class="slot-ph">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3 3 5v16l6-2 6 2 6-2V3l-6 2-6-2Zm0 0v16m6-14v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="slot-l" data-en="Distribution map — KSA regions + GCC" data-ar="خريطة التوزيع — مناطق المملكة + الخليج">Distribution map — KSA regions + GCC</span>
+        <span class="slot-f">assets/img/fl/distribution-map.svg</span>
+      </figcaption>
+    </figure>
+    <div>
+      <div class="fl-regions reveal">
+        <div class="fl-region"><div class="r-name" data-en="Western" data-ar="الغربية">Western</div>
+          <div class="r-cities" data-en="Jeddah · Makkah · Taif · Madinah · Al Lith" data-ar="جدة · مكة · الطائف · المدينة · الليث">Jeddah · Makkah · Taif · Madinah · Al Lith</div></div>
+        <div class="fl-region"><div class="r-name" data-en="Central" data-ar="الوسطى">Central</div>
+          <div class="r-cities" data-en="Riyadh · Al Kharj · Al Qassim" data-ar="الرياض · الخرج · القصيم">Riyadh · Al Kharj · Al Qassim</div></div>
+        <div class="fl-region"><div class="r-name" data-en="Eastern" data-ar="الشرقية">Eastern</div>
+          <div class="r-cities" data-en="Dammam · Khobar" data-ar="الدمام · الخبر">Dammam · Khobar</div></div>
+        <div class="fl-region"><div class="r-name" data-en="Southern" data-ar="الجنوبية">Southern</div>
+          <div class="r-cities" data-en="Khamis Mushait · Abha · Jazan" data-ar="خميس مشيط · أبها · جازان">Khamis Mushait · Abha · Jazan</div></div>
+        <div class="fl-region"><div class="r-name" data-en="Northern" data-ar="الشمالية">Northern</div>
+          <div class="r-cities" data-en="Tabuk · Hail" data-ar="تبوك · حائل">Tabuk · Hail</div></div>
+      </div>
+      <p class="fl-dist-note reveal" data-en="Plus a presence and partnerships across the Gulf and wider Middle East markets."
+         data-ar="بالإضافة إلى حضور وشراكات في أسواق الخليج والشرق الأوسط.">Plus a presence and partnerships across the Gulf and wider Middle East.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUCCESS PARTNERS ================= -->
+<section class="section tint" id="partners">
+  <div class="fl-head">
+    <p class="fl-kicker"><span class="n">07</span> <span data-en="Success Partners" data-ar="شركاء النجاح">Success Partners</span></p>
+    <h2 class="fl-h2 display reveal" data-en="A network of commercial partnerships" data-ar="شبكة من الشراكات التجارية">A network of commercial partnerships</h2>
+    <p class="fl-lead reveal" data-en="Fluiday Auto works with a range of distributors and commercial partners to support product reach and extend access to customers."
+       data-ar="تعمل فلودي أوتو مع مجموعة من الموزعين والشركاء التجاريين لدعم انتشار منتجاتها وتوسيع نطاق الوصول إلى العملاء.">Fluiday Auto works with distributors and commercial partners across the region.</p>
+  </div>
+
+  <div class="fl-partners-grid" data-stagger>
+    <div class="fl-partner reveal">
+      <figure class="slot" data-slot="partner-1">
+        <figcaption class="slot-ph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="slot-l" data-en="Partner logo 1" data-ar="شعار الشريك 1">Partner logo 1</span><span class="slot-f">assets/img/fl/partner-1.svg</span></figcaption>
+      </figure>
+      <p class="fl-partner-name" data-en="Riyad Al Khair Trading" data-ar="شركة رياض الخير للتجارة">Riyad Al Khair Trading</p>
+    </div>
+    <div class="fl-partner reveal">
+      <figure class="slot" data-slot="partner-2">
+        <figcaption class="slot-ph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="slot-l" data-en="Partner logo 2" data-ar="شعار الشريك 2">Partner logo 2</span><span class="slot-f">assets/img/fl/partner-2.svg</span></figcaption>
+      </figure>
+      <p class="fl-partner-name">Performance-PP</p>
+    </div>
+    <div class="fl-partner reveal">
+      <figure class="slot" data-slot="partner-3">
+        <figcaption class="slot-ph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="slot-l" data-en="Partner logo 3" data-ar="شعار الشريك 3">Partner logo 3</span><span class="slot-f">assets/img/fl/partner-3.svg</span></figcaption>
+      </figure>
+      <p class="fl-partner-name" data-en="Husun Qimat Al Amal Trading" data-ar="شركة حصون قمة الأمل للتجارة">Husun Qimat Al Amal Trading</p>
+    </div>
+    <div class="fl-partner reveal">
+      <figure class="slot" data-slot="partner-4">
+        <figcaption class="slot-ph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="slot-l" data-en="Partner logo 4" data-ar="شعار الشريك 4">Partner logo 4</span><span class="slot-f">assets/img/fl/partner-4.svg</span></figcaption>
+      </figure>
+      <p class="fl-partner-name" data-en="Qurina General Trading" data-ar="شركة قورينا للتجارة العامة">Qurina General Trading</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FLUIDAY × SKY GLOBAL ================= -->
+<section class="section group-band" style="background:var(--fl-ink)">
+  <div class="wrap">
+    <p class="eyebrow center reveal" style="color:var(--fl-red-l)" data-en="Fluiday Auto × Sky Global" data-ar="فلودي أوتو × سكاي جلوبال">Fluiday Auto × Sky Global</p>
+    <h2 class="display reveal" data-en="Part of the Sky Global ecosystem" data-ar="إحدى شركات منظومة سكاي جلوبال">Part of the Sky Global ecosystem</h2>
+    <p class="reveal" style="color:#c4c4c8" data-en="Fluiday Auto is one of the companies within the Sky Global ecosystem, operating under the group's vision of building specialised companies able to grow and compete in their markets."
+       data-ar="فلودي أوتو إحدى الشركات التابعة لمنظومة سكاي جلوبال، وتعمل ضمن رؤية المجموعة لبناء شركات متخصصة قادرة على النمو والمنافسة في أسواقها.">One of the companies within the Sky Global ecosystem.</p>
+    <a href="../index.html#companies" class="btn btn-primary reveal" data-en="Explore Sky Global's companies" data-ar="اكتشف شركات سكاي جلوبال">Explore Sky Global's companies
+      <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="fl-two">
+    <div>
+      <p class="fl-kicker"><span class="n">08</span> <span data-en="Contact" data-ar="تواصل معنا">Contact</span></p>
+      <h2 class="fl-h2 display reveal" data-en="Looking for automotive-sector solutions?" data-ar="هل تبحث عن حلول لقطاع السيارات؟">Looking for automotive-sector solutions?</h2>
+      <p class="fl-body-p reveal" style="margin-top:1.2rem" data-en="For commercial enquiries, distribution, partnerships, or product orders — reach the Fluiday Auto team."
+         data-ar="للاستفسارات التجارية، التوزيع، الشراكات، أو طلبات المنتجات — تواصل مع فريق فلودي أوتو.">For commercial enquiries, distribution, partnerships or product orders.</p>
+      <a href="tel:+966122068728" class="btn btn-primary" style="margin-top:1.6rem" data-en="Contact Fluiday Auto" data-ar="تواصل مع فلودي أوتو">Contact Fluiday Auto</a>
+    </div>
+    <div class="reveal">
+      <div class="fl-contact-rows">
+        <div><span class="k" data-en="Phone" data-ar="الهاتف">Phone</span>
+          <span class="v fl-phones tnum"><span>+966 12 206 8728</span><span>+966 53 337 3060</span><span>+966 59 055 0557</span></span></div>
+        <div><span class="k" data-en="Website" data-ar="الموقع">Website</span><span class="v">FLUIDAYAUTO.COM</span></div>
+        <div><span class="k">Instagram</span><span class="v">@FLUIDAYAUTOKSA · @FLUIDAYAUTO</span></div>
+        <div><span class="k" data-en="Location" data-ar="الموقع">Location</span><span class="v" data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="fl-ft">
+  <div class="wrap">
+    <div class="fl-ft-top">
+      <div>
+        <img class="fl-logo" src="../assets/img/logo-fluiday.svg" alt="Fluiday Auto" />
+        <p data-en="Applied automotive chemistry — coolants, AdBlue, radiator-circuit cleaner and spare parts, engineered to German standards."
+           data-ar="الهندسة الكيميائية التطبيقية للسيارات — سوائل تبريد، أدبلو، منظف دورة الرديتر وقطع غيار، بمعايير ألمانية.">Applied automotive chemistry — engineered to German standards.</p>
+      </div>
+      <div>
+        <h4 data-en="Sections" data-ar="الأقسام">Sections</h4>
+        <ul>
+          <li><a href="#products" data-en="Products" data-ar="المنتجات">Products</a></li>
+          <li><a href="#why" data-en="Why Fluiday" data-ar="لماذا فلودي">Why Fluiday</a></li>
+          <li><a href="#motorsport" data-en="Motorsport" data-ar="رياضة المحركات">Motorsport</a></li>
+          <li><a href="#distribution" data-en="Distribution" data-ar="التوزيع">Distribution</a></li>
+          <li><a href="#partners" data-en="Success Partners" data-ar="شركاء النجاح">Success Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Contact" data-ar="تواصل">Contact</h4>
+        <ul>
+          <li><a href="tel:+966122068728" class="tnum">+966 12 206 8728</a></li>
+          <li><a href="tel:+966533373060" class="tnum">+966 53 337 3060</a></li>
+          <li>FLUIDAYAUTO.COM</li>
+          <li><a href="../index.html#companies" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">Sky Global Holding</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fl-ft-bot">
+      <span data-en="© 2026 Fluiday Auto — a Sky Global company. All rights reserved." data-ar="© 2026 فلودي أوتو — شركة من سكاي جلوبال. جميع الحقوق محفوظة.">© 2026 Fluiday Auto — a Sky Global company.</span>
+      <span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('flHdr');
+  if(hdr){var s=function(){hdr.classList.toggle('scrolled',scrollY>40)};s();addEventListener('scroll',s,{passive:true});}
+  var mt=document.getElementById('flMenuToggle'),mm=document.getElementById('flMobile');
+  if(mt&&mm){
+    var close=function(){mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';};
+    mt.addEventListener('click',function(){var o=mm.classList.toggle('open');mt.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':'';});
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  }
+  /* nav current-section highlight */
+  var links=[].slice.call(document.querySelectorAll('.fl-nav a'));
+  var ids=links.map(function(a){return a.getAttribute('href').slice(1);});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ var i=ids.indexOf(e.target.id);
+        links.forEach(function(l,n){l.classList.toggle('here',n===i);}); } });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    ids.forEach(function(id){var el=document.getElementById(id); if(el)io.observe(el);});
+  }
+})();
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

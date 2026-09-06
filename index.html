@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sky Global Holding — A business ecosystem without limits</title>
+<meta name="title-ar" content="سكاي جلوبال القابضة — منظومة أعمال تتسع بلا حدود" />
+<meta name="description" content="Sky Global Holding is a Saudi multi-sector investment holding group that brings specialised companies under one umbrella, united by a single vision of growth, quality and governance." />
+<link rel="stylesheet" href="assets/theme.css" />
+<style>
+/* =====================================================================
+   HOME — section styles (editorial, restrained)
+   ===================================================================== */
+.s-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.s-head.center{text-align:center}
+.s-head.center .eyebrow{justify-content:center}
+.s-head.center h2,.s-head.center .lead{margin-inline:auto}
+.s-head .lead{margin-top:1.1rem}
+.s-head + .s-body{margin-top:clamp(2.2rem,4vw,3.4rem)}
+
+/* ---- OUR STORY (centred, both languages) ---- */
+.story-grid{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.story-copy{max-width:76ch;margin-inline:auto;text-align:center}
+.story-copy .eyebrow{justify-content:center}
+.story-copy h2{margin:0 auto 1.1rem;max-width:24ch}
+.story-copy .lead{margin:0 auto 1.3rem}
+.story-copy > p{color:var(--ink-soft);max-width:66ch;margin-inline:auto}
+.story-copy > p + p{margin-top:1rem}
+.story-copy .link-more{margin-top:1.8rem}
+.story-media{position:relative;isolation:isolate;max-width:440px;
+  margin:clamp(2.6rem,5vw,3.8rem) auto 0}
+.story-media .frame{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;
+  background:var(--sky-950);border:1px solid var(--line-dark)}
+.story-media .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.story-media .frame .tone{position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 42%,rgba(7,23,36,.5) 100%),
+  radial-gradient(120% 80% at 50% 120%,rgba(45,93,148,.28),transparent 60%)}
+.story-cap{margin-top:14px;text-align:center;font-size:.7rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .story-cap{letter-spacing:.02em;text-transform:none;font-size:.85rem}
+.story-quote{position:relative;margin:20px auto 0;max-width:none;text-align:center;z-index:3;
+  background:#fff;color:var(--ink);padding:24px 26px;border-radius:6px;
+  box-shadow:0 32px 66px -26px rgba(11,32,54,.4);border:1px solid var(--line-2)}
+.story-quote p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.42;color:var(--sky-800)}
+html[dir="rtl"] .story-quote p{font-family:var(--ar);font-style:normal;line-height:1.75;font-size:1rem}
+.story-quote cite{display:block;margin-top:10px;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sky-600);font-style:normal;font-weight:600}
+html[dir="rtl"] .story-quote cite{letter-spacing:.02em}
+
+/* ---- OUR COMPANIES — hover-reveal focus grid ---- */
+.hrgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;
+  max-width:var(--wide);margin-inline:auto;padding-inline:var(--gutter)}
+.hrc{flex:0 1 calc(33.333% - 12px);min-width:240px;
+  position:relative;display:block;aspect-ratio:3/4;border-radius:12px;overflow:hidden;isolation:isolate;
+  color:#fff;background:#fff;border:1px solid var(--line);box-shadow:0 2px 8px -3px rgba(20,32,44,.1);
+  transform:scale(1);transform-origin:center;
+  transition:transform .5s var(--ease),filter .5s var(--ease),opacity .5s var(--ease),box-shadow .5s var(--ease)}
+
+/* focus effect: when the grid is hovered, non-hovered cards recede */
+.hrgrid:hover .hrc:not(:hover),
+.hrgrid:focus-within .hrc:not(:focus-within){
+  transform:scale(.93);filter:blur(3px) saturate(.75) brightness(.9);opacity:.62}
+.hrgrid .hrc:hover,.hrgrid .hrc:focus-within{
+  transform:scale(1.05);z-index:3;
+  box-shadow:0 34px 80px -24px rgba(45,93,148,.55),0 0 0 1px color-mix(in srgb,var(--ca) 40%,transparent)}
+
+/* media — company logo on a light field, brand band + title at the base */
+.hrc-media{position:absolute;inset:0;z-index:0;background:#fff}
+.hrc-media img{position:absolute;inset-block-start:6%;inset-inline:10%;width:80%;height:55%;
+  object-fit:contain;object-position:center;display:block}
+.hrc-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(0deg,
+    color-mix(in srgb,var(--ca) 92%,#0a1a2a) 0%,
+    color-mix(in srgb,var(--ca) 78%,#0a1a2a) 11%,
+    color-mix(in srgb,var(--ca) 30%,transparent) 24%,
+    transparent 36%)}
+.hrc-scrim::after{content:"";position:absolute;inset-inline:0;inset-block-end:0;height:36%;
+  background:linear-gradient(0deg,rgba(4,11,22,.5),rgba(4,11,22,.12) 60%,transparent)}
+
+.hrc-body{position:absolute;inset-inline:0;inset-block-end:0;z-index:2;
+  padding:clamp(16px,1.6vw,26px);display:flex;flex-direction:column;align-items:flex-start;gap:.4rem}
+.hrc-sub{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9);text-shadow:0 1px 10px rgba(4,11,22,.5)}
+html[dir="rtl"] .hrc-sub{letter-spacing:.02em;text-transform:none;font-size:.8rem;line-height:1.5}
+.hrc-title{font-family:var(--serif);font-weight:400;font-size:clamp(1.05rem,.86rem + .5vw,1.4rem);line-height:1.14;text-wrap:balance;text-shadow:0 1px 14px rgba(4,11,22,.45)}
+html[dir="rtl"] .hrc-title{font-family:var(--ar);font-weight:700;line-height:1.35}
+.hrc-chip{margin-top:.3rem;font-size:.54rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;background:color-mix(in srgb,var(--ca) 55%,#1e4875);border-radius:999px;padding:3px 8px}
+html[dir="rtl"] .hrc-chip{letter-spacing:.02em}
+.hrc-go{margin-top:.6rem;display:inline-flex;align-items:center;gap:.4em;
+  font-size:.72rem;font-weight:700;letter-spacing:.04em;color:#fff;
+  opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.hrc:hover .hrc-go,.hrc:focus-within .hrc-go{opacity:1;transform:none}
+.hrc-go svg{width:13px;height:13px}
+html[dir="rtl"] .hrc-go svg{transform:scaleX(-1)}
+
+@media (prefers-reduced-motion:reduce){
+  .hrc,.hrc-go{transition:none}
+  .hrgrid:hover .hrc:not(:hover),.hrgrid:focus-within .hrc:not(:focus-within){
+    transform:none;filter:saturate(.85);opacity:.85}
+  .hrgrid .hrc:hover,.hrgrid .hrc:focus-within{transform:none}
+  .hrc-go{opacity:1;transform:none}
+}
+
+/* ---- OUR PURPOSE (vision / mission / values) — centred, both languages ---- */
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-dark);
+  border:1px solid var(--line-dark);border-radius:6px;overflow:hidden;max-width:var(--maxw);margin-inline:auto}
+.vm-grid > div{background:var(--sky-950);padding:clamp(32px,4.5vw,54px);text-align:center}
+.vm-grid .eyebrow{justify-content:center}
+.vm-grid .ix{font-family:var(--serif);font-size:1.9rem;color:var(--sky-500);line-height:1;margin-bottom:1.1rem;display:block}
+html[dir="rtl"] .vm-grid .ix{font-family:var(--ar)}
+.vm-grid h3{font-family:var(--serif);font-size:var(--s2);font-weight:400;line-height:1.26;color:#fff;margin:0 auto 1rem;max-width:22ch}
+html[dir="rtl"] .vm-grid h3{font-family:var(--ar);font-weight:700;line-height:1.5}
+.vm-grid p{color:#b7c8d9;max-width:46ch;font-size:.96rem;margin-inline:auto}
+.values{max-width:var(--maxw);margin:clamp(2.4rem,4vw,3.4rem) auto 0;padding-inline:var(--gutter)}
+.values .eyebrow{justify-content:center}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);
+  border:1px solid var(--line-dark);border-radius:6px;overflow:hidden}
+.value{background:var(--sky-950);padding:clamp(24px,3vw,36px);text-align:center}
+.value .vn{font-size:1.12rem;font-weight:700;margin-bottom:.5rem;display:flex;align-items:baseline;justify-content:center;gap:.55em;color:#fff}
+.value .vn i{font-size:.72rem;font-weight:700;color:var(--sky-400);font-style:normal;letter-spacing:.08em}
+.value p{font-size:.9rem;color:#a9bccd;max-width:34ch;margin-inline:auto}
+
+/* ---- GROUP SERVICES ---- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.svc{border:1px solid var(--line);border-radius:6px;padding:clamp(26px,3vw,36px);transition:border-color .3s,transform .3s var(--ease)}
+.svc:hover{border-color:var(--sky-400);transform:translateY(-3px)}
+.svc svg{width:26px;height:26px;color:var(--sky-600);margin-bottom:16px}
+.svc h4{font-size:1.1rem;margin-bottom:1rem}
+.svc ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.svc li{font-size:.9rem;color:var(--ink-soft);padding-inline-start:1.1em;position:relative}
+.svc li::before{content:"";position:absolute;inset-inline-start:0;inset-block-start:.58em;width:5px;height:5px;background:var(--sky-400);border-radius:999px}
+
+/* ---- OUR PEOPLE — full-bleed photo cards ---- */
+.people-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.pcard{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;isolation:isolate;
+  border:1px solid rgba(255,255,255,.12);background:var(--sky-950);
+  transition:box-shadow .45s var(--ease)}
+.pcard:hover,.pcard:focus-within{
+  box-shadow:0 24px 64px -20px rgba(45,93,148,.6),0 0 0 1px rgba(111,155,203,.42)}
+
+/* media (real <img> later; brand-tinted abstract for now) */
+.pcard-media{position:absolute;inset:0;z-index:0;transition:transform .7s var(--ease-out)}
+.pcard:hover .pcard-media,.pcard:focus-within .pcard-media{transform:scale(1.06)}
+.pcard-media > *{position:absolute}
+.pcard-media img{inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.pcard-tone{inset:0;background:
+  radial-gradient(78% 58% at 76% 6%,rgba(111,155,203,.42),transparent 55%),
+  linear-gradient(164deg,#1b4168 0%,#102c48 50%,#071726 100%)}
+.pcard-mono{inset-block-start:10%;inset-inline-end:-14%;width:60%;color:#fff;opacity:.045}
+html[dir="rtl"] .pcard-mono{transform:scaleX(-1)}
+.pcard-initials{inset-block-start:50%;inset-inline-start:50%;transform:translate(-50%,-64%);
+  font-family:var(--serif);font-weight:300;font-size:clamp(3.4rem,9vw,5.4rem);
+  color:rgba(255,255,255,.16);letter-spacing:.03em}
+html[dir="rtl"] .pcard-initials{font-family:var(--ar);transform:translate(50%,-62%)}
+
+/* bottom-up brand-blue scrim */
+.pcard-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(0deg,rgba(30,72,117,.94) 0%,rgba(30,72,117,.55) 24%,rgba(18,48,73,.16) 48%,transparent 70%)}
+
+.pcard-foot{position:absolute;inset-inline:0;inset-block-end:0;z-index:2;
+  padding:clamp(20px,3vw,30px);display:flex;flex-direction:column;align-items:flex-start;gap:.28rem}
+.pcard-ph{position:absolute;inset-block-start:16px;inset-inline-start:16px;z-index:2}
+.pcard-name{font-size:clamp(1.2rem,1rem + .7vw,1.5rem);font-weight:700;color:#fff}
+.pcard-role{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sky-300)}
+html[dir="rtl"] .pcard-role{letter-spacing:.02em;text-transform:none;font-size:.86rem}
+.pcard-btn{margin-top:.95rem;display:inline-flex;align-items:center;gap:.5em;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;
+  font-weight:600;font-size:.8rem;letter-spacing:.02em;padding:9px 16px;border-radius:999px;
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  transition:background .3s,border-color .3s}
+.pcard-btn .arr{width:14px;height:14px;transition:transform .3s var(--ease)}
+.pcard-btn:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.55)}
+.pcard-btn:hover .arr{transform:translateX(4px)}
+html[dir="rtl"] .pcard-btn .arr{transform:scaleX(-1)}
+html[dir="rtl"] .pcard-btn:hover .arr{transform:scaleX(-1) translateX(4px)}
+
+/* bio reveal — slides up over the card */
+.pcard-bio{position:absolute;inset:0;z-index:3;background:rgba(7,20,34,.95);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:clamp(24px,3.6vw,40px);display:flex;flex-direction:column;justify-content:flex-end;gap:1.1rem;
+  transform:translateY(101%);visibility:hidden;
+  transition:transform .5s var(--ease-out),visibility 0s linear .5s}
+.pcard.bio-open .pcard-bio{transform:translateY(0);visibility:visible;
+  transition:transform .5s var(--ease-out)}
+.pcard-bio .pcard-name{margin-bottom:.1rem}
+.pcard-bio p{color:#cddcea;font-size:.94rem;line-height:1.7}
+html[dir="rtl"] .pcard-bio p{line-height:1.9}
+.pcard-close{align-self:flex-start;display:inline-flex;align-items:center;gap:.5em;
+  color:var(--sky-300);font-weight:600;font-size:.8rem;letter-spacing:.02em}
+.pcard-close svg{width:13px;height:13px}
+.pcard-close:hover{color:#fff}
+
+@media (prefers-reduced-motion:reduce){
+  .pcard-media,.pcard-bio,.pcard-btn .arr{transition:none}
+  .pcard:hover .pcard-media,.pcard:focus-within .pcard-media{transform:none}
+}
+
+/* ---- BY THE NUMBERS ---- */
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;max-width:var(--maxw);margin-inline:auto}
+.numbers-grid .cell{background:var(--paper);padding:clamp(28px,3vw,42px) 24px}
+.numbers-grid svg{width:22px;height:22px;color:var(--sky-500);margin-bottom:12px}
+.numbers-grid .n{font-family:var(--serif);font-size:var(--s4);font-weight:300;color:var(--sky-700);line-height:1}
+html[dir="rtl"] .numbers-grid .n{font-family:var(--ar);font-weight:400}
+.numbers-grid .l{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-top:.5rem}
+html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:.9rem}
+.numbers-grid .l .ph{display:block;color:var(--sky-400);font-size:.9em;margin-top:2px}
+.numbers .note{max-width:var(--maxw);margin:1.3rem auto 0;padding-inline:var(--gutter);font-size:.8rem;color:var(--gray)}
+
+@media (max-width:1080px){
+  .story-grid,.vm-grid{grid-template-columns:1fr}
+  .vm-grid{border-radius:6px}
+  .story-quote{position:relative;inset:auto;margin-top:20px;max-width:none}
+  .story-media .frame .mono{display:none}
+  .values-grid,.svc-grid{grid-template-columns:1fr 1fr}
+  .numbers-grid{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1081px){
+  .pcard{aspect-ratio:1/1}
+}
+@media (max-width:860px){ .hrc{flex-basis:calc(50% - 8px)} }
+@media (max-width:640px){
+  .values-grid,.svc-grid,.numbers-grid,.people-grid{grid-template-columns:1fr}
+}
+@media (max-width:460px){ .hrc{flex-basis:100%;aspect-ratio:5/6} }
+/* touch / no-hover: keep every card readable, drop the recede effect */
+@media (hover:none){
+  .hrgrid:hover .hrc:not(:hover),.hrgrid:focus-within .hrc:not(:focus-within){
+    transform:none;filter:none;opacity:1}
+  .hrc-go{opacity:1;transform:none}
+}
+</style>
+</head>
+<body id="top" class="hero-photo">
+<!-- Hero: Jeddah tower photo is the confirmed default (client, 2026-09-06). ?hero=abstract previews the old abstract bg. -->
+<script>if(/[?&]hero=abstract\b/.test(location.search))document.body.classList.remove('hero-photo');else document.body.classList.add('hero-photo');</script>
+
+<svg class="sg-defs" aria-hidden="true"><defs>
+  <linearGradient id="sgGrad" x1="0" y1="0" x2="1476.09" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#7C8AD0"/><stop offset="1" stop-color="#33469C"/>
+  </linearGradient>
+  <symbol id="sgMark" viewBox="0 0 1476.09 1343.36">
+    <path d="M 128.27 0.00 C 57.43 0.00 0.00 57.43 0.00 128.25 L 0.00 128.25 L 0.00 595.00 C 0.00 665.84 57.43 723.28 128.27 723.28 L 128.27 723.28 L 281.90 723.28 L 281.90 951.25 C 281.90 1000.30 321.66 1040.06 370.71 1040.06 L 370.71 1040.06 L 1105.38 1040.06 C 1154.42 1040.06 1194.18 1000.30 1194.18 951.25 L 1194.18 951.25 L 1194.18 837.23 L 1068.89 837.23 L 1068.89 914.77 L 407.19 914.77 L 407.19 403.51 L 1068.89 403.51 L 1068.89 482.59 L 1194.18 482.59 L 1194.18 367.03 C 1194.18 317.98 1154.42 278.22 1105.38 278.22 L 1105.38 278.22 L 370.71 278.22 C 321.66 278.22 281.90 317.98 281.90 367.03 L 281.90 367.03 L 281.90 595.00 L 128.27 595.00 L 128.27 128.25 L 1347.81 128.25 L 1347.81 356.95 L 1287.60 356.95 L 1287.60 483.39 L 1476.09 483.39 L 1476.09 128.25 C 1476.09 57.43 1418.65 0.00 1347.81 0.00 L 1347.81 0.00 Z"/>
+    <path d="M 501.41 595.00 L 501.41 723.28 L 1347.81 723.28 L 1347.81 1186.17 L 128.27 1186.17 L 128.27 961.85 L 187.66 961.85 L 187.66 835.39 L 0.00 835.39 L 0.00 1215.09 C 0.00 1285.93 57.43 1343.36 128.27 1343.36 L 128.27 1343.36 L 1347.81 1343.36 C 1418.65 1343.36 1476.09 1285.93 1476.09 1215.09 L 1476.09 1215.09 L 1476.09 723.28 C 1476.09 687.84 1461.73 655.79 1438.52 632.56 L 1438.52 632.56 C 1415.30 609.36 1383.24 595.00 1347.81 595.00 L 1347.81 595.00 Z"/>
+  </symbol>
+</defs></svg>
+
+<header class="hdr" id="hdr">
+  <a href="#top" class="brand" aria-label="Sky Global Holding — home">
+    <svg class="mark" viewBox="0 0 1476.09 1343.36" aria-hidden="true"><use href="#sgMark" fill="url(#sgGrad)"/></svg>
+    <span class="wm"><b>SKY GLOBAL</b><i>سكاي جلوبال</i></span>
+  </a>
+
+  <nav class="nav" aria-label="Primary">
+    <a href="#story" data-en="About Us" data-ar="من نحن">About Us</a>
+    <div class="has-sub">
+      <button type="button" aria-haspopup="true" aria-expanded="false" data-subtoggle
+              data-en="Our Companies" data-ar="شراكتنا">Our Companies
+        <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-sub" role="menu">
+        <a href="companies/fluiday-auto.html" role="menuitem"><span class="dot" style="background:#ed1c24"></span><span data-en="Fluiday Auto" data-ar="فلوداي أوتو">Fluiday Auto</span></a>
+        <a href="companies/nheroes.html" role="menuitem"><span class="dot" style="background:#0d0d99"></span><span data-en="NHeroes" data-ar="إن هيروز">NHeroes</span></a>
+        <a href="companies/talawin-marha.html" role="menuitem"><span class="dot" style="background:#b06a35"></span><span data-en="Talawin Marha" data-ar="تلاوين مرحة">Talawin Marha</span></a>
+        <a href="companies/sky-global-contracting.html" role="menuitem"><span class="dot"></span><span data-en="Sky Global Contracting" data-ar="سكاي جلوبال للمقاولات">Sky Global Contracting</span></a>
+        <a href="companies/sky-global-financial-consulting.html" role="menuitem"><span class="dot" style="background:#1f7ac2"></span><span data-en="Financial Consulting" data-ar="الاستشارات المالية">Financial Consulting</span></a>
+      </div>
+    </div>
+    <a href="#purpose" data-en="Vision &amp; Mission" data-ar="رؤيتنا ورسالتنا">Vision &amp; Mission</a>
+    <a href="#services" data-en="Group Services" data-ar="خدمات المجموعة">Group Services</a>
+    <a href="#people" data-en="Leadership" data-ar="قيادتنا">Leadership</a>
+    <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+  </nav>
+
+  <div class="hdr-r">
+    <button class="lang" id="langBtn" aria-label="Switch language">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.7 3.8 6 3.8 9S14.5 18.3 12 21M12 3C9.5 5.7 8.2 9 8.2 12S9.5 18.3 12 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="lbl" id="langLabel">العربية</span>
+    </button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#story" data-en="About Us" data-ar="من نحن">About Us</a>
+  <div class="mm-group">
+    <span data-en="Our Companies" data-ar="شراكتنا">Our Companies</span>
+    <div class="mm-sub">
+      <a href="companies/fluiday-auto.html" data-en="Fluiday Auto" data-ar="فلوداي أوتو">Fluiday Auto</a>
+      <a href="companies/nheroes.html" data-en="NHeroes" data-ar="إن هيروز">NHeroes</a>
+      <a href="companies/talawin-marha.html" data-en="Talawin Marha" data-ar="تلاوين مرحة">Talawin Marha</a>
+      <a href="companies/sky-global-contracting.html" data-en="Sky Global Contracting" data-ar="سكاي جلوبال للمقاولات">Sky Global Contracting</a>
+      <a href="companies/sky-global-financial-consulting.html" data-en="Financial Consulting" data-ar="الاستشارات المالية">Financial Consulting</a>
+    </div>
+  </div>
+  <a href="#purpose" data-en="Vision &amp; Mission" data-ar="رؤيتنا ورسالتنا">Vision &amp; Mission</a>
+  <a href="#services" data-en="Group Services" data-ar="خدمات المجموعة">Group Services</a>
+  <a href="#people" data-en="Leadership" data-ar="قيادتنا">Leadership</a>
+  <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero-bg" data-parallax-bg aria-hidden="true">
+    <!-- abstract variant (default) -->
+    <div class="wash"></div>
+    <svg class="mono" viewBox="0 0 1476.09 1343.36"><use href="#sgMark" fill="currentColor"/></svg>
+    <span class="rule" style="inset-inline-start:22%"></span>
+    <span class="rule" style="inset-inline-start:50%"></span>
+    <span class="rule" style="inset-inline-start:78%"></span>
+    <!-- photo variant (body.hero-photo) -->
+    <img class="hero-shot" src="assets/img/hero-jeddah.jpg" alt="" decoding="async" fetchpriority="high" />
+    <div class="hero-photo-tint"></div>
+    <svg class="hero-motif" aria-hidden="true">
+      <defs>
+        <pattern id="sgTexture" width="230" height="230" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)">
+          <g fill="none" stroke="#fff" stroke-width="2">
+            <rect x="45" y="45" width="140" height="140" rx="36"/>
+            <rect x="78" y="78" width="74" height="74" rx="20"/>
+            <path d="M115 45V6M115 185v39M45 115H6M185 115h39"/>
+          </g>
+          <circle cx="115" cy="115" r="3.4" fill="#fff"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#sgTexture)"/>
+    </svg>
+    <svg class="hero-grain"><filter id="hn"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#hn)"/></svg>
+  </div>
+
+  <div class="hero-inner" data-load>
+    <p class="kicker" data-en="Multi-sector holding group · Saudi Arabia" data-ar="منظومة أعمال متعددة القطاعات · المملكة العربية السعودية">Multi-sector holding group · Saudi Arabia</p>
+    <h1 class="display hero-tag"
+        data-en="A business ecosystem <em>without limits</em>"
+        data-ar="منظومة أعمال <em>تتسع بلا حدود</em>">A business ecosystem <em>without limits</em></h1>
+    <p class="sub"
+       data-en="We build the companies of today to create the opportunities of tomorrow — specialised companies under one umbrella, each independent in its market, united by a single vision of growth, quality and governance."
+       data-ar="نبني شركات اليوم لنصنع فرص الغد — شركات متخصصة تحت مظلة واحدة، تعمل باستقلالية في أسواقها، وتلتقي تحت رؤية واحدة تقوم على النمو، الجودة، والحوكمة.">We build the companies of today to create the opportunities of tomorrow.</p>
+    <div class="hero-cta">
+      <a href="#companies" class="btn btn-primary" data-en="Explore our companies" data-ar="اكتشف شركاتنا">Explore our companies
+        <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#contact" class="btn btn-ghost" data-en="Contact us" data-ar="تواصل معنا">Contact us</a>
+    </div>
+    <div class="hero-ledger">
+      <div class="fig">
+        <div class="n tnum" data-count="5">5</div>
+        <div class="l" data-en="Companies under one umbrella" data-ar="شركات تحت مظلة واحدة">Companies under one umbrella</div>
+      </div>
+      <span class="sep"></span>
+      <div class="fig">
+        <div class="n tnum" data-count="2014" data-plain="1">2014</div>
+        <div class="l" data-en="Founded <span class='ph'>(placeholder)</span>" data-ar="سنة التأسيس <span class='ph'>(مبدئي)</span>">Founded</div>
+      </div>
+      <span class="sep"></span>
+      <div class="fig">
+        <div class="n" data-en="Multiple" data-ar="متعددة">Multiple</div>
+        <div class="l" data-en="Sectors &amp; markets" data-ar="قطاعات وأسواق">Sectors &amp; markets</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUR STORY ================= -->
+<section class="section" id="story">
+  <div class="story-grid">
+    <div class="story-copy">
+      <p class="eyebrow reveal" data-en="Our Story" data-ar="قصتنا">Our Story</p>
+      <h2 class="h-sec display reveal" data-en="From an idea under one sky — to an ecosystem of five companies" data-ar="من فكرة تحت سماء واحدة… إلى منظومة من خمس شركات">From an idea under one sky — to an ecosystem of five companies</h2>
+      <p class="lead reveal" data-en="Sky Global began with a simple observation: markets and sectors may differ, but the ingredients of success stay the same — discipline, trust, and the ability to see opportunity before it becomes reality."
+         data-ar="بدأت سكاي جلوبال من ملاحظة بسيطة: قد تختلف الأسواق والقطاعات، لكن مقومات النجاح تبقى واحدة — الانضباط، الثقة، والقدرة على رؤية الفرص قبل أن تصبح واقعًا.">Sky Global began with a simple observation.</p>
+      <p class="reveal" data-en="In 2014, founders Hisham Almuflehi and Wajdi Bamfleh set out to build a different model — a parent entity that does not depend on a single company or sector, but establishes specialised companies, each with its own expertise and market, held together by one framework of quality, governance and strategic vision."
+         data-ar="في عام التأسيس، قرر المؤسسان هشام عبد الرحمن المفلحي ووجدي بامفلح بناء نموذج مختلف؛ كيان أم لا يعتمد على شركة واحدة أو قطاع واحد، بل على تأسيس شركات متخصصة، لكل منها خبرتها وسوقها، بينما يجمعها إطار واحد من الجودة والحوكمة والرؤية الاستراتيجية.">In 2014, the founders set out to build a different model.</p>
+      <p class="reveal" data-en="Hence the name Sky Global: the sky is a space without limits, bound to no single direction or horizon — a reflection of the group's ambition to see new room for growth in every sector, and real value in every opportunity."
+         data-ar="ومن هنا جاء اسم سكاي جلوبال. فالسماء مساحة بلا حدود، لا تتوقف عند اتجاه واحد ولا يحدها أفق واحد، وكانت هذه الفكرة انعكاسًا لطموح المجموعة: أن ترى في كل قطاع مساحة جديدة للنمو، وفي كل فرصة إمكانية لبناء قيمة حقيقية.">Hence the name Sky Global.</p>
+      <a href="#purpose" class="link-more reveal" data-en="Discover our purpose" data-ar="اكتشف رؤيتنا">Discover our purpose
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="story-media reveal">
+      <figure class="frame">
+        <img src="assets/img/story-journey.jpg" alt="" width="1000" height="1250" loading="lazy" decoding="async" />
+        <div class="tone" aria-hidden="true"></div>
+      </figure>
+      <p class="story-cap" data-en="From one idea to five companies" data-ar="من فكرة واحدة إلى خمس شركات">From one idea to five companies</p>
+      <div class="story-quote">
+        <p data-en="&ldquo;We combine independence with integration — each company has its specialisation, the group has one vision.&rdquo;"
+           data-ar="«نجمع بين الاستقلالية والتكامل؛ لكل شركة تخصصها، وللمجموعة رؤية واحدة.»">&ldquo;We combine independence with integration.&rdquo;</p>
+        <cite data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">Sky Global Holding</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUR COMPANIES ================= -->
+<section id="companies">
+  <div class="section s-head center" style="padding-bottom:0">
+    <p class="eyebrow reveal" data-en="Our Companies" data-ar="شركاتنا">Our Companies</p>
+    <h2 class="h-sec display reveal" data-en="Five companies, five specialisations, one vision" data-ar="خمس شركات، خمسة تخصصات، رؤية واحدة">Five companies, five specialisations, one vision</h2>
+    <p class="lead reveal" data-en="Each company holds its own role in its market and its own ambition to grow — supported by the group's shared standards and resources."
+       data-ar="لكل شركة دورها في سوقها وطموحها للنمو — مدعومة بمعايير المجموعة ومواردها المشتركة.">Each company holds its own role in its market.</p>
+  </div>
+
+  <div class="section-sm hrgrid reveal">
+
+    <a class="hrc" href="companies/fluiday-auto.html" style="--ca:#ed1c24">
+      <div class="hrc-media" aria-hidden="true">
+        <img src="assets/img/co-fluiday-logo.jpg" alt="" width="640" height="640" loading="lazy" decoding="async" />
+      </div>
+      <div class="hrc-scrim" aria-hidden="true"></div>
+      <div class="hrc-body">
+        <span class="hrc-sub" data-en="Automotive Chemical Engineering" data-ar="الهندسة الكيميائية للسيارات">Automotive Chemical Engineering</span>
+        <span class="hrc-title" data-en="Fluiday Auto" data-ar="فلوداي أوتو">Fluiday Auto</span>
+        <span class="hrc-go" data-en="Explore" data-ar="اكتشف">Explore
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <a class="hrc" href="companies/nheroes.html" style="--ca:#0d0d99">
+      <div class="hrc-media" aria-hidden="true">
+        <img src="assets/img/co-nheroes.jpg" alt="" width="640" height="640" loading="lazy" decoding="async" />
+      </div>
+      <div class="hrc-scrim" aria-hidden="true"></div>
+      <div class="hrc-body">
+        <span class="hrc-sub" data-en="Marketing Agency &amp; Software House" data-ar="وكالة تسويق وحلول رقمية">Marketing Agency &amp; Software House</span>
+        <span class="hrc-title" data-en="NHeroes" data-ar="إن هيروز">NHeroes</span>
+        <span class="hrc-go" data-en="Explore" data-ar="اكتشف">Explore
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <a class="hrc" href="companies/talawin-marha.html" style="--ca:#b06a35">
+      <div class="hrc-media" aria-hidden="true">
+        <img src="assets/img/co-talawin.jpg" alt="" width="640" height="640" loading="lazy" decoding="async" />
+      </div>
+      <div class="hrc-scrim" aria-hidden="true"></div>
+      <div class="hrc-body">
+        <span class="hrc-sub" data-en="Creative &amp; Experience Design" data-ar="الإبداع وصناعة التجارب">Creative &amp; Experience Design</span>
+        <span class="hrc-title" data-en="Talawin Marha" data-ar="تلاوين مرحة">Talawin Marha</span>
+        <span class="hrc-chip" data-en="Identity in development" data-ar="هوية قيد الإعداد">Identity in development</span>
+        <span class="hrc-go" data-en="Explore" data-ar="اكتشف">Explore
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <a class="hrc" href="companies/sky-global-contracting.html" style="--ca:#2d5d94">
+      <div class="hrc-media" aria-hidden="true">
+        <img src="assets/img/co-contracting.jpg" alt="" width="640" height="640" loading="lazy" decoding="async" />
+      </div>
+      <div class="hrc-scrim" aria-hidden="true"></div>
+      <div class="hrc-body">
+        <span class="hrc-sub" data-en="Contracting &amp; Construction" data-ar="مقاولات وتنفيذ">Contracting &amp; Construction</span>
+        <span class="hrc-title" data-en="Sky Global Contracting" data-ar="سكاي جلوبال للمقاولات">Sky Global Contracting</span>
+        <span class="hrc-go" data-en="Explore" data-ar="اكتشف">Explore
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+    <a class="hrc" href="companies/sky-global-financial-consulting.html" style="--ca:#1f7ac2">
+      <div class="hrc-media" aria-hidden="true">
+        <img src="assets/img/co-financial.jpg" alt="" width="640" height="640" loading="lazy" decoding="async" />
+      </div>
+      <div class="hrc-scrim" aria-hidden="true"></div>
+      <div class="hrc-body">
+        <span class="hrc-sub" data-en="Financial Consulting" data-ar="استشارات وحلول مالية">Financial Consulting</span>
+        <span class="hrc-title" data-en="Sky Global Financial Consulting" data-ar="سكاي جلوبال للاستشارات المالية">Sky Global Financial Consulting</span>
+        <span class="hrc-go" data-en="Explore" data-ar="اكتشف">Explore
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ================= OUR PURPOSE (vision / mission / values) ================= -->
+<section class="section dark" id="purpose">
+  <div class="s-head center">
+    <p class="eyebrow reveal" data-en="Our Purpose" data-ar="رؤيتنا ورسالتنا">Our Purpose</p>
+    <h2 class="h-sec display reveal" data-en="A clear vision, held to shared values" data-ar="رؤية واضحة، تلتزم بقيم مشتركة">A clear vision, held to shared values</h2>
+  </div>
+  <div class="s-body wrap" style="padding-inline:0">
+    <div class="vm-grid">
+      <div class="reveal">
+        <p class="eyebrow" data-en="Our Vision" data-ar="رؤيتنا">Our Vision</p>
+        <h3 data-en="To be a leading business ecosystem that transcends the boundaries of sectors."
+            data-ar="أن نكون منظومة أعمال رائدة تتجاوز حدود القطاعات.">To be a leading business ecosystem that transcends the boundaries of sectors.</h3>
+        <p data-en="We build a flexible, evolving group that drives growth through specialised companies able to compete and expand, creating sustainable value in the markets they serve."
+           data-ar="نسعى إلى بناء مجموعة أعمال مرنة ومتطورة، تقود النمو من خلال شركات متخصصة قادرة على المنافسة والتوسع، وتخلق قيمة مستدامة في الأسواق التي تعمل فيها.">We build a flexible, evolving group that drives growth.</p>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow" data-en="Our Mission" data-ar="رسالتنا">Our Mission</p>
+        <h3 data-en="We build an environment that enables companies to grow."
+            data-ar="نبني بيئة تمكّن الشركات من النمو.">We build an environment that enables companies to grow.</h3>
+        <p data-en="We establish and support specialised companies that combine expertise with agility, giving them the environment to grow while applying clear standards of quality, governance and management — creating sustainable value for partners and clients."
+           data-ar="نؤسس وندعم شركات متخصصة تجمع بين الخبرة والمرونة، ونوفر لها البيئة التي تساعدها على النمو، مع تطبيق معايير واضحة في الجودة والحوكمة والإدارة، بما يحقق قيمة مستدامة للشركاء والعملاء.">We establish and support specialised companies.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="values">
+    <p class="eyebrow reveal" data-en="Our Values" data-ar="قيمنا">Our Values</p>
+    <div class="values-grid" data-stagger>
+      <div class="value reveal"><div class="vn"><span data-en="Ambition" data-ar="الطموح">Ambition</span></div>
+        <p data-en="We set no ceiling on what can be built. We are always looking for the next opportunity and the wider horizon." data-ar="لا نضع سقفًا لما يمكن بناؤه. نبحث دائمًا عن الفرصة التالية والأفق الأوسع.">We set no ceiling on what can be built.</p></div>
+      <div class="value reveal"><div class="vn"><span data-en="Trust" data-ar="الثقة">Trust</span></div>
+        <p data-en="We build long-term relationships founded on clarity, commitment and keeping our promises." data-ar="نبني علاقات طويلة المدى تقوم على الوضوح، الالتزام، والوفاء بالوعود.">We build long-term relationships founded on clarity.</p></div>
+      <div class="value reveal"><div class="vn"><span data-en="Quality" data-ar="الجودة">Quality</span></div>
+        <p data-en="We believe real growth is inseparable from the quality of what we offer and what we build." data-ar="نؤمن أن النمو الحقيقي لا ينفصل عن جودة ما نقدمه وما نبنيه.">Real growth is inseparable from quality.</p></div>
+      <div class="value reveal"><div class="vn"><span data-en="Discipline" data-ar="الانضباط">Discipline</span></div>
+        <p data-en="We turn ambition into results through clear systems, considered decisions and disciplined execution." data-ar="نحوّل الطموح إلى نتائج من خلال أنظمة واضحة، وقرارات مدروسة، وتنفيذ منضبط.">We turn ambition into results.</p></div>
+      <div class="value reveal"><div class="vn"><span data-en="Innovation" data-ar="الابتكار">Innovation</span></div>
+        <p data-en="We look for new ways to meet challenges and create value beyond conventional solutions." data-ar="نبحث عن طرق جديدة للتعامل مع التحديات وصناعة قيمة تتجاوز الحلول التقليدية.">We look for new ways to meet challenges.</p></div>
+      <div class="value reveal"><div class="vn"><span data-en="Sustainability" data-ar="الاستدامة">Sustainability</span></div>
+        <p data-en="We build companies, decisions and partnerships that can endure and create long-term impact." data-ar="نبني شركات وقرارات وشراكات قادرة على الاستمرار وصناعة أثر طويل المدى.">We build for long-term impact.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GROUP SERVICES ================= -->
+<section class="section tint" id="services">
+  <div class="s-head">
+    <p class="eyebrow reveal" data-en="Group Services" data-ar="خدمات المجموعة">Group Services</p>
+    <h2 class="h-sec display reveal" data-en="Shared functions that support every company" data-ar="إدارات مشتركة تدعم كل شركة">Shared functions that support every company</h2>
+    <p class="lead reveal" data-en="Alongside its companies, Sky Global runs internal group functions that give each company the standards, structure and support it needs to focus on its market."
+       data-ar="إلى جانب شركاتها، تدير سكاي جلوبال إدارات داخلية مشتركة تمنح كل شركة ما تحتاجه من معايير وهيكلة ودعم للتركيز على سوقها.">Internal group functions that support every company.</p>
+  </div>
+  <div class="s-body svc-grid" data-stagger>
+    <div class="svc reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <h4 data-en="Commercial Management" data-ar="إدارة تجارية">Commercial Management</h4>
+      <ul>
+        <li data-en="Listing &amp; qualifying companies for the stock market" data-ar="إدراج وتأهيل الشركات في سوق الأسهم والبورصة">Listing &amp; qualifying companies for the stock market</li>
+        <li data-en="Comprehensive company studies" data-ar="دراسة شاملة للشركات">Comprehensive company studies</li>
+        <li data-en="Assessing companies' current position" data-ar="تقييم وتحديد الوضع الحالي للشركات">Assessing companies' current position</li>
+        <li data-en="Managing commercial deals, mergers &amp; acquisitions" data-ar="إدارة الصفقات التجارية والدمج والاستحواذ">Managing commercial deals, mergers &amp; acquisitions</li>
+        <li data-en="Preparing companies for global market listing" data-ar="تهيئة الشركات لإدراجها بسوق البورصة العالمية">Preparing companies for global market listing</li>
+        <li data-en="Investment portfolio management" data-ar="إدارة المحافظ الاستثمارية">Investment portfolio management</li>
+      </ul>
+    </div>
+    <div class="svc reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M7 21h10M5 7h14M5 7l-2 6a3 3 0 0 0 6 0L7 7M19 7l-2 6a3 3 0 0 0 6 0l-2-6M12 3l7 4M12 3 5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h4 data-en="Legal Management" data-ar="إدارة قانونية">Legal Management</h4>
+      <ul>
+        <li data-en="Legal consultancy" data-ar="الاستشارات القانونية">Legal consultancy</li>
+        <li data-en="Legal drafting" data-ar="الصياغة القانونية">Legal drafting</li>
+        <li data-en="Legal review" data-ar="المراجعة القانونية">Legal review</li>
+        <li data-en="Litigation" data-ar="الدعاوى القضائية">Litigation</li>
+        <li data-en="Legal reporting" data-ar="التقارير القانونية">Legal reporting</li>
+      </ul>
+    </div>
+    <div class="svc reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20c0-3.3 3.1-6 7-6s7 2.7 7 6M17 11a3 3 0 1 0-1-5.8M22 20c0-2.5-1.7-4.7-4.2-5.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h4 data-en="HR &amp; Government Relations" data-ar="شؤون الموظفين">HR &amp; Government Relations</h4>
+      <ul>
+        <li data-en="General administration" data-ar="إدارة عامة">General administration</li>
+        <li data-en="Government services &amp; relations" data-ar="الخدمات الحكومية">Government services &amp; relations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUR PEOPLE ================= -->
+<section class="section dark" id="people">
+  <div class="s-head center">
+    <p class="eyebrow reveal" data-en="Our People" data-ar="قيادتنا">Our People</p>
+    <h2 class="h-sec display reveal" style="max-width:22ch" data-en="Leadership that believes building companies is building the future" data-ar="قيادة تؤمن بأن بناء الشركات هو بناء للمستقبل">Leadership that believes building companies is building the future</h2>
+    <p class="lead reveal" data-en="Sky Global is led by its founders, with a vision built on a scalable business ecosystem that unites ambition with discipline, and opportunity with execution."
+       data-ar="يقود سكاي جلوبال المؤسسان هشام المفلحي ووجدي بامفلح، برؤية تقوم على بناء منظومة أعمال قابلة للنمو والتوسع، تجمع بين الطموح والانضباط، وبين الفرص والتنفيذ.">Sky Global is led by its founders.</p>
+  </div>
+  <div class="s-body people-grid" data-stagger>
+
+    <article class="pcard reveal">
+      <div class="pcard-media" aria-hidden="true">
+        <div class="pcard-tone"></div>
+        <svg class="pcard-mono" viewBox="0 0 1476.09 1343.36"><use href="#sgMark" fill="currentColor"/></svg>
+        <span class="pcard-initials">HA</span>
+      </div>
+      <div class="pcard-scrim" aria-hidden="true"></div>
+      <span class="pcard-ph ph-note" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)" data-en="Photo to be provided" data-ar="الصورة قيد التزويد">Photo to be provided</span>
+      <div class="pcard-foot">
+        <h3 class="pcard-name" data-en="Hisham Almuflehi" data-ar="هشام المفلحي">Hisham Almuflehi</h3>
+        <p class="pcard-role" data-en="Founding Partner" data-ar="شريك مؤسس">Founding Partner</p>
+        <button class="pcard-btn" type="button" data-bio-toggle aria-expanded="false" aria-controls="bio-hm">
+          <span data-en="Read bio" data-ar="اقرأ النبذة">Read bio</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="pcard-bio" id="bio-hm" data-bio aria-hidden="true">
+        <h3 class="pcard-name" data-en="Hisham Almuflehi" data-ar="هشام المفلحي">Hisham Almuflehi</h3>
+        <p data-en="[Official biography to be added: experience, specialisation, key achievements, and the area he leads within the group.]"
+           data-ar="[يضاف هنا نبذة المؤسس الرسمية: الخبرات، التخصص، أبرز الإنجازات، والجانب الذي يقوده داخل المجموعة.]">[Official biography to be added: experience, specialisation, key achievements, and the area he leads within the group.]</p>
+        <button class="pcard-close" type="button" data-bio-close>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-en="Close" data-ar="إغلاق">Close</span>
+        </button>
+      </div>
+    </article>
+
+    <article class="pcard reveal">
+      <div class="pcard-media" aria-hidden="true">
+        <div class="pcard-tone"></div>
+        <svg class="pcard-mono" viewBox="0 0 1476.09 1343.36"><use href="#sgMark" fill="currentColor"/></svg>
+        <span class="pcard-initials">WB</span>
+      </div>
+      <div class="pcard-scrim" aria-hidden="true"></div>
+      <span class="pcard-ph ph-note" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)" data-en="Photo to be provided" data-ar="الصورة قيد التزويد">Photo to be provided</span>
+      <div class="pcard-foot">
+        <h3 class="pcard-name" data-en="Wajdi Bamfleh" data-ar="وجدي بامفلح">Wajdi Bamfleh</h3>
+        <p class="pcard-role" data-en="Founding Partner" data-ar="شريك مؤسس">Founding Partner</p>
+        <button class="pcard-btn" type="button" data-bio-toggle aria-expanded="false" aria-controls="bio-wb">
+          <span data-en="Read bio" data-ar="اقرأ النبذة">Read bio</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="pcard-bio" id="bio-wb" data-bio aria-hidden="true">
+        <h3 class="pcard-name" data-en="Wajdi Bamfleh" data-ar="وجدي بامفلح">Wajdi Bamfleh</h3>
+        <p data-en="[Official biography to be added: experience, specialisation, key achievements, and the area he leads within the group.]"
+           data-ar="[يضاف هنا نبذة المؤسس الرسمية: الخبرات، التخصص، أبرز الإنجازات، والجانب الذي يقوده داخل المجموعة.]">[Official biography to be added: experience, specialisation, key achievements, and the area he leads within the group.]</p>
+        <button class="pcard-close" type="button" data-bio-close>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-en="Close" data-ar="إغلاق">Close</span>
+        </button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= BY THE NUMBERS ================= -->
+<section class="section numbers" id="numbers">
+  <div class="s-head center">
+    <p class="eyebrow reveal" data-en="By the Numbers" data-ar="أرقامنا">By the Numbers</p>
+    <h2 class="h-sec display reveal" data-en="Growth measured by impact" data-ar="نمو يُقاس بالأثر">Growth measured by impact</h2>
+  </div>
+  <div class="s-body numbers-grid" data-stagger>
+    <div class="cell reveal"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="4" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="15" width="7" height="5" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="15" width="7" height="5" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>
+      <div class="n tnum" data-count="5">5</div><div class="l" data-en="Companies under one umbrella" data-ar="شركات تحت مظلة واحدة">Companies under one umbrella</div></div>
+    <div class="cell reveal"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 8l7-4 7 4v9l-7 4-7-4V8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <div class="n tnum" data-count="2014" data-plain="1">2014</div><div class="l" data-en="Founded <span class='ph'>(placeholder)</span>" data-ar="سنة التأسيس <span class='ph'>(مبدئي)</span>">Founded</div></div>
+    <div class="cell reveal"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" stroke="currentColor" stroke-width="1.6"/></svg>
+      <div class="n" data-en="Multiple" data-ar="متعددة">Multiple</div><div class="l" data-en="Sectors &amp; markets" data-ar="قطاعات وأسواق">Sectors &amp; markets</div></div>
+    <div class="cell reveal"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-8 0v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M20 8v6M23 11h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div class="n tnum" data-count="1500" data-suffix="+">1500+</div><div class="l" data-en="Partners &amp; clients <span class='ph'>(placeholder)</span>" data-ar="شريكًا وعميلًا <span class='ph'>(مبدئي)</span>">Partners &amp; clients</div></div>
+  </div>
+  <p class="note reveal" data-en="Figures shown are placeholders — to be replaced with the group's official approved data." data-ar="الأرقام المعروضة مبدئية وتُستبدل بالبيانات الرسمية المعتمدة من المجموعة.">Figures shown are placeholders.</p>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact-band" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow reveal" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</p>
+      <h2 class="h-sec display reveal" data-en="Let's start where opportunities begin" data-ar="لنبدأ من حيث تبدأ الفرص">Let's start where opportunities begin</h2>
+      <p class="lead reveal" data-en="For general enquiries, partnerships, investment opportunities, or any request related to one of the group's companies, reach the Sky Global team."
+         data-ar="للاستفسارات العامة، الشراكات، الفرص الاستثمارية، أو أي طلب متعلق بإحدى شركات المجموعة، تواصل مع فريق سكاي جلوبال.">Reach the Sky Global team.</p>
+    </div>
+    <div class="reveal">
+      <div class="contact-rows">
+        <div><span data-en="Email" data-ar="البريد الإلكتروني">Email</span><span>info@skyglobalworld.com</span></div>
+        <div><span data-en="Phone" data-ar="الهاتف">Phone</span><span class="tnum">+966 12 206 8728</span></div>
+        <div><span data-en="Working hours" data-ar="ساعات العمل">Working hours</span><span data-en="12:00 PM – 8:00 PM" data-ar="12:00 ظهرًا – 8:00 مساءً">12:00 PM – 8:00 PM</span></div>
+        <div><span data-en="Address" data-ar="العنوان">Address</span><span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</span></div>
+      </div>
+      <a href="mailto:info@skyglobalworld.com" class="btn btn-solid" style="margin-top:26px" data-en="Contact us" data-ar="تواصل معنا">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-col">
+        <span class="ft-glow" aria-hidden="true"></span>
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 1476.09 1343.36" aria-hidden="true" style="width:36px"><use href="#sgMark" fill="url(#sgGrad)"/></svg>
+          <span class="wm"><b>SKY GLOBAL</b><i>سكاي جلوبال</i></span>
+        </div>
+        <p class="ft-intro" data-en="A multi-sector investment holding group building specialised companies and creating opportunities for growth."
+           data-ar="منظومة أعمال استثمارية متعددة القطاعات، تبني شركات متخصصة وتصنع فرصًا للنمو.">A multi-sector investment holding group.</p>
+        <a href="#" class="ft-dl" data-en="Download company profile" data-ar="تحميل ملف المجموعة">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-en="Download company profile" data-ar="تحميل ملف المجموعة">Download company profile</span>
+        </a>
+        <form class="ft-news" data-newsletter>
+          <span class="lbl" data-en="Group updates" data-ar="مستجدات المجموعة">Group updates</span>
+          <div class="ft-news-field">
+            <input type="email" name="email" autocomplete="email" required
+                   data-en-placeholder="Your email" data-ar-placeholder="بريدك الإلكتروني"
+                   placeholder="Your email" aria-label="Email address" />
+            <button type="submit" aria-label="Subscribe">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6M4 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <p class="ft-news-note" data-en="Occasional news from Sky Global and its companies. Sign-up connects to the CMS in a later phase."
+             data-ar="أخبار غير منتظمة من سكاي جلوبال وشركاتها. سيُربط الاشتراك بلوحة التحكم في مرحلة لاحقة.">Occasional news from Sky Global and its companies.</p>
+          <p class="ft-news-ok" role="status">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-en="Thank you — we'll be in touch." data-ar="شكرًا لك — سنكون على تواصل.">Thank you — we'll be in touch.</span>
+          </p>
+        </form>
+      </div>
+
+      <div class="ft-col">
+        <h5 data-en="Explore" data-ar="استكشف">Explore</h5>
+        <ul>
+          <li><a href="#story" data-en="Our Story" data-ar="قصتنا">Our Story</a></li>
+          <li><a href="#companies" data-en="Our Companies" data-ar="شركاتنا">Our Companies</a></li>
+          <li><a href="#purpose" data-en="Our Purpose" data-ar="رؤيتنا ورسالتنا">Our Purpose</a></li>
+          <li><a href="#services" data-en="Group Services" data-ar="خدمات المجموعة">Group Services</a></li>
+          <li><a href="#people" data-en="Our People" data-ar="قيادتنا">Our People</a></li>
+          <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5 data-en="Companies" data-ar="الشركات">Companies</h5>
+        <ul>
+          <li><a href="companies/fluiday-auto.html" data-en="Fluiday Auto" data-ar="فلوداي أوتو">Fluiday Auto</a></li>
+          <li><a href="companies/nheroes.html" data-en="NHeroes" data-ar="إن هيروز">NHeroes</a></li>
+          <li><a href="companies/talawin-marha.html" data-en="Talawin Marha" data-ar="تلاوين مرحة">Talawin Marha</a></li>
+          <li><a href="companies/sky-global-contracting.html" data-en="Sky Global Contracting" data-ar="سكاي جلوبال للمقاولات">Sky Global Contracting</a></li>
+          <li><a href="companies/sky-global-financial-consulting.html" data-en="Financial Consulting" data-ar="الاستشارات المالية">Financial Consulting</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5 data-en="Contact" data-ar="تواصل">Contact</h5>
+        <ul>
+          <li><a href="mailto:info@skyglobalworld.com">info@skyglobalworld.com</a></li>
+          <li><a href="tel:+966122068728" class="tnum">+966 12 206 8728</a></li>
+          <li><span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</span></li>
+          <li><span data-en="Sun–Thu · 12:00–20:00" data-ar="الأحد–الخميس · 12:00–20:00">Sun–Thu · 12:00–20:00</span></li>
+        </ul>
+        <div class="ft-social">
+          <a href="#" aria-label="Sky Global on LinkedIn" data-tip="LinkedIn" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3.3 8.5h3.3V21H3.3V8.5Zm5.6 0h3.16v1.7h.05c.44-.83 1.5-1.7 3.1-1.7 3.3 0 3.9 2.17 3.9 5V21h-3.3v-5.5c0-1.3 0-3-1.84-3s-2.12 1.43-2.12 2.9V21H8.9V8.5Z"/></svg>
+          </a>
+          <a href="#" aria-label="Sky Global on X" data-tip="X (Twitter)" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.2-6.8-5.96 6.8H1.7l7.73-8.84L1.25 2.25h6.82l4.71 6.23 5.46-6.23Zm-1.16 17.52h1.83L7.02 4.13H5.05L17.08 19.77Z"/></svg>
+          </a>
+          <a href="#" aria-label="Sky Global on Instagram" data-tip="Instagram" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-bot">
+      <span data-en="© 2026 Sky Global Holding. All rights reserved." data-ar="© 2026 سكاي جلوبال القابضة. جميع الحقوق محفوظة.">© 2026 Sky Global Holding. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+        <a href="#" data-en="Terms of Use" data-ar="شروط الاستخدام">Terms of Use</a>
+        <a href="#" data-en="Cookie Settings" data-ar="إعدادات الكوكيز">Cookie Settings</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

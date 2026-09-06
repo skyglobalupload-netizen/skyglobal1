@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>سكاي جلوبال للاستشارات المالية — مراجعة وزكاة وضريبة واستشارات</title>
+<meta name="title-en" content="Sky Global Financial Consulting — audit, zakat, tax and advisory" />
+<meta name="description" content="سكاي جلوبال للاستشارات المالية — المراجعة الداخلية، دراسات الجدوى، الزكاة والضريبة، وتأسيس الأنظمة المحاسبية. إحدى شركات سكاي جلوبال." />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+/* =====================================================================
+   SKY GLOBAL FINANCIAL CONSULTING · brand blue #2d5d94 / #1f7ac2 / navy
+   Same visual system / hierarchy as the Fluiday Auto and Contracting pages.
+
+   HERO IMAGE — currently a brand-tinted gradient + SG-motif placeholder.
+   To swap in a real photo later: add
+     <img class="fc-hero-img" src="../assets/img/fcs/hero.jpg" alt="" />
+   as the first child of <section class="fc-hero" data-slot="hero-image">
+   (the .fc-hero-figure gradient stays as a fallback tint underneath).
+   ===================================================================== */
+:root{
+  --f-blue:#2d5d94; --f-blue-d:#1e4875; --f-blue-l:#1f7ac2; --f-cyan:#4aa3d8;
+  --f-ink:#101f33; --f-ink-2:#1b2f49; --f-ink-3:#33465e;
+  --f-paper:#ffffff; --f-paper-2:#f3f7fb;
+  --f-line:rgba(16,31,51,.14); --f-line-2:rgba(16,31,51,.07);
+  --f-line-d:rgba(255,255,255,.15);
+  --mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;
+  --f-hdr:72px;
+}
+body{background:var(--f-paper);color:var(--f-ink)}
+html{scroll-padding-top:var(--f-hdr)}
+::selection{background:var(--f-blue-l);color:#fff}
+
+.fc .section{padding-block:clamp(66px,8.5vw,124px)}
+.fc .section.dark{background:var(--f-ink);color:#e6ecf3}
+.fc .section.tint{background:var(--f-paper-2)}
+.fc-wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.fc-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);margin-bottom:clamp(2.6rem,4.5vw,4rem)}
+.fc-kicker{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--f-blue-l);display:inline-flex;align-items:center;gap:.9em;margin-bottom:1.3rem}
+html[dir="rtl"] .fc-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:.92rem}
+.fc-kicker .n{border:1px solid color-mix(in srgb,var(--f-blue-l) 42%,transparent);border-radius:2px;padding:2px 7px;font-size:.7rem;letter-spacing:.08em}
+.fc .dark .fc-kicker{color:var(--f-cyan)}
+.fc-h2{font-family:var(--serif);font-weight:400;font-size:var(--s4);line-height:1.08;letter-spacing:-.015em;max-width:20ch}
+html[dir="rtl"] .fc-h2{font-family:var(--ar);font-weight:700;line-height:1.28;letter-spacing:0;max-width:26ch}
+.fc .dark .fc-h2{color:#fff}
+.fc-lead{font-size:var(--s1);color:var(--ink-soft);font-weight:400;max-width:60ch;margin-top:1.2rem}
+html[dir="rtl"] .fc-lead{line-height:1.9}
+.fc .dark .fc-lead{color:#c1cddb}
+.fc-p{color:var(--ink-soft);max-width:60ch}
+.fc-p + .fc-p{margin-top:1rem}
+.fc .dark .fc-p{color:#b6c3d3}
+.tech{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--f-blue-l)}
+html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
+
+.fc .btn-primary{background:var(--f-blue-l);color:#fff}
+.fc .btn-primary:hover{background:var(--f-blue-d);color:#fff}
+
+/* ---------- HEADER ---------- */
+.fc-hdr{position:fixed;inset-block-start:0;inset-inline:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;padding:16px var(--gutter);
+  transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s var(--ease)}
+.fc-hdr::after{content:"";position:absolute;inset-inline:0;inset-block-end:0;height:1px;background:rgba(255,255,255,.14);transition:background .4s}
+.fc-hdr.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding-block:10px;box-shadow:0 6px 24px -14px rgba(0,0,0,.22)}
+.fc-hdr.scrolled::after{background:var(--f-line)}
+.fc-hdr-logo{flex:none;display:flex;align-items:center;gap:9px;color:#fff}
+.fc-hdr.scrolled .fc-hdr-logo{color:var(--f-blue-d)}
+.fc-hdr-logo .mk{width:30px;height:auto;flex:none;transition:width .4s var(--ease)}
+.fc-hdr.scrolled .fc-hdr-logo .mk{width:26px}
+.fc-hdr-logo .wm{display:flex;flex-direction:column;line-height:1.05}
+.fc-hdr-logo .wm b{font-weight:800;font-size:.82rem;letter-spacing:.1em}
+.fc-hdr-logo .wm i{font-family:var(--ar);font-style:normal;font-weight:600;font-size:.72rem;opacity:.85;margin-top:2px}
+html[dir="rtl"] .fc-hdr-logo .wm b{letter-spacing:.02em}
+
+.fc-nav{display:flex;gap:28px;align-items:center}
+.fc-nav a{font-size:.9rem;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.86);padding:8px 2px;position:relative;transition:color .3s}
+html[dir="rtl"] .fc-nav a{font-weight:700;font-size:1rem}
+.fc-hdr.scrolled .fc-nav a{color:var(--f-ink-2)}
+.fc-nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:0;width:0;height:2px;background:var(--f-blue-l);transition:width .3s var(--ease)}
+.fc-nav a:hover{color:#fff}
+.fc-hdr.scrolled .fc-nav a:hover{color:var(--f-blue-l)}
+.fc-nav a:hover::after,.fc-nav a.here::after{width:100%}
+.fc-hdr-r{flex:none;display:flex;align-items:center;gap:12px}
+.fc-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:.82rem;padding:9px 15px}
+.fc-hdr.scrolled .fc-hdr-r .lang{color:var(--f-ink);border-color:var(--f-line)}
+.fc-hdr-r .lang:hover{border-color:var(--f-blue-l);color:var(--f-blue-l)}
+.fc-hdr-r .btn-ghost{padding:10px 20px;font-size:.84rem}
+.fc-hdr.scrolled .fc-hdr-r .btn-ghost{border-color:var(--f-line);color:var(--f-ink)}
+.fc-hdr.scrolled .fc-hdr-r .btn-ghost:hover{background:var(--f-blue-l);border-color:var(--f-blue-l);color:#fff}
+.fc-menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:#fff}
+.fc-hdr.scrolled .fc-menu-toggle{color:var(--f-ink)}
+
+.fc-back{position:absolute;inset-block-start:calc(var(--f-hdr) + 16px);inset-inline-start:var(--gutter);z-index:6;
+  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.66);
+  display:inline-flex;align-items:center;gap:.55em;transition:color .3s}
+html[dir="rtl"] .fc-back{font-family:var(--ar);letter-spacing:0;font-weight:700}
+.fc-back:hover{color:#fff}
+.fc-back svg{width:14px;height:14px}
+html[dir="rtl"] .fc-back svg{transform:scaleX(-1)}
+
+.fc-mobile{position:fixed;inset:0;z-index:98;background:var(--f-ink);color:#fff;display:flex;flex-direction:column;
+  justify-content:center;gap:2px;padding:var(--gutter);transform:translateY(-100%);transition:transform .5s var(--ease);overflow-y:auto}
+.fc-mobile.open{transform:none}
+.fc-mobile a{font-size:1.35rem;font-weight:400;padding:14px 0;border-bottom:1px solid var(--f-line-d)}
+.fc-mobile .btn{align-self:flex-start;margin-top:22px}
+@media (max-width:1040px){ .fc-nav{display:none} .fc-menu-toggle{display:flex} .fc-hdr-r .btn-ghost{display:none} }
+
+/* ---------- HERO — brand-tinted placeholder · centred logo · tagline · one CTA ---------- */
+.fc-hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;background:var(--f-ink);color:#fff;
+  padding:calc(var(--f-hdr) + 44px) var(--gutter) 92px}
+.fc-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 46%;z-index:1}
+.fc-hero-figure{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(120% 80% at 78% 12%,rgba(74,163,216,.55),transparent 55%),
+  radial-gradient(90% 70% at 12% 92%,rgba(30,72,117,.85),transparent 60%),
+  linear-gradient(158deg,#1a3f68 0%,#2d5d94 46%,#1f7ac2 100%)}
+.fc-hero-motif{position:absolute;inset:0;z-index:1;opacity:.16;mix-blend-mode:soft-light;pointer-events:none}
+.fc-hero-motif svg{position:absolute;inset-block-start:50%;inset-inline-end:-14%;width:min(72vh,720px);height:auto;transform:translateY(-50%) rotate(-8deg)}
+.fc-hero:has(.fc-hero-img) .fc-hero-motif{display:none}
+.fc-hero-grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.5;background:
+  linear-gradient(180deg,rgba(9,17,28,.5) 0%,rgba(9,17,28,.2) 38%,rgba(9,17,28,.42) 66%,rgba(9,17,28,.82) 100%)}
+.fc-hero:has(.fc-hero-img) .fc-hero-grain{opacity:1;background:
+  linear-gradient(158deg,rgba(20,52,86,.5),rgba(15,28,45,.34) 45%,rgba(31,122,194,.28)),
+  radial-gradient(78% 62% at 50% 44%,rgba(9,17,28,.14),rgba(9,17,28,.52)),
+  linear-gradient(180deg,rgba(9,17,28,.62) 0%,rgba(9,17,28,.4) 38%,rgba(9,17,28,.58) 68%,rgba(9,17,28,.9) 100%)}
+.fc-hero-center{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:clamp(1.4rem,3.2vw,2.2rem);max-width:680px}
+.fc-hero-logo{display:flex;flex-direction:column;align-items:center;gap:.7rem;filter:drop-shadow(0 16px 46px rgba(0,0,0,.45))}
+.fc-hero-logo .mk{width:min(28vw,140px);height:auto;color:#fff}
+.fc-hero-logo .wm{display:flex;flex-direction:column;align-items:center;line-height:1;gap:.5rem}
+.fc-hero-logo .wm b{font-weight:800;font-size:clamp(1.45rem,1rem + 2.3vw,2.6rem);letter-spacing:.14em;color:#fff}
+.fc-hero-logo .wm i{font-family:var(--ar);font-style:normal;font-weight:700;font-size:clamp(1.05rem,.8rem + 1.3vw,1.6rem);color:#fff;opacity:.94}
+html[dir="rtl"] .fc-hero-logo .wm b{letter-spacing:.04em}
+.fc-hero-tagline{font-size:var(--s1);font-weight:400;line-height:1.55;color:rgba(255,255,255,.94);max-width:52ch;text-shadow:0 2px 22px rgba(0,0,0,.5)}
+html[dir="rtl"] .fc-hero-tagline{line-height:1.9}
+.fc-hero-center .btn{font-size:.96rem;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(31,122,194,.7)}
+.fc-hero-scroll{position:absolute;z-index:3;inset-block-end:24px;inset-inline:0;margin-inline:auto;width:34px;height:34px;
+  display:grid;place-items:center;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.25);border-radius:999px;transition:.3s}
+.fc-hero-scroll:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.fc-hero-scroll svg{width:15px;height:15px;animation:fcbob 2s var(--ease) infinite}
+@keyframes fcbob{0%,100%{transform:translateY(-2px)}50%{transform:translateY(2px)}}
+@media (prefers-reduced-motion:reduce){.fc-hero-scroll svg{animation:none}}
+
+/* ---------- ABOUT ---------- */
+.fc-two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,6vw,84px);align-items:start;
+  max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.fc-facts{display:flex;flex-direction:column;gap:1px;background:var(--f-line);border:1px solid var(--f-line);border-radius:10px;overflow:hidden}
+.fc-fact{background:var(--f-paper);padding:18px 22px;display:flex;gap:14px;align-items:flex-start}
+.fc-fact svg{width:22px;height:22px;color:var(--f-blue-l);flex:none;margin-top:2px}
+.fc-fact .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);display:block}
+html[dir="rtl"] .fc-fact .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.78rem}
+.fc-fact .v{font-size:.98rem;font-weight:700;margin-top:4px}
+
+/* ---------- MEDIA BAND ---------- */
+.fc-band{padding-block:0}
+.fc-band-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:var(--wide);margin-inline:auto}
+.fc-band figure{position:relative;margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--f-paper-2)}
+.fc-band img{width:100%;height:100%;object-fit:cover;display:block}
+.fc-band figcaption{position:absolute;inset-block-end:0;inset-inline:0;padding:14px 16px;
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(9,17,28,.72))}
+html[dir="rtl"] .fc-band figcaption{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.8rem;font-weight:600}
+@media (max-width:700px){ .fc-band-grid{grid-template-columns:1fr} .fc-band figure{aspect-ratio:3/2} }
+
+/* ---------- SERVICE CLUSTERS ---------- */
+.fc-cluster{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.fc-cluster + .fc-cluster{margin-top:clamp(3rem,5vw,4.6rem)}
+.fc-cluster-h{display:flex;align-items:baseline;gap:.9em;margin-bottom:1.5rem;padding-bottom:.9rem;border-bottom:1px solid var(--f-line)}
+.fc-cluster-h .cn{font-family:var(--mono);font-size:.74rem;font-weight:600;color:var(--f-blue-l);letter-spacing:.1em}
+.fc-cluster-h h3{font-family:var(--serif);font-weight:400;font-size:var(--s2);letter-spacing:-.01em}
+html[dir="rtl"] .fc-cluster-h h3{font-family:var(--ar);font-weight:700}
+.fc-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fc-svc{border:1px solid var(--f-line);border-radius:10px;padding:clamp(20px,2.3vw,28px);background:var(--f-paper);
+  transition:border-color .3s,box-shadow .3s var(--ease)}
+.fc-svc:hover{border-color:var(--f-blue-l);box-shadow:0 18px 40px -22px rgba(31,122,194,.5)}
+.fc-svc-ic{width:42px;height:42px;border-radius:9px;display:grid;place-items:center;margin-bottom:14px;
+  background:color-mix(in srgb,var(--f-blue-l) 12%,transparent)}
+.fc-svc-ic svg{width:22px;height:22px;color:var(--f-blue-l)}
+.fc-svc h4{font-size:1.02rem;font-weight:700;line-height:1.4;margin-bottom:.3rem}
+.fc-svc .en{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);display:block}
+html[dir="rtl"] .fc-svc .en{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:600}
+
+/* ---------- APPROACH ---------- */
+.fc-appr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.fc-appr > div{padding:clamp(22px,2.6vw,30px);border:1px solid var(--f-line-d);border-radius:10px;background:var(--f-ink-2)}
+.fc-appr .an{font-family:var(--serif);font-size:1.7rem;color:var(--f-cyan);line-height:1;display:block;margin-bottom:.9rem}
+html[dir="rtl"] .fc-appr .an{font-family:var(--ar)}
+.fc-appr h3{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.fc-appr p{font-size:.9rem;color:#c1cddb;line-height:1.7}
+
+/* ---------- CONTACT ---------- */
+.fc-contact-rows{margin-top:1.7rem;border-block-start:1px solid var(--f-line)}
+.fc-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--f-line);font-size:.98rem}
+.fc-contact-rows .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .fc-contact-rows .k{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.fc-contact-rows .v{font-weight:600;text-align:end}
+
+/* ---------- FOOTER ---------- */
+.fc-ft{background:var(--f-ink);color:#93a3b6;padding-block:58px 26px;font-size:.9rem}
+.fc-ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--f-line-d)}
+.fc-ft-logo{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:1rem}
+.fc-ft-logo .mk{width:34px;height:auto}
+.fc-ft-logo b{font-weight:800;letter-spacing:.08em}
+.fc-ft p{max-width:40ch}
+.fc-ft h4{color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+html[dir="rtl"] .fc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.fc-ft ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.fc-ft a:hover{color:#fff}
+.fc-ft-bot{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:#63748a}
+
+@media (max-width:1040px){
+  .fc-two{grid-template-columns:1fr}
+  .fc-svc-grid,.fc-appr{grid-template-columns:1fr 1fr}
+  .fc-ft-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .fc-svc-grid,.fc-appr{grid-template-columns:1fr}
+  .fc-ft-top{grid-template-columns:1fr}
+  .fc-contact-rows div{flex-direction:column;gap:2px}
+  .fc-contact-rows .v{text-align:start}
+}
+</style>
+</head>
+<body id="top" class="fc">
+
+<svg class="sg-defs" aria-hidden="true"><defs>
+  <linearGradient id="sgGrad" x1="0" y1="0" x2="1476.09" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#7C8AD0"/><stop offset="1" stop-color="#33469C"/>
+  </linearGradient>
+  <symbol id="sgMark" viewBox="0 0 1476.09 1343.36">
+    <path d="M 128.27 0.00 C 57.43 0.00 0.00 57.43 0.00 128.25 L 0.00 128.25 L 0.00 595.00 C 0.00 665.84 57.43 723.28 128.27 723.28 L 128.27 723.28 L 281.90 723.28 L 281.90 951.25 C 281.90 1000.30 321.66 1040.06 370.71 1040.06 L 370.71 1040.06 L 1105.38 1040.06 C 1154.42 1040.06 1194.18 1000.30 1194.18 951.25 L 1194.18 951.25 L 1194.18 837.23 L 1068.89 837.23 L 1068.89 914.77 L 407.19 914.77 L 407.19 403.51 L 1068.89 403.51 L 1068.89 482.59 L 1194.18 482.59 L 1194.18 367.03 C 1194.18 317.98 1154.42 278.22 1105.38 278.22 L 1105.38 278.22 L 370.71 278.22 C 321.66 278.22 281.90 317.98 281.90 367.03 L 281.90 367.03 L 281.90 595.00 L 128.27 595.00 L 128.27 128.25 L 1347.81 128.25 L 1347.81 356.95 L 1287.60 356.95 L 1287.60 483.39 L 1476.09 483.39 L 1476.09 128.25 C 1476.09 57.43 1418.65 0.00 1347.81 0.00 L 1347.81 0.00 Z"/>
+    <path d="M 501.41 595.00 L 501.41 723.28 L 1347.81 723.28 L 1347.81 1186.17 L 128.27 1186.17 L 128.27 961.85 L 187.66 961.85 L 187.66 835.39 L 0.00 835.39 L 0.00 1215.09 C 0.00 1285.93 57.43 1343.36 128.27 1343.36 L 128.27 1343.36 L 1347.81 1343.36 C 1418.65 1343.36 1476.09 1285.93 1476.09 1215.09 L 1476.09 1215.09 L 1476.09 723.28 C 1476.09 687.84 1461.73 655.79 1438.52 632.56 L 1438.52 632.56 C 1415.30 609.36 1383.24 595.00 1347.81 595.00 L 1347.81 595.00 Z"/>
+  </symbol>
+</defs></svg>
+
+<header class="fc-hdr" id="fcHdr">
+  <a href="#top" class="fc-hdr-logo" aria-label="Sky Global Financial Consulting — home">
+    <svg class="mk" viewBox="0 0 1476.09 1343.36" aria-hidden="true"><use href="#sgMark" fill="currentColor"/></svg>
+    <span class="wm"><b>SKY GLOBAL</b><i data-en="Financial Consulting" data-ar="للاستشارات المالية">للاستشارات المالية</i></span>
+  </a>
+  <nav class="fc-nav" aria-label="Sections">
+    <a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a>
+    <a href="#services" data-en="Services" data-ar="خدماتنا">خدماتنا</a>
+    <a href="#approach" data-en="Approach" data-ar="منهجيتنا">منهجيتنا</a>
+    <a href="#contact" data-en="Contact" data-ar="تواصل">تواصل</a>
+  </nav>
+  <div class="fc-hdr-r">
+    <button class="lang" id="langBtn" aria-label="Switch language">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.7 3.8 6 3.8 9S14.5 18.3 12 21M12 3C9.5 5.7 8.2 9 8.2 12S9.5 18.3 12 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="lbl" id="langLabel">English</span>
+    </button>
+    <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
+    <button class="fc-menu-toggle" id="fcMenuToggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="fc-mobile" id="fcMobile">
+  <a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a>
+  <a href="#services" data-en="Services" data-ar="خدماتنا">خدماتنا</a>
+  <a href="#approach" data-en="Approach" data-ar="منهجيتنا">منهجيتنا</a>
+  <a href="#contact" data-en="Contact" data-ar="تواصل">تواصل</a>
+  <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
+</div>
+
+<a href="../index.html#companies" class="fc-back" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</span>
+</a>
+
+<!-- ================= HERO (brand-tinted placeholder — swap in a real photo later) ================= -->
+<section class="fc-hero" id="hero" data-slot="hero-image">
+  <img class="fc-hero-img" src="../assets/img/fcs/hero.jpg" alt="" decoding="async" fetchpriority="high" />
+  <div class="fc-hero-figure" aria-hidden="true"></div>
+  <div class="fc-hero-motif" aria-hidden="true">
+    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="40" width="320" height="320" rx="64" stroke="#fff" stroke-width="2"/>
+      <rect x="92" y="92" width="216" height="216" rx="44" stroke="#fff" stroke-width="2"/>
+      <rect x="144" y="144" width="112" height="112" rx="26" stroke="#fff" stroke-width="2"/>
+      <path d="M200 0v40M200 360v40M0 200h40M360 200h40" stroke="#fff" stroke-width="2"/>
+      <circle cx="200" cy="200" r="7" fill="#fff"/>
+    </svg>
+  </div>
+  <div class="fc-hero-grain" aria-hidden="true"></div>
+
+  <div class="fc-hero-center" data-load>
+    <div class="fc-hero-logo">
+      <svg class="mk" viewBox="0 0 1476.09 1343.36" aria-hidden="true"><use href="#sgMark" fill="currentColor"/></svg>
+      <span class="wm"><b>SKY GLOBAL</b><i data-en="Financial Consulting" data-ar="للاستشارات المالية">للاستشارات المالية</i></span>
+    </div>
+    <p class="fc-hero-tagline"
+       data-en="The finance function of the Sky Global group — internal audit, accounting systems, zakat and tax, budgets and feasibility studies, delivered to a single standard of accuracy and compliance."
+       data-ar="الذراع المالية لمجموعة سكاي جلوبال — المراجعة الداخلية، والأنظمة المحاسبية، والزكاة والضريبة، والميزانيات ودراسات الجدوى، بمعيار واحد من الدقة والالتزام.">الذراع المالية لمجموعة سكاي جلوبال — مراجعة وأنظمة محاسبية وزكاة وضريبة واستشارات.</p>
+    <a href="#services" class="btn btn-primary" data-en="Our services" data-ar="خدماتنا">خدماتنا
+      <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+
+  <a class="fc-hero-scroll" href="#about" aria-label="Scroll to About">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14m0 0-6-6m6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="fc-two">
+    <div>
+      <p class="fc-kicker"><span class="n">01</span> <span data-en="About Us" data-ar="من نحن">من نحن</span></p>
+      <h2 class="fc-h2 display reveal" data-en="One finance standard for the whole group" data-ar="معيار مالي واحد للمجموعة بأكملها">معيار مالي واحد للمجموعة بأكملها</h2>
+      <p class="fc-lead reveal" data-en="Sky Global Financial Consulting provides financial management and advisory services across the group and for external clients — from setting up accounting systems and issuing approved budgets to internal audit, zakat and tax filing, and feasibility studies for new projects."
+         data-ar="تقدّم سكاي جلوبال للاستشارات المالية خدمات الإدارة المالية والاستشارات داخل المجموعة ولعملائها من الخارج — من تأسيس الأنظمة المحاسبية وإصدار الميزانيات المعتمدة، إلى المراجعة الداخلية ورفع إقرارات الزكاة والضريبة، وإعداد دراسات الجدوى للمشاريع الجديدة.">تقدّم سكاي جلوبال للاستشارات المالية خدمات الإدارة المالية والاستشارات داخل المجموعة ولعملائها من الخارج.</p>
+      <p class="fc-p reveal" style="margin-top:1.2rem" data-en="The work is built on accuracy, disclosure and full compliance with Saudi regulatory requirements."
+         data-ar="ويقوم العمل على الدقة والإفصاح والالتزام الكامل بالمتطلبات النظامية في المملكة.">ويقوم العمل على الدقة والإفصاح والالتزام الكامل بالمتطلبات النظامية في المملكة.</p>
+    </div>
+    <div class="fc-facts reveal">
+      <div class="fc-fact">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><span class="k" data-en="Compliance" data-ar="الالتزام">الالتزام</span><span class="v" data-en="Zakat, income tax &amp; VAT — filed on schedule" data-ar="الزكاة والدخل والقيمة المضافة — في مواعيدها">الزكاة والدخل والقيمة المضافة — في مواعيدها</span></div>
+      </div>
+      <div class="fc-fact">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><span class="k" data-en="Scope" data-ar="النطاق">النطاق</span><span class="v" data-en="Audit · accounting · budgets · advisory" data-ar="مراجعة · محاسبة · ميزانيات · استشارات">مراجعة · محاسبة · ميزانيات · استشارات</span></div>
+      </div>
+      <div class="fc-fact">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18M8 4v16" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div><span class="k" data-en="Structure" data-ar="الهيكلة">الهيكلة</span><span class="v" data-en="Integrated accounting systems, built from the ground up" data-ar="أنظمة محاسبية متكاملة تُبنى من الأساس">أنظمة محاسبية متكاملة تُبنى من الأساس</span></div>
+      </div>
+      <div class="fc-fact">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.7 7-12a7 7 0 1 0-14 0c0 6.3 7 12 7 12Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div><span class="k" data-en="Group" data-ar="المجموعة">المجموعة</span><span class="v" data-en="A Sky Global company · Saudi Arabia" data-ar="شركة من سكاي جلوبال · المملكة العربية السعودية">شركة من سكاي جلوبال · المملكة العربية السعودية</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEDIA BAND ================= -->
+<section class="fc-band" aria-label="Financial work">
+  <div class="fc-band-grid">
+    <figure class="reveal">
+      <img src="../assets/img/fcs/report.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption data-en="Financial reporting &amp; internal review" data-ar="التقارير المالية والمراجعة الداخلية">التقارير المالية والمراجعة الداخلية</figcaption>
+    </figure>
+    <figure class="reveal">
+      <img src="../assets/img/fcs/accounting.jpg" alt="" loading="lazy" decoding="async" />
+      <figcaption data-en="Accounting, budgets &amp; feasibility" data-ar="المحاسبة والميزانيات ودراسات الجدوى">المحاسبة والميزانيات ودراسات الجدوى</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section tint" id="services">
+  <div class="fc-head">
+    <p class="fc-kicker"><span class="n">02</span> <span data-en="Services" data-ar="خدماتنا">خدماتنا</span></p>
+    <h2 class="fc-h2 display reveal" data-en="What we do" data-ar="ما نقوم به">ما نقوم به</h2>
+    <p class="fc-lead reveal" data-en="A full financial-management function — grouped into audit and assurance, zakat and tax, and accounting and advisory."
+       data-ar="وظيفة إدارة مالية كاملة — موزّعة على المراجعة والتحقق، والزكاة والضريبة، والمحاسبة والاستشارات.">وظيفة إدارة مالية كاملة — المراجعة والتحقق، والزكاة والضريبة، والمحاسبة والاستشارات.</p>
+  </div>
+
+  <!-- cluster A -->
+  <div class="fc-cluster">
+    <div class="fc-cluster-h reveal">
+      <span class="cn">A</span>
+      <h3 data-en="Audit &amp; assurance" data-ar="المراجعة والتحقق">المراجعة والتحقق</h3>
+    </div>
+    <div class="fc-svc-grid" data-stagger>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16" cy="9" r="4" stroke="currentColor" stroke-width="1.7"/><path d="m19 12 3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7 8h4M7 12h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <h4 data-en="Internal audit" data-ar="المراجعة الداخلية">المراجعة الداخلية</h4>
+        <span class="en" data-en="Internal Audit" data-ar="Internal Audit">Internal Audit</span>
+      </div>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="m15.5 15.5 1.6 1.6 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h4 data-en="Internal statement review" data-ar="مراجعة القوائم الداخلية">مراجعة القوائم الداخلية</h4>
+        <span class="en" data-en="Internal Statement Review" data-ar="Internal Statement Review">Internal Statement Review</span>
+      </div>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/></svg></span>
+        <h4 data-en="Accounting records oversight &amp; review" data-ar="الإشراف والمراجعة على سجلات المحاسبة">الإشراف والمراجعة على سجلات المحاسبة</h4>
+        <span class="en" data-en="Accounting Records Oversight &amp; Review" data-ar="Accounting Records Oversight &amp; Review">Accounting Records Oversight &amp; Review</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- cluster B -->
+  <div class="fc-cluster">
+    <div class="fc-cluster-h reveal">
+      <span class="cn">B</span>
+      <h3 data-en="Zakat &amp; tax" data-ar="الزكاة والضريبة">الزكاة والضريبة</h3>
+    </div>
+    <div class="fc-svc-grid" data-stagger>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 21V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14l-3-2-3 2-3-2-3 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 9h6M9 13h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <h4 data-en="Zakat &amp; income tax filing" data-ar="رفع إقرارات الزكاة والدخل">رفع إقرارات الزكاة والدخل</h4>
+        <span class="en" data-en="Zakat &amp; Income Tax Filing" data-ar="Zakat &amp; Income Tax Filing">Zakat &amp; Income Tax Filing</span>
+      </div>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M12 17v-5m0 0-2 2m2-2 2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h4 data-en="Tax filing — monthly / quarterly" data-ar="رفع الإقرارات الضريبية شهري / ربع سنوي">رفع الإقرارات الضريبية شهري / ربع سنوي</h4>
+        <span class="en" data-en="Tax Filing — Monthly / Quarterly" data-ar="Tax Filing — Monthly / Quarterly">Tax Filing — Monthly / Quarterly</span>
+      </div>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 21V5a2 2 0 0 1 2-2h7l5 5v13a0 0 0 0 1 0 0H5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="14" r="3" stroke="currentColor" stroke-width="1.7"/><path d="m10.7 14 1 1 1.6-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h4 data-en="Approved budget issuance" data-ar="إصدار ميزانيات معتمدة">إصدار ميزانيات معتمدة</h4>
+        <span class="en" data-en="Approved Budget Issuance" data-ar="Approved Budget Issuance">Approved Budget Issuance</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- cluster C -->
+  <div class="fc-cluster">
+    <div class="fc-cluster-h reveal">
+      <span class="cn">C</span>
+      <h3 data-en="Accounting &amp; advisory" data-ar="المحاسبة والاستشارات">المحاسبة والاستشارات</h3>
+    </div>
+    <div class="fc-svc-grid" data-stagger>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" stroke-width="1.7"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" stroke-width="1.7"/></svg></span>
+        <h4 data-en="Integrated accounting system setup" data-ar="إنشاء وتأسيس نظام محاسبي متكامل">إنشاء وتأسيس نظام محاسبي متكامل</h4>
+        <span class="en" data-en="Integrated Accounting System Setup" data-ar="Integrated Accounting System Setup">Integrated Accounting System Setup</span>
+      </div>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0 0 12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h4 data-en="Feasibility studies for new projects &amp; expansions" data-ar="إعداد دراسة الجدوى للمشاريع الجديدة والتوسعات">إعداد دراسة الجدوى للمشاريع الجديدة والتوسعات</h4>
+        <span class="en" data-en="Feasibility Studies for New Projects &amp; Expansions" data-ar="Feasibility Studies for New Projects &amp; Expansions">Feasibility Studies for New Projects &amp; Expansions</span>
+      </div>
+      <div class="fc-svc reveal">
+        <span class="fc-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <h4 data-en="Financial &amp; administrative consulting" data-ar="تقديم استشارات مالية وإدارية">تقديم استشارات مالية وإدارية</h4>
+        <span class="en" data-en="Financial &amp; Administrative Consulting" data-ar="Financial &amp; Administrative Consulting">Financial &amp; Administrative Consulting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPROACH ================= -->
+<section class="section dark" id="approach">
+  <div class="fc-head">
+    <p class="fc-kicker"><span class="n">03</span> <span data-en="Approach" data-ar="منهجيتنا">منهجيتنا</span></p>
+    <h2 class="fc-h2 display reveal" data-en="How the work is run" data-ar="كيف يُدار العمل">كيف يُدار العمل</h2>
+  </div>
+  <div class="fc-appr" data-stagger>
+    <div class="reveal">
+      <span class="an">01</span>
+      <h3 data-en="Set up the system" data-ar="تأسيس النظام">تأسيس النظام</h3>
+      <p data-en="Build or restructure the accounting system so records, controls and the chart of accounts are sound from the start."
+         data-ar="بناء النظام المحاسبي أو إعادة هيكلته بحيث تكون السجلات والضوابط ودليل الحسابات سليمة من البداية.">بناء النظام المحاسبي أو إعادة هيكلته بحيث تكون السجلات والضوابط سليمة من البداية.</p>
+    </div>
+    <div class="reveal">
+      <span class="an">02</span>
+      <h3 data-en="Review &amp; oversee" data-ar="المراجعة والإشراف">المراجعة والإشراف</h3>
+      <p data-en="Ongoing internal audit and oversight of the accounting records, with review of the internal statements."
+         data-ar="مراجعة داخلية وإشراف مستمر على سجلات المحاسبة، مع مراجعة القوائم الداخلية.">مراجعة داخلية وإشراف مستمر على سجلات المحاسبة، مع مراجعة القوائم الداخلية.</p>
+    </div>
+    <div class="reveal">
+      <span class="an">03</span>
+      <h3 data-en="File &amp; report" data-ar="الإقرار والتقارير">الإقرار والتقارير</h3>
+      <p data-en="Approved budgets issued, and zakat, income-tax and VAT returns filed on their monthly, quarterly and annual schedules."
+         data-ar="إصدار الميزانيات المعتمدة، ورفع إقرارات الزكاة والدخل والقيمة المضافة في مواعيدها الشهرية والربع سنوية والسنوية.">إصدار الميزانيات المعتمدة، ورفع الإقرارات في مواعيدها الشهرية والربع سنوية والسنوية.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKY GLOBAL BAND ================= -->
+<section class="section group-band" style="background:var(--f-ink)">
+  <div class="wrap">
+    <p class="eyebrow center reveal" style="color:var(--f-cyan)" data-en="Sky Global Financial Consulting × Sky Global" data-ar="سكاي جلوبال للاستشارات المالية × سكاي جلوبال">سكاي جلوبال للاستشارات المالية × سكاي جلوبال</p>
+    <h2 class="display reveal" data-en="The group's finance function" data-ar="الذراع المالية للمجموعة">الذراع المالية للمجموعة</h2>
+    <p class="reveal" style="color:#c1cddb" data-en="Sky Global Financial Consulting keeps every company in the group on one accounting and compliance standard — and offers the same discipline to clients outside it."
+       data-ar="تُبقي سكاي جلوبال للاستشارات المالية كل شركات المجموعة على معيار محاسبي والتزامي واحد — وتقدّم الانضباط نفسه لعملائها من الخارج.">تُبقي كل شركات المجموعة على معيار محاسبي والتزامي واحد، وتقدّم الانضباط نفسه لعملاء الخارج.</p>
+    <a href="../index.html#companies" class="btn btn-primary reveal" data-en="Explore Sky Global's companies" data-ar="اكتشف شركات سكاي جلوبال">اكتشف شركات سكاي جلوبال
+      <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="fc-two">
+    <div>
+      <p class="fc-kicker"><span class="n">04</span> <span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
+      <h2 class="fc-h2 display reveal" data-en="Talk to the finance team" data-ar="تحدّث إلى الفريق المالي">تحدّث إلى الفريق المالي</h2>
+      <p class="fc-p reveal" style="margin-top:1.2rem" data-en="For internal audit, accounting system setup, zakat and tax filing, budgets or a feasibility study — reach Sky Global Financial Consulting."
+         data-ar="للمراجعة الداخلية، أو تأسيس نظام محاسبي، أو رفع إقرارات الزكاة والضريبة، أو الميزانيات، أو دراسة جدوى — تواصل مع سكاي جلوبال للاستشارات المالية.">للمراجعة الداخلية أو تأسيس نظام محاسبي أو رفع الإقرارات أو دراسة جدوى — تواصل معنا.</p>
+      <a href="mailto:info@skyglobalworld.com" class="btn btn-primary" style="margin-top:1.6rem" data-en="Contact us" data-ar="تواصل معنا">تواصل معنا</a>
+    </div>
+    <div class="reveal">
+      <div class="fc-contact-rows">
+        <div><span class="k" data-en="Email" data-ar="البريد الإلكتروني">البريد الإلكتروني</span><span class="v">info@skyglobalworld.com</span></div>
+        <div><span class="k" data-en="Phone" data-ar="الهاتف">الهاتف</span><span class="v tnum">+966 12 206 8728</span></div>
+        <div><span class="k" data-en="Location" data-ar="الموقع">الموقع</span><span class="v" data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">جدة، المملكة العربية السعودية</span></div>
+        <div><span class="k" data-en="Group" data-ar="المجموعة">المجموعة</span><span class="v" data-en="A Sky Global company" data-ar="شركة من سكاي جلوبال">شركة من سكاي جلوبال</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="fc-ft">
+  <div class="wrap">
+    <div class="fc-ft-top">
+      <div>
+        <div class="fc-ft-logo">
+          <svg class="mk" viewBox="0 0 1476.09 1343.36" aria-hidden="true"><use href="#sgMark" fill="#c7d6e6"/></svg>
+          <b data-en="SKY GLOBAL FINANCIAL CONSULTING" data-ar="سكاي جلوبال للاستشارات المالية">سكاي جلوبال للاستشارات المالية</b>
+        </div>
+        <p data-en="Financial management and advisory for the Sky Global group and external clients — audit, accounting, zakat and tax, budgets and feasibility."
+           data-ar="إدارة مالية واستشارات لمجموعة سكاي جلوبال ولعملاء الخارج — مراجعة ومحاسبة وزكاة وضريبة وميزانيات ودراسات جدوى.">إدارة مالية واستشارات لمجموعة سكاي جلوبال ولعملاء الخارج.</p>
+      </div>
+      <div>
+        <h4 data-en="Sections" data-ar="الأقسام">الأقسام</h4>
+        <ul>
+          <li><a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a></li>
+          <li><a href="#services" data-en="Services" data-ar="خدماتنا">خدماتنا</a></li>
+          <li><a href="#approach" data-en="Approach" data-ar="منهجيتنا">منهجيتنا</a></li>
+          <li><a href="#contact" data-en="Contact" data-ar="تواصل">تواصل</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Contact" data-ar="تواصل">تواصل</h4>
+        <ul>
+          <li><a href="mailto:info@skyglobalworld.com">info@skyglobalworld.com</a></li>
+          <li><a href="tel:+966122068728" class="tnum">+966 12 206 8728</a></li>
+          <li><a href="../index.html#companies" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fc-ft-bot">
+      <span data-en="© 2026 Sky Global Financial Consulting — a Sky Global company. All rights reserved." data-ar="© 2026 سكاي جلوبال للاستشارات المالية — شركة من سكاي جلوبال. جميع الحقوق محفوظة.">© 2026 سكاي جلوبال للاستشارات المالية — شركة من سكاي جلوبال.</span>
+      <span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">جدة، المملكة العربية السعودية</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('fcHdr');
+  if(hdr){var s=function(){hdr.classList.toggle('scrolled',scrollY>40)};s();addEventListener('scroll',s,{passive:true});}
+  var mt=document.getElementById('fcMenuToggle'),mm=document.getElementById('fcMobile');
+  if(mt&&mm){
+    var close=function(){mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';};
+    mt.addEventListener('click',function(){var o=mm.classList.toggle('open');mt.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':'';});
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  }
+  var links=[].slice.call(document.querySelectorAll('.fc-nav a'));
+  var ids=links.map(function(a){return a.getAttribute('href').slice(1);});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=ids.indexOf(e.target.id);
+      links.forEach(function(l,n){l.classList.toggle('here',n===i);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  }
+})();
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

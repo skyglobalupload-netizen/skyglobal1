@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>إن هيروز — وكالة تسويق وشركة برمجيات</title>
+<meta name="title-en" content="NHeroes — marketing agency & software house" />
+<meta name="description" content="إن هيروز — وكالة تسويق متكاملة وشركة برمجيات: العلاقات العامة، التسويق، صناعة المحتوى، الإنتاج الإعلامي، بناء العلامات التجارية، والحلول التقنية. إحدى شركات سكاي جلوبال." />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+/* =====================================================================
+   NHEROES · creative agency + software house
+   Brand: navy #0d0d99 / deep #000051 + orange #ffa754 / #ff7a29
+   Same hero structure + section-header system as Fluiday / Contracting /
+   Financial, but a more energetic, creative treatment: per-category
+   accent shifts, floating colour blooms, a connected methodology flow.
+
+   PLACEHOLDERS
+   - Hero: NO media yet → navy gradient + orange blooms + faint mark.
+     Swap in a photo OR video later on <section class="nh-hero"
+     data-slot="hero-media">: add <img class="nh-hero-img" …> OR a
+     <video class="nh-hero-img" autoplay muted loop playsinline …> as the
+     first child (same approach as the Fluiday video hero).
+   - #partners: RESERVED — client-logo wall (grayscale→colour) + a video
+     portfolio grid (thumbnail → lightbox). Content coming from client.
+   ===================================================================== */
+:root{
+  --nh-navy:#0d0d99; --nh-navy-d:#000051; --nh-navy-2:#2a2ab0;
+  --nh-orange:#ff7a29; --nh-orange-l:#ffa754;
+  --nh-ink:#0b0b2b; --nh-ink-2:#13134a; --nh-ink-3:#3a3a63;
+  --nh-paper:#ffffff; --nh-paper-2:#f4f4fb;
+  --nh-line:rgba(13,13,60,.14); --nh-line-2:rgba(13,13,60,.07); --nh-line-d:rgba(255,255,255,.16);
+  --mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;
+  --nh-hdr:72px;
+}
+body{background:var(--nh-paper);color:var(--nh-ink)}
+html{scroll-padding-top:var(--nh-hdr)}
+::selection{background:var(--nh-orange);color:#fff}
+
+.nh .section{padding-block:clamp(66px,8.5vw,124px)}
+.nh .section.dark{background:var(--nh-ink);color:#e7e7f3}
+.nh .section.navy{background:#0a0a52;color:#e9e9f6}
+.nh .section.tint{background:var(--nh-paper-2)}
+.nh .section.orange{background:#fff5ec}
+.nh .section.orange .nh-kicker{color:#e9691c}
+.nh .section.orange .nh-lead{color:#6a5245}
+.nh-wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.nh-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);margin-bottom:clamp(2.6rem,4.5vw,4rem)}
+.nh-kicker{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--nh-orange);display:inline-flex;align-items:center;gap:.9em;margin-bottom:1.3rem}
+html[dir="rtl"] .nh-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:.92rem}
+.nh-kicker .n{border:1px solid color-mix(in srgb,var(--nh-orange) 45%,transparent);border-radius:2px;padding:2px 7px;font-size:.7rem;letter-spacing:.08em}
+.nh .dark .nh-kicker{color:var(--nh-orange-l)}
+.nh-h2{font-family:var(--serif);font-weight:400;font-size:var(--s4);line-height:1.08;letter-spacing:-.015em;max-width:20ch}
+html[dir="rtl"] .nh-h2{font-family:var(--ar);font-weight:700;line-height:1.28;letter-spacing:0;max-width:26ch}
+.nh .dark .nh-h2{color:#fff}
+.nh-lead{font-size:var(--s1);color:var(--ink-soft);font-weight:400;max-width:60ch;margin-top:1.2rem}
+html[dir="rtl"] .nh-lead{line-height:1.95}
+.nh .dark .nh-lead{color:#c7c7e0}
+.nh-p{color:var(--ink-soft);max-width:62ch}
+html[dir="rtl"] .nh-p{line-height:1.95}
+.nh-p + .nh-p{margin-top:1rem}
+.nh .dark .nh-p{color:#bcbcd8}
+.tech{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--nh-orange)}
+html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
+
+.nh .btn-primary{background:var(--nh-orange);color:#fff}
+.nh .btn-primary:hover{background:#e9691c;color:#fff}
+.nh .btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* ---------- HEADER ---------- */
+.nh-hdr{position:fixed;inset-block-start:0;inset-inline:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;padding:16px var(--gutter);
+  transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s var(--ease)}
+.nh-hdr::after{content:"";position:absolute;inset-inline:0;inset-block-end:0;height:1px;background:transparent;transition:background .4s}
+.nh-hdr.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding-block:10px;box-shadow:0 6px 24px -14px rgba(0,0,0,.22)}
+.nh-hdr.scrolled::after{background:var(--nh-line)}
+.nh-hdr-logo{flex:none;display:flex;align-items:center;gap:10px;color:var(--nh-navy)}
+.nh-hdr-logo .mk{width:34px;height:34px;flex:none;object-fit:contain;transition:width .4s,height .4s}
+.nh-hdr-logo .wm{font-family:var(--ar);font-weight:800;font-size:1.06rem;letter-spacing:.01em}
+.nh-hdr-logo .wm-en{font-family:var(--sans);font-weight:800;font-size:.82rem;letter-spacing:.14em}
+
+.nh-nav{display:flex;gap:28px;align-items:center}
+.nh-nav a{font-size:.9rem;font-weight:600;letter-spacing:.01em;color:var(--nh-ink-2);padding:8px 2px;position:relative;transition:color .3s}
+html[dir="rtl"] .nh-nav a{font-weight:700;font-size:1rem}
+.nh-nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:0;width:0;height:2px;background:var(--nh-orange);transition:width .3s var(--ease)}
+.nh-nav a:hover{color:var(--nh-orange)}
+.nh-nav a:hover::after,.nh-nav a.here::after{width:100%}
+.nh-hdr-r{flex:none;display:flex;align-items:center;gap:12px}
+.nh-hdr-r .lang{color:var(--nh-ink);border-color:var(--nh-line);font-size:.82rem;padding:9px 15px}
+.nh-hdr-r .lang:hover{border-color:var(--nh-orange);color:var(--nh-orange)}
+.nh-hdr-r .btn-ghost{padding:10px 20px;font-size:.84rem;border-color:var(--nh-line);color:var(--nh-ink)}
+.nh-hdr-r .btn-ghost:hover{background:var(--nh-orange);border-color:var(--nh-orange);color:#fff}
+.nh-menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:var(--nh-ink)}
+
+.nh-back{position:absolute;inset-block-start:calc(var(--nh-hdr) + 16px);inset-inline-start:var(--gutter);z-index:6;
+  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:var(--nh-ink-3);
+  display:inline-flex;align-items:center;gap:.55em;transition:color .3s}
+html[dir="rtl"] .nh-back{font-family:var(--ar);letter-spacing:0;font-weight:700}
+.nh-back:hover{color:var(--nh-navy)}
+.nh-back svg{width:14px;height:14px}
+html[dir="rtl"] .nh-back svg{transform:scaleX(-1)}
+
+.nh-mobile{position:fixed;inset:0;z-index:98;background:var(--nh-ink);color:#fff;display:flex;flex-direction:column;
+  justify-content:center;gap:2px;padding:var(--gutter);transform:translateY(-100%);transition:transform .5s var(--ease);overflow-y:auto}
+.nh-mobile.open{transform:none}
+.nh-mobile a{font-size:1.3rem;font-weight:400;padding:13px 0;border-bottom:1px solid var(--nh-line-d)}
+.nh-mobile .btn{align-self:flex-start;margin-top:22px}
+@media (max-width:1080px){ .nh-nav{display:none} .nh-menu-toggle{display:flex} .nh-hdr-r .btn-ghost{display:none} }
+
+/* ---------- HERO — white with brand geometric motif ---------- */
+.nh-hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;background:var(--nh-paper);color:var(--nh-ink);
+  padding:calc(var(--nh-hdr) + 44px) var(--gutter) 92px}
+.nh-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;z-index:1}
+.nh-hero-figure{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(80% 55% at 50% 0%, #fbfbff, var(--nh-paper) 70%)}
+/* dot-grid motif: navy dots + offset orange dots, faded toward the edges */
+.nh-hero-pattern{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    radial-gradient(circle, color-mix(in srgb,var(--nh-navy) 20%,transparent) 1.5px, transparent 1.7px),
+    radial-gradient(circle, color-mix(in srgb,var(--nh-orange) 42%,transparent) 1.5px, transparent 1.7px);
+  background-size:42px 42px,42px 42px;background-position:0 0,21px 21px;
+  -webkit-mask-image:radial-gradient(125% 95% at 50% 38%, #000 26%, transparent 76%);
+  mask-image:radial-gradient(125% 95% at 50% 38%, #000 26%, transparent 76%)}
+.nh-hero-mk-bg{position:absolute;z-index:0;inset-block-start:50%;inset-inline-start:50%;width:min(115vh,1000px);height:auto;
+  transform:translate(-50%,-50%);opacity:.045;pointer-events:none}
+.nh-hero-grain{position:absolute;inset:0;z-index:2;pointer-events:none;background:transparent}
+/* when a photo/video is dropped in later, flip back to a dark treatment */
+.nh-hero:has(.nh-hero-img){color:#fff;background:var(--nh-navy-d)}
+.nh-hero:has(.nh-hero-img) .nh-hero-pattern,
+.nh-hero:has(.nh-hero-img) .nh-hero-figure{display:none}
+.nh-hero:has(.nh-hero-img) .nh-hero-mk-bg{opacity:.06;filter:brightness(0) invert(1)}
+.nh-hero:has(.nh-hero-img) .nh-hero-grain{background:
+  linear-gradient(152deg,rgba(0,0,81,.5),rgba(4,4,24,.32) 46%,rgba(255,122,41,.18)),
+  radial-gradient(78% 60% at 50% 44%,rgba(4,4,24,.15),rgba(4,4,24,.55)),
+  linear-gradient(180deg,rgba(4,4,24,.6) 0%,rgba(4,4,24,.36) 38%,rgba(4,4,24,.56) 68%,rgba(4,4,24,.9) 100%)}
+.nh-hero:has(.nh-hero-img) .nh-hero-logo .wm{color:#fff}
+.nh-hero:has(.nh-hero-img) .nh-hero-tagline{color:rgba(255,255,255,.95)}
+.nh-hero-center{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:clamp(1.4rem,3.2vw,2.3rem);max-width:660px}
+.nh-hero-logo{display:flex;flex-direction:column;align-items:center;gap:1.15rem}
+.nh-hero-logo .mk{width:min(32vw,164px);height:min(32vw,164px);object-fit:contain;
+  filter:drop-shadow(0 18px 42px rgba(13,13,60,.18))}
+.nh-hero-logo .wm{font-family:var(--ar);font-weight:800;font-size:clamp(2rem,1.3rem + 3.2vw,3.6rem);color:var(--nh-navy);line-height:1}
+.nh-hero-logo .wm-en{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:clamp(.8rem,.6rem + .8vw,1.05rem);color:var(--nh-orange);margin-top:.5rem}
+.nh-hero-tagline{font-size:var(--s1);font-weight:400;line-height:1.6;color:var(--nh-ink-2);max-width:44ch}
+html[dir="rtl"] .nh-hero-tagline{line-height:2}
+.nh-hero-center .btn{font-size:.98rem;padding:16px 36px;box-shadow:0 16px 40px -14px rgba(255,122,41,.5)}
+.nh-hero-scroll{position:absolute;z-index:3;inset-block-end:24px;inset-inline:0;margin-inline:auto;width:34px;height:34px;
+  display:grid;place-items:center;color:var(--nh-ink-3);border:1px solid var(--nh-line);border-radius:999px;transition:.3s}
+.nh-hero-scroll:hover{color:var(--nh-navy);border-color:var(--nh-navy)}
+.nh-hero:has(.nh-hero-img) .nh-hero-scroll{color:rgba(255,255,255,.65);border-color:rgba(255,255,255,.25)}
+.nh-hero-scroll svg{width:15px;height:15px;animation:nhbob 2s var(--ease) infinite}
+@keyframes nhbob{0%,100%{transform:translateY(-2px)}50%{transform:translateY(2px)}}
+@media (prefers-reduced-motion:reduce){.nh-hero-scroll svg{animation:none}}
+
+/* ---------- ABOUT ---------- */
+.nh-two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,6vw,84px);align-items:start;
+  max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.nh-specrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--nh-line);border:1px solid var(--nh-line);
+  border-radius:8px;overflow:hidden;max-width:var(--maxw);margin:0 auto clamp(2.6rem,4vw,3.6rem)}
+.nh-specrow div{background:var(--nh-paper);padding:18px 22px}
+.nh-specrow .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .nh-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.78rem}
+.nh-specrow .v{font-size:1rem;font-weight:700;margin-top:5px}
+.nh-specrow .v b{color:var(--nh-orange)}
+.nh-aside{border:1px solid var(--nh-line);border-radius:12px;padding:clamp(24px,3vw,34px);background:var(--nh-paper);
+  border-inline-start:3px solid var(--nh-orange)}
+.nh-aside .ix{font-family:var(--serif);font-size:1.8rem;color:var(--nh-orange);line-height:1;display:block;margin-bottom:1rem}
+html[dir="rtl"] .nh-aside .ix{font-family:var(--ar)}
+.nh-aside p{color:var(--ink-soft);font-size:.98rem}
+html[dir="rtl"] .nh-aside p{line-height:1.95}
+
+/* ---------- WHAT WE DO — creative card grid ---------- */
+.nh-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.nh-svc{position:relative;border:1px solid var(--nh-line);border-radius:14px;padding:clamp(24px,2.6vw,32px);background:var(--nh-paper);
+  box-shadow:0 1px 2px rgba(13,13,60,.04);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.nh-svc::before{content:"";position:absolute;inset-block-start:0;inset-inline:0;height:3px;background:var(--cat);
+  transform:scaleX(0);transform-origin:var(--x-origin,left);transition:transform .4s var(--ease)}
+html[dir="rtl"] .nh-svc::before{transform-origin:right}
+.nh-svc:hover{transform:translateY(-6px);border-color:transparent;
+  box-shadow:0 26px 50px -26px color-mix(in srgb,var(--cat) 55%,transparent)}
+.nh-svc:hover::before{transform:scaleX(1)}
+.nh-svc-ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;
+  background:color-mix(in srgb,var(--cat) 12%,transparent);color:var(--cat);transition:background .35s,color .35s,transform .35s var(--ease)}
+.nh-svc:hover .nh-svc-ic{background:var(--cat);color:#fff;transform:rotate(-6deg) scale(1.06)}
+.nh-svc-ic svg{width:24px;height:24px}
+.nh-svc h3{font-size:1.1rem;font-weight:800;margin-bottom:.5rem}
+.nh-svc p{font-size:.9rem;color:var(--ink-soft);line-height:1.7}
+html[dir="rtl"] .nh-svc p{line-height:1.9}
+.nh-svc .en{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);display:block;margin-top:.7rem}
+html[dir="rtl"] .nh-svc .en{font-family:var(--sans)}
+
+/* ---------- METHODOLOGY — connected flow ---------- */
+.nh-flow{position:relative;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.nh-flow::before{content:"";position:absolute;inset-block-start:calc(var(--gutter) * 0 + 34px);inset-inline:calc(var(--gutter) + 12%);
+  height:2px;background:linear-gradient(90deg,var(--nh-navy),var(--nh-orange));opacity:.4}
+.nh-step{text-align:center;padding:0 10px;position:relative}
+.nh-step .dot{width:70px;height:70px;border-radius:999px;background:var(--nh-paper);border:2px solid var(--nh-line);
+  display:grid;place-items:center;margin:0 auto 18px;position:relative;z-index:1;
+  transition:border-color .35s,transform .35s var(--ease),box-shadow .35s}
+.nh-step .dot svg{width:26px;height:26px;color:var(--nh-navy);transition:color .35s}
+.nh-step .n{position:absolute;inset-block-start:-6px;inset-inline-end:-6px;width:22px;height:22px;border-radius:999px;
+  background:var(--nh-orange);color:#fff;font-family:var(--mono);font-size:.66rem;font-weight:700;display:grid;place-items:center}
+.nh-step:hover .dot{border-color:var(--nh-orange);transform:translateY(-4px);box-shadow:0 16px 32px -18px rgba(255,122,41,.6)}
+.nh-step:hover .dot svg{color:var(--nh-orange)}
+.nh-step h3{font-size:1.05rem;font-weight:800;margin-bottom:.35rem}
+.nh-step p{font-size:.86rem;color:var(--ink-soft);line-height:1.7}
+.nh .navy .nh-step h3{color:#fff}
+.nh .navy .nh-step p{color:#c7c7e0}
+.nh .navy .nh-flow::before{background:linear-gradient(90deg,rgba(255,255,255,.35),var(--nh-orange));opacity:.6}
+@media (max-width:760px){ .nh .navy .nh-flow::before{background:linear-gradient(180deg,rgba(255,255,255,.35),var(--nh-orange))} }
+@media (max-width:760px){
+  .nh-flow{grid-template-columns:1fr;gap:22px}
+  .nh-flow::before{inset-block:34px auto;inset-inline-start:calc(var(--gutter) + 34px);inset-inline-end:auto;
+    width:2px;height:calc(100% - 68px);background:linear-gradient(180deg,var(--nh-navy),var(--nh-orange))}
+  .nh-step{display:flex;gap:18px;text-align:start;align-items:flex-start}
+  .nh-step .dot{margin:0;flex:none}
+}
+
+/* ---------- WHY — value cards ---------- */
+.nh-why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.nh-why > div{border:1px solid var(--nh-line);border-radius:12px;padding:clamp(22px,2.5vw,30px);background:var(--nh-paper);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.nh-why > div:hover{transform:translateY(-4px);border-color:transparent;box-shadow:0 22px 44px -26px rgba(13,13,60,.35)}
+.nh-why svg{width:26px;height:26px;color:var(--nh-orange);margin-bottom:12px}
+.nh-why h3{font-size:1rem;font-weight:800;color:var(--nh-ink);margin-bottom:.4rem}
+.nh-why p{font-size:.88rem;color:var(--ink-soft);line-height:1.75}
+html[dir="rtl"] .nh-why p{line-height:1.9}
+
+/* ---------- RESERVED: clients + video portfolio ---------- */
+.nh-reserve{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.nh-reserve-box{border:1px dashed var(--nh-line);border-radius:12px;padding:clamp(30px,4vw,52px);text-align:center;
+  background:repeating-linear-gradient(135deg,var(--nh-paper-2) 0 12px,transparent 12px 24px),var(--nh-paper);
+  display:flex;flex-direction:column;align-items:center;gap:12px}
+.nh-reserve-box svg{width:28px;height:28px;color:var(--nh-orange);opacity:.65}
+.nh-reserve-box .l{font-size:1rem;font-weight:800}
+.nh-reserve-box .s{font-size:.88rem;color:var(--ink-soft);max-width:38ch}
+html[dir="rtl"] .nh-reserve-box .s{line-height:1.9}
+.nh-reserve-box .f{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:#9a9ab4}
+@media (max-width:760px){ .nh-reserve{grid-template-columns:1fr} }
+
+/* ---------- CONTACT ---------- */
+.nh-contact-rows{margin-top:1.7rem;border-block-start:1px solid var(--nh-line)}
+.nh-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--nh-line);font-size:.98rem}
+.nh-contact-rows .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .nh-contact-rows .k{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.nh-contact-rows .v{font-weight:600;text-align:end}
+
+/* ---------- FOOTER ---------- */
+.nh-ft{background:var(--nh-ink);color:#9a9ac0;padding-block:58px 26px;font-size:.9rem}
+.nh-ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--nh-line-d)}
+.nh-ft-logo{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:1rem}
+.nh-ft-logo .mk{width:40px;height:40px;flex:none;padding:5px;border-radius:9px;background:#fff;object-fit:contain}
+.nh-ft-logo b{font-family:var(--ar);font-weight:800}
+.nh-ft p{max-width:42ch}
+html[dir="rtl"] .nh-ft p{line-height:1.9}
+.nh-ft h4{color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.nh-ft ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.nh-ft a:hover{color:#fff}
+.nh-ft-bot{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:#6a6a90}
+
+@media (max-width:1040px){
+  .nh-two{grid-template-columns:1fr}
+  .nh-specrow{grid-template-columns:1fr 1fr}
+  .nh-svc-grid{grid-template-columns:1fr 1fr}
+  .nh-why{grid-template-columns:1fr 1fr}
+  .nh-ft-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .nh-specrow,.nh-svc-grid,.nh-why{grid-template-columns:1fr}
+  .nh-ft-top{grid-template-columns:1fr}
+  .nh-contact-rows div{flex-direction:column;gap:2px}
+  .nh-contact-rows .v{text-align:start}
+}
+</style>
+</head>
+<body id="top" class="nh">
+
+<svg class="sg-defs" aria-hidden="true"><defs>
+  <linearGradient id="sgGrad" x1="0" y1="0" x2="1476.09" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#7C8AD0"/><stop offset="1" stop-color="#33469C"/>
+  </linearGradient>
+  <symbol id="sgMark" viewBox="0 0 1476.09 1343.36">
+    <path d="M 128.27 0.00 C 57.43 0.00 0.00 57.43 0.00 128.25 L 0.00 128.25 L 0.00 595.00 C 0.00 665.84 57.43 723.28 128.27 723.28 L 128.27 723.28 L 281.90 723.28 L 281.90 951.25 C 281.90 1000.30 321.66 1040.06 370.71 1040.06 L 370.71 1040.06 L 1105.38 1040.06 C 1154.42 1040.06 1194.18 1000.30 1194.18 951.25 L 1194.18 951.25 L 1194.18 837.23 L 1068.89 837.23 L 1068.89 914.77 L 407.19 914.77 L 407.19 403.51 L 1068.89 403.51 L 1068.89 482.59 L 1194.18 482.59 L 1194.18 367.03 C 1194.18 317.98 1154.42 278.22 1105.38 278.22 L 1105.38 278.22 L 370.71 278.22 C 321.66 278.22 281.90 317.98 281.90 367.03 L 281.90 367.03 L 281.90 595.00 L 128.27 595.00 L 128.27 128.25 L 1347.81 128.25 L 1347.81 356.95 L 1287.60 356.95 L 1287.60 483.39 L 1476.09 483.39 L 1476.09 128.25 C 1476.09 57.43 1418.65 0.00 1347.81 0.00 L 1347.81 0.00 Z"/>
+    <path d="M 501.41 595.00 L 501.41 723.28 L 1347.81 723.28 L 1347.81 1186.17 L 128.27 1186.17 L 128.27 961.85 L 187.66 961.85 L 187.66 835.39 L 0.00 835.39 L 0.00 1215.09 C 0.00 1285.93 57.43 1343.36 128.27 1343.36 L 128.27 1343.36 L 1347.81 1343.36 C 1418.65 1343.36 1476.09 1285.93 1476.09 1215.09 L 1476.09 1215.09 L 1476.09 723.28 C 1476.09 687.84 1461.73 655.79 1438.52 632.56 L 1438.52 632.56 C 1415.30 609.36 1383.24 595.00 1347.81 595.00 L 1347.81 595.00 Z"/>
+  </symbol>
+  <symbol id="nhMark" viewBox="257.94 83.14 439.32 440.02">
+    <path fill="var(--nhc1,#0d0d99)" d="M350.1 465.5 C358.7 467.0 366.6 468.6 374.5 469.8 C393.3 472.8 412.3 473.6 431.4 472.6 C466.2 470.6 499.5 462.3 531.3 448.0 C542.3 443.1 553.3 438.5 563.3 431.8 C602.3 405.6 626.0 369.4 633.7 322.9 C635.8 310.0 636.4 297 634.6 284.0 C633.2 273.7 628.5 264.8 621.5 257.2 C617.9 253.4 613.1 254.2 610.8 258.9 C608.0 264.6 605.3 270.5 602.5 276.3 C602.1 277.0 601.7 277.8 601.2 278.8 C595.6 255.6 578.8 247.4 554.2 259.0 C554.6 258.0 554.8 257.3 555.1 256.6 C561.6 243.0 568.1 229.4 574.5 215.8 C576.2 212.3 577.2 208.6 578.9 205.2 C588.2 187.8 602.8 178.5 622.5 178.8 C641.6 179.0 656.0 188.2 664.7 205.2 C681.6 238.6 688.8 274.2 686.4 311.5 C683.1 363.4 663.1 408.1 626.9 445.3 C594.7 478.3 555.7 498.9 510.1 505.9 C452.5 514.7 399.9 501.8 352.6 467.5 C351.9 467.0 351.2 466.4 350.1 465.5 "/>
+    <path fill="var(--nhc1,#0d0d99)" d="M604.2 140.6 C602.0 140.1 599.8 139.7 597.6 139.2 C581.6 135.8 565.5 133.9 549.2 133.3 C502.7 131.8 458.5 141.5 416.7 162.0 C398.2 171.0 381.0 181.8 366.5 196.7 C342.5 221.3 327.6 250.6 322.5 284.7 C320.6 297.0 320.1 309.4 321.4 321.8 C322.6 332.5 327.4 341.7 334.7 349.6 C335.8 350.9 337.1 351.6 338.4 352.0 C341.2 352.7 344.0 351.2 345.6 347.7 C348.4 341.9 351.1 336.1 353.9 330.3 C354.4 329.2 354.9 328.2 355.7 326.8 C356.4 329.1 356.9 330.9 357.6 332.8 C360.5 340.7 365.0 347.3 372.8 350.4 C372.8 350.4 372.9 350.4 372.9 350.4 C374.0 350.8 375.0 351.2 376.2 351.4 C383.3 353.1 390.2 351.6 396.9 349.2 C398.6 348.5 400.4 347.9 402.7 347.0 C402.6 347.2 402.5 347.5 402.4 347.7 C400.1 352.5 398.1 356.7 396.1 361.0 C395.9 361.3 395.8 361.7 395.6 362.0 C390.8 372.0 385.8 382.0 381.3 392.2 C378.7 398.0 376.7 404.0 372.9 409.1 C351.4 437.6 307.5 433.6 291.5 401.7 C279.1 376.8 271.7 350.5 270.0 322.7 C266.4 261.7 285.1 208.5 326.9 163.9 C358.0 130.7 396.3 109.8 441.2 101.9 C500.0 91.6 553.8 104.0 602.5 138.7 C603.2 139.1 603.7 139.6 604.2 140.6 "/>
+    <path fill="var(--nhc1,#0d0d99)" d="M437.4 274.1 C434.2 280.8 431.2 287.1 428.2 293.5 C427.5 295.2 426.4 296.1 424.6 296.6 C417.5 298.5 410.5 300.5 403.5 302.5 C390.9 306.1 382.1 301.6 377.2 289.5 C375.9 286.4 375.9 283.8 377.5 280.6 C388.6 257.7 399.3 234.5 410.5 211.6 C414.6 203.3 422.2 198.9 431.1 197.4 C445.6 195.0 458.3 202.1 464.6 215.4 C474.0 235.4 483.5 255.4 493.1 275.3 C498.9 287.5 504.9 299.5 510.5 311.7 C513.6 318.5 516.0 325.5 518.8 332.7 C519.2 331.8 519.7 331.1 520.0 330.3 C522.9 324.3 525.7 318.2 528.7 312.2 C529.3 311.1 530.6 310.1 531.7 309.7 C539.2 307.4 546.8 305.2 554.3 303.1 C563.5 300.5 571.3 303.5 576.6 311.5 C577.4 312.7 578.0 313.9 578.7 315.2 C580.8 318.8 580.9 322.1 578.9 326.2 C567.7 349.1 557.0 372.4 545.7 395.4 C541.6 403.8 533.9 408.2 524.8 409.6 C510.2 411.8 497.8 404.7 491.5 391.3 C482.1 371.2 472.5 351.1 462.9 331.1 C457.4 319.4 451.5 307.9 446.1 296.1 C442.9 289.1 440.4 281.8 437.4 274.1 "/>
+    <path fill="var(--nhc2,#000051)" d="M437.4 274.1 C437.2 274.6 436.9 275.1 436.6 275.7 C434.7 279.9 432.2 286.6 428.0 295.5 C420.0 312.1 409.8 333.5 403.1 347.4 C399.1 356.0 396.4 361.7 396.4 361.7 C396.4 361.7 396.1 361.8 395.6 362.0 C390.4 364.1 360.1 374.7 338.4 352.0 C341.2 352.7 344.0 351.2 345.6 347.7 C348.4 341.9 351.1 336.1 353.9 330.3 C354.4 329.2 354.9 328.2 355.7 326.8 C356.4 329.1 356.9 330.9 357.6 332.8 C360.5 340.7 365.0 347.3 372.8 350.4 C366.2 347.4 359.7 340.8 356.0 327.0 C359.5 319.1 362.5 312.6 365.0 307.1 C365.1 306.9 365.2 306.6 365.3 306.4 C368.9 299.0 372.6 291.4 375.8 284.8 C376.1 284.4 376.3 283.9 376.5 283.5 C381.8 272.8 385.0 264.9 385.0 264.9 C385.0 264.9 396.9 247.1 420.0 254.6 C423.2 255.7 434.2 262.1 437.4 274.1 "/>
+    <path fill="var(--nhc3,#ffa754)" d="M462.1 329.4 L403.1 347.4 L402.4 347.7 L393.8 350.3 C393.8 350.3 383.3 355.0 372.9 350.4 C372.9 350.4 372.8 350.4 372.8 350.4 C366.2 347.4 359.7 340.8 356.0 327.0 C359.5 319.1 362.5 312.6 365.0 307.1 C365.1 306.9 365.2 306.6 365.3 306.4 C372.6 290.5 375.7 284.3 375.7 284.3 C375.7 284.3 375.7 284.5 375.8 284.8 C375.9 285.1 376.1 285.7 376.3 286.3 L376.3 286.3 C378.1 291.2 383.7 303.5 394.6 303.4 C396.7 303.5 412.9 299.4 426.1 295.9 C426.8 295.8 427.4 295.6 428.0 295.5 C436.2 293.3 443.0 291.5 444.0 291.2 C444.1 291.2 444.1 291.2 444.1 291.2 L461.8 328.8 Z "/>
+    <path fill="var(--nhc2,#000051)" d="M620.9 256.7 C620.9 256.7 616.8 252.1 611.3 257.5 C609.2 262.3 571.0 342.0 571.0 342.0 C571.0 342.0 560.6 356.2 542.4 353.8 C539.8 353.1 523.5 351.0 518.7 332.7 C524.2 320.4 560.2 245.3 560.2 245.3 C560.2 245.3 574.8 235.6 599.2 242.9 C601.6 243.5 615.8 248.8 620.9 256.7 "/>
+    <path fill="var(--nhc3,#ffa754)" d="M579.8 324.1 C579.8 324.1 574.5 304.1 560.6 304.3 C557.0 304.0 512.8 316.7 512.8 316.7 L493.7 276.6 L561.4 255.3 C561.4 255.3 591.4 241.5 601.2 278.8 C586.9 311.6 579.8 324.1 579.8 324.1 "/>
+  </symbol>
+</defs></svg>
+
+<header class="nh-hdr" id="nhHdr">
+  <a href="#top" class="nh-hdr-logo" aria-label="إن هيروز — الرئيسية">
+    <img class="mk" src="../assets/img/icon-nheroes.svg" alt="" aria-hidden="true" />
+    <span class="wm" data-en="NHEROES" data-ar="إن هيروز">إن هيروز</span>
+  </a>
+  <nav class="nh-nav" aria-label="Sections">
+    <a href="#about" data-en="About" data-ar="من نحن">من نحن</a>
+    <a href="#services" data-en="What we do" data-ar="ماذا نقدم">ماذا نقدم</a>
+    <a href="#method" data-en="Methodology" data-ar="منهجيتنا">منهجيتنا</a>
+    <a href="#partners" data-en="Clients" data-ar="عملاؤنا">عملاؤنا</a>
+  </nav>
+  <div class="nh-hdr-r">
+    <button class="lang" id="langBtn" aria-label="Switch language">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.7 3.8 6 3.8 9S14.5 18.3 12 21M12 3C9.5 5.7 8.2 9 8.2 12S9.5 18.3 12 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="lbl" id="langLabel">English</span>
+    </button>
+    <a href="#contact" class="btn btn-ghost" data-en="Talk to us" data-ar="تحدث معنا">تحدث معنا</a>
+    <button class="nh-menu-toggle" id="nhMenuToggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nh-mobile" id="nhMobile">
+  <a href="#about" data-en="About" data-ar="من نحن">من نحن</a>
+  <a href="#services" data-en="What we do" data-ar="ماذا نقدم">ماذا نقدم</a>
+  <a href="#method" data-en="Methodology" data-ar="منهجيتنا">منهجيتنا</a>
+  <a href="#why" data-en="Why NHeroes" data-ar="لماذا إن هيروز">لماذا إن هيروز</a>
+  <a href="#partners" data-en="Clients" data-ar="عملاؤنا">عملاؤنا</a>
+  <a href="#contact" class="btn btn-ghost" data-en="Talk to NHeroes" data-ar="تحدث مع إن هيروز">تحدث مع إن هيروز</a>
+</div>
+
+<a href="../index.html#companies" class="nh-back" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</span>
+</a>
+
+<!-- ================= HERO (media coming — navy + orange placeholder) ================= -->
+<section class="nh-hero" id="hero" data-slot="hero-media">
+  <div class="nh-hero-figure" aria-hidden="true"></div>
+  <div class="nh-hero-pattern" aria-hidden="true"></div>
+  <img class="nh-hero-mk-bg" src="../assets/img/icon-nheroes.svg" alt="" aria-hidden="true" />
+  <div class="nh-hero-grain" aria-hidden="true"></div>
+
+  <div class="nh-hero-center" data-load>
+    <div class="nh-hero-logo">
+      <img class="mk" src="../assets/img/icon-nheroes.svg" alt="" aria-hidden="true" />
+      <span class="wm" data-en="NHEROES" data-ar="إن هيروز">إن هيروز</span>
+      <span class="wm-en" data-en="MARKETING AGENCY &amp; SOFTWARE HOUSE" data-ar="وكالة تسويق وشركة برمجيات">وكالة تسويق وشركة برمجيات</span>
+    </div>
+    <p class="nh-hero-tagline"
+       data-en="We build brands, craft experiences, and develop digital solutions."
+       data-ar="نبني العلامات التجارية، نصنع التجارب، ونطوّر الحلول الرقمية.">نبني العلامات التجارية، نصنع التجارب، ونطوّر الحلول الرقمية.</p>
+    <a href="#contact" class="btn btn-primary" data-en="Talk to NHeroes" data-ar="تحدث مع إن هيروز">تحدث مع إن هيروز
+      <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+
+  <a class="nh-hero-scroll" href="#about" aria-label="Scroll to About">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14m0 0-6-6m6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section tint" id="about">
+  <div class="nh-specrow reveal">
+    <div><div class="k" data-en="Model" data-ar="النموذج">النموذج</div><div class="v" data-en="Agency + software house" data-ar="وكالة + شركة برمجيات">وكالة + شركة برمجيات</div></div>
+    <div><div class="k" data-en="Under one roof" data-ar="تحت مظلة واحدة">تحت مظلة واحدة</div><div class="v" data-en="Marketing · creative · tech" data-ar="تسويق · إبداع · تقنية">تسويق · إبداع · تقنية</div></div>
+    <div><div class="k" data-en="Way of working" data-ar="أسلوب العمل">أسلوب العمل</div><div class="v"><b data-en="Fast &amp; flexible" data-ar="سرعة ومرونة">سرعة ومرونة</b></div></div>
+    <div><div class="k" data-en="Focus" data-ar="التركيز">التركيز</div><div class="v" data-en="Middle East markets" data-ar="أسواق الشرق الأوسط">أسواق الشرق الأوسط</div></div>
+  </div>
+
+  <div class="nh-two">
+    <div>
+      <p class="nh-kicker"><span class="n">01</span> <span data-en="About Us" data-ar="من نحن">من نحن</span></p>
+      <h2 class="nh-h2 display reveal" data-en="One team for the whole journey" data-ar="فريق واحد للرحلة كاملة">فريق واحد للرحلة كاملة</h2>
+      <p class="nh-lead reveal" data-en="NHeroes is a full-service marketing agency and software house — bringing marketing, creative, content, media production, branding and technical development together under one roof."
+         data-ar="إن هيروز وكالة تسويق متكاملة وشركة برمجيات، تجمع التسويق، الإبداع، صناعة المحتوى، الإنتاج الإعلامي، بناء العلامات التجارية، والتطوير التقني تحت مظلة واحدة.">إن هيروز وكالة تسويق متكاملة وشركة برمجيات، تجمع التسويق والإبداع والتقنية تحت مظلة واحدة.</p>
+      <p class="nh-p reveal" style="margin-top:1.2rem" data-en="We work fast and flexibly to turn business goals into strategies and solutions that can actually be executed."
+         data-ar="نعمل بسرعة ومرونة لتحويل أهداف الأعمال لاستراتيجيات وحلول قابلة للتنفيذ.">نعمل بسرعة ومرونة لتحويل أهداف الأعمال لاستراتيجيات وحلول قابلة للتنفيذ.</p>
+    </div>
+    <aside class="nh-aside reveal">
+      <span class="ix" data-en="In short" data-ar="باختصار">باختصار</span>
+      <p data-en="Strategy, creative and code from the same people — so brand, content, campaigns and product move together, not in silos."
+         data-ar="الاستراتيجية والإبداع والبرمجة من الفريق نفسه — فتتحرك العلامة والمحتوى والحملات والمنتج معًا، لا في جزر منفصلة.">الاستراتيجية والإبداع والبرمجة من الفريق نفسه — فتتحرك العلامة والمحتوى والحملات والمنتج معًا.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= WHAT WE DO ================= -->
+<section class="section" id="services">
+  <div class="nh-head">
+    <p class="nh-kicker"><span class="n">02</span> <span data-en="What we do" data-ar="ماذا نقدم">ماذا نقدم</span></p>
+    <h2 class="nh-h2 display reveal" data-en="Six capabilities, one partner" data-ar="ست قدرات، شريك واحد">ست قدرات، شريك واحد</h2>
+  </div>
+  <div class="nh-svc-grid" data-stagger>
+    <div class="nh-svc reveal" style="--cat:#ff7a29">
+      <span class="nh-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 11l18-5v12L3 14v-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 13v4a2 2 0 0 0 2 2h1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <h3 data-en="Public relations" data-ar="العلاقات العامة">العلاقات العامة</h3>
+      <p data-en="Media relations, press releases, analyst relations, reputation and crisis management, and speaking opportunities at events."
+         data-ar="العلاقات الإعلامية، البيانات الصحفية، علاقات المحللين، إدارة السمعة والأزمات، وفرص التحدث بالمناسبات.">العلاقات الإعلامية، البيانات الصحفية، علاقات المحللين، إدارة السمعة والأزمات، وفرص التحدث بالمناسبات.</p>
+      <span class="en">Public Relations</span>
+    </div>
+    <div class="nh-svc reveal" style="--cat:#ffa754">
+      <span class="nh-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V5s-1 1-4 1-5-2-8-2-4 1-4 1v10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4 22v-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <h3 data-en="Marketing" data-ar="التسويق">التسويق</h3>
+      <p data-en="Digital marketing plans, marketing consulting, social media management, SEO, conversion optimisation, and campaigns and events."
+         data-ar="خطط التسويق الرقمي، استشارات تسويقية، إدارة السوشيال ميديا، تحسين محركات البحث، تحسين التحويلات، والحملات والفعاليات.">خطط التسويق الرقمي، استشارات تسويقية، إدارة السوشيال ميديا، تحسين محركات البحث، تحسين التحويلات، والحملات والفعاليات.</p>
+      <span class="en">Marketing</span>
+    </div>
+    <div class="nh-svc reveal" style="--cat:#5b5be0">
+      <span class="nh-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5a1 1 0 0 1 1-1h9l6 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 4v6h6M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <h3 data-en="Content creation" data-ar="صناعة المحتوى">صناعة المحتوى</h3>
+      <p data-en="Photography and video, copywriting, blogs and social content — built on audience and competitor analysis."
+         data-ar="تصوير فوتوغرافي وفيديو، كتابة محتوى، مدونات، ومحتوى سوشيال ميديا — بناءً على تحليل الجمهور والمنافسين.">تصوير فوتوغرافي وفيديو، كتابة محتوى، مدونات، ومحتوى سوشيال ميديا — بناءً على تحليل الجمهور والمنافسين.</p>
+      <span class="en">Content Creation</span>
+    </div>
+    <div class="nh-svc reveal" style="--cat:#ff6a3d">
+      <span class="nh-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="m17 10 5-3v10l-5-3v-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+      <h3 data-en="Media production" data-ar="الإنتاج الإعلامي">الإنتاج الإعلامي</h3>
+      <p data-en="Turning ideas into striking visual content — filming, editing, post-production, and aerial cinematography."
+         data-ar="تحويل الأفكار لمحتوى بصري مؤثر — تصوير، مونتاج، ما بعد الإنتاج، وتصوير جوي.">تحويل الأفكار لمحتوى بصري مؤثر — تصوير، مونتاج، ما بعد الإنتاج، وتصوير جوي.</p>
+      <span class="en">Media Production</span>
+    </div>
+    <div class="nh-svc reveal" style="--cat:#0d0d99">
+      <span class="nh-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18" stroke="currentColor" stroke-width="1.7"/></svg></span>
+      <h3 data-en="Branding" data-ar="بناء العلامات التجارية">بناء العلامات التجارية</h3>
+      <p data-en="From strategy and positioning to visual identity — a brand that means something and can grow with you."
+         data-ar="من الاستراتيجية والتموضع إلى الهوية البصرية — علامة ذات معنى وقابلة للتطور.">من الاستراتيجية والتموضع إلى الهوية البصرية — علامة ذات معنى وقابلة للتطور.</p>
+      <span class="en">Branding</span>
+    </div>
+    <div class="nh-svc reveal" style="--cat:#3a3ac9">
+      <span class="nh-svc-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 8-4 4 4 4M15 8l4 4-4 4M13 5l-2 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h3 data-en="Technical solutions" data-ar="الحلول التقنية">الحلول التقنية</h3>
+      <p data-en="Web development, custom software, business automation, ERP solutions, AI and machine learning, and mobile apps."
+         data-ar="تطوير مواقع، برمجيات مخصصة، أتمتة الأعمال، حلول تخطيط موارد المؤسسات، ذكاء اصطناعي وتعلم آلي، وتطبيقات جوال.">تطوير مواقع، برمجيات مخصصة، أتمتة الأعمال، حلول تخطيط موارد المؤسسات، ذكاء اصطناعي وتعلم آلي، وتطبيقات جوال.</p>
+      <span class="en">Software &amp; Technology</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHODOLOGY ================= -->
+<section class="section dark navy" id="method">
+  <div class="nh-head">
+    <p class="nh-kicker"><span class="n">03</span> <span data-en="Methodology" data-ar="منهجيتنا">منهجيتنا</span></p>
+    <h2 class="nh-h2 display reveal" data-en="Understand first, then build" data-ar="نفهم أولًا، ثم نبني">نفهم أولًا، ثم نبني</h2>
+  </div>
+  <div class="nh-flow" data-stagger>
+    <div class="nh-step reveal">
+      <span class="dot"><span class="n">1</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <h3 data-en="Strategy" data-ar="الاستراتيجية">الاستراتيجية</h3>
+      <p data-en="Understand the business, the audience and the goal." data-ar="نفهم العمل والجمهور والهدف.">نفهم العمل والجمهور والهدف.</p>
+    </div>
+    <div class="nh-step reveal">
+      <span class="dot"><span class="n">2</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0 0 12 3ZM9 19h6M10 22h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h3 data-en="Creative" data-ar="الإبداع">الإبداع</h3>
+      <p data-en="Shape the idea, the story and the look." data-ar="نصوغ الفكرة والقصة والشكل.">نصوغ الفكرة والقصة والشكل.</p>
+    </div>
+    <div class="nh-step reveal">
+      <span class="dot"><span class="n">3</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-2.4 2.6-2.6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+      <h3 data-en="Execution" data-ar="التنفيذ">التنفيذ</h3>
+      <p data-en="Produce, build and launch — across channels and code." data-ar="ننتج ونبرمج ونطلق — عبر القنوات والأكواد.">ننتج ونبرمج ونطلق — عبر القنوات والأكواد.</p>
+    </div>
+    <div class="nh-step reveal">
+      <span class="dot"><span class="n">4</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l3-4 3 3 5-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h3 data-en="Results" data-ar="النتائج">النتائج</h3>
+      <p data-en="Measure, learn and optimise against the goal." data-ar="نقيس ونتعلّم ونحسّن مقابل الهدف.">نقيس ونتعلّم ونحسّن مقابل الهدف.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY NHEROES ================= -->
+<section class="section" id="why">
+  <div class="nh-head">
+    <p class="nh-kicker"><span class="n">04</span> <span data-en="Why NHeroes" data-ar="لماذا إن هيروز">لماذا إن هيروز</span></p>
+    <h2 class="nh-h2 display reveal" data-en="What you get with us" data-ar="ما الذي تحصل عليه معنا">ما الذي تحصل عليه معنا</h2>
+  </div>
+  <div class="nh-why" data-stagger>
+    <div class="reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 3.1a4 4 0 0 1 0 7.8M22 21v-2a4 4 0 0 0-3-3.9M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3 data-en="A multidisciplinary team" data-ar="فريق متعدد التخصصات">فريق متعدد التخصصات</h3>
+      <p data-en="Marketing, creative and technology under one roof." data-ar="تسويق، إبداع، وتقنية تحت مظلة واحدة.">تسويق، إبداع، وتقنية تحت مظلة واحدة.</p>
+    </div>
+    <div class="reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      <h3 data-en="Speed &amp; flexibility" data-ar="سرعة ومرونة">سرعة ومرونة</h3>
+      <p data-en="We respond quickly to opportunities and challenges." data-ar="سرعة ومرونة في الاستجابة للفرص والتحديات.">سرعة ومرونة في الاستجابة للفرص والتحديات.</p>
+    </div>
+    <div class="reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M14 17.5h7M17.5 14v7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <h3 data-en="End-to-end solutions" data-ar="حلول متكاملة">حلول متكاملة</h3>
+      <p data-en="From brand to technical development, joined up." data-ar="من العلامة التجارية إلى التطوير التقني، متصلة معًا.">من العلامة التجارية إلى التطوير التقني.</p>
+    </div>
+    <div class="reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9S14.5 18.3 12 21M12 3C9.5 5.7 8.2 9 8.2 12S9.5 18.3 12 21" stroke="currentColor" stroke-width="1.7"/></svg>
+      <h3 data-en="Deep regional insight" data-ar="فهم عميق للمنطقة">فهم عميق للمنطقة</h3>
+      <p data-en="A real understanding of Middle East markets." data-ar="فهم عميق لأسواق الشرق الأوسط.">فهم عميق لأسواق الشرق الأوسط.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLIENTS / PORTFOLIO — RESERVED ================= -->
+<section class="section orange" id="partners">
+  <div class="nh-head">
+    <p class="nh-kicker"><span class="n">05</span> <span data-en="Clients &amp; work" data-ar="عملاؤنا وأعمالنا">عملاؤنا وأعمالنا</span></p>
+    <h2 class="nh-h2 display reveal" data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</h2>
+    <p class="nh-lead reveal" data-en="Client logos and a video portfolio from past production work will live here once provided."
+       data-ar="ستُعرض هنا شعارات العملاء ومعرض فيديو من أعمال الإنتاج السابقة فور توفّرها.">ستُعرض هنا شعارات العملاء ومعرض فيديو من أعمال الإنتاج السابقة فور توفّرها.</p>
+  </div>
+  <div class="nh-reserve">
+    <div class="nh-reserve-box reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg>
+      <span class="l" data-en="Video portfolio" data-ar="معرض الأعمال (فيديو)">معرض الأعمال (فيديو)</span>
+      <span class="s" data-en="Production samples as a thumbnail grid — each opens larger in a lightbox on click, with no inline autoplay to keep the page fast."
+        data-ar="عينات الإنتاج كشبكة صور مصغّرة — يفتح كل عنصر بحجم أكبر في نافذة منبثقة عند الضغط، بدون تشغيل تلقائي للحفاظ على سرعة الصفحة.">عينات الإنتاج كشبكة صور مصغّرة تفتح في نافذة منبثقة عند الضغط، بدون تشغيل تلقائي.</span>
+      <span class="f" dir="ltr">partners · video-portfolio · lightbox</span>
+    </div>
+    <div class="nh-reserve-box reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9" r="1.6" fill="currentColor"/><path d="m3 16 5-4 4 3 4-4 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="l" data-en="Client logos" data-ar="شعارات العملاء">شعارات العملاء</span>
+      <span class="s" data-en="A logo wall — grayscale by default, full colour on hover — for a cleaner, more professional look."
+        data-ar="جدار شعارات — رمادية بشكل افتراضي، تتلوّن بالكامل عند التمرير — لمظهر أنظف وأكثر احترافية.">جدار شعارات رمادية افتراضيًا، تتلوّن بالكامل عند التمرير.</span>
+      <span class="f" dir="ltr">partners · client-logos · grayscale-hover</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NHEROES × SKY GLOBAL ================= -->
+<section class="section group-band" id="group" style="background:#0a0a52">
+  <div class="wrap">
+    <p class="eyebrow center reveal" style="color:var(--nh-orange-l)" data-en="NHeroes × Sky Global" data-ar="إن هيروز × سكاي جلوبال">إن هيروز × سكاي جلوبال</p>
+    <h2 class="display reveal" data-en="The group's marketing &amp; digital arm" data-ar="ذراع المجموعة للتسويق والحلول الرقمية">ذراع المجموعة للتسويق والحلول الرقمية</h2>
+    <p class="reveal" style="color:#c7c7e0" data-en="NHeroes is a Sky Global company, operating within the group's ecosystem in the marketing and digital-solutions sector."
+       data-ar="إحدى شركات سكاي جلوبال، تعمل ضمن منظومة المجموعة بقطاع التسويق والحلول الرقمية.">إحدى شركات سكاي جلوبال، تعمل ضمن منظومة المجموعة بقطاع التسويق والحلول الرقمية.</p>
+    <a href="../index.html#companies" class="btn btn-primary reveal" data-en="Explore Sky Global's companies" data-ar="اكتشف شركات سكاي جلوبال">اكتشف شركات سكاي جلوبال
+      <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="nh-two">
+    <div>
+      <p class="nh-kicker"><span class="n">06</span> <span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
+      <h2 class="nh-h2 display reveal" data-en="Got a brief? Let's talk." data-ar="عندك مشروع؟ خلّنا نتكلم.">عندك مشروع؟ خلّنا نتكلم.</h2>
+      <p class="nh-p reveal" style="margin-top:1.2rem" data-en="For PR, marketing, content, media production, branding or software — talk to the NHeroes team."
+         data-ar="للعلاقات العامة، التسويق، المحتوى، الإنتاج الإعلامي، بناء العلامات، أو الحلول التقنية — تحدّث مع فريق إن هيروز.">للعلاقات العامة والتسويق والمحتوى والإنتاج والعلامات والحلول التقنية — تحدّث مع فريق إن هيروز.</p>
+      <a href="mailto:info@skyglobalworld.com" class="btn btn-primary" style="margin-top:1.6rem" data-en="Talk to NHeroes" data-ar="تحدث مع إن هيروز">تحدث مع إن هيروز</a>
+    </div>
+    <div class="reveal">
+      <div class="nh-contact-rows">
+        <div><span class="k" data-en="Email" data-ar="البريد الإلكتروني">البريد الإلكتروني</span><span class="v">info@skyglobalworld.com</span></div>
+        <div><span class="k" data-en="Phone" data-ar="الهاتف">الهاتف</span><span class="v tnum">+966 12 206 8728</span></div>
+        <div><span class="k" data-en="Location" data-ar="الموقع">الموقع</span><span class="v" data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">جدة، المملكة العربية السعودية</span></div>
+        <div><span class="k" data-en="Group" data-ar="المجموعة">المجموعة</span><span class="v" data-en="A Sky Global company" data-ar="شركة من سكاي جلوبال">شركة من سكاي جلوبال</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="nh-ft">
+  <div class="wrap">
+    <div class="nh-ft-top">
+      <div>
+        <div class="nh-ft-logo">
+          <img class="mk" src="../assets/img/icon-nheroes.svg" alt="" aria-hidden="true" />
+          <b data-en="NHEROES" data-ar="إن هيروز">إن هيروز</b>
+        </div>
+        <p data-en="A marketing agency and software house — PR, marketing, content, media production, branding and technology. A Sky Global company."
+           data-ar="وكالة تسويق وشركة برمجيات — علاقات عامة، تسويق، محتوى، إنتاج إعلامي، علامات تجارية، وتقنية. شركة من سكاي جلوبال.">وكالة تسويق وشركة برمجيات — شركة من سكاي جلوبال.</p>
+      </div>
+      <div>
+        <h4 data-en="Sections" data-ar="الأقسام">الأقسام</h4>
+        <ul>
+          <li><a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a></li>
+          <li><a href="#services" data-en="What we do" data-ar="ماذا نقدم">ماذا نقدم</a></li>
+          <li><a href="#method" data-en="Methodology" data-ar="منهجيتنا">منهجيتنا</a></li>
+          <li><a href="#partners" data-en="Clients" data-ar="عملاؤنا">عملاؤنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Contact" data-ar="تواصل">تواصل</h4>
+        <ul>
+          <li><a href="mailto:info@skyglobalworld.com">info@skyglobalworld.com</a></li>
+          <li><a href="tel:+966122068728" class="tnum">+966 12 206 8728</a></li>
+          <li><a href="../index.html#companies" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="nh-ft-bot">
+      <span data-en="© 2026 NHeroes — a Sky Global company. All rights reserved." data-ar="© 2026 إن هيروز — شركة من سكاي جلوبال. جميع الحقوق محفوظة.">© 2026 إن هيروز — شركة من سكاي جلوبال.</span>
+      <span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">جدة، المملكة العربية السعودية</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('nhHdr');
+  if(hdr){var s=function(){hdr.classList.toggle('scrolled',scrollY>40)};s();addEventListener('scroll',s,{passive:true});}
+  var mt=document.getElementById('nhMenuToggle'),mm=document.getElementById('nhMobile');
+  if(mt&&mm){
+    var close=function(){mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';};
+    mt.addEventListener('click',function(){var o=mm.classList.toggle('open');mt.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':'';});
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  }
+  var links=[].slice.call(document.querySelectorAll('.nh-nav a'));
+  var ids=links.map(function(a){return a.getAttribute('href').slice(1);});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=ids.indexOf(e.target.id);
+      links.forEach(function(l,n){l.classList.toggle('here',n===i);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  }
+})();
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

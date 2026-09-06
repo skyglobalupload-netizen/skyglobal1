@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>تلاوين مرحة — من فكرة، إلى تصميم، إلى تنفيذ</title>
+<meta name="title-en" content="Talawin Marha — from idea, to design, to delivery" />
+<meta name="description" content="تلاوين مرحة — الإبداع وصناعة التجارب في عالم الدعاية والإعلان: مطبوعات ولوحات وهدايا. إحدى شركات سكاي جلوبال." />
+<link rel="stylesheet" href="../assets/theme.css" />
+<style>
+/* =====================================================================
+   TALAWIN MARHA · warm identity — maroon #993d3d (real extracted logo)
+   + warm sand neutrals + a single amber pop.
+   Same hero structure / section-header system as the Fluiday Auto,
+   Contracting and Financial Consulting pages.
+
+   PLACEHOLDERS:
+   - Hero has NO photo yet → warm brand gradient + colour-circle motif.
+     To swap a real photo later: add <img class="tm-hero-img" src="…">
+     as the first child of <section class="tm-hero" data-slot="hero-image">.
+   - #work is a RESERVED section for portfolio / products / success
+     partners — content coming in a follow-up. Fill the .tm-reserve block.
+   ===================================================================== */
+:root{
+  --t-clay:#993d3d; --t-clay-d:#732c2c; --t-clay-l:#c2695a; --t-amber:#cf8a3d;
+  --t-ink:#2a1c1b; --t-ink-2:#3a2826; --t-ink-3:#5c4340;
+  --t-paper:#ffffff; --t-paper-2:#faf5f1;
+  --t-line:rgba(42,28,27,.14); --t-line-2:rgba(42,28,27,.07); --t-line-d:rgba(255,255,255,.15);
+  --mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;
+  --t-hdr:72px;
+}
+body{background:var(--t-paper);color:var(--t-ink)}
+html{scroll-padding-top:var(--t-hdr)}
+::selection{background:var(--t-clay);color:#fff}
+
+.tm .section{padding-block:clamp(66px,8.5vw,124px)}
+.tm .section.dark{background:var(--t-ink);color:#f0e7e3}
+.tm .section.tint{background:var(--t-paper-2)}
+.tm-wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.tm-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);margin-bottom:clamp(2.6rem,4.5vw,4rem)}
+.tm-kicker{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--t-clay);display:inline-flex;align-items:center;gap:.9em;margin-bottom:1.3rem}
+html[dir="rtl"] .tm-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:.92rem}
+.tm-kicker .n{border:1px solid color-mix(in srgb,var(--t-clay) 42%,transparent);border-radius:2px;padding:2px 7px;font-size:.7rem;letter-spacing:.08em}
+.tm .dark .tm-kicker{color:var(--t-clay-l)}
+.tm-h2{font-family:var(--serif);font-weight:400;font-size:var(--s4);line-height:1.08;letter-spacing:-.015em;max-width:20ch}
+html[dir="rtl"] .tm-h2{font-family:var(--ar);font-weight:700;line-height:1.28;letter-spacing:0;max-width:26ch}
+.tm .dark .tm-h2{color:#fff}
+.tm-lead{font-size:var(--s1);color:var(--ink-soft);font-weight:400;max-width:60ch;margin-top:1.2rem}
+html[dir="rtl"] .tm-lead{line-height:1.95}
+.tm .dark .tm-lead{color:#e4d6d1}
+.tm-p{color:var(--ink-soft);max-width:62ch}
+html[dir="rtl"] .tm-p{line-height:1.95}
+.tm-p + .tm-p{margin-top:1rem}
+.tm .dark .tm-p{color:#d8c7c2}
+.tech{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--t-clay)}
+html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
+
+.tm .btn-primary{background:var(--t-clay);color:#fff}
+.tm .btn-primary:hover{background:var(--t-clay-d);color:#fff}
+
+/* ---------- HEADER ---------- */
+.tm-hdr{position:fixed;inset-block-start:0;inset-inline:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;padding:16px var(--gutter);
+  transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s var(--ease)}
+.tm-hdr::after{content:"";position:absolute;inset-inline:0;inset-block-end:0;height:1px;background:rgba(255,255,255,.14);transition:background .4s}
+.tm-hdr.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding-block:10px;box-shadow:0 6px 24px -14px rgba(0,0,0,.22)}
+.tm-hdr.scrolled::after{background:var(--t-line)}
+.tm-hdr-logo{flex:none;display:flex;align-items:center;gap:9px;color:#fff}
+.tm-hdr.scrolled .tm-hdr-logo{color:var(--t-clay-d)}
+.tm-hdr-logo .mk{width:36px;height:36px;flex:none;padding:5px;border-radius:999px;background:#faf5f1;
+  box-shadow:0 2px 12px rgba(0,0,0,.18);transition:width .4s var(--ease),height .4s var(--ease),box-shadow .4s}
+.tm-hdr.scrolled .tm-hdr-logo .mk{width:32px;height:32px;box-shadow:none;border:1px solid var(--t-line)}
+.tm-hdr-logo .wm{font-family:var(--ar);font-weight:700;font-size:1.05rem;letter-spacing:.01em}
+.tm-hdr-logo .wm-en{font-family:var(--sans);font-weight:800;font-size:.8rem;letter-spacing:.1em}
+
+.tm-nav{display:flex;gap:28px;align-items:center}
+.tm-nav a{font-size:.9rem;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.86);padding:8px 2px;position:relative;transition:color .3s}
+html[dir="rtl"] .tm-nav a{font-weight:700;font-size:1rem}
+.tm-hdr.scrolled .tm-nav a{color:var(--t-ink-2)}
+.tm-nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:0;width:0;height:2px;background:var(--t-clay);transition:width .3s var(--ease)}
+.tm-nav a:hover{color:#fff}
+.tm-hdr.scrolled .tm-nav a:hover{color:var(--t-clay)}
+.tm-nav a:hover::after,.tm-nav a.here::after{width:100%}
+.tm-hdr-r{flex:none;display:flex;align-items:center;gap:12px}
+.tm-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:.82rem;padding:9px 15px}
+.tm-hdr.scrolled .tm-hdr-r .lang{color:var(--t-ink);border-color:var(--t-line)}
+.tm-hdr-r .lang:hover{border-color:var(--t-clay);color:var(--t-clay)}
+.tm-hdr-r .btn-ghost{padding:10px 20px;font-size:.84rem}
+.tm-hdr.scrolled .tm-hdr-r .btn-ghost{border-color:var(--t-line);color:var(--t-ink)}
+.tm-hdr.scrolled .tm-hdr-r .btn-ghost:hover{background:var(--t-clay);border-color:var(--t-clay);color:#fff}
+.tm-menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:#fff}
+.tm-hdr.scrolled .tm-menu-toggle{color:var(--t-ink)}
+
+.tm-back{position:absolute;inset-block-start:calc(var(--t-hdr) + 16px);inset-inline-start:var(--gutter);z-index:6;
+  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.66);
+  display:inline-flex;align-items:center;gap:.55em;transition:color .3s}
+html[dir="rtl"] .tm-back{font-family:var(--ar);letter-spacing:0;font-weight:700}
+.tm-back:hover{color:#fff}
+.tm-back svg{width:14px;height:14px}
+html[dir="rtl"] .tm-back svg{transform:scaleX(-1)}
+
+.tm-mobile{position:fixed;inset:0;z-index:98;background:var(--t-ink);color:#fff;display:flex;flex-direction:column;
+  justify-content:center;gap:2px;padding:var(--gutter);transform:translateY(-100%);transition:transform .5s var(--ease);overflow-y:auto}
+.tm-mobile.open{transform:none}
+.tm-mobile a{font-size:1.35rem;font-weight:400;padding:14px 0;border-bottom:1px solid var(--t-line-d)}
+.tm-mobile .btn{align-self:flex-start;margin-top:22px}
+@media (max-width:1040px){ .tm-nav{display:none} .tm-menu-toggle{display:flex} .tm-hdr-r .btn-ghost{display:none} }
+
+/* ---------- HERO ---------- */
+.tm-hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;background:var(--t-ink);color:#fff;
+  padding:calc(var(--t-hdr) + 44px) var(--gutter) 92px}
+.tm-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;z-index:1}
+.tm-hero-figure{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(120% 85% at 80% 10%,rgba(207,138,61,.5),transparent 55%),
+  radial-gradient(95% 75% at 10% 95%,rgba(115,44,44,.9),transparent 62%),
+  linear-gradient(158deg,#5a2626 0%,#993d3d 46%,#c2695a 100%)}
+.tm-hero-motif{position:absolute;inset:0;z-index:1;opacity:.9;mix-blend-mode:soft-light;pointer-events:none;overflow:hidden}
+.tm-hero-motif span{position:absolute;border-radius:999px;border:2px solid rgba(255,255,255,.5)}
+.tm-hero-motif span:nth-child(1){width:44vmax;height:44vmax;inset-block-start:-16vmax;inset-inline-end:-14vmax}
+.tm-hero-motif span:nth-child(2){width:30vmax;height:30vmax;inset-block-start:-4vmax;inset-inline-end:6vmax;border-color:rgba(255,255,255,.32)}
+.tm-hero-motif span:nth-child(3){width:36vmax;height:36vmax;inset-block-end:-18vmax;inset-inline-start:-12vmax;border-color:rgba(255,255,255,.4)}
+.tm-hero-motif span:nth-child(4){width:18vmax;height:18vmax;inset-block-end:6vmax;inset-inline-start:10vmax;border-color:rgba(255,255,255,.25)}
+.tm-hero-grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.55;background:
+  linear-gradient(180deg,rgba(28,14,14,.5) 0%,rgba(28,14,14,.22) 38%,rgba(28,14,14,.44) 66%,rgba(28,14,14,.84) 100%)}
+.tm-hero:has(.tm-hero-img) .tm-hero-motif{display:none}
+.tm-hero:has(.tm-hero-img) .tm-hero-grain{opacity:1;background:
+  linear-gradient(158deg,rgba(90,38,38,.5),rgba(28,14,14,.34) 45%,rgba(207,138,61,.24)),
+  radial-gradient(78% 62% at 50% 44%,rgba(20,10,10,.14),rgba(20,10,10,.52)),
+  linear-gradient(180deg,rgba(20,10,10,.62) 0%,rgba(20,10,10,.4) 38%,rgba(20,10,10,.58) 68%,rgba(20,10,10,.9) 100%)}
+.tm-hero-center{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:clamp(1.4rem,3.2vw,2.2rem);max-width:640px}
+.tm-hero-logo{display:flex;flex-direction:column;align-items:center;gap:1.1rem}
+.tm-hero-logo .mk{width:min(30vw,152px);height:min(30vw,152px);padding:clamp(14px,3vw,20px);border-radius:999px;
+  background:#faf5f1;box-shadow:0 22px 60px rgba(0,0,0,.34)}
+.tm-hero-logo .wm{font-family:var(--ar);font-weight:700;font-size:clamp(1.9rem,1.2rem + 3vw,3.4rem);color:#fff;line-height:1}
+.tm-hero-tagline{font-size:var(--s1);font-weight:400;line-height:1.6;color:rgba(255,255,255,.95);max-width:46ch;text-shadow:0 2px 22px rgba(0,0,0,.5)}
+html[dir="rtl"] .tm-hero-tagline{line-height:2}
+.tm-hero-center .btn{font-size:.96rem;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(115,44,44,.75)}
+.tm-hero-scroll{position:absolute;z-index:3;inset-block-end:24px;inset-inline:0;margin-inline:auto;width:34px;height:34px;
+  display:grid;place-items:center;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.25);border-radius:999px;transition:.3s}
+.tm-hero-scroll:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.tm-hero-scroll svg{width:15px;height:15px;animation:tmbob 2s var(--ease) infinite}
+@keyframes tmbob{0%,100%{transform:translateY(-2px)}50%{transform:translateY(2px)}}
+@media (prefers-reduced-motion:reduce){.tm-hero-scroll svg{animation:none}}
+
+/* ---------- ABOUT ---------- */
+.tm-two{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(34px,6vw,84px);align-items:start;
+  max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.tm-specrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--t-line);border:1px solid var(--t-line);
+  border-radius:8px;overflow:hidden;max-width:var(--maxw);margin:0 auto clamp(2.6rem,4vw,3.6rem)}
+.tm-specrow div{background:var(--t-paper);padding:18px 22px}
+.tm-specrow .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .tm-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.78rem}
+.tm-specrow .v{font-size:1rem;font-weight:700;margin-top:5px}
+.tm-specrow .v b{color:var(--t-clay)}
+.tm-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.6rem}
+.tm-chip{display:inline-flex;align-items:center;gap:.55em;border:1px solid var(--t-line);border-radius:999px;padding:10px 18px;font-weight:700;font-size:.95rem}
+.tm-chip .d{width:7px;height:7px;border-radius:999px;background:var(--t-clay);flex:none}
+.tm-chip:nth-child(2) .d{background:var(--t-amber)}
+.tm-chip:nth-child(3) .d{background:var(--t-clay-l)}
+.tm-aside{border:1px solid var(--t-line);border-radius:12px;padding:clamp(24px,3vw,34px);background:var(--t-paper-2)}
+.tm-aside .ix{font-family:var(--serif);font-size:1.8rem;color:var(--t-clay);line-height:1;display:block;margin-bottom:1rem}
+html[dir="rtl"] .tm-aside .ix{font-family:var(--ar)}
+.tm-aside p{color:var(--ink-soft);font-size:.98rem}
+html[dir="rtl"] .tm-aside p{line-height:1.95}
+
+/* ---------- SUCCESS PARTNERS ---------- */
+.tm-logos{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tm-logo{aspect-ratio:3/2;border:1px solid var(--t-line);border-radius:10px;background:#fff;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  transition:border-color .3s,box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tm-logo:hover{border-color:var(--t-clay-l);box-shadow:0 16px 34px -20px rgba(115,44,44,.42);transform:translateY(-3px)}
+.tm-logo img{max-width:100%;max-height:100%;object-fit:contain;
+  filter:grayscale(1) opacity(.68);transition:filter .35s var(--ease)}
+.tm-logo:hover img{filter:grayscale(0) opacity(1)}
+@media (max-width:900px){ .tm-logos{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:520px){ .tm-logos{grid-template-columns:repeat(2,1fr)} }
+@media (prefers-reduced-motion:reduce){ .tm-logo,.tm-logo img{transition:none} }
+
+/* ---------- RESERVED (portfolio / products) ---------- */
+.tm-reserve{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.tm-reserve-box{border:1px dashed var(--t-line);border-radius:12px;padding:clamp(38px,6vw,72px);text-align:center;
+  background:repeating-linear-gradient(135deg,var(--t-paper-2) 0 12px,transparent 12px 24px),var(--t-paper);
+  display:flex;flex-direction:column;align-items:center;gap:14px}
+.tm-reserve-box svg{width:30px;height:30px;color:var(--t-clay);opacity:.6}
+.tm-reserve-box .l{font-size:1rem;font-weight:700}
+.tm-reserve-box .s{font-size:.9rem;color:var(--ink-soft);max-width:44ch}
+html[dir="rtl"] .tm-reserve-box .s{line-height:1.9}
+.tm-reserve-box .f{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:#a99a95}
+
+/* ---------- CONTACT ---------- */
+.tm-contact-rows{margin-top:1.7rem;border-block-start:1px solid var(--t-line)}
+.tm-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--t-line);font-size:.98rem}
+.tm-contact-rows .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .tm-contact-rows .k{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.tm-contact-rows .v{font-weight:600;text-align:end}
+
+/* ---------- FOOTER ---------- */
+.tm-ft{background:var(--t-ink);color:#b6a29d;padding-block:58px 26px;font-size:.9rem}
+.tm-ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--t-line-d)}
+.tm-ft-logo{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:1rem}
+.tm-ft-logo .mk{width:36px;height:36px;flex:none;padding:5px;border-radius:999px;background:#faf5f1}
+.tm-ft-logo b{font-family:var(--ar);font-weight:700}
+.tm-ft p{max-width:42ch}
+html[dir="rtl"] .tm-ft p{line-height:1.9}
+.tm-ft h4{color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:none}
+.tm-ft ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.tm-ft a:hover{color:#fff}
+.tm-ft-bot{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:#8a7571}
+
+@media (max-width:1040px){
+  .tm-two{grid-template-columns:1fr}
+  .tm-specrow{grid-template-columns:1fr 1fr}
+  .tm-ft-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .tm-specrow{grid-template-columns:1fr}
+  .tm-ft-top{grid-template-columns:1fr}
+  .tm-contact-rows div{flex-direction:column;gap:2px}
+  .tm-contact-rows .v{text-align:start}
+}
+</style>
+</head>
+<body id="top" class="tm">
+
+<svg class="sg-defs" aria-hidden="true"><defs>
+  <linearGradient id="sgGrad" x1="0" y1="0" x2="1476.09" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#7C8AD0"/><stop offset="1" stop-color="#33469C"/>
+  </linearGradient>
+  <symbol id="sgMark" viewBox="0 0 1476.09 1343.36">
+    <path d="M 128.27 0.00 C 57.43 0.00 0.00 57.43 0.00 128.25 L 0.00 128.25 L 0.00 595.00 C 0.00 665.84 57.43 723.28 128.27 723.28 L 128.27 723.28 L 281.90 723.28 L 281.90 951.25 C 281.90 1000.30 321.66 1040.06 370.71 1040.06 L 370.71 1040.06 L 1105.38 1040.06 C 1154.42 1040.06 1194.18 1000.30 1194.18 951.25 L 1194.18 951.25 L 1194.18 837.23 L 1068.89 837.23 L 1068.89 914.77 L 407.19 914.77 L 407.19 403.51 L 1068.89 403.51 L 1068.89 482.59 L 1194.18 482.59 L 1194.18 367.03 C 1194.18 317.98 1154.42 278.22 1105.38 278.22 L 1105.38 278.22 L 370.71 278.22 C 321.66 278.22 281.90 317.98 281.90 367.03 L 281.90 367.03 L 281.90 595.00 L 128.27 595.00 L 128.27 128.25 L 1347.81 128.25 L 1347.81 356.95 L 1287.60 356.95 L 1287.60 483.39 L 1476.09 483.39 L 1476.09 128.25 C 1476.09 57.43 1418.65 0.00 1347.81 0.00 L 1347.81 0.00 Z"/>
+    <path d="M 501.41 595.00 L 501.41 723.28 L 1347.81 723.28 L 1347.81 1186.17 L 128.27 1186.17 L 128.27 961.85 L 187.66 961.85 L 187.66 835.39 L 0.00 835.39 L 0.00 1215.09 C 0.00 1285.93 57.43 1343.36 128.27 1343.36 L 128.27 1343.36 L 1347.81 1343.36 C 1418.65 1343.36 1476.09 1285.93 1476.09 1215.09 L 1476.09 1215.09 L 1476.09 723.28 C 1476.09 687.84 1461.73 655.79 1438.52 632.56 L 1438.52 632.56 C 1415.30 609.36 1383.24 595.00 1347.81 595.00 L 1347.81 595.00 Z"/>
+  </symbol>
+  <symbol id="tmMark" viewBox="-1.73 -0.92 99.77 96.43">
+    <path fill="#993d3d" fill-rule="evenodd" d="M40.863 72.402 C34.401 72.402 28.341 70.685 23.113 67.683 L23.099 67.675 L23.092 67.672 L23.069 67.658 C20.895 66.405 18.865 64.929 17.01 63.262 C16.887 63.15 16.764 63.037 16.642 62.923 L16.64 62.924 C9.583 56.402 5.162 47.069 5.162 36.701 C5.162 33.721 5.529 30.828 6.218 28.06 C8.697 18.474 14.387 11.21 22.791 5.908 C28.091 2.79 34.268 1 40.863 1 C45.044 1 49.057 1.721 52.786 3.042 L52.784 3.044 C57.368 4.805 61.582 7.216 65.226 10.623 L65.237 10.619 C72.207 17.134 76.564 26.408 76.564 36.701 C76.564 56.418 60.581 72.402 40.863 72.402 "/>
+    <path fill="#ffffff" fill-rule="evenodd" d="M42.066 38.169 C38.425 38.169 35.474 41.134 35.474 44.791 C35.474 48.448 38.425 51.412 42.066 51.412 C45.708 51.412 48.659 48.448 48.659 44.791 C48.659 41.134 45.708 38.169 42.066 38.169 "/>
+    <path fill="#ffffff" fill-rule="evenodd" d="M42.066 22.678 C38.425 22.678 35.474 25.642 35.474 29.299 C35.474 32.955 38.425 35.92 42.066 35.92 C45.708 35.92 48.659 32.955 48.659 29.299 C48.659 25.642 45.708 22.678 42.066 22.678 "/>
+    <path fill="#ffffff" d="M27.483 68.621 L27.483 21.217 L52.163 21.217 L52.163 18.005 C52.163 16.725 51.715 15.628 50.821 14.729 C49.927 13.83 48.834 13.381 47.559 13.381 L15.51 13.381 C13.337 15.73 11.519 18.337 10.078 21.217 L18.405 21.217 L18.405 62.935 C21.15 65.323 24.204 67.169 27.483 68.621 "/>
+    <path fill="#ffffff" d="M54.889 4.88 L54.889 52.284 L30.209 52.284 L30.209 55.496 C30.209 56.777 30.657 57.874 31.551 58.772 C32.446 59.671 33.539 60.12 34.814 60.12 L66.862 60.12 C69.035 57.771 70.853 55.164 72.294 52.284 L63.967 52.284 L63.967 10.567 C61.222 8.178 58.168 6.332 54.889 4.88 "/>
+  </symbol>
+</defs></svg>
+
+<header class="tm-hdr" id="tmHdr">
+  <a href="#top" class="tm-hdr-logo" aria-label="تلاوين مرحة — الرئيسية">
+    <svg class="mk" viewBox="-1.73 -0.92 99.77 96.43" aria-hidden="true"><use href="#tmMark" color="currentColor"/></svg>
+    <span class="wm" data-en="Talawin Marha" data-ar="تلاوين مرحة">تلاوين مرحة</span>
+  </a>
+  <nav class="tm-nav" aria-label="Sections">
+    <a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a>
+    <a href="#partners" data-en="Partners" data-ar="شركاء النجاح">شركاء النجاح</a>
+    <a href="#group" data-en="Sky Global" data-ar="سكاي جلوبال">سكاي جلوبال</a>
+    <a href="#contact" data-en="Contact" data-ar="تواصل">تواصل</a>
+  </nav>
+  <div class="tm-hdr-r">
+    <button class="lang" id="langBtn" aria-label="Switch language">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.7 3.8 6 3.8 9S14.5 18.3 12 21M12 3C9.5 5.7 8.2 9 8.2 12S9.5 18.3 12 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="lbl" id="langLabel">English</span>
+    </button>
+    <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
+    <button class="tm-menu-toggle" id="tmMenuToggle" aria-label="Menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="tm-mobile" id="tmMobile">
+  <a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a>
+  <a href="#partners" data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</a>
+  <a href="#work" data-en="Our Work" data-ar="أعمالنا">أعمالنا</a>
+  <a href="#group" data-en="Sky Global" data-ar="سكاي جلوبال">سكاي جلوبال</a>
+  <a href="#contact" data-en="Contact" data-ar="تواصل">تواصل</a>
+  <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
+</div>
+
+<a href="../index.html#companies" class="tm-back" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</span>
+</a>
+
+<!-- ================= HERO (placeholder identity — no photo yet) ================= -->
+<section class="tm-hero" id="hero" data-slot="hero-image">
+  <div class="tm-hero-figure" aria-hidden="true"></div>
+  <div class="tm-hero-motif" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="tm-hero-grain" aria-hidden="true"></div>
+
+  <div class="tm-hero-center" data-load>
+    <div class="tm-hero-logo">
+      <svg class="mk" viewBox="-1.73 -0.92 99.77 96.43" aria-hidden="true"><use href="#tmMark" color="#ffffff"/></svg>
+      <span class="wm" data-en="Talawin Marha" data-ar="تلاوين مرحة">تلاوين مرحة</span>
+    </div>
+    <p class="tm-hero-tagline"
+       data-en="Not just colours in advertising — forms that take shape to meet your sense of complete artistic beauty: from idea, to design, to delivery."
+       data-ar="ليست مجرد ألوان في عالم الدعاية والإعلان، بل أشكال تتجسد أمامك لتعانق إحساسك بالجمال الفني المتكامل — من فكرة، إلى تصميم، إلى تنفيذ.">ليست مجرد ألوان — بل أشكال تتجسد أمامك: من فكرة، إلى تصميم، إلى تنفيذ.</p>
+    <a href="#about" class="btn btn-primary" data-en="About Talawin Marha" data-ar="تعرّف علينا">تعرّف علينا
+      <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+
+  <a class="tm-hero-scroll" href="#about" aria-label="Scroll to About">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14m0 0-6-6m6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="tm-specrow reveal">
+    <div><div class="k" data-en="Field" data-ar="المجال">المجال</div><div class="v" data-en="Advertising &amp; media" data-ar="الدعاية والإعلان">الدعاية والإعلان</div></div>
+    <div><div class="k" data-en="Method" data-ar="المنهج">المنهج</div><div class="v" data-en="Idea → design → delivery" data-ar="فكرة ← تصميم ← تنفيذ">فكرة ← تصميم ← تنفيذ</div></div>
+    <div><div class="k" data-en="Care" data-ar="الالتزام">الالتزام</div><div class="v" data-en="After-sales service" data-ar="خدمات ما بعد البيع">خدمات ما بعد البيع</div></div>
+    <div><div class="k" data-en="Group" data-ar="المجموعة">المجموعة</div><div class="v"><b data-en="A Sky Global company" data-ar="عضو في سكاي جلوبال">عضو في سكاي جلوبال</b></div></div>
+  </div>
+
+  <div class="tm-two">
+    <div>
+      <p class="tm-kicker"><span class="n">01</span> <span data-en="About Us" data-ar="من نحن">من نحن</span></p>
+      <h2 class="tm-h2 display reveal" data-en="Colour, given form" data-ar="لونٌ يتجسّد شكلًا">لونٌ يتجسّد شكلًا</h2>
+      <p class="tm-lead reveal" data-en="Talawin Marha is not just colours in the world of advertising and media — it is forms that take shape before you to meet your feeling and your sense of a complete artistic beauty: from an idea, to a design, to delivery, in one integrated picture of real beauty."
+         data-ar="تلاوين مرحة... ليست مجرد ألوان في عالم الدعاية والإعلان فحسب، بل أشكال تتجسد أمامك لتعانق شعورك وإحساسك بالجمال الفني المتكامل — من فكرة، إلى تصميم، إلى تنفيذ، في صورة تكاملية غاية بالجمال.">تلاوين مرحة ليست مجرد ألوان، بل أشكال تتجسد أمامك — من فكرة، إلى تصميم، إلى تنفيذ.</p>
+      <p class="tm-p reveal" style="margin-top:1.2rem" data-en="Talawin Marha stood out through the range of its services — printed matter, signage and boards, and gifts in every shape and taste — which let it compete with major firms in the field, alongside its commitment to after-sales service without shirking its moral responsibility."
+         data-ar="تميّزت تلاوين مرحة بتنوع خدماتها من مطبوعات ولوحات وهدايا بمختلف الأشكال والأذواق، مما مكّنها من منافسة شركات كبرى بالمجال، إلى جانب التزامها بتقديم خدمات ما بعد البيع دون تنصّل من مسؤوليتها الأدبية.">تميّزت تلاوين مرحة بتنوع خدماتها من مطبوعات ولوحات وهدايا، مما مكّنها من منافسة شركات كبرى بالمجال.</p>
+      <div class="tm-chips reveal">
+        <span class="tm-chip"><span class="d"></span><span data-en="Printed matter" data-ar="مطبوعات">مطبوعات</span></span>
+        <span class="tm-chip"><span class="d"></span><span data-en="Signage &amp; boards" data-ar="لوحات">لوحات</span></span>
+        <span class="tm-chip"><span class="d"></span><span data-en="Gifts" data-ar="هدايا">هدايا</span></span>
+      </div>
+    </div>
+    <aside class="tm-aside reveal">
+      <span class="ix" data-en="Now" data-ar="الآن">الآن</span>
+      <p data-en="This distinction is what brought Talawin Marha into a larger entity — Sky Global — which acquired it within a short period to develop its services in step with Vision 2030, with a constant focus on meeting our clients' needs and their satisfaction. With that, it enters a new, refined chapter: continuous innovation and development, alongside its partners in success."
+         data-ar="هذا التميّز جعلها تنضم لكيان كبير كسكاي جلوبال، التي استحوذت على تلاوين مرحة خلال فترة قصيرة لتطوير خدماتها بما يواكب رؤية 2030، مع الحرص الدائم على تلبية احتياجات عملائنا وإرضائهم — لتدخل بذلك مرحلة جديدة وراقية اسمها الابتكار والتطوير المستمر مع شركاء النجاح.">هذا التميّز جعلها تنضم لكيان كبير كسكاي جلوبال، التي استحوذت على تلاوين مرحة لتطوير خدماتها بما يواكب رؤية 2030 — لتدخل مرحلة جديدة اسمها الابتكار والتطوير المستمر مع شركاء النجاح.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= SUCCESS PARTNERS ================= -->
+<section class="section tint" id="partners">
+  <div class="tm-head">
+    <p class="tm-kicker"><span class="n">02</span> <span data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</span></p>
+    <h2 class="tm-h2 display reveal" data-en="Trusted by leading names" data-ar="ثقة أسماء رائدة">ثقة أسماء رائدة</h2>
+    <p class="tm-lead reveal" data-en="Government bodies, sports clubs, and major commercial groups Talawin Marha has worked with across advertising, printing, signage and gifts."
+       data-ar="جهات حكومية وأندية رياضية ومجموعات تجارية كبرى تعاملت معها تلاوين مرحة في الدعاية والطباعة واللوحات والهدايا.">جهات حكومية وأندية رياضية ومجموعات تجارية كبرى تعاملت معها تلاوين مرحة.</p>
+  </div>
+  <div class="tm-logos" data-stagger>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/makkah-emirate.png" alt="إمارة منطقة مكة المكرمة — Emirate of Makkah Region" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/amanat-jeddah.png" alt="أمانة جدة — Jeddah Municipality" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/jeddah-chamber.png" alt="غرفة جدة — Jeddah Chamber" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/sbc.png" alt="هيئة الإذاعة والتلفزيون — Saudi Broadcasting Authority" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/swcc.png" alt="المؤسسة العامة لتحلية المياه المالحة — SWCC" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/nesma.png" alt="نسما للمياه والطاقة — Nesma Water &amp; Energy" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/ittihad-fc.png" alt="نادي الاتحاد — Al-Ittihad FC" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/al-ahli-fc.png" alt="النادي الأهلي — Al-Ahli Saudi FC" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/alsorayai.png" alt="مجموعة السريع — Alsorayai Group" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/bamco.png" alt="بامكو — BAMCO" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/dar-al-eiman.png" alt="دار الإيمان — Dar Al Eiman" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/neamah.png" alt="نعمة — Neamah" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/naghi-hyundai.png" alt="محمد يوسف ناغي للسيارات — Mohamed Yousuf Naghi Motors (Hyundai)" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/alesayi-motors.png" alt="العيسائي للسيارات — Alesayi Motors" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/infiniti.png" alt="إنفينيتي — INFINITI" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/fuel.png" alt="فيول لقطع غيار السيارات — Fuel Auto Parts" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/binzagr.png" alt="بن زقر — Binzagr" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/alfuttaim-eng.png" alt="الفطيم الهندسية للتقنية — Al-Futtaim Engineering &amp; Technologies" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/alminhali.png" alt="عبيد عمر المنهالي وأولاده للتجارة — Obaid Omar Al Minhali Sons Trading" loading="lazy" decoding="async" /></div>
+    <div class="tm-logo reveal"><img src="../assets/img/tm/partners/leap-to-success.png" alt="Leap To Success" loading="lazy" decoding="async" /></div>
+  </div>
+</section>
+
+<!-- ================= RESERVED: portfolio / products ================= -->
+<section class="section" id="work">
+  <div class="tm-head">
+    <p class="tm-kicker"><span class="n">03</span> <span data-en="Our Work" data-ar="أعمالنا">أعمالنا</span></p>
+    <h2 class="tm-h2 display reveal" data-en="Products &amp; portfolio" data-ar="المنتجات والأعمال">المنتجات والأعمال</h2>
+  </div>
+  <div class="tm-reserve reveal">
+    <div class="tm-reserve-box">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m3 15 5-4 4 3 4-5 5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="9" r="1.6" fill="currentColor"/></svg>
+      <span class="l" data-en="This section is reserved" data-ar="هذا القسم محجوز">هذا القسم محجوز</span>
+      <span class="s" data-en="Talawin Marha's products and portfolio — printed matter, signage and gifts — will be published here once the content is provided."
+        data-ar="ستُعرض هنا منتجات تلاوين مرحة وأعمالها من مطبوعات ولوحات وهدايا، فور توفّر المحتوى.">ستُعرض هنا منتجات تلاوين مرحة وأعمالها من مطبوعات ولوحات وهدايا، فور توفّر المحتوى.</span>
+      <span class="f" dir="ltr">work · products · portfolio</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKY GLOBAL BAND ================= -->
+<section class="section group-band" id="group" style="background:var(--t-ink)">
+  <div class="wrap">
+    <p class="eyebrow center reveal" style="color:var(--t-clay-l)" data-en="Talawin Marha × Sky Global" data-ar="تلاوين مرحة × سكاي جلوبال">تلاوين مرحة × سكاي جلوبال</p>
+    <h2 class="display reveal" data-en="A new chapter: innovation and continuous development" data-ar="مرحلة جديدة: الابتكار والتطوير المستمر">مرحلة جديدة: الابتكار والتطوير المستمر</h2>
+    <p class="reveal" style="color:#d8c7c2" data-en="Sky Global acquired Talawin Marha to develop its services in step with Vision 2030 — keeping the same commitment to clients, with the reach of a larger group behind it."
+       data-ar="استحوذت سكاي جلوبال على تلاوين مرحة لتطوير خدماتها بما يواكب رؤية 2030 — بالالتزام نفسه تجاه العملاء، وبقوة كيان أكبر يدعمها.">استحوذت سكاي جلوبال على تلاوين مرحة لتطوير خدماتها بما يواكب رؤية 2030، بالالتزام نفسه تجاه العملاء.</p>
+    <a href="../index.html#companies" class="btn btn-primary reveal" data-en="Explore Sky Global's companies" data-ar="اكتشف شركات سكاي جلوبال">اكتشف شركات سكاي جلوبال
+      <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="tm-two">
+    <div>
+      <p class="tm-kicker"><span class="n">03</span> <span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
+      <h2 class="tm-h2 display reveal" data-en="Have a project in mind?" data-ar="لديك مشروع في ذهنك؟">لديك مشروع في ذهنك؟</h2>
+      <p class="tm-p reveal" style="margin-top:1.2rem" data-en="For printed matter, signage, branded gifts, or a full idea-to-delivery project — talk to the Talawin Marha team."
+         data-ar="للمطبوعات، اللوحات، الهدايا الدعائية، أو مشروع متكامل من الفكرة إلى التنفيذ — تواصل مع فريق تلاوين مرحة.">للمطبوعات واللوحات والهدايا الدعائية أو مشروع متكامل — تواصل مع الفريق.</p>
+      <a href="mailto:info@skyglobalworld.com" class="btn btn-primary" style="margin-top:1.6rem" data-en="Contact us" data-ar="تواصل معنا">تواصل معنا</a>
+    </div>
+    <div class="reveal">
+      <div class="tm-contact-rows">
+        <div><span class="k" data-en="Email" data-ar="البريد الإلكتروني">البريد الإلكتروني</span><span class="v">info@skyglobalworld.com</span></div>
+        <div><span class="k" data-en="Phone" data-ar="الهاتف">الهاتف</span><span class="v tnum">+966 12 206 8728</span></div>
+        <div><span class="k" data-en="Location" data-ar="الموقع">الموقع</span><span class="v" data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">جدة، المملكة العربية السعودية</span></div>
+        <div><span class="k" data-en="Group" data-ar="المجموعة">المجموعة</span><span class="v" data-en="A Sky Global company" data-ar="شركة من سكاي جلوبال">شركة من سكاي جلوبال</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="tm-ft">
+  <div class="wrap">
+    <div class="tm-ft-top">
+      <div>
+        <div class="tm-ft-logo">
+          <svg class="mk" viewBox="-1.73 -0.92 99.77 96.43" aria-hidden="true"><use href="#tmMark" color="#c9b6b1"/></svg>
+          <b data-en="Talawin Marha" data-ar="تلاوين مرحة">تلاوين مرحة</b>
+        </div>
+        <p data-en="Creative and experience design in advertising and media — printed matter, signage and gifts, from idea to delivery. A Sky Global company."
+           data-ar="الإبداع وصناعة التجارب في الدعاية والإعلان — مطبوعات ولوحات وهدايا، من الفكرة إلى التنفيذ. شركة من سكاي جلوبال.">الإبداع وصناعة التجارب في الدعاية والإعلان — من الفكرة إلى التنفيذ. شركة من سكاي جلوبال.</p>
+      </div>
+      <div>
+        <h4 data-en="Sections" data-ar="الأقسام">الأقسام</h4>
+        <ul>
+          <li><a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a></li>
+          <li><a href="#partners" data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</a></li>
+          <li><a href="#work" data-en="Our Work" data-ar="أعمالنا">أعمالنا</a></li>
+          <li><a href="#group" data-en="Sky Global" data-ar="سكاي جلوبال">سكاي جلوبال</a></li>
+          <li><a href="#contact" data-en="Contact" data-ar="تواصل">تواصل</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Contact" data-ar="تواصل">تواصل</h4>
+        <ul>
+          <li><a href="mailto:info@skyglobalworld.com">info@skyglobalworld.com</a></li>
+          <li><a href="tel:+966122068728" class="tnum">+966 12 206 8728</a></li>
+          <li><a href="../index.html#companies" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tm-ft-bot">
+      <span data-en="© 2026 Talawin Marha — a Sky Global company. All rights reserved." data-ar="© 2026 تلاوين مرحة — شركة من سكاي جلوبال. جميع الحقوق محفوظة.">© 2026 تلاوين مرحة — شركة من سكاي جلوبال.</span>
+      <span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">جدة، المملكة العربية السعودية</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('tmHdr');
+  if(hdr){var s=function(){hdr.classList.toggle('scrolled',scrollY>40)};s();addEventListener('scroll',s,{passive:true});}
+  var mt=document.getElementById('tmMenuToggle'),mm=document.getElementById('tmMobile');
+  if(mt&&mm){
+    var close=function(){mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';};
+    mt.addEventListener('click',function(){var o=mm.classList.toggle('open');mt.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':'';});
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  }
+  var links=[].slice.call(document.querySelectorAll('.tm-nav a'));
+  var ids=links.map(function(a){return a.getAttribute('href').slice(1);});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=ids.indexOf(e.target.id);
+      links.forEach(function(l,n){l.classList.toggle('here',n===i);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  }
+})();
+</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
