@@ -8,6 +8,7 @@
 <meta name="description" content="Sky Global Holding is a Saudi multi-sector investment holding group that brings specialised companies under one umbrella, united by a single vision of growth, quality and governance." />
 <link rel="stylesheet" href="assets/theme.css" />
 <style>
+
 /* =====================================================================
    HOME — section styles (editorial, restrained)
    ===================================================================== */
@@ -27,8 +28,8 @@
 .story-copy > p{color:var(--ink-soft);max-width:66ch;margin-inline:auto}
 .story-copy > p + p{margin-top:1rem}
 .story-copy .link-more{margin-top:1.8rem}
-.story-media{position:relative;isolation:isolate;max-width:440px;
-  margin:clamp(2.6rem,5vw,3.8rem) auto 0}
+.story-media{position:relative;isolation:isolate;max-width:380px;
+  margin:clamp(2.2rem,4vw,3.2rem) auto 0}
 .story-media .frame{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;
   background:var(--sky-950);border:1px solid var(--line-dark)}
 .story-media .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
@@ -41,7 +42,7 @@ html[dir="rtl"] .story-cap{letter-spacing:.02em;text-transform:none;font-size:.8
 .story-quote{position:relative;margin:20px auto 0;max-width:none;text-align:center;z-index:3;
   background:#fff;color:var(--ink);padding:24px 26px;border-radius:6px;
   box-shadow:0 32px 66px -26px rgba(11,32,54,.4);border:1px solid var(--line-2)}
-.story-quote p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.42;color:var(--sky-800)}
+.story-quote p{font-family:var(--serif);font-style:italic;font-size:1rem;line-height:1.42;color:var(--sky-800)}
 html[dir="rtl"] .story-quote p{font-family:var(--ar);font-style:normal;line-height:1.75;font-size:1rem}
 .story-quote cite{display:block;margin-top:10px;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sky-600);font-style:normal;font-weight:600}
 html[dir="rtl"] .story-quote cite{letter-spacing:.02em}
@@ -89,7 +90,7 @@ html[dir="rtl"] .hrc-chip{letter-spacing:.02em}
   font-size:.72rem;font-weight:700;letter-spacing:.04em;color:#fff;
   opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
 .hrc:hover .hrc-go,.hrc:focus-within .hrc-go{opacity:1;transform:none}
-.hrc-go svg{width:13px;height:13px}
+.hrc-go svg{width:11px;height:11px}
 html[dir="rtl"] .hrc-go svg{transform:scaleX(-1)}
 
 @media (prefers-reduced-motion:reduce){
@@ -105,32 +106,35 @@ html[dir="rtl"] .hrc-go svg{transform:scaleX(-1)}
   border:1px solid var(--line-dark);border-radius:6px;overflow:hidden;max-width:var(--maxw);margin-inline:auto}
 .vm-grid > div{background:var(--sky-950);padding:clamp(32px,4.5vw,54px);text-align:center}
 .vm-grid .eyebrow{justify-content:center}
-.vm-grid .ix{font-family:var(--serif);font-size:1.9rem;color:var(--sky-500);line-height:1;margin-bottom:1.1rem;display:block}
+.vm-grid .ix{font-family:var(--serif);font-size:1.6rem;color:var(--sky-500);line-height:1;margin-bottom:1.1rem;display:block}
 html[dir="rtl"] .vm-grid .ix{font-family:var(--ar)}
 .vm-grid h3{font-family:var(--serif);font-size:var(--s2);font-weight:400;line-height:1.26;color:#fff;margin:0 auto 1rem;max-width:22ch}
 html[dir="rtl"] .vm-grid h3{font-family:var(--ar);font-weight:700;line-height:1.5}
-.vm-grid p{color:#b7c8d9;max-width:46ch;font-size:.96rem;margin-inline:auto}
+.vm-grid p{color:#b7c8d9;max-width:46ch;font-size:.9rem;margin-inline:auto}
 .values{max-width:var(--maxw);margin:clamp(2.4rem,4vw,3.4rem) auto 0;padding-inline:var(--gutter)}
 .values .eyebrow{justify-content:center}
 .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);
   border:1px solid var(--line-dark);border-radius:6px;overflow:hidden}
 .value{background:var(--sky-950);padding:clamp(24px,3vw,36px);text-align:center}
-.value .vn{font-size:1.12rem;font-weight:700;margin-bottom:.5rem;display:flex;align-items:baseline;justify-content:center;gap:.55em;color:#fff}
+.value .vn{font-size:1rem;font-weight:700;margin-bottom:.5rem;display:flex;align-items:baseline;justify-content:center;gap:.55em;color:#fff}
 .value .vn i{font-size:.72rem;font-weight:700;color:var(--sky-400);font-style:normal;letter-spacing:.08em}
-.value p{font-size:.9rem;color:#a9bccd;max-width:34ch;margin-inline:auto}
+.value p{font-size:.84rem;color:#a9bccd;max-width:34ch;margin-inline:auto}
 
 /* ---- GROUP SERVICES ---- */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
-.svc{border:1px solid var(--line);border-radius:6px;padding:clamp(26px,3vw,36px);transition:border-color .3s,transform .3s var(--ease)}
+.svc{text-align:center;border:1px solid var(--line);border-radius:6px;padding:clamp(22px,2.6vw,30px);transition:border-color .3s,transform .3s var(--ease)}
 .svc:hover{border-color:var(--sky-400);transform:translateY(-3px)}
-.svc svg{width:26px;height:26px;color:var(--sky-600);margin-bottom:16px}
-.svc h4{font-size:1.1rem;margin-bottom:1rem}
-.svc ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.svc li{font-size:.9rem;color:var(--ink-soft);padding-inline-start:1.1em;position:relative}
-.svc li::before{content:"";position:absolute;inset-inline-start:0;inset-block-start:.58em;width:5px;height:5px;background:var(--sky-400);border-radius:999px}
+.svc svg{width:22px;height:22px;color:var(--sky-600);margin:0 auto 14px}
+.svc h4{font-size:1.05rem;margin-bottom:.9rem}
+.svc ul{list-style:none;display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.svc li{font-size:.88rem;color:var(--ink-soft);text-align:center}
+#services .s-head{text-align:center}
+#services .s-head .eyebrow{justify-content:center}
+#services .s-head h2,#services .s-head .lead{margin-inline:auto}
 
 /* ---- OUR PEOPLE — full-bleed photo cards ---- */
-.people-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.people-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.people-grid .pcard{flex:0 0 calc(25% - 12px)}
 .pcard{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;isolation:isolate;
   border:1px solid rgba(255,255,255,.12);background:var(--sky-950);
   transition:box-shadow .45s var(--ease)}
@@ -157,17 +161,17 @@ html[dir="rtl"] .pcard-initials{font-family:var(--ar);transform:translate(50%,-6
   linear-gradient(0deg,rgba(30,72,117,.94) 0%,rgba(30,72,117,.55) 24%,rgba(18,48,73,.16) 48%,transparent 70%)}
 
 .pcard-foot{position:absolute;inset-inline:0;inset-block-end:0;z-index:2;
-  padding:clamp(20px,3vw,30px);display:flex;flex-direction:column;align-items:flex-start;gap:.28rem}
+  padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;align-items:flex-start;gap:.28rem}
 .pcard-ph{position:absolute;inset-block-start:16px;inset-inline-start:16px;z-index:2}
-.pcard-name{font-size:clamp(1.2rem,1rem + .7vw,1.5rem);font-weight:700;color:#fff}
-.pcard-role{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sky-300)}
+.pcard-name{font-size:clamp(1.05rem,.95rem + .4vw,1.25rem);font-weight:700;color:#fff}
+.pcard-role{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sky-300)}
 html[dir="rtl"] .pcard-role{letter-spacing:.02em;text-transform:none;font-size:.86rem}
 .pcard-btn{margin-top:.95rem;display:inline-flex;align-items:center;gap:.5em;
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;
-  font-weight:600;font-size:.8rem;letter-spacing:.02em;padding:9px 16px;border-radius:999px;
+  font-weight:600;font-size:.74rem;letter-spacing:.02em;padding:8px 14px;border-radius:999px;
   backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
   transition:background .3s,border-color .3s}
-.pcard-btn .arr{width:14px;height:14px;transition:transform .3s var(--ease)}
+.pcard-btn .arr{width:12px;height:12px;transition:transform .3s var(--ease)}
 .pcard-btn:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.55)}
 .pcard-btn:hover .arr{transform:translateX(4px)}
 html[dir="rtl"] .pcard-btn .arr{transform:scaleX(-1)}
@@ -176,17 +180,17 @@ html[dir="rtl"] .pcard-btn:hover .arr{transform:scaleX(-1) translateX(4px)}
 /* bio reveal — slides up over the card */
 .pcard-bio{position:absolute;inset:0;z-index:3;background:rgba(7,20,34,.95);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  padding:clamp(24px,3.6vw,40px);display:flex;flex-direction:column;justify-content:flex-end;gap:1.1rem;
+  padding:clamp(18px,2vw,26px);display:flex;flex-direction:column;justify-content:flex-end;gap:.9rem;
   transform:translateY(101%);visibility:hidden;
   transition:transform .5s var(--ease-out),visibility 0s linear .5s}
 .pcard.bio-open .pcard-bio{transform:translateY(0);visibility:visible;
   transition:transform .5s var(--ease-out)}
 .pcard-bio .pcard-name{margin-bottom:.1rem}
-.pcard-bio p{color:#cddcea;font-size:.94rem;line-height:1.7}
+.pcard-bio p{color:#cddcea;font-size:.84rem;line-height:1.7}
 html[dir="rtl"] .pcard-bio p{line-height:1.9}
 .pcard-close{align-self:flex-start;display:inline-flex;align-items:center;gap:.5em;
   color:var(--sky-300);font-weight:600;font-size:.8rem;letter-spacing:.02em}
-.pcard-close svg{width:13px;height:13px}
+.pcard-close svg{width:11px;height:11px}
 .pcard-close:hover{color:#fff}
 
 @media (prefers-reduced-motion:reduce){
@@ -196,14 +200,14 @@ html[dir="rtl"] .pcard-bio p{line-height:1.9}
 
 /* ---- BY THE NUMBERS ---- */
 .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;max-width:var(--maxw);margin-inline:auto}
-.numbers-grid .cell{background:var(--paper);padding:clamp(28px,3vw,42px) 24px}
-.numbers-grid svg{width:22px;height:22px;color:var(--sky-500);margin-bottom:12px}
+.numbers-grid .cell{background:var(--paper);padding:clamp(24px,2.6vw,36px) 20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.numbers-grid svg{width:18px;height:18px;color:var(--sky-500);margin:0 auto 10px}
 .numbers-grid .n{font-family:var(--serif);font-size:var(--s4);font-weight:300;color:var(--sky-700);line-height:1}
 html[dir="rtl"] .numbers-grid .n{font-family:var(--ar);font-weight:400}
-.numbers-grid .l{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-top:.5rem}
-html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:.9rem}
+.numbers-grid .l{text-align:center;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-top:.5rem}
+html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:.85rem}
 .numbers-grid .l .ph{display:block;color:var(--sky-400);font-size:.9em;margin-top:2px}
-.numbers .note{max-width:var(--maxw);margin:1.3rem auto 0;padding-inline:var(--gutter);font-size:.8rem;color:var(--gray)}
+.numbers .note{max-width:var(--maxw);margin:1.3rem auto 0;padding-inline:var(--gutter);font-size:.8rem;color:var(--gray);text-align:center}
 
 @media (max-width:1080px){
   .story-grid,.vm-grid{grid-template-columns:1fr}
@@ -213,12 +217,12 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
   .values-grid,.svc-grid{grid-template-columns:1fr 1fr}
   .numbers-grid{grid-template-columns:1fr 1fr}
 }
-@media (min-width:1081px){
-  .pcard{aspect-ratio:1/1}
-}
+@media (max-width:1080px){ .people-grid .pcard{flex-basis:calc(33.333% - 11px)} }
+@media (max-width:760px){ .people-grid .pcard{flex-basis:calc(50% - 8px)} }
+@media (max-width:480px){ .people-grid .pcard{flex-basis:100%} }
 @media (max-width:860px){ .hrc{flex-basis:calc(50% - 8px)} }
 @media (max-width:640px){
-  .values-grid,.svc-grid,.numbers-grid,.people-grid{grid-template-columns:1fr}
+  .values-grid,.svc-grid,.numbers-grid{grid-template-columns:1fr}
 }
 @media (max-width:460px){ .hrc{flex-basis:100%;aspect-ratio:5/6} }
 /* touch / no-hover: keep every card readable, drop the recede effect */
@@ -227,6 +231,8 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
     transform:none;filter:none;opacity:1}
   .hrc-go{opacity:1;transform:none}
 }
+
+
 </style>
 </head>
 <body id="top" class="hero-photo">
@@ -253,7 +259,7 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
     <a href="#story" data-en="About Us" data-ar="من نحن">About Us</a>
     <div class="has-sub">
       <button type="button" aria-haspopup="true" aria-expanded="false" data-subtoggle
-              data-en="Our Companies" data-ar="شراكتنا">Our Companies
+              data-en="Our Companies" data-ar="شركاتنا">Our Companies
         <svg class="caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="nav-sub" role="menu">
@@ -284,7 +290,7 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
 <div class="mobile-menu" id="mobileMenu">
   <a href="#story" data-en="About Us" data-ar="من نحن">About Us</a>
   <div class="mm-group">
-    <span data-en="Our Companies" data-ar="شراكتنا">Our Companies</span>
+    <span data-en="Our Companies" data-ar="شركاتنا">Our Companies</span>
     <div class="mm-sub">
       <a href="companies/fluiday-auto.html" data-en="Fluiday Auto" data-ar="فلوداي أوتو">Fluiday Auto</a>
       <a href="companies/nheroes.html" data-en="NHeroes" data-ar="إن هيروز">NHeroes</a>
@@ -329,9 +335,9 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
 
   <div class="hero-inner" data-load>
     <p class="kicker" data-en="Multi-sector holding group · Saudi Arabia" data-ar="منظومة أعمال متعددة القطاعات · المملكة العربية السعودية">Multi-sector holding group · Saudi Arabia</p>
-    <h1 class="display hero-tag"
-        data-en="A business ecosystem <em>without limits</em>"
-        data-ar="منظومة أعمال <em>تتسع بلا حدود</em>">A business ecosystem <em>without limits</em></h1>
+    <h1 class="display hero-tag one-line"
+        data-en="From an idea under one sky… to an ecosystem"
+        data-ar="من فكرة تحت سماء واحدة… إلى منظومة">From an idea under one sky… to an ecosystem</h1>
     <p class="sub"
        data-en="We build the companies of today to create the opportunities of tomorrow — specialised companies under one umbrella, each independent in its market, united by a single vision of growth, quality and governance."
        data-ar="نبني شركات اليوم لنصنع فرص الغد — شركات متخصصة تحت مظلة واحدة، تعمل باستقلالية في أسواقها، وتلتقي تحت رؤية واحدة تقوم على النمو، الجودة، والحوكمة.">We build the companies of today to create the opportunities of tomorrow.</p>
@@ -515,7 +521,7 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
 
 <!-- ================= GROUP SERVICES ================= -->
 <section class="section tint" id="services">
-  <div class="s-head">
+  <div class="s-head center">
     <p class="eyebrow reveal" data-en="Group Services" data-ar="خدمات المجموعة">Group Services</p>
     <h2 class="h-sec display reveal" data-en="Shared functions that support every company" data-ar="إدارات مشتركة تدعم كل شركة">Shared functions that support every company</h2>
     <p class="lead reveal" data-en="Alongside its companies, Sky Global runs internal group functions that give each company the standards, structure and support it needs to focus on its market."
@@ -559,7 +565,7 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
 <!-- ================= OUR PEOPLE ================= -->
 <section class="section dark" id="people">
   <div class="s-head center">
-    <p class="eyebrow reveal" data-en="Our People" data-ar="قيادتنا">Our People</p>
+    <p class="eyebrow reveal" data-en="Our People" data-ar="الفريق">Our People</p>
     <h2 class="h-sec display reveal" style="max-width:22ch" data-en="Leadership that believes building companies is building the future" data-ar="قيادة تؤمن بأن بناء الشركات هو بناء للمستقبل">Leadership that believes building companies is building the future</h2>
     <p class="lead reveal" data-en="Sky Global is led by its founders, with a vision built on a scalable business ecosystem that unites ambition with discipline, and opportunity with execution."
        data-ar="يقود سكاي جلوبال المؤسسان هشام المفلحي ووجدي بامفلح، برؤية تقوم على بناء منظومة أعمال قابلة للنمو والتوسع، تجمع بين الطموح والانضباط، وبين الفرص والتنفيذ.">Sky Global is led by its founders.</p>
@@ -613,6 +619,132 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
         <h3 class="pcard-name" data-en="Wajdi Bamfleh" data-ar="وجدي بامفلح">Wajdi Bamfleh</h3>
         <p data-en="[Official biography to be added: experience, specialisation, key achievements, and the area he leads within the group.]"
            data-ar="[يضاف هنا نبذة المؤسس الرسمية: الخبرات، التخصص، أبرز الإنجازات، والجانب الذي يقوده داخل المجموعة.]">[Official biography to be added: experience, specialisation, key achievements, and the area he leads within the group.]</p>
+        <button class="pcard-close" type="button" data-bio-close>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-en="Close" data-ar="إغلاق">Close</span>
+        </button>
+      </div>
+    </article>
+
+
+    <article class="pcard reveal">
+      <div class="pcard-media" aria-hidden="true">
+        <div class="pcard-tone"></div>
+        <svg class="pcard-mono" viewBox="0 0 1476.09 1343.36"><use href="#sgMark" fill="currentColor"/></svg>
+      </div>
+      <div class="pcard-scrim" aria-hidden="true"></div>
+      <span class="pcard-ph ph-note" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)" data-en="Photo to be provided" data-ar="الصورة قيد التزويد">Photo to be provided</span>
+      <div class="pcard-foot">
+        <h3 class="pcard-name" data-en="Team member 3" data-ar="عضو الفريق 3">Team member 3</h3>
+        <p class="pcard-role" data-en="Role to be provided" data-ar="المسمى الوظيفي قيد التزويد">Role to be provided</p>
+        <button class="pcard-btn" type="button" data-bio-toggle aria-expanded="false" aria-controls="bio-t3">
+          <span data-en="Read bio" data-ar="اقرأ النبذة">Read bio</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="pcard-bio" id="bio-t3" data-bio aria-hidden="true">
+        <h3 class="pcard-name" data-en="Team member 3" data-ar="عضو الفريق 3">Team member 3</h3>
+        <p data-en="[Official biography to be added.]" data-ar="[تضاف هنا النبذة الرسمية.]">[Official biography to be added.]</p>
+        <button class="pcard-close" type="button" data-bio-close>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-en="Close" data-ar="إغلاق">Close</span>
+        </button>
+      </div>
+    </article>
+
+    <article class="pcard reveal">
+      <div class="pcard-media" aria-hidden="true">
+        <div class="pcard-tone"></div>
+        <svg class="pcard-mono" viewBox="0 0 1476.09 1343.36"><use href="#sgMark" fill="currentColor"/></svg>
+      </div>
+      <div class="pcard-scrim" aria-hidden="true"></div>
+      <span class="pcard-ph ph-note" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)" data-en="Photo to be provided" data-ar="الصورة قيد التزويد">Photo to be provided</span>
+      <div class="pcard-foot">
+        <h3 class="pcard-name" data-en="Team member 4" data-ar="عضو الفريق 4">Team member 4</h3>
+        <p class="pcard-role" data-en="Role to be provided" data-ar="المسمى الوظيفي قيد التزويد">Role to be provided</p>
+        <button class="pcard-btn" type="button" data-bio-toggle aria-expanded="false" aria-controls="bio-t4">
+          <span data-en="Read bio" data-ar="اقرأ النبذة">Read bio</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="pcard-bio" id="bio-t4" data-bio aria-hidden="true">
+        <h3 class="pcard-name" data-en="Team member 4" data-ar="عضو الفريق 4">Team member 4</h3>
+        <p data-en="[Official biography to be added.]" data-ar="[تضاف هنا النبذة الرسمية.]">[Official biography to be added.]</p>
+        <button class="pcard-close" type="button" data-bio-close>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-en="Close" data-ar="إغلاق">Close</span>
+        </button>
+      </div>
+    </article>
+
+    <article class="pcard reveal">
+      <div class="pcard-media" aria-hidden="true">
+        <div class="pcard-tone"></div>
+        <svg class="pcard-mono" viewBox="0 0 1476.09 1343.36"><use href="#sgMark" fill="currentColor"/></svg>
+      </div>
+      <div class="pcard-scrim" aria-hidden="true"></div>
+      <span class="pcard-ph ph-note" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)" data-en="Photo to be provided" data-ar="الصورة قيد التزويد">Photo to be provided</span>
+      <div class="pcard-foot">
+        <h3 class="pcard-name" data-en="Team member 5" data-ar="عضو الفريق 5">Team member 5</h3>
+        <p class="pcard-role" data-en="Role to be provided" data-ar="المسمى الوظيفي قيد التزويد">Role to be provided</p>
+        <button class="pcard-btn" type="button" data-bio-toggle aria-expanded="false" aria-controls="bio-t5">
+          <span data-en="Read bio" data-ar="اقرأ النبذة">Read bio</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="pcard-bio" id="bio-t5" data-bio aria-hidden="true">
+        <h3 class="pcard-name" data-en="Team member 5" data-ar="عضو الفريق 5">Team member 5</h3>
+        <p data-en="[Official biography to be added.]" data-ar="[تضاف هنا النبذة الرسمية.]">[Official biography to be added.]</p>
+        <button class="pcard-close" type="button" data-bio-close>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-en="Close" data-ar="إغلاق">Close</span>
+        </button>
+      </div>
+    </article>
+
+    <article class="pcard reveal">
+      <div class="pcard-media" aria-hidden="true">
+        <div class="pcard-tone"></div>
+        <svg class="pcard-mono" viewBox="0 0 1476.09 1343.36"><use href="#sgMark" fill="currentColor"/></svg>
+      </div>
+      <div class="pcard-scrim" aria-hidden="true"></div>
+      <span class="pcard-ph ph-note" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)" data-en="Photo to be provided" data-ar="الصورة قيد التزويد">Photo to be provided</span>
+      <div class="pcard-foot">
+        <h3 class="pcard-name" data-en="Team member 6" data-ar="عضو الفريق 6">Team member 6</h3>
+        <p class="pcard-role" data-en="Role to be provided" data-ar="المسمى الوظيفي قيد التزويد">Role to be provided</p>
+        <button class="pcard-btn" type="button" data-bio-toggle aria-expanded="false" aria-controls="bio-t6">
+          <span data-en="Read bio" data-ar="اقرأ النبذة">Read bio</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="pcard-bio" id="bio-t6" data-bio aria-hidden="true">
+        <h3 class="pcard-name" data-en="Team member 6" data-ar="عضو الفريق 6">Team member 6</h3>
+        <p data-en="[Official biography to be added.]" data-ar="[تضاف هنا النبذة الرسمية.]">[Official biography to be added.]</p>
+        <button class="pcard-close" type="button" data-bio-close>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span data-en="Close" data-ar="إغلاق">Close</span>
+        </button>
+      </div>
+    </article>
+
+    <article class="pcard reveal">
+      <div class="pcard-media" aria-hidden="true">
+        <div class="pcard-tone"></div>
+        <svg class="pcard-mono" viewBox="0 0 1476.09 1343.36"><use href="#sgMark" fill="currentColor"/></svg>
+      </div>
+      <div class="pcard-scrim" aria-hidden="true"></div>
+      <span class="pcard-ph ph-note" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)" data-en="Photo to be provided" data-ar="الصورة قيد التزويد">Photo to be provided</span>
+      <div class="pcard-foot">
+        <h3 class="pcard-name" data-en="Team member 7" data-ar="عضو الفريق 7">Team member 7</h3>
+        <p class="pcard-role" data-en="Role to be provided" data-ar="المسمى الوظيفي قيد التزويد">Role to be provided</p>
+        <button class="pcard-btn" type="button" data-bio-toggle aria-expanded="false" aria-controls="bio-t7">
+          <span data-en="Read bio" data-ar="اقرأ النبذة">Read bio</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="pcard-bio" id="bio-t7" data-bio aria-hidden="true">
+        <h3 class="pcard-name" data-en="Team member 7" data-ar="عضو الفريق 7">Team member 7</h3>
+        <p data-en="[Official biography to be added.]" data-ar="[تضاف هنا النبذة الرسمية.]">[Official biography to be added.]</p>
         <button class="pcard-close" type="button" data-bio-close>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           <span data-en="Close" data-ar="إغلاق">Close</span>
@@ -705,7 +837,7 @@ html[dir="rtl"] .numbers-grid .l{letter-spacing:0;text-transform:none;font-size:
           <li><a href="#companies" data-en="Our Companies" data-ar="شركاتنا">Our Companies</a></li>
           <li><a href="#purpose" data-en="Our Purpose" data-ar="رؤيتنا ورسالتنا">Our Purpose</a></li>
           <li><a href="#services" data-en="Group Services" data-ar="خدمات المجموعة">Group Services</a></li>
-          <li><a href="#people" data-en="Our People" data-ar="قيادتنا">Our People</a></li>
+          <li><a href="#people" data-en="Our People" data-ar="الفريق">Our People</a></li>
           <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
         </ul>
       </div>

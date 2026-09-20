@@ -1,0 +1,13 @@
+# Normalise text line endings; treat binaries as binary
+* text=auto
+
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.webp  binary
+*.gif   binary
+*.ico   binary
+*.mp4   binary
+*.webm  binary
+*.woff  binary
+*.woff2 binary
