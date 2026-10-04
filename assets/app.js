@@ -79,30 +79,6 @@
     addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
   }
 
-  /* ---------- leadership cards: bio reveal ---------- */
-  document.querySelectorAll('[data-bio-toggle]').forEach(function (btn) {
-    var card = btn.closest('.pcard');
-    if (!card) return;
-    var panel = card.querySelector('[data-bio]');
-    var closeBtn = card.querySelector('[data-bio-close]');
-    var supportsInert = 'inert' in HTMLElement.prototype;
-    function set(open) {
-      card.classList.toggle('bio-open', open);
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (panel) {
-        panel.setAttribute('aria-hidden', open ? 'false' : 'true');
-        if (supportsInert) panel.inert = !open;
-      }
-      if (open && closeBtn) closeBtn.focus();
-    }
-    set(false);
-    btn.addEventListener('click', function () { set(!card.classList.contains('bio-open')); });
-    if (closeBtn) closeBtn.addEventListener('click', function () { set(false); btn.focus(); });
-    card.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && card.classList.contains('bio-open')) { set(false); btn.focus(); }
-    });
-  });
-
   /* ---------- footer newsletter (no backend yet — inline acknowledgement) ---------- */
   document.querySelectorAll('[data-newsletter]').forEach(function (form) {
     form.addEventListener('submit', function (e) {

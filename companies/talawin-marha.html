@@ -38,10 +38,10 @@ html{scroll-padding-top:var(--t-hdr)}
 .tm .section.tint{background:var(--t-paper-2)}
 .tm-wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .tm-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);margin-bottom:clamp(2.6rem,4.5vw,4rem)}
-.tm-kicker{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+.tm-kicker{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
   color:var(--t-clay);display:inline-flex;align-items:center;gap:.9em;margin-bottom:1.3rem}
-html[dir="rtl"] .tm-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:.92rem}
-.tm-kicker .n{border:1px solid color-mix(in srgb,var(--t-clay) 42%,transparent);border-radius:2px;padding:2px 7px;font-size:.7rem;letter-spacing:.08em}
+html[dir="rtl"] .tm-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:15px}
+.tm-kicker .n{border:1px solid color-mix(in srgb,var(--t-clay) 42%,transparent);border-radius:2px;padding:2px 7px;font-size:15px;letter-spacing:.08em}
 .tm .dark .tm-kicker{color:var(--t-clay-l)}
 .tm-h2{font-family:var(--serif);font-weight:400;font-size:var(--s4);line-height:1.08;letter-spacing:-.015em;max-width:20ch}
 html[dir="rtl"] .tm-h2{font-family:var(--ar);font-weight:700;line-height:1.28;letter-spacing:0;max-width:26ch}
@@ -53,7 +53,7 @@ html[dir="rtl"] .tm-lead{line-height:1.95}
 html[dir="rtl"] .tm-p{line-height:1.95}
 .tm-p + .tm-p{margin-top:1rem}
 .tm .dark .tm-p{color:#d8c7c2}
-.tech{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--t-clay)}
+.tech{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--t-clay)}
 html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
 
 .tm .btn-primary{background:var(--t-clay);color:#fff}
@@ -72,29 +72,29 @@ html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none
 .tm-hdr-logo .mk{width:36px;height:36px;flex:none;padding:5px;border-radius:999px;background:#faf5f1;
   box-shadow:0 2px 12px rgba(0,0,0,.18);transition:width .4s var(--ease),height .4s var(--ease),box-shadow .4s}
 .tm-hdr.scrolled .tm-hdr-logo .mk{width:32px;height:32px;box-shadow:none;border:1px solid var(--t-line)}
-.tm-hdr-logo .wm{font-family:var(--ar);font-weight:700;font-size:1.05rem;letter-spacing:.01em}
-.tm-hdr-logo .wm-en{font-family:var(--sans);font-weight:800;font-size:.8rem;letter-spacing:.1em}
+.tm-hdr-logo .wm{font-family:var(--ar);font-weight:700;font-size:15px;letter-spacing:.01em}
+.tm-hdr-logo .wm-en{font-family:var(--sans);font-weight:800;font-size:15px;letter-spacing:.1em}
 
 .tm-nav{display:flex;gap:28px;align-items:center}
-.tm-nav a{font-size:.9rem;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.86);padding:8px 2px;position:relative;transition:color .3s}
-html[dir="rtl"] .tm-nav a{font-weight:700;font-size:1rem}
+.tm-nav a{font-size:17px;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.86);padding:8px 2px;position:relative;transition:color .3s}
+html[dir="rtl"] .tm-nav a{font-weight:700;font-size:17px}
 .tm-hdr.scrolled .tm-nav a{color:var(--t-ink-2)}
 .tm-nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:0;width:0;height:2px;background:var(--t-clay);transition:width .3s var(--ease)}
 .tm-nav a:hover{color:#fff}
 .tm-hdr.scrolled .tm-nav a:hover{color:var(--t-clay)}
 .tm-nav a:hover::after,.tm-nav a.here::after{width:100%}
 .tm-hdr-r{flex:none;display:flex;align-items:center;gap:12px}
-.tm-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:.82rem;padding:9px 15px}
+.tm-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:16px;padding:9px 15px}
 .tm-hdr.scrolled .tm-hdr-r .lang{color:var(--t-ink);border-color:var(--t-line)}
 .tm-hdr-r .lang:hover{border-color:var(--t-clay);color:var(--t-clay)}
-.tm-hdr-r .btn-ghost{padding:10px 20px;font-size:.84rem}
+.tm-hdr-r .btn-ghost{padding:10px 20px;font-size:16px}
 .tm-hdr.scrolled .tm-hdr-r .btn-ghost{border-color:var(--t-line);color:var(--t-ink)}
 .tm-hdr.scrolled .tm-hdr-r .btn-ghost:hover{background:var(--t-clay);border-color:var(--t-clay);color:#fff}
 .tm-menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:#fff}
 .tm-hdr.scrolled .tm-menu-toggle{color:var(--t-ink)}
 
 .tm-back{position:absolute;inset-block-start:calc(var(--t-hdr) + 16px);inset-inline-start:var(--gutter);z-index:6;
-  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.66);
+  font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.66);
   display:inline-flex;align-items:center;gap:.55em;transition:color .3s}
 html[dir="rtl"] .tm-back{font-family:var(--ar);letter-spacing:0;font-weight:700}
 .tm-back:hover{color:#fff}
@@ -104,7 +104,7 @@ html[dir="rtl"] .tm-back svg{transform:scaleX(-1)}
 .tm-mobile{position:fixed;inset:0;z-index:98;background:var(--t-ink);color:#fff;display:flex;flex-direction:column;
   justify-content:center;gap:2px;padding:var(--gutter);transform:translateY(-100%);transition:transform .5s var(--ease);overflow-y:auto}
 .tm-mobile.open{transform:none}
-.tm-mobile a{font-size:1.35rem;font-weight:400;padding:14px 0;border-bottom:1px solid var(--t-line-d)}
+.tm-mobile a{font-size:18px;font-weight:400;padding:14px 0;border-bottom:1px solid var(--t-line-d)}
 .tm-mobile .btn{align-self:flex-start;margin-top:22px}
 @media (max-width:1040px){ .tm-nav{display:none} .tm-menu-toggle{display:flex} .tm-hdr-r .btn-ghost{display:none} }
 
@@ -137,7 +137,7 @@ html[dir="rtl"] .tm-back svg{transform:scaleX(-1)}
 .tm-hero-logo .wm{font-family:var(--ar);font-weight:700;font-size:clamp(1.9rem,1.2rem + 3vw,3.4rem);color:#fff;line-height:1}
 .tm-hero-tagline{font-size:var(--s1);font-weight:400;line-height:1.6;color:rgba(255,255,255,.95);max-width:46ch;text-shadow:0 2px 22px rgba(0,0,0,.5)}
 html[dir="rtl"] .tm-hero-tagline{line-height:2}
-.tm-hero-center .btn{font-size:.96rem;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(115,44,44,.75)}
+.tm-hero-center .btn{font-size:16px;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(115,44,44,.75)}
 .tm-hero-scroll{position:absolute;z-index:3;inset-block-end:24px;inset-inline:0;margin-inline:auto;width:34px;height:34px;
   display:grid;place-items:center;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.25);border-radius:999px;transition:.3s}
 .tm-hero-scroll:hover{color:#fff;border-color:rgba(255,255,255,.6)}
@@ -151,20 +151,82 @@ html[dir="rtl"] .tm-hero-tagline{line-height:2}
 .tm-specrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--t-line);border:1px solid var(--t-line);
   border-radius:8px;overflow:hidden;max-width:var(--maxw);margin:0 auto clamp(2.6rem,4vw,3.6rem)}
 .tm-specrow div{background:var(--t-paper);padding:18px 22px}
-.tm-specrow .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
-html[dir="rtl"] .tm-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.78rem}
-.tm-specrow .v{font-size:1rem;font-weight:700;margin-top:5px}
+.tm-specrow .k{font-family:var(--mono);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .tm-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:15px}
+.tm-specrow .v{font-size:16px;font-weight:700;margin-top:5px}
 .tm-specrow .v b{color:var(--t-clay)}
 .tm-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.6rem}
-.tm-chip{display:inline-flex;align-items:center;gap:.55em;border:1px solid var(--t-line);border-radius:999px;padding:10px 18px;font-weight:700;font-size:.95rem}
+.tm-chip{display:inline-flex;align-items:center;gap:.55em;border:1px solid var(--t-line);border-radius:999px;padding:10px 18px;font-weight:700;font-size:16px}
 .tm-chip .d{width:7px;height:7px;border-radius:999px;background:var(--t-clay);flex:none}
 .tm-chip:nth-child(2) .d{background:var(--t-amber)}
 .tm-chip:nth-child(3) .d{background:var(--t-clay-l)}
 .tm-aside{border:1px solid var(--t-line);border-radius:12px;padding:clamp(24px,3vw,34px);background:var(--t-paper-2)}
 .tm-aside .ix{font-family:var(--serif);font-size:1.8rem;color:var(--t-clay);line-height:1;display:block;margin-bottom:1rem}
 html[dir="rtl"] .tm-aside .ix{font-family:var(--ar)}
-.tm-aside p{color:var(--ink-soft);font-size:.98rem}
+.tm-aside p{color:var(--ink-soft);font-size:17px}
 html[dir="rtl"] .tm-aside p{line-height:1.95}
+
+/* ---------- OUR DIVISIONS (bento grid + expanding-card interaction) ----------
+   Vanilla-JS recreation of a "LayoutGrid" expand-on-click component (no React/
+   framer-motion here — see /future-react-components/layout-grid.tsx for the
+   Next.js version). Data lives in #tm-divisions-content so photos/text can be
+   swapped without touching this script. Colours reused: --t-clay/--t-ink. */
+.tm-div-grid{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
+  display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:320px 230px;gap:16px}
+.tm-div-card{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:var(--t-ink);
+  outline:none;-webkit-tap-highlight-color:transparent}
+.tm-div-card.size-lg{grid-column:1/3;grid-row:1}
+.tm-div-card.size-sm{grid-column:3/4;grid-row:1}
+.tm-div-card.size-wide{grid-column:1/4;grid-row:2}
+.tm-div-card:focus-visible{outline:3px solid var(--t-amber);outline-offset:3px}
+.tm-div-card.is-source{opacity:0;pointer-events:none}
+.tm-div-card .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.001);
+  transition:transform .6s var(--ease)}
+.tm-div-card:hover .ph,.tm-div-card:focus-visible .ph{transform:scale(1.07)}
+.tm-div-card .grad{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(20,10,10,.84) 0%,rgba(20,10,10,.32) 48%,rgba(20,10,10,0) 74%);
+  transition:background .4s var(--ease)}
+.tm-div-card:hover .grad,.tm-div-card:focus-visible .grad{background:linear-gradient(0deg,rgba(20,10,10,.92) 0%,rgba(20,10,10,.48) 52%,rgba(20,10,10,.04) 78%)}
+.tm-div-card .exp{position:absolute;inset-block-start:14px;inset-inline-end:14px;z-index:1;width:34px;height:34px;
+  border-radius:999px;background:rgba(20,10,10,.4);display:grid;place-items:center;color:#fff;
+  opacity:0;transform:scale(.82);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.tm-div-card:hover .exp,.tm-div-card:focus-visible .exp{opacity:1;transform:scale(1)}
+.tm-div-card .exp svg{width:14px;height:14px}
+.tm-div-card .cap{position:absolute;inset-inline:0;inset-block-end:0;padding:18px 20px;z-index:1}
+.tm-div-card .title{display:block;color:#fff;font-weight:800;font-size:24px;line-height:1.3;text-shadow:0 2px 14px rgba(0,0,0,.4)} /* prominent card title, treated like an H3 — 22–26px band */
+html[dir="rtl"] .tm-div-card .title{font-family:var(--ar)}
+@media (max-width:900px){
+  .tm-div-grid{grid-template-columns:1fr;grid-template-rows:none;gap:14px}
+  .tm-div-card{grid-column:1/-1!important;grid-row:auto!important;height:250px}
+}
+
+/* overlay + expanded panel — position:fixed clone animated box-model FLIP */
+.tm-div-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.3);opacity:0;cursor:pointer;
+  transition:opacity .3s var(--ease)}
+.tm-div-overlay.show{opacity:1}
+.tm-div-panel{position:fixed;z-index:201;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px -18px rgba(0,0,0,.5);
+  transition:top .35s var(--ease),left .35s var(--ease),width .35s var(--ease),height .35s var(--ease)}
+.tm-div-panel .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tm-div-panel .grad{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(20,10,10,.92) 0%,rgba(20,10,10,.55) 42%,rgba(20,10,10,.08) 72%)}
+.tm-div-panel .cap{position:absolute;inset-inline:0;inset-block-end:0;padding:clamp(20px,4vw,40px);z-index:1;
+  transform:translateY(14px);opacity:0;transition:opacity .35s var(--ease) .1s,transform .35s var(--ease) .1s}
+.tm-div-panel.content-in .cap{opacity:1;transform:none}
+.tm-div-panel .title{display:block;color:#fff;font-weight:800;font-size:24px;
+  margin-bottom:.6rem;text-shadow:0 2px 14px rgba(0,0,0,.4)} /* prominent panel title, treated like an H3 — 22–26px band */
+html[dir="rtl"] .tm-div-panel .title{font-family:var(--ar)}
+.tm-div-panel .desc{color:#f0e7e3;font-size:17px;max-width:56ch;line-height:1.7}
+html[dir="rtl"] .tm-div-panel .desc{font-family:var(--ar);line-height:2}
+.tm-div-panel .close{position:absolute;inset-block-start:14px;inset-inline-end:14px;z-index:2;width:38px;height:38px;
+  border-radius:999px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25);color:#fff;
+  display:grid;place-items:center;opacity:0;transition:opacity .3s var(--ease) .15s,background .3s}
+.tm-div-panel.content-in .close{opacity:1}
+.tm-div-panel .close:hover{background:rgba(0,0,0,.6)}
+.tm-div-panel .close svg{width:16px;height:16px}
+body.tm-div-lock{overflow:hidden}
+@media (prefers-reduced-motion:reduce){
+  .tm-div-card .ph,.tm-div-card .grad,.tm-div-card .exp,.tm-div-panel,.tm-div-panel .cap,.tm-div-panel .close{transition:none}
+}
 
 /* ---------- SUCCESS PARTNERS ---------- */
 .tm-logos{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
@@ -173,12 +235,10 @@ html[dir="rtl"] .tm-aside p{line-height:1.95}
   display:flex;align-items:center;justify-content:center;padding:20px;
   transition:border-color .3s,box-shadow .3s var(--ease),transform .3s var(--ease)}
 .tm-logo:hover{border-color:var(--t-clay-l);box-shadow:0 16px 34px -20px rgba(115,44,44,.42);transform:translateY(-3px)}
-.tm-logo img{max-width:100%;max-height:100%;object-fit:contain;
-  filter:grayscale(1) opacity(.68);transition:filter .35s var(--ease)}
-.tm-logo:hover img{filter:grayscale(0) opacity(1)}
+.tm-logo img{max-width:100%;max-height:100%;object-fit:contain}
 @media (max-width:900px){ .tm-logos{grid-template-columns:repeat(3,1fr)} }
 @media (max-width:520px){ .tm-logos{grid-template-columns:repeat(2,1fr)} }
-@media (prefers-reduced-motion:reduce){ .tm-logo,.tm-logo img{transition:none} }
+@media (prefers-reduced-motion:reduce){ .tm-logo{transition:none} }
 
 /* ---------- RESERVED (portfolio / products) ---------- */
 .tm-reserve{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
@@ -186,40 +246,29 @@ html[dir="rtl"] .tm-aside p{line-height:1.95}
   background:repeating-linear-gradient(135deg,var(--t-paper-2) 0 12px,transparent 12px 24px),var(--t-paper);
   display:flex;flex-direction:column;align-items:center;gap:14px}
 .tm-reserve-box svg{width:30px;height:30px;color:var(--t-clay);opacity:.6}
-.tm-reserve-box .l{font-size:1rem;font-weight:700}
-.tm-reserve-box .s{font-size:.9rem;color:var(--ink-soft);max-width:44ch}
+.tm-reserve-box .l{font-size:16px;font-weight:700}
+.tm-reserve-box .s{font-size:17px;color:var(--ink-soft);max-width:44ch}
 html[dir="rtl"] .tm-reserve-box .s{line-height:1.9}
-.tm-reserve-box .f{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:#a99a95}
+.tm-reserve-box .f{font-family:var(--mono);font-size:15px;letter-spacing:.08em;color:#a99a95}
 
 /* ---------- CONTACT ---------- */
 .tm-contact-rows{margin-top:1.7rem;border-block-start:1px solid var(--t-line)}
-.tm-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--t-line);font-size:.98rem}
-.tm-contact-rows .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.tm-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--t-line);font-size:17px}
+.tm-contact-rows .k{font-family:var(--mono);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
 html[dir="rtl"] .tm-contact-rows .k{font-family:var(--ar);letter-spacing:0;text-transform:none}
 .tm-contact-rows .v{font-weight:600;text-align:end}
 
-/* ---------- FOOTER ---------- */
-.tm-ft{background:var(--t-ink);color:#b6a29d;padding-block:58px 26px;font-size:.9rem}
-.tm-ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--t-line-d)}
-.tm-ft-logo{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:1rem}
-.tm-ft-logo .mk{width:36px;height:36px;flex:none;padding:5px;border-radius:999px;background:#faf5f1}
-.tm-ft-logo b{font-family:var(--ar);font-weight:700}
-.tm-ft p{max-width:42ch}
-html[dir="rtl"] .tm-ft p{line-height:1.9}
-.tm-ft h4{color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
-html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:none}
-.tm-ft ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.tm-ft a:hover{color:#fff}
-.tm-ft-bot{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:#8a7571}
+/* ---------- FOOTER ----------
+   Structure/CSS lives in the shared assets/footer.js + theme.css .ft* rules;
+   this just re-tints the shared footer's accent to Talawin's amber. */
+footer.ft{--sky-400:var(--t-amber);--sky-500:var(--t-clay-l);--sky-600:var(--t-clay);--sky-300:var(--t-amber);}
 
 @media (max-width:1040px){
   .tm-two{grid-template-columns:1fr}
   .tm-specrow{grid-template-columns:1fr 1fr}
-  .tm-ft-top{grid-template-columns:1fr 1fr}
 }
 @media (max-width:600px){
   .tm-specrow{grid-template-columns:1fr}
-  .tm-ft-top{grid-template-columns:1fr}
   .tm-contact-rows div{flex-direction:column;gap:2px}
   .tm-contact-rows .v{text-align:start}
 }
@@ -251,6 +300,7 @@ html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
   </a>
   <nav class="tm-nav" aria-label="Sections">
     <a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a>
+    <a href="#divisions" data-en="Our Divisions" data-ar="أقسامنا">أقسامنا</a>
     <a href="#partners" data-en="Partners" data-ar="شركاء النجاح">شركاء النجاح</a>
     <a href="#group" data-en="Sky Global" data-ar="سكاي جلوبال">سكاي جلوبال</a>
     <a href="#contact" data-en="Contact" data-ar="تواصل">تواصل</a>
@@ -269,6 +319,7 @@ html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 
 <div class="tm-mobile" id="tmMobile">
   <a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a>
+  <a href="#divisions" data-en="Our Divisions" data-ar="أقسامنا">أقسامنا</a>
   <a href="#partners" data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</a>
   <a href="#work" data-en="Our Work" data-ar="أعمالنا">أعمالنا</a>
   <a href="#group" data-en="Sky Global" data-ar="سكاي جلوبال">سكاي جلوبال</a>
@@ -315,7 +366,7 @@ html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 
   <div class="tm-two">
     <div>
-      <p class="tm-kicker"><span class="n">01</span> <span data-en="About Us" data-ar="من نحن">من نحن</span></p>
+      <p class="tm-kicker"><span data-en="About Us" data-ar="من نحن">من نحن</span></p>
       <h2 class="tm-h2 display reveal" data-en="Colour, given form" data-ar="لونٌ يتجسّد شكلًا">لونٌ يتجسّد شكلًا</h2>
       <p class="tm-lead reveal" data-en="Talawin Marha is not just colours in the world of advertising and media — it is forms that take shape before you to meet your feeling and your sense of a complete artistic beauty: from an idea, to a design, to delivery, in one integrated picture of real beauty."
          data-ar="تلاوين مرحة... ليست مجرد ألوان في عالم الدعاية والإعلان فحسب، بل أشكال تتجسد أمامك لتعانق شعورك وإحساسك بالجمال الفني المتكامل — من فكرة، إلى تصميم، إلى تنفيذ، في صورة تكاملية غاية بالجمال.">تلاوين مرحة ليست مجرد ألوان، بل أشكال تتجسد أمامك — من فكرة، إلى تصميم، إلى تنفيذ.</p>
@@ -335,10 +386,197 @@ html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
   </div>
 </section>
 
+<!-- ================= OUR DIVISIONS ================= -->
+<section class="section tint" id="divisions">
+  <div class="tm-head">
+    <p class="tm-kicker"><span data-en="Our Divisions" data-ar="أقسامنا">أقسامنا</span></p>
+    <h2 class="tm-h2 display reveal" data-en="From idea to delivery, in every division" data-ar="من فكرة، إلى تصميم، إلى تنفيذ — في كل قسم">من فكرة، إلى تصميم، إلى تنفيذ — في كل قسم</h2>
+    <p class="tm-lead reveal" data-en="Three integrated service tracks covering your advertising and marketing needs. Click a division to learn more."
+       data-ar="ثلاثة مسارات عمل متكاملة تغطي احتياجاتكم الدعائية والتسويقية بالكامل — انقر على أي قسم للتعرف عليه.">ثلاثة مسارات عمل متكاملة تغطي احتياجاتكم الدعائية والتسويقية — انقر على أي قسم للتعرف عليه.</p>
+  </div>
+
+  <div class="tm-div-grid" id="tmDivGrid" aria-label="Our Divisions"></div>
+
+  <script type="application/json" id="tm-divisions-content">
+  [
+    {
+      "id": "print", "size": "lg",
+      "en": "Advertising & Print", "ar": "مطبوعات الدعاية والإعلان",
+      "descEn": "Design and execution of every kind of promotional print — brochures, booklets and company profiles, branded giveaways, and visual-identity materials — with high print quality and on-time delivery.",
+      "descAr": "تصميم وتنفيذ المطبوعات الدعائية بجميع أنواعها: البروشورات والكتيبات والملفات التعريفية، والهدايا الدعائية، ومواد الهوية البصرية، بجودة طباعة عالية وتسليم في الموعد.",
+      "img": "https://images.unsplash.com/photo-1503694978374-8a2fa686963a?q=75&w=1600&auto=format&fit=crop",
+      "altEn": "Colour print run coming off a printing press", "altAr": "مطبوعات ملونة تخرج من مكبس الطباعة"
+    },
+    {
+      "id": "events", "size": "sm",
+      "en": "Events & Conferences", "ar": "الفعاليات والمؤتمرات",
+      "descEn": "Organising and running events, conferences and exhibitions — from design and setup to booths, stages and décor — with full on-the-day execution management.",
+      "descAr": "تنظيم وتنفيذ الفعاليات والمؤتمرات والمعارض، من التصميم والتجهيز إلى الأجنحة والمنصات والديكورات، مع إدارة كاملة لليوم التنفيذي.",
+      "img": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=75&w=1400&auto=format&fit=crop",
+      "altEn": "Conference hall with a speaker presenting to an audience", "altAr": "قاعة مؤتمرات مع متحدث أمام الحضور"
+    },
+    {
+      "id": "outdoor", "size": "wide",
+      "en": "Outdoor Advertising", "ar": "اللوحات والإعلانات الخارجية",
+      "descEn": "Execution of outdoor billboards, illuminated signs, shop fronts and road signage, including obtaining the necessary permits, installation and maintenance.",
+      "descAr": "تنفيذ اللوحات الإعلانية الخارجية واللوحات المضيئة وواجهات المحلات ولوحات الطرق، مع استخراج التصاريح اللازمة والتركيب والصيانة.",
+      "img": "https://images.unsplash.com/photo-1533069027836-fa937181a8ce?q=75&w=1900&auto=format&fit=crop",
+      "altEn": "Blank outdoor billboard against a clear sky", "altAr": "لوحة إعلانية خارجية فارغة أمام سماء صافية"
+    }
+  ]
+  </script>
+  <script>
+  (function(){
+    var DATA = JSON.parse(document.getElementById('tm-divisions-content').textContent);
+    var grid = document.getElementById('tmDivGrid');
+    if (!grid) return;
+    function lang(){ return document.documentElement.lang === 'ar' ? 'ar' : 'en'; }
+    function el(tag, cls){ var n = document.createElement(tag); if (cls) n.className = cls; return n; }
+    var expIcon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3H3v6M15 21h6v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    var closeIcon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    /* ---------- build the grid cards ----------
+       NOTE: data-en/data-ar stay on the leaf <span class="title"> only, never
+       on .tm-div-card itself — app.js's global setLang() does
+       el.textContent = v on every [data-en] match, which would wipe a
+       card's img/grad children if set on the card (see Distribution-map
+       fix earlier on the Fluiday page for the same bug). */
+    DATA.forEach(function(d){
+      var card = el('div', 'tm-div-card reveal size-' + d.size);
+      card.tabIndex = 0;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-expanded', 'false');
+      card.setAttribute('aria-label', d.en + ' / ' + d.ar);
+      card.setAttribute('data-id', d.id);
+
+      var img = el('img', 'ph');
+      img.src = d.img; img.loading = 'lazy'; img.decoding = 'async';
+      img.alt = d.altEn + ' — ' + d.altAr;
+      card.appendChild(img);
+
+      var grad = el('div', 'grad'); grad.setAttribute('aria-hidden', 'true');
+      card.appendChild(grad);
+
+      var exp = el('div', 'exp'); exp.setAttribute('aria-hidden', 'true'); exp.innerHTML = expIcon;
+      card.appendChild(exp);
+
+      var cap = el('div', 'cap');
+      var title = el('span', 'title');
+      title.setAttribute('data-en', d.en); title.setAttribute('data-ar', d.ar);
+      title.textContent = lang() === 'ar' ? d.ar : d.en;
+      cap.appendChild(title);
+      card.appendChild(cap);
+
+      card.addEventListener('click', function(){ openCard(card, d); });
+      card.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){ e.preventDefault(); openCard(card, d); }
+      });
+
+      grid.appendChild(card);
+    });
+
+    /* ---------- expand / collapse (FLIP-style box-model animation) ---------- */
+    var openPanel = null;
+
+    function targetRect(){
+      var vw = innerWidth, vh = innerHeight, w, h;
+      if (vw <= 640){ w = vw * 0.9; h = vh * 0.7; }
+      else { w = Math.min(vw * 0.5, 760); h = vh * 0.5; }
+      return { top: (vh - h) / 2, left: (vw - w) / 2, width: w, height: h };
+    }
+    function applyRect(node, r){
+      node.style.top = r.top + 'px'; node.style.left = r.left + 'px';
+      node.style.width = r.width + 'px'; node.style.height = r.height + 'px';
+    }
+
+    function openCard(card, d){
+      if (openPanel) return;
+      var startRect = card.getBoundingClientRect();
+      var l = lang();
+
+      var overlay = el('div', 'tm-div-overlay');
+      document.body.appendChild(overlay);
+
+      var panel = el('div', 'tm-div-panel');
+      applyRect(panel, { top: startRect.top, left: startRect.left, width: startRect.width, height: startRect.height });
+      var img = el('img', 'ph'); img.src = d.img; img.alt = d.altEn + ' — ' + d.altAr;
+      var grad = el('div', 'grad'); grad.setAttribute('aria-hidden', 'true');
+      var cap = el('div', 'cap');
+      var title = el('span', 'title'); title.textContent = l === 'ar' ? d.ar : d.en;
+      var desc = el('p', 'desc'); desc.textContent = l === 'ar' ? d.descAr : d.descEn;
+      cap.appendChild(title); cap.appendChild(desc);
+      var closeBtn = el('button', 'close'); closeBtn.type = 'button';
+      closeBtn.setAttribute('aria-label', l === 'ar' ? 'إغلاق' : 'Close');
+      closeBtn.innerHTML = closeIcon;
+      panel.appendChild(img); panel.appendChild(grad); panel.appendChild(cap); panel.appendChild(closeBtn);
+      document.body.appendChild(panel);
+
+      card.classList.add('is-source');
+      card.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('tm-div-lock');
+
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){ applyRect(panel, targetRect()); });
+      });
+
+      /* transitionend drives the content fade-in, but it never fires when
+         prefers-reduced-motion strips the CSS transition (or in any browser
+         quirk that drops the event) — a timeout fallback guarantees the
+         title/description/close button always appear. */
+      var expandSettled = false;
+      function settleExpand(){
+        if (expandSettled) return;
+        expandSettled = true;
+        panel.classList.add('content-in');
+        panel.removeEventListener('transitionend', onExpandEnd);
+      }
+      function onExpandEnd(e){ if (e.propertyName === 'width') settleExpand(); }
+      panel.addEventListener('transitionend', onExpandEnd);
+      setTimeout(settleExpand, 450);
+
+      function onResize(){ applyRect(panel, targetRect()); }
+      addEventListener('resize', onResize);
+
+      function close(){
+        panel.classList.remove('content-in');
+        overlay.classList.remove('show');
+        removeEventListener('resize', onResize);
+        var endRect = card.getBoundingClientRect();
+        applyRect(panel, { top: endRect.top, left: endRect.left, width: endRect.width, height: endRect.height });
+        var closeSettled = false;
+        function settleClose(){
+          if (closeSettled) return;
+          closeSettled = true;
+          panel.removeEventListener('transitionend', onCloseEnd);
+          panel.remove(); overlay.remove();
+          card.classList.remove('is-source');
+          card.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('tm-div-lock');
+          card.focus();
+          openPanel = null;
+        }
+        function onCloseEnd(e){ if (e.propertyName === 'width') settleClose(); }
+        panel.addEventListener('transitionend', onCloseEnd);
+        setTimeout(settleClose, 450);
+        document.removeEventListener('keydown', onKey);
+      }
+      function onKey(e){ if (e.key === 'Escape') close(); }
+
+      overlay.addEventListener('click', close);
+      closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', onKey);
+      requestAnimationFrame(function(){ overlay.classList.add('show'); });
+
+      openPanel = { close: close };
+    }
+  })();
+  </script>
+</section>
+
 <!-- ================= SUCCESS PARTNERS ================= -->
 <section class="section tint" id="partners">
   <div class="tm-head">
-    <p class="tm-kicker"><span class="n">02</span> <span data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</span></p>
+    <p class="tm-kicker"><span data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</span></p>
     <h2 class="tm-h2 display reveal" data-en="Trusted by leading names" data-ar="ثقة أسماء رائدة">ثقة أسماء رائدة</h2>
     <p class="tm-lead reveal" data-en="Government bodies, sports clubs, and major commercial groups Talawin Marha has worked with across advertising, printing, signage and gifts."
        data-ar="جهات حكومية وأندية رياضية ومجموعات تجارية كبرى تعاملت معها تلاوين مرحة في الدعاية والطباعة واللوحات والهدايا.">جهات حكومية وأندية رياضية ومجموعات تجارية كبرى تعاملت معها تلاوين مرحة.</p>
@@ -370,7 +608,7 @@ html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 <!-- ================= RESERVED: portfolio / products ================= -->
 <section class="section" id="work">
   <div class="tm-head">
-    <p class="tm-kicker"><span class="n">03</span> <span data-en="Our Work" data-ar="أعمالنا">أعمالنا</span></p>
+    <p class="tm-kicker"><span data-en="Our Work" data-ar="أعمالنا">أعمالنا</span></p>
     <h2 class="tm-h2 display reveal" data-en="Products &amp; portfolio" data-ar="المنتجات والأعمال">المنتجات والأعمال</h2>
   </div>
   <div class="tm-reserve reveal">
@@ -400,7 +638,7 @@ html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 <section class="section" id="contact">
   <div class="tm-two">
     <div>
-      <p class="tm-kicker"><span class="n">03</span> <span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
+      <p class="tm-kicker"><span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
       <h2 class="tm-h2 display reveal" data-en="Have a project in mind?" data-ar="لديك مشروع في ذهنك؟">لديك مشروع في ذهنك؟</h2>
       <p class="tm-p reveal" style="margin-top:1.2rem" data-en="For printed matter, signage, branded gifts, or a full idea-to-delivery project — talk to the Talawin Marha team."
          data-ar="للمطبوعات، اللوحات، الهدايا الدعائية، أو مشروع متكامل من الفكرة إلى التنفيذ — تواصل مع فريق تلاوين مرحة.">للمطبوعات واللوحات والهدايا الدعائية أو مشروع متكامل — تواصل مع الفريق.</p>
@@ -418,42 +656,27 @@ html[dir="rtl"] .tm-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="tm-ft">
-  <div class="wrap">
-    <div class="tm-ft-top">
-      <div>
-        <div class="tm-ft-logo">
-          <svg class="mk" viewBox="-1.73 -0.92 99.77 96.43" aria-hidden="true"><use href="#tmMark" color="#c9b6b1"/></svg>
-          <b data-en="Talawin Marha" data-ar="تلاوين مرحة">تلاوين مرحة</b>
-        </div>
-        <p data-en="Creative and experience design in advertising and media — printed matter, signage and gifts, from idea to delivery. A Sky Global company."
-           data-ar="الإبداع وصناعة التجارب في الدعاية والإعلان — مطبوعات ولوحات وهدايا، من الفكرة إلى التنفيذ. شركة من سكاي جلوبال.">الإبداع وصناعة التجارب في الدعاية والإعلان — من الفكرة إلى التنفيذ. شركة من سكاي جلوبال.</p>
-      </div>
-      <div>
-        <h4 data-en="Sections" data-ar="الأقسام">الأقسام</h4>
-        <ul>
-          <li><a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a></li>
-          <li><a href="#partners" data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</a></li>
-          <li><a href="#work" data-en="Our Work" data-ar="أعمالنا">أعمالنا</a></li>
-          <li><a href="#group" data-en="Sky Global" data-ar="سكاي جلوبال">سكاي جلوبال</a></li>
-          <li><a href="#contact" data-en="Contact" data-ar="تواصل">تواصل</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-en="Contact" data-ar="تواصل">تواصل</h4>
-        <ul>
-          <li><a href="mailto:info@skyglobalworld.com">info@skyglobalworld.com</a></li>
-          <li><a href="tel:+966122068728" class="tnum">+966 12 206 8728</a></li>
-          <li><a href="../index.html#companies" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="tm-ft-bot">
-      <span data-en="© 2026 Talawin Marha — a Sky Global company. All rights reserved." data-ar="© 2026 تلاوين مرحة — شركة من سكاي جلوبال. جميع الحقوق محفوظة.">© 2026 تلاوين مرحة — شركة من سكاي جلوبال.</span>
-      <span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">جدة، المملكة العربية السعودية</span>
-    </div>
-  </div>
-</footer>
+<!-- Shared site footer — single source: assets/footer.js builds it from this config.
+     Editing footer design/structure? Change assets/footer.js once and every page updates. -->
+<div id="ft-mount"></div>
+<script type="application/json" id="ft-config">
+{
+  "nameEn": "Talawin Marha", "nameAr": "تلاوين مرحة",
+  "companyId": "talawin",
+  "taglineEn": "Creative and experience design in advertising and media — printed matter, signage and gifts, from idea to delivery. A Sky Global company.",
+  "taglineAr": "الإبداع وصناعة التجارب في الدعاية والإعلان — مطبوعات ولوحات وهدايا، من الفكرة إلى التنفيذ. شركة من سكاي جلوبال.",
+  "logoHTML": "<svg class=\"mk\" viewBox=\"-1.73 -0.92 99.77 96.43\" aria-hidden=\"true\" style=\"width:34px;height:34px;padding:5px;border-radius:999px;background:#faf5f1\"><use href=\"#tmMark\" color=\"#c9b6b1\"/></svg><span class=\"wm\"><b>TALAWIN MARHA</b><i>تلاوين مرحة</i></span>",
+  "explore": [
+    { "href": "#about", "en": "About Us", "ar": "من نحن" },
+    { "href": "#divisions", "en": "Our Divisions", "ar": "أقسامنا" },
+    { "href": "#partners", "en": "Partners in success", "ar": "شركاء النجاح" },
+    { "href": "#work", "en": "Our Work", "ar": "أعمالنا" },
+    { "href": "#group", "en": "Sky Global", "ar": "سكاي جلوبال" },
+    { "href": "#contact", "en": "Contact", "ar": "تواصل" }
+  ]
+}
+</script>
+<script src="../assets/footer.js"></script>
 
 <script>
 (function(){

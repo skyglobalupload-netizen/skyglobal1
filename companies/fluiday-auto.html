@@ -20,10 +20,13 @@
    so restyling a section never disturbs a slot.
    Slot ids:
      hero-visual (image OR video) · about-image ·
-     prod-coolants · prod-adblue · prod-cleaner · prod-spare-parts ·
-     motorsport-1 · motorsport-2 · motorsport-3 · distribution-map ·
-     partner-1 · partner-2 · partner-3 · partner-4
+     prod-coolants · prod-adblue · prod-cleaner · prod-spare-parts
    Target files live under  assets/img/fl/  (and assets/video/fl/ for video).
+   Partner logos are a separate, simpler logo-ready pattern: see #fl-partners-content
+   near the Partners section — each entry's "file" is tried first, and the render
+   script falls back to a monogram circle if that file 404s. No placeholder needed.
+   The Distribution map is a self-contained inline SVG (no slot, no external service) —
+   see #fl-distribution-content near the Distribution section to edit zones/cities.
    ===================================================================== */
 
 :root{
@@ -49,11 +52,11 @@ html[dir="rtl"] .fl .display em,html[dir="rtl"] .fl .display i{color:inherit}
 
 .fl-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
   margin-bottom:clamp(2.6rem,4.5vw,4rem)}
-.fl-kicker{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+.fl-kicker{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
   color:var(--fl-red);display:inline-flex;align-items:center;gap:.9em;margin-bottom:1.3rem}
-html[dir="rtl"] .fl-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:.92rem}
+html[dir="rtl"] .fl-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:15px}
 .fl-kicker .n{border:1px solid color-mix(in srgb,var(--fl-red) 42%,transparent);border-radius:2px;
-  padding:2px 7px;font-size:.7rem;letter-spacing:.08em}
+  padding:2px 7px;font-size:15px;letter-spacing:.08em}
 .fl .dark .fl-kicker{color:var(--fl-red-l)}
 .fl-h2{font-family:var(--serif);font-weight:400;font-size:var(--s4);line-height:1.08;letter-spacing:-.015em;max-width:19ch}
 html[dir="rtl"] .fl-h2{font-family:var(--ar);font-weight:700;line-height:1.28;letter-spacing:0;max-width:24ch}
@@ -61,11 +64,16 @@ html[dir="rtl"] .fl-h2{font-family:var(--ar);font-weight:700;line-height:1.28;le
 .fl-lead{font-size:var(--s1);color:var(--ink-soft);font-weight:400;max-width:56ch;margin-top:1.2rem}
 html[dir="rtl"] .fl-lead{line-height:1.9}
 .fl .dark .fl-lead{color:#c4c4c8}
+/* centred section headers (Products / Why Fluiday / Partners) */
+.fl-head-center{text-align:center}
+.fl-head-center .fl-h2{margin-inline:auto;max-width:22ch}
+html[dir="rtl"] .fl-head-center .fl-h2{max-width:24ch}
+.fl-head-center .fl-lead{margin-inline:auto;max-width:640px}
 .fl-body-p{color:var(--ink-soft);max-width:54ch}
 .fl-body-p + .fl-body-p{margin-top:1rem}
 .fl .dark .fl-body-p{color:#bcbcc0}
 
-.tech{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--fl-red)}
+.tech{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--fl-red)}
 html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
 
 /* ---------- buttons ---------- */
@@ -91,10 +99,12 @@ html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none
 .fl-hdr-logo img{height:30px;width:auto;transition:height .4s var(--ease)}
 .fl-hdr.scrolled .fl-hdr-logo img{height:27px}
 
-.fl-nav{display:flex;gap:28px;align-items:center}
-.fl-nav a{font-size:.9rem;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.86);
+.fl-nav{display:flex;gap:48px;align-items:center;min-width:0;overflow-x:auto;scrollbar-width:none}
+.fl-nav::-webkit-scrollbar{display:none}
+.fl-nav a{font-size:18px;font-weight:600;letter-spacing:.01em;white-space:nowrap;flex:none;color:rgba(255,255,255,.86);
   padding:8px 2px;position:relative;transition:color .3s}
-html[dir="rtl"] .fl-nav a{font-weight:700;font-size:1rem}
+html[dir="rtl"] .fl-nav a{font-weight:600;font-size:18px;letter-spacing:0}
+@media (max-width:760px){ .fl-nav{gap:24px} .fl-nav a,html[dir="rtl"] .fl-nav a{font-size:16px} }
 .fl-hdr.scrolled .fl-nav a{color:var(--fl-ink-2)}
 .fl-nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:0;width:0;height:2px;
   background:var(--fl-red);transition:width .3s var(--ease)}
@@ -103,17 +113,17 @@ html[dir="rtl"] .fl-nav a{font-weight:700;font-size:1rem}
 .fl-nav a:hover::after,.fl-nav a.here::after{width:100%}
 
 .fl-hdr-r{flex:none;display:flex;align-items:center;gap:12px}
-.fl-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:.82rem;padding:9px 15px}
+.fl-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:16px;padding:9px 15px}
 .fl-hdr.scrolled .fl-hdr-r .lang{color:var(--fl-ink);border-color:var(--fl-line)}
 .fl-hdr-r .lang:hover{border-color:var(--fl-red);color:var(--fl-red)}
-.fl-hdr-r .btn-ghost{padding:10px 20px;font-size:.84rem}
+.fl-hdr-r .btn-ghost{padding:10px 20px;font-size:16px}
 .fl-hdr.scrolled .fl-hdr-r .btn-ghost{border-color:var(--fl-line);color:var(--fl-ink)}
 .fl-hdr.scrolled .fl-hdr-r .btn-ghost:hover{background:var(--fl-red);border-color:var(--fl-red);color:#fff}
 .fl-menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:#fff}
 .fl-hdr.scrolled .fl-menu-toggle{color:var(--fl-ink)}
 
 .fl-back{position:absolute;inset-block-start:calc(var(--fl-hdr) + 14px);inset-inline-start:var(--gutter);z-index:6;
-  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.62);
+  font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.62);
   display:inline-flex;align-items:center;gap:.55em;transition:color .3s}
 html[dir="rtl"] .fl-back{font-family:var(--ar);letter-spacing:0;font-weight:700}
 .fl-back:hover{color:#fff}
@@ -123,7 +133,7 @@ html[dir="rtl"] .fl-back svg{transform:scaleX(-1)}
 .fl-mobile{position:fixed;inset:0;z-index:98;background:var(--fl-ink);color:#fff;display:flex;flex-direction:column;
   justify-content:center;gap:2px;padding:var(--gutter);transform:translateY(-100%);transition:transform .5s var(--ease);overflow-y:auto}
 .fl-mobile.open{transform:none}
-.fl-mobile a{font-size:1.35rem;font-weight:400;padding:14px 0;border-bottom:1px solid var(--fl-line-d)}
+.fl-mobile a{font-size:18px;font-weight:400;padding:14px 0;border-bottom:1px solid var(--fl-line-d)}
 .fl-mobile .btn{align-self:flex-start;margin-top:22px}
 
 @media (max-width:1040px){
@@ -144,9 +154,9 @@ html[dir="rtl"] .fl-back svg{transform:scaleX(-1)}
 .slot:has(> img) .slot-ph,.slot:has(> video) .slot-ph,.slot.is-filled .slot-ph{display:none}
 .slot-ph{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:22px}
 .slot-ph svg{width:26px;height:26px;color:var(--fl-red);opacity:.55}
-.slot-ph .slot-l{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fl-ink-3)}
-html[dir="rtl"] .slot-ph .slot-l{letter-spacing:0;text-transform:none;font-size:.86rem}
-.slot-ph .slot-f{font-family:var(--mono);font-size:.64rem;color:#a4a4a8;word-break:break-all}
+.slot-ph .slot-l{font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fl-ink-3)}
+html[dir="rtl"] .slot-ph .slot-l{letter-spacing:0;text-transform:none;font-size:15px}
+.slot-ph .slot-f{font-family:var(--mono);font-size:15px;color:#a4a4a8;word-break:break-all}
 .slot[data-tone="dark"]{border-color:var(--fl-line-d);
   background:repeating-linear-gradient(135deg,rgba(255,255,255,.045) 0 11px,transparent 11px 22px),var(--fl-ink-2)}
 .slot[data-tone="dark"] .slot-ph .slot-l{color:rgba(255,255,255,.74)}
@@ -170,10 +180,10 @@ html[dir="rtl"] .slot-ph .slot-l{letter-spacing:0;text-transform:none;font-size:
 .fl-hero-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
   gap:clamp(1.4rem,3.2vw,2.2rem);max-width:660px}
 .fl-hero-logo{width:min(80vw,440px);height:auto;filter:drop-shadow(0 16px 46px rgba(0,0,0,.45))}
-.fl-hero-tagline{font-size:var(--s1);font-weight:400;line-height:1.5;color:rgba(255,255,255,.94);
-  max-width:46ch;text-shadow:0 2px 22px rgba(0,0,0,.55)}
-html[dir="rtl"] .fl-hero-tagline{line-height:1.9}
-.fl-hero-center .btn{font-size:.96rem;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(237,28,36,.6)}
+.fl-hero-tagline{font-size:18px;font-weight:400;line-height:1.7;color:rgba(255,255,255,.94);
+  max-width:720px;text-shadow:0 2px 22px rgba(0,0,0,.55)}
+html[dir="rtl"] .fl-hero-tagline{line-height:1.7}
+.fl-hero-center .btn{font-size:16px;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(237,28,36,.6)}
 
 .fl-hero-scroll{position:absolute;z-index:2;inset-block-end:24px;inset-inline:0;margin-inline:auto;
   width:34px;height:34px;display:grid;place-items:center;color:rgba(255,255,255,.65);
@@ -189,12 +199,28 @@ html[dir="rtl"] .fl-hero-tagline{line-height:1.9}
 .fl-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,84px);align-items:center;
   max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .fl-about .slot{aspect-ratio:5/4;border-radius:10px}
+.fl-about-overlay{position:absolute;inset-inline:0;inset-block-start:0;z-index:2;
+  padding:26px 22px 0;display:flex;flex-direction:column;align-items:center;gap:16px;
+  text-align:center;pointer-events:none}
+.fl-about-tag{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.28;color:#fff;
+  max-width:20ch;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+html[dir="rtl"] .fl-about-tag{font-family:var(--ar);font-weight:700;font-size:19px;line-height:1.5;max-width:16ch}
+.fl-about-feats{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.fl-about-feat{display:flex;flex-direction:column;align-items:center;gap:6px;max-width:80px}
+.fl-about-feat svg{width:22px;height:22px;color:#fff;opacity:.95;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55))}
+.fl-about-feat span{font-size:13px;font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.92);
+  text-shadow:0 1px 8px rgba(0,0,0,.65)}
+html[dir="rtl"] .fl-about-feat span{letter-spacing:0;font-size:13px}
+@media (max-width:480px){
+  .fl-about-tag{font-size:18px}
+  .fl-about-feats{gap:14px}
+}
 .fl-about-cells{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--fl-line);border:1px solid var(--fl-line);
   border-radius:8px;overflow:hidden;margin-top:2.2rem}
-.fl-about-cells div{background:var(--fl-paper);padding:22px 24px}
-.fl-about-cells b{font-family:var(--mono);font-size:1.7rem;font-weight:600;color:var(--fl-red);display:block;line-height:1}
+.fl-about-cells div{background:var(--fl-paper);padding:22px 24px;text-align:center}
+.fl-about-cells b{font-family:var(--mono);font-size:1.7rem;font-weight:600;color:var(--fl-red);display:block;line-height:1;font-variant-numeric:tabular-nums}
 html[dir="rtl"] .fl-about-cells b{font-family:var(--ar);font-weight:700}
-.fl-about-cells span{font-size:.82rem;color:var(--gray);display:block;margin-top:.55rem}
+.fl-about-cells span{font-size:15px;color:var(--gray);display:block;margin-top:.55rem}
 
 /* ============================================================
    PRODUCTS — 4 equal cards, one row
@@ -206,27 +232,54 @@ html[dir="rtl"] .fl-about-cells b{font-family:var(--ar);font-weight:700}
 .fl-prod:hover{border-color:var(--fl-red);transform:translateY(-4px);box-shadow:0 26px 54px -26px rgba(237,28,36,.3)}
 .fl-prod .slot{aspect-ratio:1/1;border:0;border-radius:0;border-bottom:1px solid var(--fl-line-2)}
 .fl-prod-b{padding:clamp(20px,2vw,26px);display:flex;flex-direction:column;gap:.7rem;flex:1}
-.fl-prod-tag{align-self:flex-start;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
+.fl-prod-tag{align-self:flex-start;font-family:var(--mono);font-size:15px;letter-spacing:.08em;text-transform:uppercase;
   color:var(--fl-red);border:1px solid color-mix(in srgb,var(--fl-red) 34%,transparent);border-radius:2px;padding:3px 7px}
 html[dir="rtl"] .fl-prod-tag{font-family:var(--ar);letter-spacing:0;text-transform:none}
-.fl-prod h3{font-size:1.14rem;font-weight:700;line-height:1.2}
+.fl-prod h3{font-size:24px;font-weight:700;line-height:1.2} /* real <h3> — 22–26px band */
 .fl-prod ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-top:.1rem}
-.fl-prod li{font-size:.85rem;color:var(--ink-soft);padding-inline-start:1.05em;position:relative;line-height:1.5}
+.fl-prod li{font-size:17px;color:var(--ink-soft);padding-inline-start:1.05em;position:relative;line-height:1.5}
 .fl-prod li::before{content:"";position:absolute;inset-inline-start:0;inset-block-start:.5em;width:5px;height:5px;background:var(--fl-red);border-radius:1px}
 .fl-prod-variants{display:flex;flex-wrap:wrap;gap:5px;margin-top:.2rem}
-.fl-prod-variants span{font-family:var(--mono);font-size:.64rem;font-weight:500;color:var(--fl-ink-2);
+.fl-prod-variants span{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--fl-ink-2);
   background:var(--fl-paper-2);border:1px solid var(--fl-line-2);border-radius:2px;padding:2px 6px}
 html[dir="rtl"] .fl-prod-variants span{font-family:var(--ar);font-weight:600}
-/* coolants range — understated supporting row */
-.fl-cool-range{max-width:var(--maxw);margin:clamp(2.4rem,4vw,3.4rem) auto 0;padding-inline:var(--gutter)}
-.fl-cool-range .tech{display:block;margin-bottom:1.1rem;color:var(--fl-red)}
-.fl-cool-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.fl-cool-thumb{border:1px solid var(--fl-line-2);border-radius:6px;overflow:hidden;background:var(--fl-paper)}
-.fl-cool-thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
-.fl-cool-thumb figcaption{font-family:var(--mono);font-size:.66rem;font-weight:500;color:var(--fl-ink-2);
-  padding:9px 6px;text-align:center;border-top:1px solid var(--fl-line-2)}
-html[dir="rtl"] .fl-cool-thumb figcaption{font-family:var(--ar);font-weight:600}
-@media (max-width:600px){.fl-cool-thumbs{grid-template-columns:1fr 1fr}}
+/* PRODUCT CATEGORIES — 3 static square cards (image fills card, name + tag overlaid) */
+.fl-cat-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;
+  max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.fl-cat{flex:0 0 calc(33.333% - 11px);aspect-ratio:1/1;position:relative;overflow:hidden;isolation:isolate;
+  border-radius:12px;border:1px solid var(--fl-line);background:var(--fl-ink);color:#fff;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.fl-cat:hover{transform:translateY(-4px);box-shadow:0 26px 54px -26px rgba(237,28,36,.45)}
+.fx .fl-cat.reveal.in:hover{transform:translateY(-4px)}
+.fl-cat > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .5s var(--ease)}
+.fl-cat:hover > img{transform:scale(1.05)}
+/* coolant/AdBlue cards: cut-out product renders, shown whole (contain) on the card's own dark/red-glow backdrop */
+.fl-cat-contain{background:
+  radial-gradient(80% 60% at 78% 8%,rgba(237,28,36,.38),transparent 60%),
+  linear-gradient(160deg,#2a2a2e 0%,#141414 60%,#0a0a0a 100%)}
+.fl-cat-contain > img{object-fit:contain;padding:22px 18px 96px}
+/* AdBlue card: the source photo has a plain white studio backdrop; darken it so the card still
+   reads as part of the dark, red-glow product grid instead of a bright white block. */
+.fl-cat-adblue > img{filter:brightness(.52) contrast(1.12) saturate(1.15)}
+@media (prefers-reduced-motion:reduce){ .fl-cat > img{transition:none} .fl-cat:hover > img{transform:none} }
+/* placeholder sits under the image; visible only until the final image file exists */
+.fl-cat-ph{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;text-align:center;padding:24px 24px 96px;background:
+  radial-gradient(80% 60% at 78% 8%,rgba(237,28,36,.38),transparent 60%),
+  linear-gradient(160deg,#2a2a2e 0%,#141414 60%,#0a0a0a 100%)}
+.fl-cat-ph svg{width:30px;height:30px;color:var(--fl-red-l);opacity:.8}
+.fl-cat-ph .l{font-weight:700;font-size:16px;color:#fff}
+.fl-cat-ph .f{font-family:var(--mono);font-size:15px;color:rgba(255,255,255,.6);direction:ltr;unicode-bidi:isolate}
+.fl-cat::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(0deg,rgba(8,8,10,.9) 0%,rgba(8,8,10,.62) 28%,rgba(8,8,10,.18) 52%,transparent 68%)}
+.fl-cat-b{position:absolute;inset-inline:0;inset-block-end:0;z-index:3;padding:clamp(16px,2vw,24px);
+  display:flex;flex-direction:column;align-items:flex-start;gap:.55rem}
+.fl-cat-tag{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--fl-red);border-radius:2px;padding:3px 8px}
+html[dir="rtl"] .fl-cat-tag{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:15px}
+.fl-cat h3{font-size:24px;font-weight:700;line-height:1.2;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.4)} /* real <h3> — 22–26px band */
+@media (max-width:1080px){ .fl-cat{flex-basis:calc(50% - 8px)} }
+@media (max-width:640px){ .fl-cat{flex-basis:100%} }
 
 /* ============================================================
    WHY
@@ -235,12 +288,12 @@ html[dir="rtl"] .fl-cool-thumb figcaption{font-family:var(--ar);font-weight:600}
   border-radius:9px;overflow:hidden;max-width:var(--maxw);margin-inline:auto}
 .fl-why{background:var(--fl-paper);padding:clamp(24px,2.6vw,34px);transition:background .4s var(--ease)}
 .fl-why:hover{background:var(--fl-ink)}
-.fl-why .fl-why-n{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--gray);display:block;margin-bottom:1rem;transition:color .4s}
+.fl-why .fl-why-n{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.1em;color:var(--gray);display:block;margin-bottom:1rem;transition:color .4s}
 .fl-why:hover .fl-why-n{color:rgba(255,255,255,.5)}
-.fl-why svg{width:24px;height:24px;color:var(--fl-red);margin-bottom:14px}
-.fl-why h3{font-size:1.04rem;font-weight:700;margin-bottom:.5rem;transition:color .4s}
+.fl-why svg{width:40px;height:40px;color:var(--fl-red);margin-bottom:14px} /* service icons — 32–48px band */
+.fl-why h3{font-size:24px;font-weight:700;margin-bottom:.5rem;transition:color .4s} /* real <h3> — 22–26px band */
 .fl-why:hover h3{color:#fff}
-.fl-why p{font-size:.87rem;color:var(--ink-soft);transition:color .4s;line-height:1.6}
+.fl-why p{font-size:17px;color:var(--ink-soft);transition:color .4s;line-height:1.6}
 .fl-why:hover p{color:rgba(255,255,255,.78)}
 
 /* ============================================================
@@ -248,86 +301,144 @@ html[dir="rtl"] .fl-cool-thumb figcaption{font-family:var(--ar);font-weight:600}
    ============================================================ */
 .fl-eco{border:1px solid var(--fl-line);border-radius:9px;padding:clamp(24px,3vw,38px);background:var(--fl-paper-2)}
 .fl-eco .tech{color:var(--fl-red)}
-.fl-eco p{margin-top:.9rem;font-size:.96rem;color:var(--ink-soft);line-height:1.7}
+.fl-eco p{margin-top:.9rem;font-size:17px;color:var(--ink-soft);line-height:1.7}
 
 /* ============================================================
-   MOTORSPORT
+   DISTRIBUTION — inline SVG map of Saudi Arabia (real admin-1 borders,
+   simplified from geoBoundaries/OpenStreetMap data) + linked zone list.
+   No external map service, no API key, no tiles — everything below is
+   static markup built once from #fl-distribution-content.
    ============================================================ */
-.fl-moto{position:relative;overflow:hidden}
-.fl-moto .fl-moto-diag{position:absolute;inset-block:0;inset-inline-end:-10%;width:42%;
-  background:linear-gradient(120deg,transparent,rgba(237,28,36,.14));transform:skewX(-12deg)}
-.fl-moto > *{position:relative;z-index:1}
-.fl-moto-tag{font-family:var(--serif);font-style:italic;font-size:var(--s2);color:#fff;max-width:20ch;margin-top:1.5rem}
-html[dir="rtl"] .fl-moto-tag{font-family:var(--ar);font-style:normal;line-height:1.6}
-.fl-moto-strip{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:14px;
-  max-width:var(--maxw);margin:clamp(2.6rem,4vw,3.6rem) auto 0;padding-inline:var(--gutter)}
-.fl-moto-strip .slot{aspect-ratio:16/10;border-radius:9px}
-.fl-moto-strip .slot:first-child{aspect-ratio:auto}
+#distribution .fl-head{scroll-margin-top:calc(var(--fl-hdr) + 18px)}
+.fl-dist-wrap{max-width:1100px;margin-inline:auto;padding-inline:var(--gutter)}
 
-/* ============================================================
-   DISTRIBUTION
-   ============================================================ */
-.fl-dist .slot{aspect-ratio:4/3;border-radius:9px}
-.fl-regions{display:flex;flex-direction:column;border-block-start:1px solid var(--fl-line)}
-.fl-region{padding:17px 0;border-block-end:1px solid var(--fl-line);display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline}
-.fl-region .r-name{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fl-red)}
-html[dir="rtl"] .fl-region .r-name{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
-.fl-region .r-cities{font-size:.98rem;color:var(--ink-soft);line-height:1.6}
-.fl-dist-note{margin-top:1.5rem;font-size:.86rem;color:var(--gray)}
+/* ---- map card: full-width, much bigger; the map keeps its true proportions and is
+   centered inside (letterboxed) since the card is wider than the country's own ratio —
+   #fl-dz-map's JS recomputes city-dot % positions against this box on every resize. ---- */
+.fl-dz-map-card{position:relative;background:#fff;border-radius:16px;box-shadow:0 16px 44px -26px rgba(20,20,20,.28);
+  border:1px solid var(--fl-line-2);overflow:hidden;padding:clamp(14px,2vw,22px) clamp(14px,2vw,22px) 50px}
+.fl-dz-map{position:relative;width:100%;height:600px}
+@media (max-width:1040px){ .fl-dz-map{height:460px} }
+@media (max-width:600px){ .fl-dz-map{height:350px} }
+.fl-dz-map svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fl-dz-region{fill:#e9e9ec;stroke:#fff;stroke-width:1.3;stroke-linejoin:round;transition:fill .3s var(--ease),opacity .3s var(--ease);cursor:default}
+.fl-dz-region[data-zone]{fill:rgba(227,30,36,.16);cursor:pointer}
+.fl-dz-region[data-zone]:focus-visible{outline:2px solid var(--fl-red);outline-offset:1px}
+.fl-dz-map.has-active .fl-dz-region[data-zone]{opacity:.5}
+.fl-dz-region.is-active{fill:rgba(227,30,36,.85)!important;opacity:1!important}
+
+/* city markers — absolutely positioned HTML layer on top of the SVG so tooltips/animations stay simple */
+.fl-dz-cities{position:absolute;inset:0;pointer-events:none}
+.fl-dz-city{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;display:grid;place-items:center;
+  pointer-events:auto;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.fl-dz-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--fl-red);border:1.5px solid #fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.35);transition:width .25s var(--ease),height .25s var(--ease)}
+.fl-dz-city[data-hub="1"] .fl-dz-dot{width:10px;height:10px}
+.fl-dz-ring{position:absolute;width:7px;height:7px;border-radius:50%;background:rgba(227,30,36,.55);
+  animation:flDzPulse 2.6s var(--ease) infinite}
+.fl-dz-city[data-hub="1"] .fl-dz-ring{width:10px;height:10px}
+.fl-dz-city.is-active .fl-dz-ring{animation-duration:1.15s;background:rgba(227,30,36,.75)}
+.fl-dz-city.is-active .fl-dz-dot{background:#ff3b42}
+@keyframes flDzPulse{0%{transform:scale(1);opacity:.85}75%{transform:scale(3.1);opacity:0}100%{transform:scale(3.1);opacity:0}}
+.fl-dz-tip{position:absolute;inset-block-end:calc(100% + 7px);inset-inline-start:50%;transform:translateX(-50%) translateY(4px);
+  white-space:nowrap;background:var(--fl-ink);color:#fff;font-size:15px;font-weight:700;padding:4px 9px;border-radius:5px;
+  opacity:0;pointer-events:none;transition:opacity .2s var(--ease),transform .2s var(--ease);z-index:2}
+html[dir="rtl"] .fl-dz-tip{font-family:var(--ar);font-size:15px}
+.fl-dz-city:hover .fl-dz-tip,.fl-dz-city:focus-visible .fl-dz-tip{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (prefers-reduced-motion:reduce){ .fl-dz-ring{animation:none;opacity:.55} }
+
+.fl-dz-legend{position:absolute;inset-inline-start:0;inset-inline-end:0;inset-block-end:0;padding:12px clamp(14px,2vw,22px);
+  display:flex;align-items:center;gap:.5em;font-size:15px;color:var(--gray);border-block-start:1px solid var(--fl-line-2)}
+.fl-dz-legend .dot{width:7px;height:7px;border-radius:50%;background:var(--fl-red);flex:none}
+html[dir="rtl"] .fl-dz-legend{font-family:var(--ar);font-size:15px}
+
+/* ---- stats strip: centered directly under the map ---- */
+.fl-dz-stats{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.5em;text-align:center;
+  font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.03em;color:var(--fl-red);
+  margin:1.8rem 0 1.2rem}
+html[dir="rtl"] .fl-dz-stats{font-family:var(--ar);font-size:15px;font-weight:700;letter-spacing:0}
+.fl-dz-stats .sep{color:#c9c9cd}
+
+/* ---- zone cards: 5 across on desktop, 3 tablet, 2 mobile (last one centered) ---- */
+.fl-dz-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.fl-dz-card{position:relative;background:#fff;border:1px solid var(--fl-line);border-radius:12px;
+  padding:20px 16px;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  transition:border-color .3s var(--ease),box-shadow .3s var(--ease),background-color .3s var(--ease),transform .3s var(--ease)}
+.fl-dz-card .name{font-weight:800;color:var(--fl-red);font-size:16px}
+html[dir="rtl"] .fl-dz-card .name{font-family:var(--ar)}
+.fl-dz-card .badge{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--fl-ink-3);
+  background:var(--fl-paper-2);border:1px solid var(--fl-line-2);border-radius:99px;padding:3px 10px;white-space:nowrap}
+html[dir="rtl"] .fl-dz-card .badge{font-family:var(--ar);font-size:15px}
+.fl-dz-card .cities{font-size:15px;color:var(--ink-soft);line-height:1.6}
+html[dir="rtl"] .fl-dz-card .cities{font-family:var(--ar);line-height:1.85}
+.fl-dz-card:hover,.fl-dz-card.is-active{border-color:var(--fl-red);background:rgba(227,30,36,.05);
+  box-shadow:0 14px 30px -20px rgba(227,30,36,.4);transform:translateY(-3px)}
+.fl-dz-card:focus-visible{outline:2px solid var(--fl-red);outline-offset:2px}
+
+@media (max-width:1040px){ .fl-dz-cards{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:600px){
+  .fl-dz-cards{grid-template-columns:repeat(2,1fr)}
+  .fl-dz-card:last-child{grid-column:1/-1;width:calc(50% - 7px);margin-inline:auto}
+}
+@media (prefers-reduced-motion:reduce){ .fl-dz-card{transition:none} .fl-dz-card:hover{transform:none} }
+
+.fl-dist-note{margin-top:1.8rem;display:flex;justify-content:center;align-items:flex-start;gap:.7em;text-align:center;
+  font-size:17px;color:var(--fl-ink-2);line-height:1.6;
+  background:rgba(227,30,36,.06);border:1px solid rgba(227,30,36,.16);border-radius:10px;padding:13px 16px}
+html[dir="rtl"] .fl-dist-note{font-family:var(--ar);font-size:17px;line-height:1.85}
+.fl-dist-note svg{width:17px;height:17px;flex:none;margin-top:2px;color:var(--fl-red)}
 
 /* ============================================================
    PARTNERS
    ============================================================ */
 .fl-partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
   max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
-.fl-partner .slot{aspect-ratio:3/2;border-radius:9px}
-.fl-partner .fl-partner-name{margin-top:.8rem;font-size:.82rem;font-weight:600;color:var(--ink-soft);text-align:center}
+/* card: clean white surface — logo-ready (real file auto-replaces the monogram, see fl-partner-logo-wrap:has(>img)) */
+.fl-partner{height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
+  background:#fff;border-radius:16px;padding:clamp(28px,3.2vw,36px) 20px;box-shadow:0 10px 30px -20px rgba(20,20,20,.22);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.fl-partner:hover{transform:translateY(-4px);box-shadow:0 26px 48px -22px rgba(20,20,20,.3)}
+.fl-partner-logo-wrap{position:relative;flex:none;width:64px;height:64px;border-radius:50%;overflow:hidden;
+  display:grid;place-items:center;background:#1a1a1a;border:2px solid var(--fl-red);
+  transition:box-shadow .4s var(--ease)}
+.fl-partner:hover .fl-partner-logo-wrap{box-shadow:0 0 0 6px rgba(227,30,36,.18)}
+.fl-partner-mono{font-family:var(--mono);font-weight:700;font-size:1.05rem;letter-spacing:.02em;color:#fff}
+html[dir="rtl"] .fl-partner-mono{font-family:var(--ar);font-size:1.15rem}
+/* once a real logo file exists at assets/img/fl/partner-X.(svg|png|webp), it replaces the monogram circle entirely —
+   shown at its own size (not boxed in), so the artwork isn't cropped/shrunk to fit a 64px circle. */
+.fl-partner-logo-wrap:has(>img){width:auto;height:70px;max-width:100%;border-radius:0;background:none;border:0;box-shadow:none!important}
+.fl-partner-logo-wrap:has(>img) .fl-partner-mono{display:none}
+.fl-partner-logo{display:block;max-height:70px;max-width:180px;width:auto;height:auto;object-fit:contain}
+.fl-partner-name{font-size:16px;font-weight:700;color:var(--fl-ink);line-height:1.4}
+html[dir="rtl"] .fl-partner-name{font-family:var(--ar)}
+.fl-partner-sub{margin-top:-8px;font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .fl-partner-sub{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:15px}
+@media (prefers-reduced-motion:reduce){ .fl-partner,.fl-partner-logo-wrap{transition:none} }
 
 /* ============================================================
    CONTACT
    ============================================================ */
 .fl-contact-rows{margin-top:1.7rem;border-block-start:1px solid var(--fl-line)}
-.fl-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--fl-line);font-size:.98rem}
-.fl-contact-rows .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.fl-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--fl-line);font-size:17px}
+.fl-contact-rows .k{font-family:var(--mono);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
 html[dir="rtl"] .fl-contact-rows .k{font-family:var(--ar);letter-spacing:0;text-transform:none}
 .fl-contact-rows .v{font-weight:600;text-align:end}
 .fl-phones{display:flex;flex-direction:column;gap:.3rem}
 
-/* ---------- footer ---------- */
-.fl-ft{background:var(--fl-ink);color:#96969a;padding-block:58px 26px;font-size:.9rem}
-.fl-ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--fl-line-d)}
-.fl-ft .fl-logo{height:40px;margin-bottom:1rem}
-.fl-ft p{max-width:40ch}
-.fl-ft h4{color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
-html[dir="rtl"] .fl-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:none}
-.fl-ft ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.fl-ft a:hover{color:#fff}
-.fl-ft-bot{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:#67676b}
-
-/* ---------- responsive ---------- */
-/* ---- ABOUT spec strip (moved out of the hero) ---- */
-.fl-specrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--fl-line);
-  border:1px solid var(--fl-line);border-radius:8px;overflow:hidden;
-  max-width:var(--maxw);margin:0 auto clamp(2.6rem,4vw,3.6rem)}
-.fl-specrow div{background:var(--fl-paper);padding:18px 22px}
-.fl-specrow .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
-html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.78rem}
-.fl-specrow .v{font-size:1.02rem;font-weight:700;margin-top:5px}
-.fl-specrow .v b{color:var(--fl-red)}
+/* ---------- footer ----------
+   Structure/CSS lives in the shared assets/footer.js + theme.css .ft* rules;
+   this just re-tints the shared footer's accent to the Fluiday red. */
+footer.ft{--sky-400:var(--fl-red-l);--sky-500:var(--fl-red);--sky-600:var(--fl-red-d);--sky-300:var(--fl-red-l);}
 
 /* ---------- responsive ---------- */
 @media (max-width:1040px){
   .fl-two{grid-template-columns:1fr}
-  .fl-specrow{grid-template-columns:1fr 1fr}
   .fl-why-grid,.fl-prod-grid,.fl-partners-grid{grid-template-columns:1fr 1fr}
-  .fl-moto-strip{grid-template-columns:1fr 1fr}
-  .fl-ft-top{grid-template-columns:1fr 1fr}
 }
 @media (max-width:600px){
-  .fl-specrow{grid-template-columns:1fr}
-  .fl-why-grid,.fl-prod-grid,.fl-partners-grid,.fl-moto-strip,.fl-about-cells{grid-template-columns:1fr}
-  .fl-region{grid-template-columns:1fr;gap:4px}
-  .fl-ft-top{grid-template-columns:1fr}
+  .fl-why-grid,.fl-prod-grid,.fl-partners-grid,.fl-about-cells{grid-template-columns:1fr}
   .fl-contact-rows div{flex-direction:column;gap:2px}
   .fl-contact-rows .v{text-align:start}
   .fl-hero-logo{width:82vw}
@@ -353,7 +464,6 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
   <nav class="fl-nav" aria-label="Fluiday Auto sections">
     <a href="#about" data-en="About Us" data-ar="من نحن">About Us</a>
     <a href="#products" data-en="Products" data-ar="المنتجات">Products</a>
-    <a href="#motorsport" data-en="Motorsport" data-ar="رياضة المحركات">Motorsport</a>
     <a href="#partners" data-en="Partners" data-ar="شركاؤنا">Partners</a>
   </nav>
   <div class="fl-hdr-r">
@@ -372,7 +482,6 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
   <a href="#about" data-en="About Fluiday" data-ar="من نحن">About Fluiday</a>
   <a href="#products" data-en="Products" data-ar="المنتجات">Products</a>
   <a href="#why" data-en="Why Fluiday" data-ar="لماذا فلودي">Why Fluiday</a>
-  <a href="#motorsport" data-en="Motorsport" data-ar="رياضة المحركات">Motorsport</a>
   <a href="#distribution" data-en="Distribution" data-ar="التوزيع">Distribution</a>
   <a href="#partners" data-en="Success Partners" data-ar="شركاء النجاح">Success Partners</a>
   <a href="#contact" class="btn btn-ghost" data-en="Contact" data-ar="تواصل معنا">Contact</a>
@@ -396,8 +505,8 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
   <div class="fl-hero-center" data-load>
     <img class="fl-hero-logo" src="../assets/img/logo-fluiday.svg" alt="Fluiday Auto" />
     <p class="fl-hero-tagline"
-       data-en="Applied automotive chemistry since 2018 — coolants, AdBlue, radiator care and spare parts, engineered to German standards for Middle East conditions."
-       data-ar="الهندسة الكيميائية التطبيقية للسيارات منذ 2018 — سوائل تبريد، أدبلو، العناية بالرديتر وقطع غيار، بمعايير ألمانية تراعي ظروف التشغيل في الشرق الأوسط.">Applied automotive chemistry since 2018 — engineered to German standards for the region.</p>
+       data-en="Complete automotive solutions since 2018 — coolants &amp; antifreeze, AdBlue, and genuine spare parts, built to German standards for Middle East conditions."
+       data-ar="حلول متكاملة للسيارات منذ 2018 — سوائل تبريد ومضادات تجمّد، أدبلو، وقطع غيار أصلية، بمعايير ألمانية مصممة لأجواء الشرق الأوسط.">Complete automotive solutions since 2018 — built to German standards for the region.</p>
     <a href="#products" class="btn btn-primary" data-en="Explore products" data-ar="استعرض المنتجات">Explore products
       <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
@@ -409,15 +518,9 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
 
 <!-- ================= ABOUT ================= -->
 <section class="section" id="about">
-  <div class="fl-specrow reveal">
-    <div><div class="k" data-en="Founded" data-ar="التأسيس">Founded</div><div class="v tnum">2018</div></div>
-    <div><div class="k" data-en="Engineering" data-ar="الهندسة">Engineering</div><div class="v"><b data-en="German" data-ar="ألمانية">German</b> <span data-en="standards" data-ar="معايير">standards</span></div></div>
-    <div><div class="k" data-en="AdBlue" data-ar="أدبلو">AdBlue</div><div class="v">ISO 22241 · <b>Euro 5/6</b></div></div>
-    <div><div class="k" data-en="Supply" data-ar="الإمداد">Supply</div><div class="v" data-en="KSA &amp; the GCC" data-ar="المملكة والخليج">KSA &amp; the GCC</div></div>
-  </div>
   <div class="fl-two fl-about">
     <div>
-      <p class="fl-kicker"><span class="n">01</span> <span data-en="About" data-ar="من نحن">About</span></p>
+      <p class="fl-kicker"><span data-en="About" data-ar="من نحن">About</span></p>
       <h2 class="fl-h2 display reveal" data-en="More than engine fluids" data-ar="أكثر من سوائل للمحركات">More than engine fluids</h2>
       <p class="fl-lead reveal" data-en="At Fluiday Auto, automotive fluids and spare parts are core elements of a vehicle's efficiency and continued performance — not consumables."
          data-ar="في فلودي أوتو، ننظر إلى سوائل السيارات وقطع الغيار باعتبارها عناصر أساسية في كفاءة المركبة واستمرارية أدائها، وليست مجرد منتجات استهلاكية.">Core elements of a vehicle's performance — not consumables.</p>
@@ -425,10 +528,28 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
          data-ar="نوفر حلولًا متكاملة تساعد على حماية أنظمة المحرك، تقليل احتمالية الأعطال، وتحسين كفاءة التشغيل، مع الالتزام بالمعايير العالمية والاستفادة من التقنيات المتقدمة.">Integrated solutions that protect engine systems and improve efficiency.</p>
       <div class="fl-about-cells reveal">
         <div><b class="tnum">2018</b><span data-en="Year founded" data-ar="سنة التأسيس">Year founded</span></div>
-        <div><b>4</b><span data-en="Product families" data-ar="عائلات منتجات">Product families</span></div>
+        <div><b class="tnum">4</b><span data-en="Product families" data-ar="عائلات منتجات">Product families</span></div>
       </div>
     </div>
     <figure class="slot reveal" data-slot="about-image">
+      <img src="../assets/img/fl/about-image.jpg" alt="Fluiday Auto products against an industrial facility backdrop" loading="lazy" decoding="async" />
+      <div class="fl-about-overlay">
+        <h4 class="fl-about-tag" data-en="Engineered for protection and performance" data-ar="مصممة للحماية والأداء">Engineered for protection and performance</h4>
+        <div class="fl-about-feats">
+          <div class="fl-about-feat">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span data-en="Rust resistance" data-ar="مقاومة الصدأ">Rust resistance</span>
+          </div>
+          <div class="fl-about-feat">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-en="Global standards" data-ar="معايير عالمية">Global standards</span>
+          </div>
+          <div class="fl-about-feat">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span data-en="Regional supply" data-ar="إمداد إقليمي">Regional supply</span>
+          </div>
+        </div>
+      </div>
       <figcaption class="slot-ph">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m3 15 5-4 4 3 4-5 5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="9" r="1.6" stroke="currentColor" stroke-width="1.6"/></svg>
         <span class="slot-l" data-en="Image — lab / production / facility" data-ar="صورة — مختبر / إنتاج / منشأة">Image — lab / production / facility</span>
@@ -440,14 +561,45 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
 
 <!-- ================= PRODUCTS ================= -->
 <section class="section tint" id="products">
-  <div class="fl-head">
-    <p class="fl-kicker"><span class="n">02</span> <span data-en="Products" data-ar="المنتجات">Products</span></p>
+  <div class="fl-head fl-head-center">
+    <p class="fl-kicker"><span data-en="Products" data-ar="المنتجات">Products</span></p>
     <h2 class="fl-h2 display reveal" data-en="Solutions engineered for every vehicle need" data-ar="حلول مصممة لمختلف احتياجات المركبات">Solutions engineered for every vehicle need</h2>
-    <p class="fl-lead reveal" data-en="Four product families, each built to a clear purpose in the vehicle."
-       data-ar="أربع عائلات منتجات، لكلٍّ منها دور واضح في المركبة.">Four product families, each built to a clear purpose.</p>
+    <p class="fl-lead reveal" data-en="Three product families, each with a clear role in the vehicle."
+       data-ar="ثلاث عائلات منتجات، لكلٍّ منها دور واضح في المركبة.">Three product families, each with a clear role in the vehicle.</p>
   </div>
 
-  <div class="fl-prod-grid" data-stagger>
+  <div class="fl-cat-grid" data-stagger>
+
+    <article class="fl-cat fl-cat-contain reveal">
+      <img src="../assets/img/fl/cat-coolant.png" width="1409" height="1017" loading="lazy" decoding="async"
+           alt="Fluiday Auto coolant, antifreeze and radiator water bottles — 1L, 3.78L, EV and 5L formulas" data-alt-en="Fluiday Auto coolant, antifreeze and radiator water bottles — 1L, 3.78L, EV and 5L formulas" data-alt-ar="عبوات سوائل التبريد ومضادات التجمد وماء الراديتر من فلوييداي أوتو" />
+      <div class="fl-cat-b">
+        <span class="fl-cat-tag" data-en="Cooling Systems" data-ar="أنظمة التبريد">Cooling Systems</span>
+        <h3 data-en="Coolant &amp; Antifreeze" data-ar="سوائل التبريد ومضادات التجمد">Coolant &amp; Antifreeze</h3>
+      </div>
+    </article>
+
+    <article class="fl-cat reveal">
+      <img src="../assets/img/fl/cat-spare-parts.jpg" width="1200" height="800" loading="lazy" decoding="async"
+           alt="Close-up of precision engine and spare parts on a dark workbench" data-alt-en="Close-up of precision engine and spare parts on a dark workbench" data-alt-ar="قطعة غيار محرك دقيقة على طاولة عمل داكنة" />
+      <div class="fl-cat-b">
+        <span class="fl-cat-tag" data-en="Genuine &amp; Aftermarket" data-ar="أصلية وبديلة">Genuine &amp; Aftermarket</span>
+        <h3 data-en="Genuine Spare Parts" data-ar="قطع غيار أصلية">Genuine Spare Parts</h3>
+      </div>
+    </article>
+
+    <article class="fl-cat fl-cat-adblue reveal">
+      <img src="../assets/img/fl/cat-adblue.jpg" width="1000" height="2276" loading="lazy" decoding="async"
+           alt="Fluiday AdBlue 10L jug, ISO 22241" data-alt-en="Fluiday AdBlue 10L jug, ISO 22241" data-alt-ar="عبوة Fluiday AdBlue سعة 10 لتر، معيار ISO 22241" />
+      <div class="fl-cat-b">
+        <span class="fl-cat-tag">ISO 22241 · Euro 5/6</span>
+        <h3>Fluiday AdBlue</h3>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- LEGACY 4-CARD PRODUCT MARKUP (bullets + spec chips) — kept for later; not rendered.
 
     <article class="fl-prod reveal">
       <figure class="slot" data-slot="prod-coolants">
@@ -529,49 +681,36 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
       </div>
     </article>
 
-  </div>
+  -->
 
-  <div class="fl-cool-range reveal">
-    <p class="tech" data-en="The coolants range" data-ar="مجموعة سوائل التبريد">The coolants range</p>
-    <div class="fl-cool-thumbs">
-      <figure class="fl-cool-thumb"><img src="../assets/img/fl/co-5050.jpg" alt="Fluiday Antifreeze &amp; Coolant 50/50" loading="lazy" decoding="async"><figcaption>50 / 50</figcaption></figure>
-      <figure class="fl-cool-thumb"><img src="../assets/img/fl/co-5050-ev.jpg" alt="Fluiday Antifreeze &amp; Coolant 50/50 for electric vehicles" loading="lazy" decoding="async"><figcaption><span data-en="50/50 · EV" data-ar="50/50 · كهربائية">50/50 · EV</span></figcaption></figure>
-      <figure class="fl-cool-thumb"><img src="../assets/img/fl/co-100100.jpg" alt="Fluiday Antifreeze &amp; Coolant 100/100" loading="lazy" decoding="async"><figcaption>100 / 100</figcaption></figure>
-      <figure class="fl-cool-thumb"><img src="../assets/img/fl/co-radiator-water.jpg" alt="Fluiday Coolant — Radiator Water 5 L" loading="lazy" decoding="async"><figcaption><span data-en="Radiator water 5 L" data-ar="مياه رديتر 5 لتر">Radiator water 5 L</span></figcaption></figure>
-    </div>
-  </div>
 </section>
 
 <!-- ================= WHY ================= -->
 <section class="section" id="why">
-  <div class="fl-head">
-    <p class="fl-kicker"><span class="n">03</span> <span data-en="Why Fluiday" data-ar="لماذا فلودي">Why Fluiday</span></p>
+  <div class="fl-head fl-head-center">
+    <p class="fl-kicker"><span data-en="Why Fluiday" data-ar="لماذا فلودي">Why Fluiday</span></p>
     <h2 class="fl-h2 display reveal" data-en="Quality you can rely on" data-ar="جودة يمكن الاعتماد عليها">Quality you can rely on</h2>
   </div>
   <div class="fl-why-grid" data-stagger>
     <div class="fl-why reveal">
-      <span class="fl-why-n">01</span>
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Standards &amp; testing" data-ar="معايير واختبارات">Standards &amp; testing</h3>
       <p data-en="Quality backed by laboratory testing and analysis, and compliance with the relevant standards and regulatory bodies."
          data-ar="جودة مدعومة بالاختبارات والتحاليل المخبرية والتوافق مع المعايير والجهات التنظيمية ذات الصلة.">Backed by lab testing and compliance with the relevant standards.</p>
     </div>
     <div class="fl-why reveal">
-      <span class="fl-why-n">02</span>
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <h3 data-en="Proven performance" data-ar="أداء مثبت">Proven performance</h3>
       <p data-en="Field-tested under high-pressure, high-temperature conditions — including motorsport participation."
          data-ar="اختبار ميداني في ظروف تشغيل عالية الضغط ودرجات الحرارة، بما في ذلك مشاركات في رياضة المحركات.">Field-tested under high-pressure, high-temperature conditions.</p>
     </div>
     <div class="fl-why reveal">
-      <span class="fl-why-n">03</span>
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3V7Zm6-3v13m6-10v13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Regional supply" data-ar="إمداد إقليمي">Regional supply</h3>
       <p data-en="A supply network across the GCC and the Middle East, focused on distribution speed, flexibility, and large commercial orders."
          data-ar="شبكة إمداد تمتد عبر دول الخليج والشرق الأوسط، مع توجه لتعزيز سرعة ومرونة التوزيع وتلبية الطلبات التجارية الكبرى.">A supply network across the GCC and the Middle East.</p>
     </div>
     <div class="fl-why reveal">
-      <span class="fl-why-n">04</span>
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3v4M15 3v4M12 21a5 5 0 005-5V9a5 5 0 00-10 0v7a5 5 0 005 5Zm0 0v-6m-2-2h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Integrated solutions" data-ar="حلول متكاملة">Integrated solutions</h3>
       <p data-en="Not just selling a product — solutions that cut maintenance costs and improve operational continuity and vehicle efficiency."
@@ -584,7 +723,7 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
 <section class="section tint" id="sustainability">
   <div class="fl-two">
     <div>
-      <p class="fl-kicker"><span class="n">04</span> <span data-en="Sustainability" data-ar="الاستدامة">Sustainability</span></p>
+      <p class="fl-kicker"><span data-en="Sustainability" data-ar="الاستدامة">Sustainability</span></p>
       <h2 class="fl-h2 display reveal" data-en="Better performance, lower impact" data-ar="أداء أفضل، وأثر أقل">Better performance, lower impact</h2>
       <p class="fl-body-p reveal" style="margin-top:1.2rem" data-en="Fluiday Auto supports sustainability through solutions that improve operating efficiency, reduce emissions, and support compliance with environmental standards."
          data-ar="تدعم فلودي أوتو توجهات الاستدامة من خلال حلول تساعد على تحسين كفاءة التشغيل، تقليل الانبعاثات، ودعم الامتثال للمعايير البيئية.">Solutions that improve efficiency, reduce emissions and support compliance.</p>
@@ -597,114 +736,320 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
   </div>
 </section>
 
-<!-- ================= MOTORSPORT ================= -->
-<section class="section dark fl-moto" id="motorsport">
-  <div class="fl-moto-diag" aria-hidden="true"></div>
-  <div class="fl-head">
-    <p class="fl-kicker"><span class="n">05</span> <span data-en="Motorsport" data-ar="رياضة المحركات">Motorsport</span></p>
-    <h2 class="fl-h2 display reveal" data-en="Real performance is tested under pressure" data-ar="الأداء الحقيقي يُختبر تحت الضغط">Real performance is tested under pressure</h2>
-    <p class="fl-lead reveal" data-en="Fluiday Auto has taken part as a technical partner and sponsor in motorsport events, with its products tested in conditions that demand high levels of performance and thermal endurance — and aims to expand its motorsport partnerships across the region."
-       data-ar="شاركت فلودي أوتو كشريك تقني وراعٍ في فعاليات رياضة السيارات، واختُبرت منتجاتها في ظروف تتطلب مستويات عالية من الأداء والتحمل الحراري، وتستهدف التوسع في شراكاتها ضمن رياضات المحركات في المنطقة.">Technical partner and sponsor in motorsport events across the region.</p>
-    <p class="fl-moto-tag reveal">From the road to the track. Performance without compromise.</p>
-  </div>
-
-  <div class="fl-moto-strip">
-    <figure class="slot reveal" data-slot="motorsport-1" data-tone="dark" style="min-height:230px">
-      <figcaption class="slot-ph">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 17h18M6 17V9l3-4h6l3 4v8M8 13h8M7 21v-2m10 2v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="slot-l" data-en="Motorsport photo / video — primary" data-ar="صورة / فيديو رياضة محركات — رئيسي">Motorsport photo / video — primary</span>
-        <span class="slot-f">assets/img/fl/motorsport-1.jpg</span>
-      </figcaption>
-    </figure>
-    <figure class="slot reveal" data-slot="motorsport-2" data-tone="dark">
-      <figcaption class="slot-ph">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v4l-4 3 4 3v4H5v-4l4-3-4-3V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <span class="slot-l" data-en="Motorsport photo 2" data-ar="صورة رياضة محركات 2">Motorsport photo 2</span>
-        <span class="slot-f">assets/img/fl/motorsport-2.jpg</span>
-      </figcaption>
-    </figure>
-    <figure class="slot reveal" data-slot="motorsport-3" data-tone="dark">
-      <figcaption class="slot-ph">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <span class="slot-l" data-en="Motorsport photo 3" data-ar="صورة رياضة محركات 3">Motorsport photo 3</span>
-        <span class="slot-f">assets/img/fl/motorsport-3.jpg</span>
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
 <!-- ================= DISTRIBUTION ================= -->
 <section class="section" id="distribution">
   <div class="fl-head">
-    <p class="fl-kicker"><span class="n">06</span> <span data-en="Distribution" data-ar="التوزيع">Distribution</span></p>
+    <p class="fl-kicker"><span data-en="Distribution" data-ar="التوزيع">Distribution</span></p>
     <h2 class="fl-h2 display reveal" data-en="A distribution network across the Kingdom and the region" data-ar="شبكة توزيع تمتد عبر المملكة والمنطقة">A distribution network across the Kingdom and the region</h2>
   </div>
-  <div class="fl-two fl-dist">
-    <figure class="slot reveal" data-slot="distribution-map">
-      <figcaption class="slot-ph">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3 3 5v16l6-2 6 2 6-2V3l-6 2-6-2Zm0 0v16m6-14v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="slot-l" data-en="Distribution map — KSA regions + GCC" data-ar="خريطة التوزيع — مناطق المملكة + الخليج">Distribution map — KSA regions + GCC</span>
-        <span class="slot-f">assets/img/fl/distribution-map.svg</span>
-      </figcaption>
-    </figure>
-    <div>
-      <div class="fl-regions reveal">
-        <div class="fl-region"><div class="r-name" data-en="Western" data-ar="الغربية">Western</div>
-          <div class="r-cities" data-en="Jeddah · Makkah · Taif · Madinah · Al Lith" data-ar="جدة · مكة · الطائف · المدينة · الليث">Jeddah · Makkah · Taif · Madinah · Al Lith</div></div>
-        <div class="fl-region"><div class="r-name" data-en="Central" data-ar="الوسطى">Central</div>
-          <div class="r-cities" data-en="Riyadh · Al Kharj · Al Qassim" data-ar="الرياض · الخرج · القصيم">Riyadh · Al Kharj · Al Qassim</div></div>
-        <div class="fl-region"><div class="r-name" data-en="Eastern" data-ar="الشرقية">Eastern</div>
-          <div class="r-cities" data-en="Dammam · Khobar" data-ar="الدمام · الخبر">Dammam · Khobar</div></div>
-        <div class="fl-region"><div class="r-name" data-en="Southern" data-ar="الجنوبية">Southern</div>
-          <div class="r-cities" data-en="Khamis Mushait · Abha · Jazan" data-ar="خميس مشيط · أبها · جازان">Khamis Mushait · Abha · Jazan</div></div>
-        <div class="fl-region"><div class="r-name" data-en="Northern" data-ar="الشمالية">Northern</div>
-          <div class="r-cities" data-en="Tabuk · Hail" data-ar="تبوك · حائل">Tabuk · Hail</div></div>
+
+  <div class="fl-dist-wrap">
+    <div class="fl-dz-map-card reveal" role="img" aria-label="Distribution map of Saudi Arabia by region" data-aria-en="Distribution map of Saudi Arabia by region" data-aria-ar="خريطة التوزيع في المملكة العربية السعودية حسب المنطقة">
+      <div class="fl-dz-map" id="flDzMap"></div>
+      <div class="fl-dz-legend">
+        <span class="dot" aria-hidden="true"></span>
+        <span data-en="Distribution cities" data-ar="مدن التوزيع">Distribution cities</span>
       </div>
-      <p class="fl-dist-note reveal" data-en="Plus a presence and partnerships across the Gulf and wider Middle East markets."
-         data-ar="بالإضافة إلى حضور وشراكات في أسواق الخليج والشرق الأوسط.">Plus a presence and partnerships across the Gulf and wider Middle East.</p>
     </div>
+
+    <p class="fl-dz-stats" id="flDzStats"></p>
+    <div class="fl-dz-cards" id="flDzCards"></div>
+    <p class="fl-dist-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.7 3.8 6 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-6-3.8-9S9.5 5.7 12 3Z" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span data-en="Plus a presence and partnerships across the Gulf and wider Middle East markets."
+            data-ar="بالإضافة إلى حضور وشراكات في أسواق الخليج والشرق الأوسط.">Plus a presence and partnerships across the Gulf and wider Middle East markets.</span>
+    </p>
   </div>
+
+  <script type="application/json" id="fl-distribution-content">
+{
+  "viewBox": "0 0 308.8 252.4",
+  "proj": { "lonMin": 34.4944055, "latMax": 32.1543377, "cosMid": 0.911640499723105, "scale": 16 },
+  "zones": [
+    { "id": "western", "en": "Western", "ar": "الغربية", "cities": [
+        { "en": "Jeddah", "ar": "جدة", "lon": 39.1728, "lat": 21.5433, "hub": true },
+        { "en": "Makkah", "ar": "مكة", "lon": 39.8579, "lat": 21.3891 },
+        { "en": "Taif", "ar": "الطائف", "lon": 40.4158, "lat": 21.2703 },
+        { "en": "Madinah", "ar": "المدينة", "lon": 39.5692, "lat": 24.5247 },
+        { "en": "Al Lith", "ar": "الليث", "lon": 40.2667, "lat": 20.15 }
+      ] },
+    { "id": "central", "en": "Central", "ar": "الوسطى", "cities": [
+        { "en": "Riyadh", "ar": "الرياض", "lon": 46.6753, "lat": 24.7136, "hub": true },
+        { "en": "Al Kharj", "ar": "الخرج", "lon": 47.3346, "lat": 24.1556 },
+        { "en": "Al Qassim", "ar": "القصيم", "lon": 43.975, "lat": 26.326 }
+      ] },
+    { "id": "eastern", "en": "Eastern", "ar": "الشرقية", "cities": [
+        { "en": "Dammam", "ar": "الدمام", "lon": 50.0888, "lat": 26.4207, "hub": true },
+        { "en": "Khobar", "ar": "الخبر", "lon": 50.2083, "lat": 26.2794 }
+      ] },
+    { "id": "southern", "en": "Southern", "ar": "الجنوبية", "cities": [
+        { "en": "Khamis Mushait", "ar": "خميس مشيط", "lon": 42.7333, "lat": 18.3 },
+        { "en": "Abha", "ar": "أبها", "lon": 42.5053, "lat": 18.2164 },
+        { "en": "Jazan", "ar": "جازان", "lon": 42.5511, "lat": 16.8892 }
+      ] },
+    { "id": "northern", "en": "Northern", "ar": "الشمالية", "cities": [
+        { "en": "Tabuk", "ar": "تبوك", "lon": 36.555, "lat": 28.3838 },
+        { "en": "Hail", "ar": "حائل", "lon": 41.7208, "lat": 27.5114 }
+      ] }
+  ],
+  "regions":
+[
+    { "iso": "SA-04", "zone": "eastern", "d": "M230.52,105.3L231.3,106.39L230.52,105.3ZM152.94,71.71L156.84,78.82L166.85,84.87L176.42,88.74L179.94,88.43L188.68,94.22L189.65,117.95L198.98,126.04L201.22,130.47L189.22,240.6L199.67,223.8L213.28,216.6L255.34,210.47L299.1,194.47L308.82,162.47L302.15,151.13L301.1,152.36L263.82,147.44L249.35,126.4L244.86,125.91L248.12,121.27L242.19,122.94L237.38,118.95L233.36,108.02L226.17,98.64L226.65,95.24L228.44,97.84L229.64,92.54L229.05,90.08L228.54,91.71L226.78,90.51L225.98,86.98L228.56,88.24L221.39,82.78L222.04,81.07L220.1,81L220.73,77.93L219.67,79.86L218.7,77.61L221.82,77.66L218.68,76.96L218.02,81.17L215.27,75.93L213.37,75.97L216.14,75.67L215.29,74.06L209.37,72.82L208.44,71.06L209.98,69.37L206.07,65.1L204.31,58.56L192.69,58.08L189.2,50.46L168.57,48.98L162.75,53.92L155.55,53.9L154,55.86L158.39,63.13L152.94,71.71Z" },
+    { "iso": "SA-10", "zone": null, "d": "M193.28,201.97L157.12,206.41L152,205.79L146.19,202.27L143.78,207.12L144.04,212.82L139.84,214.96L133.38,223.04L133.08,235.65L138.16,237.18L156.41,235.51L169.28,238.47L178.76,237.94L182.41,243.25L185.08,243.27L189.22,240.6L193.28,201.97Z" },
+    { "iso": "SA-08", "zone": null, "d": "M168.57,48.98L149.18,47.29L110.73,16.68L86.33,3.3L68.65,0L65.81,2.46L50.38,6.97L49.53,15.04L52.53,15.89L53.96,20.72L68.77,18.96L78.39,20.24L81.68,22.72L84.67,21.26L95.05,22.28L96.55,26.31L104.12,26.14L103.2,28.5L109.17,33.05L100.75,37.6L103.76,48.21L100.97,48.78L99.98,52.5L110.17,52.39L116.38,54.33L120.98,57.4L121.5,60.28L125.49,61.24L127.91,59.6L136.46,59.52L137.35,67.21L142.79,67.71L149.16,74.07L152.22,72.79L158.37,63.3L153.99,56.1L155.39,53.94L162.75,53.92L168.57,48.98Z" },
+    { "iso": "SA-06", "zone": "northern", "d": "M99.98,52.5L88.05,52.31L77.26,57.75L71.11,65.47L77.86,70.24L80.47,78.01L80.11,80.5L76.92,79.04L72.93,85.89L78.65,92.11L79.78,106.81L81.92,108.97L86.93,109.81L87.55,107.57L90.72,107.79L93.18,105.17L98.36,106.79L101.57,102.71L104.78,102.87L108.72,96.94L112.24,95.45L113.54,90.98L118.5,88.66L119.85,85.31L125.76,83.11L128.99,78.47L128.24,75.85L134.51,74.2L134.74,67.34L137.6,64.72L136.32,59.46L127.91,59.6L125.49,61.24L121.5,60.28L120.98,57.4L116.38,54.33L110.17,52.39L99.98,52.5Z" },
+    { "iso": "SA-01", "zone": "central", "d": "M152.94,71.71L149.16,74.07L151.42,77.7L151.71,83.58L148.97,81.75L144.64,83.48L146.04,97.37L150.24,103.26L149.11,106.38L145.31,104.7L134.77,109.49L134.11,111.52L130.68,111.18L125.89,114.67L125.57,116.08L127.25,115.98L125.43,118.48L127.11,118.79L125.04,122.21L117.7,123.34L115.8,119.27L111.37,119.15L109.13,133.84L114.94,146.94L123.49,148.28L124.32,153.64L131.01,154.17L129.77,172.68L139.36,185.11L137.64,192.86L145.89,202.06L152,205.79L157.12,206.41L193.28,201.97L201.51,135.63L200.94,129.38L189.65,117.95L188.68,94.22L179.94,88.43L176.42,88.74L166.85,84.87L156.84,78.82L152.94,71.71Z" },
+    { "iso": "SA-14", "zone": "southern", "d": "M146.19,202.27L137.64,192.86L139.51,185.52L133.8,178.85L129.68,181.14L123.25,181.46L113.48,189L109.94,184.47L110.05,189.18L107.14,191.56L105.08,197.72L107.47,198.28L107.39,205.97L100.68,207.35L100.56,212.41L105.51,214.56L108.32,225.59L115.43,228.05L118.96,231.96L122.86,226.3L125.87,231.63L133.08,235.65L133.38,223.04L139.84,214.96L144.04,212.82L143.78,207.12L146.19,202.27Z" },
+    { "iso": "SA-02", "zone": "western", "d": "M80.25,190.33L83.18,191.8L80.25,190.33ZM109.28,131.28L105.77,131.36L105.32,136.4L98.83,140.13L101.43,143.32L89.98,153.29L86.42,152.35L83.47,154.6L81.46,154.36L81.35,151.02L78.53,149.37L79.05,144.03L72.62,145.56L72.14,143.66L68.75,143.87L64.67,139.3L60.85,139.71L67.81,155.96L66.5,161.47L64.7,162.28L66.93,167.12L68.23,166.01L66.97,167.2L68.49,176.84L76.38,188.2L81.94,190.1L91.89,198.74L103.43,224.95L106.77,218.61L105.21,214.27L100.88,213.41L100.59,207.66L107.07,206.6L107.47,198.28L102.15,198.22L100.04,204.13L98.01,204.61L94.36,201.18L94.22,195.2L91.87,193.43L96.87,190.51L98.47,182.98L100.6,182.5L102.47,185.42L109.11,183.63L113.48,189L123.25,181.46L129.68,181.14L133.8,178.85L129.7,172.37L131.01,154.17L124.32,153.64L123.49,148.28L114.94,146.94L109.28,131.28Z" },
+    { "iso": "SA-07", "zone": "northern", "d": "M2.3,67.67L3.58,67.72L2.3,67.67ZM0,66.46L1.87,67.72L0,66.46ZM77.26,57.75L59.6,46.7L54.39,47.51L56.93,42.38L43.86,34.47L32.95,36.57L29.32,42.47L23.02,47.53L6.75,44.77L4.54,58.1L1.12,64.93L10.62,65.73L29.2,96.61L32.26,97.98L31.36,100.85L35.65,104.13L40.03,111.43L40.42,116.59L38.81,117.29L42.17,121.91L43.86,119.31L48.01,120.16L48.2,118.33L51.58,118.29L51.85,116.72L47.99,110.26L47.13,105.77L48.86,103.46L44.49,100.98L41.28,94.84L42.09,93.2L39.57,93.18L38.62,86.77L35.54,85.03L35.89,81.73L33.05,80.81L33.03,77.85L36.21,75.25L41.15,76.6L46.37,74.08L50.01,76.05L49.87,80L52.9,85.16L71.24,85.58L77.18,78.79L80.47,79.76L77.86,70.24L71.08,66.11L77.26,57.75Z" },
+    { "iso": "SA-03", "zone": "western", "d": "M73.05,84.74L52.9,85.16L49.87,80L50.01,76.05L46.17,74.04L41.15,76.6L36.21,75.25L33.03,77.85L32.93,80.53L35.78,81.53L35.45,84.87L38.62,86.77L39.47,93.02L42.09,93.2L41.28,94.84L44.49,100.98L48.86,103.46L47.13,105.77L47.99,110.26L51.85,116.72L51.58,118.29L48.2,118.33L48.01,120.16L43.77,119.37L42.77,124.56L49.15,128.05L50.43,127.11L57.89,133.99L60.68,139.72L64.67,139.3L68.75,143.87L72.14,143.66L72.62,145.56L79.05,144.03L78.53,149.37L81.35,151.02L81.46,154.36L83.47,154.6L86.42,152.35L89.98,153.29L101.43,143.32L98.83,140.13L105.32,136.4L105.77,131.36L109.28,131.28L111.48,116.85L100.64,107.16L95.82,105.38L87.71,107.47L86.93,109.81L80.51,108.33L78.65,92.11L73.05,84.74Z" },
+    { "iso": "SA-05", "zone": "central", "d": "M137.6,64.72L134.74,67.34L134.51,74.2L128.24,75.85L128.99,78.47L125.76,83.11L119.85,85.31L118.5,88.66L111.85,92.96L111.82,95.99L108.72,96.94L104.78,102.87L101.28,102.9L98.36,106.79L111.27,116.64L111.37,119.15L115.8,119.27L117.7,123.34L125.83,121.57L127.26,115.75L125.54,115.39L130.68,111.18L134.11,111.52L134.77,109.49L145.31,104.7L149.11,106.38L149.72,105.11L150.24,103.26L146.04,97.37L144.31,86.92L145.39,82.45L148.97,81.75L151.71,83.58L151.42,77.7L145.63,69.73L141.04,66.98L138.13,68.03L137.6,64.72Z" },
+    { "iso": "SA-11", "zone": null, "d": "M109.94,184.47L102.47,185.42L99.04,182.37L96.87,190.51L91.9,193.12L94.22,195.2L94.36,201.18L97.66,204.44L100.04,204.13L102.15,198.22L105.07,197.78L107.14,191.56L110.05,189.18L109.94,184.47Z" },
+    { "iso": "SA-09", "zone": "southern", "d": "M103.16,244.4L104.16,245.46L103.16,244.4ZM103.41,244.19L104.06,245.21L103.41,244.19ZM107.25,242.28L108.64,243.23L107.25,242.28ZM105.42,246.81L107.04,247.6L105.42,246.81ZM105.9,244.23L112.25,249.09L110.75,245.36L109.97,247.12L105.9,244.23ZM107.1,244.08L109.64,246.28L108.51,243.24L107.1,244.08ZM106.13,221.45L103.42,224.96L104.19,226.5L114.02,235.34L114.9,242.23L115.68,239.92L120.2,247.65L120.48,251.87L123.31,252.07L126.18,247.62L127.47,248.06L126.08,243.79L128.75,233.95L123.23,228.76L122.86,226.3L118.66,231.94L115.43,228.05L108.32,225.59L108.55,221.7L106.13,221.45Z" },
+    { "iso": "SA-12", "zone": null, "d": "M50.63,6.53L36.56,10.47L51.09,26.46L46.26,29.15L43.86,34.47L56.93,42.38L54.39,47.51L59.6,46.7L77.26,57.75L88.15,52.28L99.98,52.5L100.97,48.78L103.69,48.33L100.65,37.82L109.17,33.05L103.2,28.5L104.12,26.14L96.55,26.31L95.05,22.28L84.67,21.26L81.68,22.72L78.39,20.24L68.77,18.96L53.96,20.72L52.53,15.89L49.53,15.04L50.63,6.53Z" }
+  ]
+}
+  </script>
+  <script>
+  (function(){
+    var D = JSON.parse(document.getElementById('fl-distribution-content').textContent);
+    var mapMount = document.getElementById('flDzMap');
+    var cardsMount = document.getElementById('flDzCards');
+    var statsMount = document.getElementById('flDzStats');
+    if (!mapMount || !cardsMount) return;
+
+    function lang(){ return document.documentElement.lang === 'ar' ? 'ar' : 'en'; }
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    function svgEl(tag, attrs){
+      var n = document.createElementNS(SVGNS, tag);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      return n;
+    }
+    function el(tag, cls){ var n = document.createElement(tag); if (cls) n.className = cls; return n; }
+    function project(lon, lat){
+      var p = D.proj;
+      return [ (lon - p.lonMin) * p.cosMid * p.scale, (p.latMax - lat) * p.scale ];
+    }
+
+    /* ---------- build the SVG (region shapes) ---------- */
+    var svg = svgEl('svg', { viewBox: D.viewBox, 'aria-hidden': 'true' });
+    var gRegions = svgEl('g');
+    var regionEls = {}; // zone id -> array of path elements
+    D.regions.forEach(function(r){
+      var attrs = { d: r.d, class: 'fl-dz-region' };
+      var path = svgEl('path', attrs);
+      if (r.zone) {
+        path.setAttribute('data-zone', r.zone);
+        path.setAttribute('tabindex', '0');
+        path.setAttribute('role', 'button');
+        (regionEls[r.zone] = regionEls[r.zone] || []).push(path);
+      }
+      gRegions.appendChild(path);
+    });
+    svg.appendChild(gRegions);
+    mapMount.appendChild(svg);
+
+    /* ---------- city dots (HTML overlay) ----------
+       The map card is now much wider than the country's own aspect ratio, so the SVG
+       letterboxes itself inside #flDzMap (centered, true proportions kept — no stretching).
+       That means dots can't just use a flat %-of-viewBox position any more: layoutCities()
+       below re-derives the exact letterboxed rectangle from the live box size (via
+       ResizeObserver, so it tracks every breakpoint/height change) and places each dot
+       inside *that* rectangle. */
+    var cityWrap = el('div', 'fl-dz-cities');
+    var vb = D.viewBox.split(' ');
+    var VBW = parseFloat(vb[2]), VBH = parseFloat(vb[3]);
+    var cityEls = {}; // zone id -> array of city button elements
+    var cityPos = []; // { btn, vx, vy } — vx/vy are the point's position in viewBox units
+    var allZones = D.zones.map(function(z){ return z.id; });
+
+    D.zones.forEach(function(zone){
+      zone.cities.forEach(function(c){
+        var xy = project(c.lon, c.lat);
+        var btn = el('button', 'fl-dz-city');
+        btn.type = 'button';
+        btn.setAttribute('data-zone', zone.id);
+        btn.setAttribute('data-hub', c.hub ? '1' : '0');
+        /* NOTE: deliberately not data-en/data-ar on the button itself — app.js's global i18n
+           handler treats any [data-en] element as a leaf and overwrites its full textContent,
+           which would wipe out the ring/dot/tip children below. Only the tip (a real leaf) carries them. */
+        var ring = el('span', 'fl-dz-ring'); ring.setAttribute('aria-hidden', 'true');
+        var dot = el('span', 'fl-dz-dot'); dot.setAttribute('aria-hidden', 'true');
+        var tip = el('span', 'fl-dz-tip');
+        tip.setAttribute('data-en', c.en); tip.setAttribute('data-ar', c.ar);
+        tip.textContent = lang() === 'ar' ? c.ar : c.en;
+        btn.setAttribute('aria-label', c.en + ' / ' + c.ar);
+        btn.appendChild(ring); btn.appendChild(dot); btn.appendChild(tip);
+        cityWrap.appendChild(btn);
+        (cityEls[zone.id] = cityEls[zone.id] || []).push(btn);
+        cityPos.push({ btn: btn, vx: xy[0], vy: xy[1] });
+      });
+    });
+    mapMount.appendChild(cityWrap);
+
+    function layoutCities(){
+      var Wc = mapMount.clientWidth, Hc = mapMount.clientHeight;
+      if (!Wc || !Hc) return;
+      var scale = Math.min(Wc / VBW, Hc / VBH);
+      var renderW = VBW * scale, renderH = VBH * scale;
+      var offX = (Wc - renderW) / 2, offY = (Hc - renderH) / 2;
+      cityPos.forEach(function(p){
+        var px = offX + p.vx * scale, py = offY + p.vy * scale;
+        p.btn.style.left = (px / Wc * 100).toFixed(3) + '%';
+        p.btn.style.top = (py / Hc * 100).toFixed(3) + '%';
+      });
+    }
+    layoutCities();
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(layoutCities).observe(mapMount);
+    } else {
+      addEventListener('resize', layoutCities);
+    }
+
+    /* ---------- list: stats strip + zone rows ---------- */
+    var totalCities = D.zones.reduce(function(n, z){ return n + z.cities.length; }, 0);
+    function pluralCities(n, l){
+      if (l === 'ar') return n === 2 ? 'مدينتان' : (n + ' مدن');
+      return n === 1 ? '1 city' : (n + ' cities');
+    }
+    function renderStats(){
+      var l = lang();
+      statsMount.innerHTML = l === 'ar'
+        ? (D.zones.length + ' مناطق <span class="sep">·</span> ' + totalCities + ' مدينة <span class="sep">·</span> حضور خليجي')
+        : (D.zones.length + ' regions <span class="sep">·</span> ' + totalCities + ' cities <span class="sep">·</span> Gulf presence');
+    }
+    renderStats();
+
+    var cardEls = {}; // zone id -> card element
+    D.zones.forEach(function(zone){
+      var card = el('button', 'fl-dz-card');
+      card.type = 'button';
+      card.setAttribute('data-zone', zone.id);
+      var name = el('span', 'name');
+      name.setAttribute('data-en', zone.en); name.setAttribute('data-ar', zone.ar);
+      var badge = el('span', 'badge');
+      badge.setAttribute('data-count-en', pluralCities(zone.cities.length, 'en'));
+      badge.setAttribute('data-count-ar', pluralCities(zone.cities.length, 'ar'));
+      var citiesEn = zone.cities.map(function(c){ return c.en; }).join(' · ');
+      var citiesAr = zone.cities.map(function(c){ return c.ar; }).join(' · ');
+      var cities = el('span', 'cities');
+      cities.setAttribute('data-en', citiesEn); cities.setAttribute('data-ar', citiesAr);
+      card.appendChild(name); card.appendChild(badge); card.appendChild(cities);
+      cardsMount.appendChild(card);
+      cardEls[zone.id] = card;
+    });
+
+    function syncCardText(){
+      var l = lang();
+      D.zones.forEach(function(zone){
+        var card = cardEls[zone.id];
+        card.querySelector('.name').textContent = l === 'ar' ? zone.ar : zone.en;
+        card.querySelector('.cities').textContent = card.querySelector('.cities').getAttribute('data-' + l);
+        var b = card.querySelector('.badge');
+        b.textContent = b.getAttribute('data-count-' + l);
+      });
+      cityWrap.querySelectorAll('.fl-dz-tip').forEach(function(t){
+        t.textContent = t.getAttribute('data-' + l);
+      });
+    }
+    syncCardText();
+
+    /* ---------- linked hover / tap interaction ---------- */
+    var mapEl = mapMount;
+    var active = null;
+    function setActive(zoneId){
+      active = zoneId;
+      mapEl.classList.toggle('has-active', !!zoneId);
+      allZones.forEach(function(z){
+        var on = z === zoneId;
+        (regionEls[z] || []).forEach(function(p){ p.classList.toggle('is-active', on); });
+        (cityEls[z] || []).forEach(function(b){ b.classList.toggle('is-active', on); });
+        if (cardEls[z]) cardEls[z].classList.toggle('is-active', on);
+      });
+    }
+
+    D.zones.forEach(function(zone){
+      var card = cardEls[zone.id];
+      card.addEventListener('mouseenter', function(){ setActive(zone.id); });
+      card.addEventListener('mouseleave', function(){ setActive(null); });
+      card.addEventListener('focus', function(){ setActive(zone.id); });
+      card.addEventListener('blur', function(){ setActive(null); });
+      card.addEventListener('click', function(){ setActive(active === zone.id ? null : zone.id); });
+
+      (regionEls[zone.id] || []).forEach(function(p){
+        p.addEventListener('mouseenter', function(){ setActive(zone.id); });
+        p.addEventListener('mouseleave', function(){ setActive(null); });
+        p.addEventListener('focus', function(){ setActive(zone.id); });
+        p.addEventListener('blur', function(){ setActive(null); });
+        p.addEventListener('click', function(){ setActive(active === zone.id ? null : zone.id); });
+      });
+      (cityEls[zone.id] || []).forEach(function(b){
+        b.addEventListener('mouseenter', function(){ setActive(zone.id); });
+        b.addEventListener('mouseleave', function(){ setActive(null); });
+      });
+    });
+
+    function syncAll(){ renderStats(); syncCardText(); }
+    new MutationObserver(syncAll).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  })();
+  </script>
 </section>
 
 <!-- ================= SUCCESS PARTNERS ================= -->
 <section class="section tint" id="partners">
-  <div class="fl-head">
-    <p class="fl-kicker"><span class="n">07</span> <span data-en="Success Partners" data-ar="شركاء النجاح">Success Partners</span></p>
+  <div class="fl-head fl-head-center">
+    <p class="fl-kicker"><span data-en="Success Partners" data-ar="شركاء النجاح">Success Partners</span></p>
     <h2 class="fl-h2 display reveal" data-en="A network of commercial partnerships" data-ar="شبكة من الشراكات التجارية">A network of commercial partnerships</h2>
     <p class="fl-lead reveal" data-en="Fluiday Auto works with a range of distributors and commercial partners to support product reach and extend access to customers."
        data-ar="تعمل فلودي أوتو مع مجموعة من الموزعين والشركاء التجاريين لدعم انتشار منتجاتها وتوسيع نطاق الوصول إلى العملاء.">Fluiday Auto works with distributors and commercial partners across the region.</p>
   </div>
 
-  <div class="fl-partners-grid" data-stagger>
-    <div class="fl-partner reveal">
-      <figure class="slot" data-slot="partner-1">
-        <figcaption class="slot-ph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.6"/></svg>
-          <span class="slot-l" data-en="Partner logo 1" data-ar="شعار الشريك 1">Partner logo 1</span><span class="slot-f">assets/img/fl/partner-1.svg</span></figcaption>
-      </figure>
-      <p class="fl-partner-name" data-en="Riyad Al Khair Trading" data-ar="شركة رياض الخير للتجارة">Riyad Al Khair Trading</p>
-    </div>
-    <div class="fl-partner reveal">
-      <figure class="slot" data-slot="partner-2">
-        <figcaption class="slot-ph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.6"/></svg>
-          <span class="slot-l" data-en="Partner logo 2" data-ar="شعار الشريك 2">Partner logo 2</span><span class="slot-f">assets/img/fl/partner-2.svg</span></figcaption>
-      </figure>
-      <p class="fl-partner-name">Performance-PP</p>
-    </div>
-    <div class="fl-partner reveal">
-      <figure class="slot" data-slot="partner-3">
-        <figcaption class="slot-ph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.6"/></svg>
-          <span class="slot-l" data-en="Partner logo 3" data-ar="شعار الشريك 3">Partner logo 3</span><span class="slot-f">assets/img/fl/partner-3.svg</span></figcaption>
-      </figure>
-      <p class="fl-partner-name" data-en="Husun Qimat Al Amal Trading" data-ar="شركة حصون قمة الأمل للتجارة">Husun Qimat Al Amal Trading</p>
-    </div>
-    <div class="fl-partner reveal">
-      <figure class="slot" data-slot="partner-4">
-        <figcaption class="slot-ph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.6"/></svg>
-          <span class="slot-l" data-en="Partner logo 4" data-ar="شعار الشريك 4">Partner logo 4</span><span class="slot-f">assets/img/fl/partner-4.svg</span></figcaption>
-      </figure>
-      <p class="fl-partner-name" data-en="Qurina General Trading" data-ar="شركة قورينا للتجارة العامة">Qurina General Trading</p>
-    </div>
-  </div>
+  <div class="fl-partners-grid" id="flPartners" data-stagger></div>
+
+  <!-- Partner names + logo paths live here so they can be updated later without touching the layout/render code below.
+       "file" is the real logo to try first (assets/img/fl/…); if it 404s the render script falls back to "mono" —
+       no broken images. -->
+  <script type="application/json" id="fl-partners-content">
+  [
+    { "en": "Riyadh Al-Khair Trading Co.", "ar": "شركة رياض الخير للتجارة", "monoEn": "RK", "monoAr": "ر", "file": "partner-1.png" },
+    { "en": "Performance-PP", "ar": "Performance-PP", "monoEn": "PP", "monoAr": "PP", "file": "partner-2.png" },
+    { "en": "Husoon Qimmat Al-Amal Trading Co.", "ar": "شركة حصون قمة الأمل للتجارة", "monoEn": "HQ", "monoAr": "ح", "file": "partner-3.png" },
+    { "en": "Qoreena General Trading Co.", "ar": "شركة قورينا للتجارة العامة", "monoEn": "Q", "monoAr": "ق", "file": "partner-4.png" }
+  ]
+  </script>
+  <script>
+  (function(){
+    var data = JSON.parse(document.getElementById('fl-partners-content').textContent);
+    var grid = document.getElementById('flPartners');
+    function el(tag, cls){ var n = document.createElement(tag); if (cls) n.className = cls; return n; }
+    data.forEach(function(p){
+      var card = el('div', 'fl-partner reveal');
+
+      var wrap = el('div', 'fl-partner-logo-wrap');
+      var img = document.createElement('img');
+      img.className = 'fl-partner-logo'; img.loading = 'lazy'; img.decoding = 'async';
+      img.alt = p.en; img.setAttribute('data-alt-en', p.en); img.setAttribute('data-alt-ar', p.ar);
+      img.onerror = function(){ this.remove(); };
+      img.src = '../assets/img/fl/' + p.file;
+      var mono = el('span', 'fl-partner-mono');
+      mono.setAttribute('aria-hidden', 'true');
+      mono.setAttribute('data-en', p.monoEn); mono.setAttribute('data-ar', p.monoAr);
+      mono.textContent = document.documentElement.dir === 'rtl' ? p.monoAr : p.monoEn;
+      wrap.appendChild(img); wrap.appendChild(mono);
+
+      var name = el('p', 'fl-partner-name');
+      name.setAttribute('data-en', p.en); name.setAttribute('data-ar', p.ar);
+      name.textContent = document.documentElement.dir === 'rtl' ? p.ar : p.en;
+
+      var sub = el('p', 'fl-partner-sub');
+      sub.setAttribute('data-en', 'Authorized Distributor'); sub.setAttribute('data-ar', 'موزّع معتمد');
+      sub.textContent = document.documentElement.dir === 'rtl' ? 'موزّع معتمد' : 'Authorized Distributor';
+
+      card.appendChild(wrap); card.appendChild(name); card.appendChild(sub);
+      grid.appendChild(card);
+    });
+  })();
+  </script>
 </section>
 
 <!-- ================= FLUIDAY × SKY GLOBAL ================= -->
@@ -723,7 +1068,7 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
 <section class="section" id="contact">
   <div class="fl-two">
     <div>
-      <p class="fl-kicker"><span class="n">08</span> <span data-en="Contact" data-ar="تواصل معنا">Contact</span></p>
+      <p class="fl-kicker"><span data-en="Contact" data-ar="تواصل معنا">Contact</span></p>
       <h2 class="fl-h2 display reveal" data-en="Looking for automotive-sector solutions?" data-ar="هل تبحث عن حلول لقطاع السيارات؟">Looking for automotive-sector solutions?</h2>
       <p class="fl-body-p reveal" style="margin-top:1.2rem" data-en="For commercial enquiries, distribution, partnerships, or product orders — reach the Fluiday Auto team."
          data-ar="للاستفسارات التجارية، التوزيع، الشراكات، أو طلبات المنتجات — تواصل مع فريق فلودي أوتو.">For commercial enquiries, distribution, partnerships or product orders.</p>
@@ -742,40 +1087,31 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="fl-ft">
-  <div class="wrap">
-    <div class="fl-ft-top">
-      <div>
-        <img class="fl-logo" src="../assets/img/logo-fluiday.svg" alt="Fluiday Auto" />
-        <p data-en="Applied automotive chemistry — coolants, AdBlue, radiator-circuit cleaner and spare parts, engineered to German standards."
-           data-ar="الهندسة الكيميائية التطبيقية للسيارات — سوائل تبريد، أدبلو، منظف دورة الرديتر وقطع غيار، بمعايير ألمانية.">Applied automotive chemistry — engineered to German standards.</p>
-      </div>
-      <div>
-        <h4 data-en="Sections" data-ar="الأقسام">Sections</h4>
-        <ul>
-          <li><a href="#products" data-en="Products" data-ar="المنتجات">Products</a></li>
-          <li><a href="#why" data-en="Why Fluiday" data-ar="لماذا فلودي">Why Fluiday</a></li>
-          <li><a href="#motorsport" data-en="Motorsport" data-ar="رياضة المحركات">Motorsport</a></li>
-          <li><a href="#distribution" data-en="Distribution" data-ar="التوزيع">Distribution</a></li>
-          <li><a href="#partners" data-en="Success Partners" data-ar="شركاء النجاح">Success Partners</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-en="Contact" data-ar="تواصل">Contact</h4>
-        <ul>
-          <li><a href="tel:+966122068728" class="tnum">+966 12 206 8728</a></li>
-          <li><a href="tel:+966533373060" class="tnum">+966 53 337 3060</a></li>
-          <li>FLUIDAYAUTO.COM</li>
-          <li><a href="../index.html#companies" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">Sky Global Holding</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="fl-ft-bot">
-      <span data-en="© 2026 Fluiday Auto — a Sky Global company. All rights reserved." data-ar="© 2026 فلودي أوتو — شركة من سكاي جلوبال. جميع الحقوق محفوظة.">© 2026 Fluiday Auto — a Sky Global company.</span>
-      <span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</span>
-    </div>
-  </div>
-</footer>
+<!-- Shared site footer — single source: assets/footer.js builds it from this config.
+     Editing footer design/structure? Change assets/footer.js once and every page updates. -->
+<div id="ft-mount"></div>
+<script type="application/json" id="ft-config">
+{
+  "nameEn": "Fluiday Auto", "nameAr": "فلودي أوتو",
+  "companyId": "fluiday",
+  "taglineEn": "Applied automotive chemistry — coolants, AdBlue, radiator-circuit cleaner and spare parts, engineered to German standards.",
+  "taglineAr": "الهندسة الكيميائية التطبيقية للسيارات — سوائل تبريد، أدبلو، منظف دورة الرديتر وقطع غيار، بمعايير ألمانية.",
+  "logoHTML": "<img src=\"../assets/img/logo-fluiday.svg\" alt=\"Fluiday Auto\" style=\"height:40px\"/>",
+  "explore": [
+    { "href": "#about", "en": "About Us", "ar": "من نحن" },
+    { "href": "#products", "en": "Products", "ar": "المنتجات" },
+    { "href": "#why", "en": "Why Fluiday", "ar": "لماذا فلودي" },
+    { "href": "#distribution", "en": "Distribution", "ar": "التوزيع" },
+    { "href": "#partners", "en": "Partners", "ar": "شركاؤنا" },
+    { "href": "#contact", "en": "Contact", "ar": "تواصل" }
+  ],
+  "contact": {
+    "phone": "+966 12 206 8728", "phoneHref": "tel:+966122068728",
+    "phone2": "+966 53 337 3060", "phone2Href": "tel:+966533373060"
+  }
+}
+</script>
+<script src="../assets/footer.js"></script>
 
 <script>
 (function(){
@@ -801,5 +1137,15 @@ html[dir="rtl"] .fl-specrow .k{font-family:var(--ar);letter-spacing:0;text-trans
 })();
 </script>
 <script src="../assets/app.js"></script>
+<script>
+/* keep product-category image alt text in sync with the active language */
+(function(){
+  var root=document.documentElement;
+  function sync(){var l=root.lang==='ar'?'ar':'en';
+    document.querySelectorAll('img[data-alt-en]').forEach(function(i){i.setAttribute('alt',i.getAttribute('data-alt-'+l));});}
+  sync();
+  new MutationObserver(sync).observe(root,{attributes:true,attributeFilter:['lang']});
+})();
+</script>
 </body>
 </html>

@@ -46,10 +46,10 @@ html{scroll-padding-top:var(--nh-hdr)}
 .nh .section.orange .nh-lead{color:#6a5245}
 .nh-wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .nh-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);margin-bottom:clamp(2.6rem,4.5vw,4rem)}
-.nh-kicker{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+.nh-kicker{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
   color:var(--nh-orange);display:inline-flex;align-items:center;gap:.9em;margin-bottom:1.3rem}
-html[dir="rtl"] .nh-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:.92rem}
-.nh-kicker .n{border:1px solid color-mix(in srgb,var(--nh-orange) 45%,transparent);border-radius:2px;padding:2px 7px;font-size:.7rem;letter-spacing:.08em}
+html[dir="rtl"] .nh-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:15px}
+.nh-kicker .n{border:1px solid color-mix(in srgb,var(--nh-orange) 45%,transparent);border-radius:2px;padding:2px 7px;font-size:15px;letter-spacing:.08em}
 .nh .dark .nh-kicker{color:var(--nh-orange-l)}
 .nh-h2{font-family:var(--serif);font-weight:400;font-size:var(--s4);line-height:1.08;letter-spacing:-.015em;max-width:20ch}
 html[dir="rtl"] .nh-h2{font-family:var(--ar);font-weight:700;line-height:1.28;letter-spacing:0;max-width:26ch}
@@ -61,7 +61,7 @@ html[dir="rtl"] .nh-lead{line-height:1.95}
 html[dir="rtl"] .nh-p{line-height:1.95}
 .nh-p + .nh-p{margin-top:1rem}
 .nh .dark .nh-p{color:#bcbcd8}
-.tech{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--nh-orange)}
+.tech{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--nh-orange)}
 html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
 
 .nh .btn-primary{background:var(--nh-orange);color:#fff}
@@ -78,24 +78,24 @@ html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none
 .nh-hdr.scrolled::after{background:var(--nh-line)}
 .nh-hdr-logo{flex:none;display:flex;align-items:center;gap:10px;color:var(--nh-navy)}
 .nh-hdr-logo .mk{width:34px;height:34px;flex:none;object-fit:contain;transition:width .4s,height .4s}
-.nh-hdr-logo .wm{font-family:var(--ar);font-weight:800;font-size:1.06rem;letter-spacing:.01em}
-.nh-hdr-logo .wm-en{font-family:var(--sans);font-weight:800;font-size:.82rem;letter-spacing:.14em}
+.nh-hdr-logo .wm{font-family:var(--ar);font-weight:800;font-size:15px;letter-spacing:.01em}
+.nh-hdr-logo .wm-en{font-family:var(--sans);font-weight:800;font-size:15px;letter-spacing:.14em}
 
 .nh-nav{display:flex;gap:28px;align-items:center}
-.nh-nav a{font-size:.9rem;font-weight:600;letter-spacing:.01em;color:var(--nh-ink-2);padding:8px 2px;position:relative;transition:color .3s}
-html[dir="rtl"] .nh-nav a{font-weight:700;font-size:1rem}
+.nh-nav a{font-size:17px;font-weight:600;letter-spacing:.01em;color:var(--nh-ink-2);padding:8px 2px;position:relative;transition:color .3s}
+html[dir="rtl"] .nh-nav a{font-weight:700;font-size:17px}
 .nh-nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:0;width:0;height:2px;background:var(--nh-orange);transition:width .3s var(--ease)}
 .nh-nav a:hover{color:var(--nh-orange)}
 .nh-nav a:hover::after,.nh-nav a.here::after{width:100%}
 .nh-hdr-r{flex:none;display:flex;align-items:center;gap:12px}
-.nh-hdr-r .lang{color:var(--nh-ink);border-color:var(--nh-line);font-size:.82rem;padding:9px 15px}
+.nh-hdr-r .lang{color:var(--nh-ink);border-color:var(--nh-line);font-size:16px;padding:9px 15px}
 .nh-hdr-r .lang:hover{border-color:var(--nh-orange);color:var(--nh-orange)}
-.nh-hdr-r .btn-ghost{padding:10px 20px;font-size:.84rem;border-color:var(--nh-line);color:var(--nh-ink)}
+.nh-hdr-r .btn-ghost{padding:10px 20px;font-size:16px;border-color:var(--nh-line);color:var(--nh-ink)}
 .nh-hdr-r .btn-ghost:hover{background:var(--nh-orange);border-color:var(--nh-orange);color:#fff}
 .nh-menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:var(--nh-ink)}
 
 .nh-back{position:absolute;inset-block-start:calc(var(--nh-hdr) + 16px);inset-inline-start:var(--gutter);z-index:6;
-  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:var(--nh-ink-3);
+  font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.06em;color:var(--nh-ink-3);
   display:inline-flex;align-items:center;gap:.55em;transition:color .3s}
 html[dir="rtl"] .nh-back{font-family:var(--ar);letter-spacing:0;font-weight:700}
 .nh-back:hover{color:var(--nh-navy)}
@@ -105,7 +105,7 @@ html[dir="rtl"] .nh-back svg{transform:scaleX(-1)}
 .nh-mobile{position:fixed;inset:0;z-index:98;background:var(--nh-ink);color:#fff;display:flex;flex-direction:column;
   justify-content:center;gap:2px;padding:var(--gutter);transform:translateY(-100%);transition:transform .5s var(--ease);overflow-y:auto}
 .nh-mobile.open{transform:none}
-.nh-mobile a{font-size:1.3rem;font-weight:400;padding:13px 0;border-bottom:1px solid var(--nh-line-d)}
+.nh-mobile a{font-size:18px;font-weight:400;padding:13px 0;border-bottom:1px solid var(--nh-line-d)}
 .nh-mobile .btn{align-self:flex-start;margin-top:22px}
 @media (max-width:1080px){ .nh-nav{display:none} .nh-menu-toggle{display:flex} .nh-hdr-r .btn-ghost{display:none} }
 
@@ -146,7 +146,7 @@ html[dir="rtl"] .nh-back svg{transform:scaleX(-1)}
 .nh-hero-logo .wm-en{font-family:var(--sans);font-weight:800;letter-spacing:.22em;font-size:clamp(.8rem,.6rem + .8vw,1.05rem);color:var(--nh-orange);margin-top:.5rem}
 .nh-hero-tagline{font-size:var(--s1);font-weight:400;line-height:1.6;color:var(--nh-ink-2);max-width:44ch}
 html[dir="rtl"] .nh-hero-tagline{line-height:2}
-.nh-hero-center .btn{font-size:.98rem;padding:16px 36px;box-shadow:0 16px 40px -14px rgba(255,122,41,.5)}
+.nh-hero-center .btn{font-size:16px;padding:16px 36px;box-shadow:0 16px 40px -14px rgba(255,122,41,.5)}
 .nh-hero-scroll{position:absolute;z-index:3;inset-block-end:24px;inset-inline:0;margin-inline:auto;width:34px;height:34px;
   display:grid;place-items:center;color:var(--nh-ink-3);border:1px solid var(--nh-line);border-radius:999px;transition:.3s}
 .nh-hero-scroll:hover{color:var(--nh-navy);border-color:var(--nh-navy)}
@@ -161,15 +161,15 @@ html[dir="rtl"] .nh-hero-tagline{line-height:2}
 .nh-specrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--nh-line);border:1px solid var(--nh-line);
   border-radius:8px;overflow:hidden;max-width:var(--maxw);margin:0 auto clamp(2.6rem,4vw,3.6rem)}
 .nh-specrow div{background:var(--nh-paper);padding:18px 22px}
-.nh-specrow .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
-html[dir="rtl"] .nh-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.78rem}
-.nh-specrow .v{font-size:1rem;font-weight:700;margin-top:5px}
+.nh-specrow .k{font-family:var(--mono);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .nh-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:15px}
+.nh-specrow .v{font-size:16px;font-weight:700;margin-top:5px}
 .nh-specrow .v b{color:var(--nh-orange)}
 .nh-aside{border:1px solid var(--nh-line);border-radius:12px;padding:clamp(24px,3vw,34px);background:var(--nh-paper);
   border-inline-start:3px solid var(--nh-orange)}
 .nh-aside .ix{font-family:var(--serif);font-size:1.8rem;color:var(--nh-orange);line-height:1;display:block;margin-bottom:1rem}
 html[dir="rtl"] .nh-aside .ix{font-family:var(--ar)}
-.nh-aside p{color:var(--ink-soft);font-size:.98rem}
+.nh-aside p{color:var(--ink-soft);font-size:17px}
 html[dir="rtl"] .nh-aside p{line-height:1.95}
 
 /* ---------- WHAT WE DO — creative card grid ---------- */
@@ -182,14 +182,14 @@ html[dir="rtl"] .nh-svc::before{transform-origin:right}
 .nh-svc:hover{transform:translateY(-6px);border-color:transparent;
   box-shadow:0 26px 50px -26px color-mix(in srgb,var(--cat) 55%,transparent)}
 .nh-svc:hover::before{transform:scaleX(1)}
-.nh-svc-ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;
+.nh-svc-ic{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;
   background:color-mix(in srgb,var(--cat) 12%,transparent);color:var(--cat);transition:background .35s,color .35s,transform .35s var(--ease)}
 .nh-svc:hover .nh-svc-ic{background:var(--cat);color:#fff;transform:rotate(-6deg) scale(1.06)}
-.nh-svc-ic svg{width:24px;height:24px}
-.nh-svc h3{font-size:1.1rem;font-weight:800;margin-bottom:.5rem}
-.nh-svc p{font-size:.9rem;color:var(--ink-soft);line-height:1.7}
+.nh-svc-ic svg{width:40px;height:40px} /* service icons — 32–48px band */
+.nh-svc h3{font-size:24px;font-weight:800;margin-bottom:.5rem} /* real <h3> — 22–26px band */
+.nh-svc p{font-size:17px;color:var(--ink-soft);line-height:1.7}
 html[dir="rtl"] .nh-svc p{line-height:1.9}
-.nh-svc .en{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);display:block;margin-top:.7rem}
+.nh-svc .en{font-family:var(--mono);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);display:block;margin-top:.7rem}
 html[dir="rtl"] .nh-svc .en{font-family:var(--sans)}
 
 /* ---------- METHODOLOGY — connected flow ---------- */
@@ -201,13 +201,13 @@ html[dir="rtl"] .nh-svc .en{font-family:var(--sans)}
 .nh-step .dot{width:70px;height:70px;border-radius:999px;background:var(--nh-paper);border:2px solid var(--nh-line);
   display:grid;place-items:center;margin:0 auto 18px;position:relative;z-index:1;
   transition:border-color .35s,transform .35s var(--ease),box-shadow .35s}
-.nh-step .dot svg{width:26px;height:26px;color:var(--nh-navy);transition:color .35s}
-.nh-step .n{position:absolute;inset-block-start:-6px;inset-inline-end:-6px;width:22px;height:22px;border-radius:999px;
-  background:var(--nh-orange);color:#fff;font-family:var(--mono);font-size:.66rem;font-weight:700;display:grid;place-items:center}
+.nh-step .dot svg{width:40px;height:40px;color:var(--nh-navy);transition:color .35s} /* service icons — 32–48px band */
+.nh-step .n{position:absolute;inset-block-start:-6px;inset-inline-end:-6px;width:26px;height:26px;border-radius:999px;
+  background:var(--nh-orange);color:#fff;font-family:var(--mono);font-size:15px;font-weight:700;display:grid;place-items:center}
 .nh-step:hover .dot{border-color:var(--nh-orange);transform:translateY(-4px);box-shadow:0 16px 32px -18px rgba(255,122,41,.6)}
 .nh-step:hover .dot svg{color:var(--nh-orange)}
-.nh-step h3{font-size:1.05rem;font-weight:800;margin-bottom:.35rem}
-.nh-step p{font-size:.86rem;color:var(--ink-soft);line-height:1.7}
+.nh-step h3{font-size:24px;font-weight:800;margin-bottom:.35rem} /* real <h3> — 22–26px band */
+.nh-step p{font-size:17px;color:var(--ink-soft);line-height:1.7}
 .nh .navy .nh-step h3{color:#fff}
 .nh .navy .nh-step p{color:#c7c7e0}
 .nh .navy .nh-flow::before{background:linear-gradient(90deg,rgba(255,255,255,.35),var(--nh-orange));opacity:.6}
@@ -225,9 +225,9 @@ html[dir="rtl"] .nh-svc .en{font-family:var(--sans)}
 .nh-why > div{border:1px solid var(--nh-line);border-radius:12px;padding:clamp(22px,2.5vw,30px);background:var(--nh-paper);
   transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
 .nh-why > div:hover{transform:translateY(-4px);border-color:transparent;box-shadow:0 22px 44px -26px rgba(13,13,60,.35)}
-.nh-why svg{width:26px;height:26px;color:var(--nh-orange);margin-bottom:12px}
-.nh-why h3{font-size:1rem;font-weight:800;color:var(--nh-ink);margin-bottom:.4rem}
-.nh-why p{font-size:.88rem;color:var(--ink-soft);line-height:1.75}
+.nh-why svg{width:40px;height:40px;color:var(--nh-orange);margin-bottom:12px} /* service icons — 32–48px band */
+.nh-why h3{font-size:24px;font-weight:800;color:var(--nh-ink);margin-bottom:.4rem} /* real <h3> — 22–26px band */
+.nh-why p{font-size:17px;color:var(--ink-soft);line-height:1.75}
 html[dir="rtl"] .nh-why p{line-height:1.9}
 
 /* ---------- RESERVED: clients + video portfolio ---------- */
@@ -236,43 +236,32 @@ html[dir="rtl"] .nh-why p{line-height:1.9}
   background:repeating-linear-gradient(135deg,var(--nh-paper-2) 0 12px,transparent 12px 24px),var(--nh-paper);
   display:flex;flex-direction:column;align-items:center;gap:12px}
 .nh-reserve-box svg{width:28px;height:28px;color:var(--nh-orange);opacity:.65}
-.nh-reserve-box .l{font-size:1rem;font-weight:800}
-.nh-reserve-box .s{font-size:.88rem;color:var(--ink-soft);max-width:38ch}
+.nh-reserve-box .l{font-size:16px;font-weight:800}
+.nh-reserve-box .s{font-size:17px;color:var(--ink-soft);max-width:38ch}
 html[dir="rtl"] .nh-reserve-box .s{line-height:1.9}
-.nh-reserve-box .f{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:#9a9ab4}
+.nh-reserve-box .f{font-family:var(--mono);font-size:15px;letter-spacing:.06em;color:#9a9ab4}
 @media (max-width:760px){ .nh-reserve{grid-template-columns:1fr} }
 
 /* ---------- CONTACT ---------- */
 .nh-contact-rows{margin-top:1.7rem;border-block-start:1px solid var(--nh-line)}
-.nh-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--nh-line);font-size:.98rem}
-.nh-contact-rows .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.nh-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--nh-line);font-size:17px}
+.nh-contact-rows .k{font-family:var(--mono);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
 html[dir="rtl"] .nh-contact-rows .k{font-family:var(--ar);letter-spacing:0;text-transform:none}
 .nh-contact-rows .v{font-weight:600;text-align:end}
 
-/* ---------- FOOTER ---------- */
-.nh-ft{background:var(--nh-ink);color:#9a9ac0;padding-block:58px 26px;font-size:.9rem}
-.nh-ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--nh-line-d)}
-.nh-ft-logo{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:1rem}
-.nh-ft-logo .mk{width:40px;height:40px;flex:none;padding:5px;border-radius:9px;background:#fff;object-fit:contain}
-.nh-ft-logo b{font-family:var(--ar);font-weight:800}
-.nh-ft p{max-width:42ch}
-html[dir="rtl"] .nh-ft p{line-height:1.9}
-.nh-ft h4{color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
-html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:none}
-.nh-ft ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.nh-ft a:hover{color:#fff}
-.nh-ft-bot{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:#6a6a90}
+/* ---------- FOOTER ----------
+   Structure/CSS lives in the shared assets/footer.js + theme.css .ft* rules;
+   this just re-tints the shared footer's accent to NHeroes orange. */
+footer.ft{--sky-400:var(--nh-orange-l);--sky-500:var(--nh-orange);--sky-600:var(--nh-orange);--sky-300:var(--nh-orange-l);}
 
 @media (max-width:1040px){
   .nh-two{grid-template-columns:1fr}
   .nh-specrow{grid-template-columns:1fr 1fr}
   .nh-svc-grid{grid-template-columns:1fr 1fr}
   .nh-why{grid-template-columns:1fr 1fr}
-  .nh-ft-top{grid-template-columns:1fr 1fr}
 }
 @media (max-width:600px){
   .nh-specrow,.nh-svc-grid,.nh-why{grid-template-columns:1fr}
-  .nh-ft-top{grid-template-columns:1fr}
   .nh-contact-rows div{flex-direction:column;gap:2px}
   .nh-contact-rows .v{text-align:start}
 }
@@ -372,7 +361,7 @@ html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 
   <div class="nh-two">
     <div>
-      <p class="nh-kicker"><span class="n">01</span> <span data-en="About Us" data-ar="من نحن">من نحن</span></p>
+      <p class="nh-kicker"><span data-en="About Us" data-ar="من نحن">من نحن</span></p>
       <h2 class="nh-h2 display reveal" data-en="One team for the whole journey" data-ar="فريق واحد للرحلة كاملة">فريق واحد للرحلة كاملة</h2>
       <p class="nh-lead reveal" data-en="NHeroes is a full-service marketing agency and software house — bringing marketing, creative, content, media production, branding and technical development together under one roof."
          data-ar="إن هيروز وكالة تسويق متكاملة وشركة برمجيات، تجمع التسويق، الإبداع، صناعة المحتوى، الإنتاج الإعلامي، بناء العلامات التجارية، والتطوير التقني تحت مظلة واحدة.">إن هيروز وكالة تسويق متكاملة وشركة برمجيات، تجمع التسويق والإبداع والتقنية تحت مظلة واحدة.</p>
@@ -390,7 +379,7 @@ html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 <!-- ================= WHAT WE DO ================= -->
 <section class="section" id="services">
   <div class="nh-head">
-    <p class="nh-kicker"><span class="n">02</span> <span data-en="What we do" data-ar="ماذا نقدم">ماذا نقدم</span></p>
+    <p class="nh-kicker"><span data-en="What we do" data-ar="ماذا نقدم">ماذا نقدم</span></p>
     <h2 class="nh-h2 display reveal" data-en="Six capabilities, one partner" data-ar="ست قدرات، شريك واحد">ست قدرات، شريك واحد</h2>
   </div>
   <div class="nh-svc-grid" data-stagger>
@@ -442,30 +431,30 @@ html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 <!-- ================= METHODOLOGY ================= -->
 <section class="section dark navy" id="method">
   <div class="nh-head">
-    <p class="nh-kicker"><span class="n">03</span> <span data-en="Methodology" data-ar="منهجيتنا">منهجيتنا</span></p>
+    <p class="nh-kicker"><span data-en="Methodology" data-ar="منهجيتنا">منهجيتنا</span></p>
     <h2 class="nh-h2 display reveal" data-en="Understand first, then build" data-ar="نفهم أولًا، ثم نبني">نفهم أولًا، ثم نبني</h2>
   </div>
   <div class="nh-flow" data-stagger>
     <div class="nh-step reveal">
-      <span class="dot"><span class="n">1</span>
+      <span class="dot">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
       <h3 data-en="Strategy" data-ar="الاستراتيجية">الاستراتيجية</h3>
       <p data-en="Understand the business, the audience and the goal." data-ar="نفهم العمل والجمهور والهدف.">نفهم العمل والجمهور والهدف.</p>
     </div>
     <div class="nh-step reveal">
-      <span class="dot"><span class="n">2</span>
+      <span class="dot">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0 0 12 3ZM9 19h6M10 22h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       <h3 data-en="Creative" data-ar="الإبداع">الإبداع</h3>
       <p data-en="Shape the idea, the story and the look." data-ar="نصوغ الفكرة والقصة والشكل.">نصوغ الفكرة والقصة والشكل.</p>
     </div>
     <div class="nh-step reveal">
-      <span class="dot"><span class="n">3</span>
+      <span class="dot">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-2.4 2.6-2.6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
       <h3 data-en="Execution" data-ar="التنفيذ">التنفيذ</h3>
       <p data-en="Produce, build and launch — across channels and code." data-ar="ننتج ونبرمج ونطلق — عبر القنوات والأكواد.">ننتج ونبرمج ونطلق — عبر القنوات والأكواد.</p>
     </div>
     <div class="nh-step reveal">
-      <span class="dot"><span class="n">4</span>
+      <span class="dot">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l3-4 3 3 5-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       <h3 data-en="Results" data-ar="النتائج">النتائج</h3>
       <p data-en="Measure, learn and optimise against the goal." data-ar="نقيس ونتعلّم ونحسّن مقابل الهدف.">نقيس ونتعلّم ونحسّن مقابل الهدف.</p>
@@ -476,7 +465,7 @@ html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 <!-- ================= WHY NHEROES ================= -->
 <section class="section" id="why">
   <div class="nh-head">
-    <p class="nh-kicker"><span class="n">04</span> <span data-en="Why NHeroes" data-ar="لماذا إن هيروز">لماذا إن هيروز</span></p>
+    <p class="nh-kicker"><span data-en="Why NHeroes" data-ar="لماذا إن هيروز">لماذا إن هيروز</span></p>
     <h2 class="nh-h2 display reveal" data-en="What you get with us" data-ar="ما الذي تحصل عليه معنا">ما الذي تحصل عليه معنا</h2>
   </div>
   <div class="nh-why" data-stagger>
@@ -506,7 +495,7 @@ html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 <!-- ================= CLIENTS / PORTFOLIO — RESERVED ================= -->
 <section class="section orange" id="partners">
   <div class="nh-head">
-    <p class="nh-kicker"><span class="n">05</span> <span data-en="Clients &amp; work" data-ar="عملاؤنا وأعمالنا">عملاؤنا وأعمالنا</span></p>
+    <p class="nh-kicker"><span data-en="Clients &amp; work" data-ar="عملاؤنا وأعمالنا">عملاؤنا وأعمالنا</span></p>
     <h2 class="nh-h2 display reveal" data-en="Partners in success" data-ar="شركاء النجاح">شركاء النجاح</h2>
     <p class="nh-lead reveal" data-en="Client logos and a video portfolio from past production work will live here once provided."
        data-ar="ستُعرض هنا شعارات العملاء ومعرض فيديو من أعمال الإنتاج السابقة فور توفّرها.">ستُعرض هنا شعارات العملاء ومعرض فيديو من أعمال الإنتاج السابقة فور توفّرها.</p>
@@ -545,7 +534,7 @@ html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 <section class="section" id="contact">
   <div class="nh-two">
     <div>
-      <p class="nh-kicker"><span class="n">06</span> <span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
+      <p class="nh-kicker"><span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
       <h2 class="nh-h2 display reveal" data-en="Got a brief? Let's talk." data-ar="عندك مشروع؟ خلّنا نتكلم.">عندك مشروع؟ خلّنا نتكلم.</h2>
       <p class="nh-p reveal" style="margin-top:1.2rem" data-en="For PR, marketing, content, media production, branding or software — talk to the NHeroes team."
          data-ar="للعلاقات العامة، التسويق، المحتوى، الإنتاج الإعلامي، بناء العلامات، أو الحلول التقنية — تحدّث مع فريق إن هيروز.">للعلاقات العامة والتسويق والمحتوى والإنتاج والعلامات والحلول التقنية — تحدّث مع فريق إن هيروز.</p>
@@ -563,41 +552,27 @@ html[dir="rtl"] .nh-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="nh-ft">
-  <div class="wrap">
-    <div class="nh-ft-top">
-      <div>
-        <div class="nh-ft-logo">
-          <img class="mk" src="../assets/img/icon-nheroes.svg" alt="" aria-hidden="true" />
-          <b data-en="NHEROES" data-ar="إن هيروز">إن هيروز</b>
-        </div>
-        <p data-en="A marketing agency and software house — PR, marketing, content, media production, branding and technology. A Sky Global company."
-           data-ar="وكالة تسويق وشركة برمجيات — علاقات عامة، تسويق، محتوى، إنتاج إعلامي، علامات تجارية، وتقنية. شركة من سكاي جلوبال.">وكالة تسويق وشركة برمجيات — شركة من سكاي جلوبال.</p>
-      </div>
-      <div>
-        <h4 data-en="Sections" data-ar="الأقسام">الأقسام</h4>
-        <ul>
-          <li><a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a></li>
-          <li><a href="#services" data-en="What we do" data-ar="ماذا نقدم">ماذا نقدم</a></li>
-          <li><a href="#method" data-en="Methodology" data-ar="منهجيتنا">منهجيتنا</a></li>
-          <li><a href="#partners" data-en="Clients" data-ar="عملاؤنا">عملاؤنا</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-en="Contact" data-ar="تواصل">تواصل</h4>
-        <ul>
-          <li><a href="mailto:info@skyglobalworld.com">info@skyglobalworld.com</a></li>
-          <li><a href="tel:+966122068728" class="tnum">+966 12 206 8728</a></li>
-          <li><a href="../index.html#companies" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="nh-ft-bot">
-      <span data-en="© 2026 NHeroes — a Sky Global company. All rights reserved." data-ar="© 2026 إن هيروز — شركة من سكاي جلوبال. جميع الحقوق محفوظة.">© 2026 إن هيروز — شركة من سكاي جلوبال.</span>
-      <span data-en="Jeddah, Saudi Arabia" data-ar="جدة، المملكة العربية السعودية">جدة، المملكة العربية السعودية</span>
-    </div>
-  </div>
-</footer>
+<!-- Shared site footer — single source: assets/footer.js builds it from this config.
+     Editing footer design/structure? Change assets/footer.js once and every page updates. -->
+<div id="ft-mount"></div>
+<script type="application/json" id="ft-config">
+{
+  "nameEn": "NHeroes", "nameAr": "إن هيروز",
+  "companyId": "nheroes",
+  "taglineEn": "A marketing agency and software house — PR, marketing, content, media production, branding and technology. A Sky Global company.",
+  "taglineAr": "وكالة تسويق وشركة برمجيات — علاقات عامة، تسويق، محتوى، إنتاج إعلامي، علامات تجارية، وتقنية. شركة من سكاي جلوبال.",
+  "logoHTML": "<img class=\"mk\" src=\"../assets/img/icon-nheroes.svg\" alt=\"\" aria-hidden=\"true\" style=\"width:38px;height:38px;padding:5px;border-radius:9px;background:#fff;object-fit:contain\"/><span class=\"wm\"><b>NHEROES</b><i>إن هيروز</i></span>",
+  "explore": [
+    { "href": "#about", "en": "About Us", "ar": "من نحن" },
+    { "href": "#services", "en": "What we do", "ar": "ماذا نقدم" },
+    { "href": "#method", "en": "Methodology", "ar": "منهجيتنا" },
+    { "href": "#why", "en": "Why NHeroes", "ar": "لماذا إن هيروز" },
+    { "href": "#partners", "en": "Clients", "ar": "عملاؤنا" },
+    { "href": "#contact", "en": "Contact", "ar": "تواصل" }
+  ]
+}
+</script>
+<script src="../assets/footer.js"></script>
 
 <script>
 (function(){

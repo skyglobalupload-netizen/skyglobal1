@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>سكاي جلوبال للمقاولات — تنفيذ المشاريع الإنشائية والتطويرية</title>
-<meta name="title-en" content="Sky Global Contracting — Construction and development projects" />
-<meta name="description" content="سكاي جلوبال للمقاولات — شركة سعودية متخصصة في تنفيذ المشاريع الإنشائية والتطويرية وفق معايير عالية من الجودة والسلامة. إحدى شركات سكاي جلوبال." />
+<title>سكاي جلوبال العقارية — تنفيذ المشاريع الإنشائية والتطويرية</title>
+<meta name="title-en" content="Sky Global Real Estate — Construction and development projects" />
+<meta name="description" content="سكاي جلوبال العقارية — شركة سعودية متخصصة في تنفيذ المشاريع الإنشائية والتطويرية وفق معايير عالية من الجودة والسلامة. إحدى شركات سكاي جلوبال." />
 <link rel="stylesheet" href="../assets/theme.css" />
 <style>
 /* =====================================================================
@@ -40,10 +40,10 @@ html[dir="rtl"] .sgc .display em,html[dir="rtl"] .sgc .display i{color:inherit}
 .sgc .section.tint{background:var(--c-paper-2)}
 .sgc-wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .sgc-head{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);margin-bottom:clamp(2.6rem,4.5vw,4rem)}
-.sgc-kicker{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+.sgc-kicker{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
   color:var(--c-blue);display:inline-flex;align-items:center;gap:.9em;margin-bottom:1.3rem}
-html[dir="rtl"] .sgc-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:.92rem}
-.sgc-kicker .n{border:1px solid color-mix(in srgb,var(--c-blue) 42%,transparent);border-radius:2px;padding:2px 7px;font-size:.7rem;letter-spacing:.08em}
+html[dir="rtl"] .sgc-kicker{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700;font-size:15px}
+.sgc-kicker .n{border:1px solid color-mix(in srgb,var(--c-blue) 42%,transparent);border-radius:2px;padding:2px 7px;font-size:15px;letter-spacing:.08em}
 .sgc .dark .sgc-kicker{color:var(--c-blue-l)}
 .sgc-h2{font-family:var(--serif);font-weight:400;font-size:var(--s4);line-height:1.08;letter-spacing:-.015em;max-width:20ch}
 html[dir="rtl"] .sgc-h2{font-family:var(--ar);font-weight:700;line-height:1.28;letter-spacing:0;max-width:26ch}
@@ -54,7 +54,7 @@ html[dir="rtl"] .sgc-lead{line-height:1.9}
 .sgc-p{color:var(--ink-soft);max-width:60ch}
 .sgc-p + .sgc-p{margin-top:1rem}
 .sgc .dark .sgc-p{color:#b6c3d3}
-.tech{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--c-blue)}
+.tech{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--c-blue)}
 html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none;font-weight:700}
 
 .sgc .btn-primary{background:var(--c-blue);color:#fff}
@@ -69,35 +69,31 @@ html[dir="rtl"] .tech{font-family:var(--ar);letter-spacing:0;text-transform:none
 .sgc-hdr.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   padding-block:10px;box-shadow:0 6px 24px -14px rgba(0,0,0,.22)}
 .sgc-hdr.scrolled::after{background:var(--c-line)}
-.sgc-hdr-logo{flex:none;display:flex;align-items:center;gap:9px;color:#fff}
-.sgc-hdr.scrolled .sgc-hdr-logo{color:var(--c-blue-d)}
-.sgc-hdr-logo .mk{width:30px;height:auto;flex:none;transition:width .4s var(--ease)}
-.sgc-hdr.scrolled .sgc-hdr-logo .mk{width:26px}
-.sgc-hdr-logo .wm{display:flex;flex-direction:column;line-height:1.05}
-.sgc-hdr-logo .wm b{font-weight:800;font-size:.82rem;letter-spacing:.1em}
-.sgc-hdr-logo .wm i{font-family:var(--ar);font-style:normal;font-weight:600;font-size:.72rem;opacity:.85;margin-top:2px}
-html[dir="rtl"] .sgc-hdr-logo .wm b{letter-spacing:.02em}
+.sgc-hdr-logo{flex:none;display:flex;align-items:center}
+.sgc-hdr-logo-img{height:68px;width:auto;display:block;
+  filter:brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0,0,0,.35));transition:height .4s var(--ease),filter .4s var(--ease)}
+.sgc-hdr.scrolled .sgc-hdr-logo-img{height:56px;filter:none}
 
 .sgc-nav{display:flex;gap:28px;align-items:center}
-.sgc-nav a{font-size:.9rem;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.86);padding:8px 2px;position:relative;transition:color .3s}
-html[dir="rtl"] .sgc-nav a{font-weight:700;font-size:1rem}
+.sgc-nav a{font-size:17px;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.86);padding:8px 2px;position:relative;transition:color .3s}
+html[dir="rtl"] .sgc-nav a{font-weight:700;font-size:17px}
 .sgc-hdr.scrolled .sgc-nav a{color:var(--c-ink-2)}
 .sgc-nav a::after{content:"";position:absolute;inset-block-end:2px;inset-inline-start:0;width:0;height:2px;background:var(--c-blue);transition:width .3s var(--ease)}
 .sgc-nav a:hover{color:#fff}
 .sgc-hdr.scrolled .sgc-nav a:hover{color:var(--c-blue)}
 .sgc-nav a:hover::after,.sgc-nav a.here::after{width:100%}
 .sgc-hdr-r{flex:none;display:flex;align-items:center;gap:12px}
-.sgc-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:.82rem;padding:9px 15px}
+.sgc-hdr-r .lang{color:#fff;border-color:rgba(255,255,255,.34);font-size:16px;padding:9px 15px}
 .sgc-hdr.scrolled .sgc-hdr-r .lang{color:var(--c-ink);border-color:var(--c-line)}
 .sgc-hdr-r .lang:hover{border-color:var(--c-blue);color:var(--c-blue)}
-.sgc-hdr-r .btn-ghost{padding:10px 20px;font-size:.84rem}
+.sgc-hdr-r .btn-ghost{padding:10px 20px;font-size:16px}
 .sgc-hdr.scrolled .sgc-hdr-r .btn-ghost{border-color:var(--c-line);color:var(--c-ink)}
 .sgc-hdr.scrolled .sgc-hdr-r .btn-ghost:hover{background:var(--c-blue);border-color:var(--c-blue);color:#fff}
 .sgc-menu-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:#fff}
 .sgc-hdr.scrolled .sgc-menu-toggle{color:var(--c-ink)}
 
 .sgc-back{position:absolute;inset-block-start:calc(var(--c-hdr) + 16px);inset-inline-start:var(--gutter);z-index:6;
-  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.66);
+  font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.66);
   display:inline-flex;align-items:center;gap:.55em;transition:color .3s}
 html[dir="rtl"] .sgc-back{font-family:var(--ar);letter-spacing:0;font-weight:700}
 .sgc-back:hover{color:#fff}
@@ -107,7 +103,7 @@ html[dir="rtl"] .sgc-back svg{transform:scaleX(-1)}
 .sgc-mobile{position:fixed;inset:0;z-index:98;background:var(--c-ink);color:#fff;display:flex;flex-direction:column;
   justify-content:center;gap:2px;padding:var(--gutter);transform:translateY(-100%);transition:transform .5s var(--ease);overflow-y:auto}
 .sgc-mobile.open{transform:none}
-.sgc-mobile a{font-size:1.35rem;font-weight:400;padding:14px 0;border-bottom:1px solid var(--c-line-d)}
+.sgc-mobile a{font-size:18px;font-weight:400;padding:14px 0;border-bottom:1px solid var(--c-line-d)}
 .sgc-mobile .btn{align-self:flex-start;margin-top:22px}
 @media (max-width:1040px){ .sgc-nav{display:none} .sgc-menu-toggle{display:flex} .sgc-hdr-r .btn-ghost{display:none} }
 
@@ -120,9 +116,9 @@ html[dir="rtl"] .sgc-back svg{transform:scaleX(-1)}
 .slot:has(> img) .slot-ph,.slot.is-filled .slot-ph{display:none}
 .slot-ph{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:22px}
 .slot-ph svg{width:26px;height:26px;color:var(--c-blue);opacity:.55}
-.slot-ph .slot-l{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c-ink-3)}
-html[dir="rtl"] .slot-ph .slot-l{letter-spacing:0;text-transform:none;font-size:.86rem}
-.slot-ph .slot-f{font-family:var(--mono);font-size:.64rem;color:#9aa6b4;word-break:break-all}
+.slot-ph .slot-l{font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c-ink-3)}
+html[dir="rtl"] .slot-ph .slot-l{letter-spacing:0;text-transform:none;font-size:15px}
+.slot-ph .slot-f{font-family:var(--mono);font-size:15px;color:#9aa6b4;word-break:break-all}
 
 /* ---------- HERO — full-bleed photo · centred logo · tagline · one CTA ---------- */
 .sgc-hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -134,16 +130,12 @@ html[dir="rtl"] .slot-ph .slot-l{letter-spacing:0;text-transform:none;font-size:
   radial-gradient(78% 62% at 50% 46%,rgba(9,18,30,.12),rgba(9,18,30,.55)),
   linear-gradient(180deg,color-mix(in srgb,var(--c-blue-d) 30%,transparent),transparent 40%)}
 .sgc-hero-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:clamp(1.4rem,3.2vw,2.2rem);max-width:680px}
-.sgc-hero-logo{display:flex;flex-direction:column;align-items:center;gap:.7rem;
-  filter:drop-shadow(0 16px 46px rgba(0,0,0,.5))}
-.sgc-hero-logo .mk{width:min(30vw,150px);height:auto;color:#fff}
-.sgc-hero-logo .wm{display:flex;flex-direction:column;align-items:center;line-height:1;gap:.5rem}
-.sgc-hero-logo .wm b{font-weight:800;font-size:clamp(1.5rem,1rem + 2.4vw,2.7rem);letter-spacing:.14em;color:#fff}
-.sgc-hero-logo .wm i{font-family:var(--ar);font-style:normal;font-weight:700;font-size:clamp(1.1rem,.8rem + 1.4vw,1.7rem);color:#fff;opacity:.94}
-html[dir="rtl"] .sgc-hero-logo .wm b{letter-spacing:.04em}
+.sgc-hero-logo{display:flex;flex-direction:column;align-items:center}
+.sgc-hero-logo-img{width:min(46vw,240px);height:auto;display:block;
+  filter:brightness(0) invert(1) drop-shadow(0 10px 30px rgba(0,0,0,.55))}
 .sgc-hero-tagline{font-size:var(--s1);font-weight:400;line-height:1.55;color:rgba(255,255,255,.94);max-width:48ch;text-shadow:0 2px 22px rgba(0,0,0,.6)}
 html[dir="rtl"] .sgc-hero-tagline{line-height:1.9}
-.sgc-hero-center .btn{font-size:.96rem;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(45,93,148,.7)}
+.sgc-hero-center .btn{font-size:16px;padding:15px 34px;box-shadow:0 14px 40px -14px rgba(45,93,148,.7)}
 .sgc-hero-scroll{position:absolute;z-index:2;inset-block-end:24px;inset-inline:0;margin-inline:auto;width:34px;height:34px;
   display:grid;place-items:center;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.25);border-radius:999px;transition:.3s}
 .sgc-hero-scroll:hover{color:#fff;border-color:rgba(255,255,255,.6)}
@@ -158,9 +150,9 @@ html[dir="rtl"] .sgc-hero-tagline{line-height:1.9}
 .sgc-specrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--c-line);border:1px solid var(--c-line);
   border-radius:8px;overflow:hidden;max-width:var(--maxw);margin:0 auto clamp(2.6rem,4vw,3.6rem)}
 .sgc-specrow div{background:var(--c-paper);padding:18px 22px}
-.sgc-specrow .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
-html[dir="rtl"] .sgc-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:.78rem}
-.sgc-specrow .v{font-size:1rem;font-weight:700;margin-top:5px}
+.sgc-specrow .k{font-family:var(--mono);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+html[dir="rtl"] .sgc-specrow .k{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:15px}
+.sgc-specrow .v{font-size:16px;font-weight:700;margin-top:5px}
 .sgc-specrow .v b{color:var(--c-blue)}
 
 /* ---------- VISION / GOAL ---------- */
@@ -171,7 +163,7 @@ html[dir="rtl"] .sgc-specrow .k{font-family:var(--ar);letter-spacing:0;text-tran
 html[dir="rtl"] .sgc-vg .ix{font-family:var(--ar)}
 .sgc-vg h3{font-family:var(--serif);font-size:var(--s2);font-weight:400;line-height:1.26;color:#fff;margin-bottom:1rem}
 html[dir="rtl"] .sgc-vg h3{font-family:var(--ar);font-weight:700;line-height:1.5}
-.sgc-vg p{color:#c1cddb;font-size:.98rem;max-width:46ch;line-height:1.75}
+.sgc-vg p{color:#c1cddb;font-size:17px;max-width:46ch;line-height:1.75}
 
 /* ---------- METHODOLOGY ---------- */
 .sgc-method{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
@@ -179,15 +171,15 @@ html[dir="rtl"] .sgc-vg h3{font-family:var(--ar);font-weight:700;line-height:1.5
 .sgc-step{border:1px solid var(--c-line);border-radius:9px;padding:clamp(22px,2.4vw,30px);background:var(--c-paper);
   transition:border-color .3s,box-shadow .3s var(--ease)}
 .sgc-step:hover{border-color:var(--c-blue);box-shadow:0 18px 40px -22px rgba(45,93,148,.5)}
-.sgc-step .s-n{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--gray);display:block;margin-bottom:.9rem}
-.sgc-step svg{width:24px;height:24px;color:var(--c-blue);margin-bottom:12px}
-.sgc-step h3{font-size:1.02rem;font-weight:700;margin-bottom:.45rem}
-.sgc-step p{font-size:.87rem;color:var(--ink-soft);line-height:1.6}
+.sgc-step .s-n{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.1em;color:var(--gray);display:block;margin-bottom:.9rem}
+.sgc-step svg{width:40px;height:40px;color:var(--c-blue);margin-bottom:12px} /* service icons — 32–48px band */
+.sgc-step h3{font-size:24px;font-weight:700;margin-bottom:.45rem} /* real <h3> — 22–26px band */
+.sgc-step p{font-size:17px;color:var(--ink-soft);line-height:1.6}
 
 /* ---------- VALUES ---------- */
 .sgc-values{display:flex;flex-wrap:wrap;gap:10px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .sgc-value{display:inline-flex;align-items:center;gap:.6em;border:1px solid var(--c-line);border-radius:999px;
-  padding:11px 20px;font-weight:700;font-size:.98rem;transition:border-color .3s,background .3s,color .3s}
+  padding:11px 20px;font-weight:700;font-size:16px;transition:border-color .3s,background .3s,color .3s}
 .sgc-value:hover{border-color:var(--c-blue);background:var(--c-blue);color:#fff}
 .sgc-value .d{width:7px;height:7px;border-radius:999px;background:var(--c-blue);flex:none;transition:background .3s}
 .sgc-value:hover .d{background:#fff}
@@ -197,19 +189,19 @@ html[dir="rtl"] .sgc-vg h3{font-family:var(--ar);font-weight:700;line-height:1.5
   border-radius:10px;overflow:hidden;max-width:var(--maxw);margin-inline:auto}
 .sgc-svc{background:var(--c-paper);padding:clamp(22px,2.6vw,32px);transition:background .4s var(--ease)}
 .sgc-svc:hover{background:var(--c-ink)}
-.sgc-svc .s-n{font-family:var(--mono);font-size:.7rem;font-weight:600;color:var(--gray);display:block;margin-bottom:1rem;transition:color .4s}
+.sgc-svc .s-n{font-family:var(--mono);font-size:15px;font-weight:600;color:var(--gray);display:block;margin-bottom:1rem;transition:color .4s}
 .sgc-svc:hover .s-n{color:rgba(255,255,255,.5)}
-.sgc-svc svg{width:24px;height:24px;color:var(--c-blue);margin-bottom:12px}
-.sgc-svc h3{font-size:1rem;font-weight:700;transition:color .4s}
+.sgc-svc svg{width:40px;height:40px;color:var(--c-blue);margin-bottom:12px} /* service icons — 32–48px band */
+.sgc-svc h3{font-size:24px;font-weight:700;transition:color .4s} /* real <h3> — 22–26px band */
 .sgc-svc:hover h3{color:#fff}
-.sgc-svc p{margin-top:.4rem;font-size:.85rem;color:var(--ink-soft);transition:color .4s}
+.sgc-svc p{margin-top:.4rem;font-size:17px;color:var(--ink-soft);transition:color .4s}
 .sgc-svc:hover p{color:rgba(255,255,255,.76)}
 
 /* ---------- PROJECT FIELDS ---------- */
 .sgc-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .sgc-field{border:1px solid var(--c-line);border-radius:9px;padding:clamp(22px,2.4vw,30px)}
 .sgc-field .tech{display:block;margin-bottom:.6rem}
-.sgc-field p{font-size:.9rem;color:var(--ink-soft)}
+.sgc-field p{font-size:17px;color:var(--ink-soft)}
 
 /* ---------- PROJECTS GALLERY ---------- */
 .sgc-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:var(--wide);margin-inline:auto;padding-inline:var(--gutter)}
@@ -219,29 +211,20 @@ html[dir="rtl"] .sgc-vg h3{font-family:var(--ar);font-weight:700;line-height:1.5
 /* ---------- CREDENTIALS ---------- */
 .sgc-creds{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .sgc-cred{border:1px solid var(--c-line);border-radius:9px;padding:clamp(22px,2.6vw,30px);display:flex;gap:16px;align-items:flex-start}
-.sgc-cred svg{width:26px;height:26px;color:var(--c-blue);flex:none}
-.sgc-cred h3{font-size:1rem;font-weight:700;margin-bottom:.3rem}
-.sgc-cred p{font-size:.86rem;color:var(--ink-soft)}
+.sgc-cred svg{width:48px;height:48px;color:var(--c-blue);flex:none} /* large card icons — 40–56px band */
+.sgc-cred h3{font-size:24px;font-weight:700;margin-bottom:.3rem} /* real <h3> — 22–26px band */
+.sgc-cred p{font-size:17px;color:var(--ink-soft)}
 
 /* ---------- CONTACT ---------- */
 .sgc-contact-rows{margin-top:1.7rem;border-block-start:1px solid var(--c-line)}
-.sgc-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--c-line);font-size:.98rem}
-.sgc-contact-rows .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.sgc-contact-rows div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-block-end:1px solid var(--c-line);font-size:17px}
+.sgc-contact-rows .k{font-family:var(--mono);font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
 html[dir="rtl"] .sgc-contact-rows .k{font-family:var(--ar);letter-spacing:0;text-transform:none}
 .sgc-contact-rows .v{font-weight:600;text-align:end}
 
-/* ---------- FOOTER ---------- */
-.sgc-ft{background:var(--c-ink);color:#93a3b6;padding-block:58px 26px;font-size:.9rem}
-.sgc-ft-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--c-line-d)}
-.sgc-ft-logo{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:1rem}
-.sgc-ft-logo .mk{width:34px;height:auto}
-.sgc-ft-logo b{font-weight:800;letter-spacing:.08em}
-.sgc-ft p{max-width:40ch}
-.sgc-ft h4{color:#fff;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
-html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform:none}
-.sgc-ft ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.sgc-ft a:hover{color:#fff}
-.sgc-ft-bot{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;color:#63748a}
+/* ---------- FOOTER ----------
+   Structure/CSS lives in the shared assets/footer.js + theme.css .ft* rules.
+   No accent override here — Sky Global Real Estate keeps the same Sky Global blue. */
 
 @media (max-width:1040px){
   .sgc-two,.sgc-vg{grid-template-columns:1fr}
@@ -250,13 +233,11 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
   .sgc-svc-grid{grid-template-columns:1fr 1fr}
   .sgc-gallery{grid-template-columns:1fr 1fr}
   .sgc-gallery .slot:first-child{grid-column:span 2}
-  .sgc-ft-top{grid-template-columns:1fr 1fr}
 }
 @media (max-width:600px){
   .sgc-specrow,.sgc-method,.sgc-fields,.sgc-creds,.sgc-svc-grid{grid-template-columns:1fr}
   .sgc-gallery{grid-template-columns:1fr}
   .sgc-gallery .slot:first-child{grid-column:auto;aspect-ratio:4/5}
-  .sgc-ft-top{grid-template-columns:1fr}
   .sgc-contact-rows div{flex-direction:column;gap:2px}
   .sgc-contact-rows .v{text-align:start}
 }
@@ -275,9 +256,8 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 </defs></svg>
 
 <header class="sgc-hdr" id="sgcHdr">
-  <a href="#top" class="sgc-hdr-logo" aria-label="Sky Global Contracting — home">
-    <svg class="mk" viewBox="0 0 1476.09 1343.36" aria-hidden="true"><use href="#sgMark" fill="currentColor"/></svg>
-    <span class="wm"><b>SKY GLOBAL</b><i data-en="Contracting" data-ar="للمقاولات">للمقاولات</i></span>
+  <a href="#top" class="sgc-hdr-logo" aria-label="Sky Global Real Estate — home">
+    <img class="sgc-hdr-logo-img" src="../assets/img/sgc/logo-transparent.png" alt="Sky Global Real Estate" />
   </a>
   <nav class="sgc-nav" aria-label="Sections">
     <a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a>
@@ -319,8 +299,7 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 
   <div class="sgc-hero-center" data-load>
     <div class="sgc-hero-logo">
-      <svg class="mk" viewBox="0 0 1476.09 1343.36" aria-hidden="true"><use href="#sgMark" fill="currentColor"/></svg>
-      <span class="wm"><b>SKY GLOBAL</b><i data-en="Contracting" data-ar="للمقاولات">للمقاولات</i></span>
+      <img class="sgc-hero-logo-img" src="../assets/img/sgc/logo-transparent.png" alt="Sky Global Real Estate" />
     </div>
     <p class="sgc-hero-tagline"
        data-en="A Saudi company specialised in delivering construction and development projects — integrated solutions to high standards of quality and safety, by an experienced professional team."
@@ -345,7 +324,7 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 
   <div class="sgc-two sgc-about">
     <div>
-      <p class="sgc-kicker"><span class="n">01</span> <span data-en="About Us" data-ar="من نحن">من نحن</span></p>
+      <p class="sgc-kicker"><span data-en="About Us" data-ar="من نحن">من نحن</span></p>
       <h2 class="sgc-h2 display reveal" data-en="Building to a clear standard" data-ar="نبني وفق معيار واضح">نبني وفق معيار واضح</h2>
       <p class="sgc-lead reveal" data-en="Sky Global is a Saudi company specialised in delivering construction and development projects, providing integrated solutions to high standards of quality and safety, through a professional team with broad experience in residential, commercial and industrial projects."
          data-ar="سكاي جلوبال شركة سعودية متخصصة في تنفيذ المشاريع الإنشائية والتطويرية، تقدم حلولًا متكاملة وفق معايير عالية من الجودة والسلامة، من خلال فريق محترف يمتلك خبرة واسعة في تنفيذ المشاريع السكنية والتجارية والصناعية.">شركة سعودية متخصصة في تنفيذ المشاريع الإنشائية والتطويرية.</p>
@@ -366,13 +345,12 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 <!-- ================= VISION / GOAL ================= -->
 <section class="section dark" id="vision">
   <div class="sgc-head">
-    <p class="sgc-kicker"><span class="n">02</span> <span data-en="Vision &amp; Goal" data-ar="رؤيتنا وهدفنا">رؤيتنا وهدفنا</span></p>
+    <p class="sgc-kicker"><span data-en="Vision &amp; Goal" data-ar="رؤيتنا وهدفنا">رؤيتنا وهدفنا</span></p>
     <h2 class="sgc-h2 display reveal" data-en="Where we are heading" data-ar="إلى أين نتجه">إلى أين نتجه</h2>
   </div>
   <div class="sgc-wrap" style="padding-inline:0">
     <div class="sgc-vg">
       <div class="reveal">
-        <span class="ix">01</span>
         <p class="tech" data-en="Our Vision" data-ar="رؤيتنا">رؤيتنا</p>
         <h3 data-en="To be among the leading companies in the Kingdom's contracting sector"
             data-ar="أن نكون من الشركات الرائدة في قطاع المقاولات بالمملكة">أن نكون من الشركات الرائدة في قطاع المقاولات بالمملكة</h3>
@@ -380,7 +358,6 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
            data-ar="من خلال تنفيذ مشاريع متميزة وفق أعلى معايير الجودة والموثوقية، والمساهمة في تطوير البنية التحتية وتحقيق تطلعات العملاء.">من خلال تنفيذ مشاريع متميزة وفق أعلى معايير الجودة والموثوقية، والمساهمة في تطوير البنية التحتية وتحقيق تطلعات العملاء.</p>
       </div>
       <div class="reveal">
-        <span class="ix">02</span>
         <p class="tech" data-en="Our Goal" data-ar="هدفنا">هدفنا</p>
         <h3 data-en="Integrated contracting services at the highest levels of quality and commitment"
             data-ar="تقديم خدمات مقاولات متكاملة بأعلى مستويات الجودة والالتزام">تقديم خدمات مقاولات متكاملة بأعلى مستويات الجودة والالتزام</h3>
@@ -394,34 +371,28 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 <!-- ================= METHODOLOGY ================= -->
 <section class="section" id="methodology">
   <div class="sgc-head">
-    <p class="sgc-kicker"><span class="n">03</span> <span data-en="Methodology" data-ar="منهجية العمل">منهجية العمل</span></p>
+    <p class="sgc-kicker"><span data-en="Methodology" data-ar="منهجية العمل">منهجية العمل</span></p>
     <h2 class="sgc-h2 display reveal" data-en="A clear method, from brief to handover" data-ar="منهجية واضحة، من الفكرة إلى التسليم">منهجية واضحة، من الفكرة إلى التسليم</h2>
     <p class="sgc-lead reveal" data-en="We follow a clear method — using the latest techniques and best practices in the contracting sector, with continuous communication with the client at every stage."
        data-ar="نعتمد منهجية واضحة، باستخدام أحدث التقنيات وأفضل الممارسات في قطاع المقاولات، مع التواصل المستمر مع العميل في جميع مراحل المشروع.">نعتمد منهجية واضحة، مع التواصل المستمر مع العميل في جميع مراحل المشروع.</p>
   </div>
   <div class="sgc-method" data-stagger>
-    <div class="sgc-step reveal"><span class="s-n">01</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    <div class="sgc-step reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
       <h3 data-en="Understand the need" data-ar="فهم الاحتياج">فهم الاحتياج</h3>
       <p data-en="It begins with understanding the client's requirements." data-ar="تبدأ بفهم احتياجات العميل.">تبدأ بفهم احتياجات العميل.</p></div>
-    <div class="sgc-step reveal"><span class="s-n">02</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    <div class="sgc-step reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
       <h3 data-en="Precise planning" data-ar="التخطيط الدقيق">التخطيط الدقيق</h3>
       <p data-en="Detailed planning of the project." data-ar="التخطيط الدقيق للمشروع.">التخطيط الدقيق للمشروع.</p></div>
-    <div class="sgc-step reveal"><span class="s-n">03</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M6 21V8l6-4 6 4v13M9 21v-6h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="sgc-step reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M6 21V8l6-4 6 4v13M9 21v-6h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Skilled execution" data-ar="التنفيذ المتقن">التنفيذ المتقن</h3>
       <p data-en="Meticulous execution under specialised engineering supervision." data-ar="التنفيذ المتقن تحت إشراف هندسي متخصص.">التنفيذ المتقن تحت إشراف هندسي متخصص.</p></div>
-    <div class="sgc-step reveal"><span class="s-n">04</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 2v4M16 2v4M3 10h18M8 15l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="sgc-step reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 2v4M16 2v4M3 10h18M8 15l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Schedules, quality &amp; safety" data-ar="الجداول والجودة والسلامة">الجداول والجودة والسلامة</h3>
       <p data-en="Commitment to timelines and to quality and safety standards." data-ar="الالتزام بالجداول الزمنية ومعايير الجودة والسلامة.">الالتزام بالجداول الزمنية ومعايير الجودة والسلامة.</p></div>
-    <div class="sgc-step reveal"><span class="s-n">05</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+    <div class="sgc-step reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
       <h3 data-en="Continuous communication" data-ar="التواصل المستمر">التواصل المستمر</h3>
       <p data-en="Ongoing communication with the client at every project stage." data-ar="التواصل المستمر مع العميل في جميع مراحل المشروع.">التواصل المستمر مع العميل في جميع مراحل المشروع.</p></div>
-    <div class="sgc-step reveal"><span class="s-n">06</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m14.5-6.5-2 2m-9 9-2 2m13 0-2-2m-9-9-2-2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.7"/></svg>
+    <div class="sgc-step reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m14.5-6.5-2 2m-9 9-2 2m13 0-2-2m-9-9-2-2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.7"/></svg>
       <h3 data-en="Latest technology" data-ar="أحدث التقنيات">أحدث التقنيات</h3>
       <p data-en="Latest techniques and best practices in the contracting sector." data-ar="أحدث التقنيات وأفضل الممارسات في قطاع المقاولات.">أحدث التقنيات وأفضل الممارسات في قطاع المقاولات.</p></div>
   </div>
@@ -430,7 +401,7 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 <!-- ================= VALUES ================= -->
 <section class="section tint" id="values">
   <div class="sgc-head">
-    <p class="sgc-kicker"><span class="n">04</span> <span data-en="Values" data-ar="قيمنا">قيمنا</span></p>
+    <p class="sgc-kicker"><span data-en="Values" data-ar="قيمنا">قيمنا</span></p>
     <h2 class="sgc-h2 display reveal" data-en="What we hold to on every project" data-ar="ما نلتزم به في كل مشروع">ما نلتزم به في كل مشروع</h2>
   </div>
   <div class="sgc-values" data-stagger>
@@ -446,34 +417,29 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 <!-- ================= SERVICES ================= -->
 <section class="section" id="services">
   <div class="sgc-head">
-    <p class="sgc-kicker"><span class="n">05</span> <span data-en="Services" data-ar="خدماتنا">خدماتنا</span></p>
+    <p class="sgc-kicker"><span data-en="Services" data-ar="خدماتنا">خدماتنا</span></p>
     <h2 class="sgc-h2 display reveal" data-en="Integrated contracting services" data-ar="خدمات مقاولات متكاملة">خدمات مقاولات متكاملة</h2>
   </div>
   <div class="sgc-svc-grid" data-stagger>
-    <div class="sgc-svc reveal"><span class="s-n">01</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V9l7-4 7 4v12M17 21V13l4-2v10M3 21h18M8 21v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="sgc-svc reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V9l7-4 7 4v12M17 21V13l4-2v10M3 21h18M8 21v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Industrial works" data-ar="الأعمال الصناعية">الأعمال الصناعية</h3>
       <p data-en="Industrial facilities and installations." data-ar="المنشآت والتجهيزات الصناعية.">المنشآت والتجهيزات الصناعية.</p></div>
-    <div class="sgc-svc reveal"><span class="s-n">02</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="sgc-svc reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Residential works" data-ar="الأعمال السكنية">الأعمال السكنية</h3>
       <p data-en="Homes, villas and residential buildings." data-ar="المنازل والفلل والمباني السكنية.">المنازل والفلل والمباني السكنية.</p></div>
-    <div class="sgc-svc reveal"><span class="s-n">03</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V4h10v17M14 21V9h6v12M4 21h18M7 8h4M7 12h4M7 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="sgc-svc reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V4h10v17M14 21V9h6v12M4 21h18M7 8h4M7 12h4M7 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Commercial works" data-ar="الأعمال التجارية">الأعمال التجارية</h3>
       <p data-en="Retail, offices and commercial buildings." data-ar="المحلات والمكاتب والمباني التجارية.">المحلات والمكاتب والمباني التجارية.</p></div>
-    <div class="sgc-svc reveal"><span class="s-n">04</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-2.4 2.6-2.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <div class="sgc-svc reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-2.4 2.6-2.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <h3 data-en="Maintenance &amp; operations" data-ar="الصيانة والتشغيل">الصيانة والتشغيل</h3>
       <p data-en="Facility maintenance and operations." data-ar="أعمال صيانة وتشغيل المنشآت.">أعمال صيانة وتشغيل المنشآت.</p></div>
-    <div class="sgc-svc reveal"><span class="s-n">05</span>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16v16H4zM4 9h16M9 9v11M14 14l3 3M14 17l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="sgc-svc reveal">      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16v16H4zM4 9h16M9 9v11M14 14l3 3M14 17l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3 data-en="Engineering design" data-ar="التصاميم الهندسية">التصاميم الهندسية</h3>
       <p data-en="Engineering and design works." data-ar="أعمال التصاميم الهندسية.">أعمال التصاميم الهندسية.</p></div>
   </div>
 
   <div class="sgc-head" style="margin-top:clamp(3rem,5vw,4.4rem);margin-bottom:clamp(1.6rem,3vw,2.4rem)">
-    <p class="sgc-kicker"><span class="n">06</span> <span data-en="Project fields" data-ar="مجالات المشاريع">مجالات المشاريع</span></p>
+    <p class="sgc-kicker"><span data-en="Project fields" data-ar="مجالات المشاريع">مجالات المشاريع</span></p>
   </div>
   <div class="sgc-fields" data-stagger>
     <div class="sgc-field reveal"><span class="tech" data-en="Structural" data-ar="الأعمال الإنشائية">الأعمال الإنشائية</span>
@@ -488,7 +454,7 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 <!-- ================= PROJECTS GALLERY ================= -->
 <section class="section tint" id="projects">
   <div class="sgc-head">
-    <p class="sgc-kicker"><span class="n">07</span> <span data-en="Projects" data-ar="المشاريع">المشاريع</span></p>
+    <p class="sgc-kicker"><span data-en="Projects" data-ar="المشاريع">المشاريع</span></p>
     <h2 class="sgc-h2 display reveal" data-en="Selected work" data-ar="أعمال مختارة">أعمال مختارة</h2>
     <p class="sgc-lead reveal" data-en="Project photography is being added — the gallery below will hold real project images once provided."
        data-ar="تُضاف صور المشاريع لاحقًا — سيعرض المعرض أدناه صور المشاريع الفعلية عند توفّرها.">تُضاف صور المشاريع لاحقًا.</p>
@@ -512,7 +478,7 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 <!-- ================= CREDENTIALS ================= -->
 <section class="section" id="credentials">
   <div class="sgc-head">
-    <p class="sgc-kicker"><span class="n">08</span> <span data-en="Credentials &amp; documents" data-ar="الاعتمادات والوثائق">الاعتمادات والوثائق</span></p>
+    <p class="sgc-kicker"><span data-en="Credentials &amp; documents" data-ar="الاعتمادات والوثائق">الاعتمادات والوثائق</span></p>
     <h2 class="sgc-h2 display reveal" data-en="Registered and documented" data-ar="كيان مُسجّل وموثّق">كيان مُسجّل وموثّق</h2>
   </div>
   <div class="sgc-creds" data-stagger>
@@ -537,10 +503,10 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 <!-- ================= SKY GLOBAL BAND ================= -->
 <section class="section group-band" style="background:var(--c-ink)">
   <div class="wrap">
-    <p class="eyebrow center reveal" style="color:var(--c-blue-l)" data-en="Sky Global Contracting × Sky Global" data-ar="سكاي جلوبال للمقاولات × سكاي جلوبال">سكاي جلوبال للمقاولات × سكاي جلوبال</p>
+    <p class="eyebrow center reveal" style="color:var(--c-blue-l)" data-en="Sky Global Real Estate × Sky Global" data-ar="سكاي جلوبال العقارية × سكاي جلوبال">سكاي جلوبال العقارية × سكاي جلوبال</p>
     <h2 class="display reveal" data-en="Part of the Sky Global ecosystem" data-ar="إحدى شركات منظومة سكاي جلوبال">إحدى شركات منظومة سكاي جلوبال</h2>
-    <p class="reveal" style="color:#c1cddb" data-en="Sky Global Contracting operates under the group's vision of building specialised companies able to grow and compete in their markets."
-       data-ar="تعمل سكاي جلوبال للمقاولات ضمن رؤية المجموعة لبناء شركات متخصصة قادرة على النمو والمنافسة في أسواقها.">تعمل ضمن رؤية المجموعة لبناء شركات متخصصة قادرة على النمو والمنافسة.</p>
+    <p class="reveal" style="color:#c1cddb" data-en="Sky Global Real Estate operates under the group's vision of building specialised companies able to grow and compete in their markets."
+       data-ar="تعمل سكاي جلوبال العقارية ضمن رؤية المجموعة لبناء شركات متخصصة قادرة على النمو والمنافسة في أسواقها.">تعمل ضمن رؤية المجموعة لبناء شركات متخصصة قادرة على النمو والمنافسة.</p>
     <a href="../index.html#companies" class="btn btn-primary reveal" data-en="Explore Sky Global's companies" data-ar="اكتشف شركات سكاي جلوبال">اكتشف شركات سكاي جلوبال
       <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
@@ -550,10 +516,10 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 <section class="section" id="contact">
   <div class="sgc-two">
     <div>
-      <p class="sgc-kicker"><span class="n">09</span> <span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
+      <p class="sgc-kicker"><span data-en="Contact" data-ar="تواصل معنا">تواصل معنا</span></p>
       <h2 class="sgc-h2 display reveal" data-en="Have a project to build?" data-ar="لديك مشروع تريد تنفيذه؟">لديك مشروع تريد تنفيذه؟</h2>
-      <p class="sgc-p reveal" style="margin-top:1.2rem" data-en="For tenders, contracting enquiries, maintenance and operations, or engineering design — reach the Sky Global Contracting team."
-         data-ar="للمناقصات، استفسارات المقاولات، الصيانة والتشغيل، أو التصاميم الهندسية — تواصل مع فريق سكاي جلوبال للمقاولات.">للمناقصات واستفسارات المقاولات والصيانة والتشغيل — تواصل مع الفريق.</p>
+      <p class="sgc-p reveal" style="margin-top:1.2rem" data-en="For tenders, contracting enquiries, maintenance and operations, or engineering design — reach the Sky Global Real Estate team."
+         data-ar="للمناقصات، استفسارات المقاولات، الصيانة والتشغيل، أو التصاميم الهندسية — تواصل مع فريق سكاي جلوبال العقارية.">للمناقصات واستفسارات المقاولات والصيانة والتشغيل — تواصل مع الفريق.</p>
       <a href="tel:+966590550557" class="btn btn-primary" style="margin-top:1.6rem" data-en="Contact us" data-ar="تواصل معنا">تواصل معنا</a>
     </div>
     <div class="reveal">
@@ -568,42 +534,31 @@ html[dir="rtl"] .sgc-ft h4{font-family:var(--ar);letter-spacing:0;text-transform
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="sgc-ft">
-  <div class="wrap">
-    <div class="sgc-ft-top">
-      <div>
-        <div class="sgc-ft-logo">
-          <svg class="mk" viewBox="0 0 1476.09 1343.36" aria-hidden="true"><use href="#sgMark" fill="#c7d6e6"/></svg>
-          <b data-en="SKY GLOBAL CONTRACTING" data-ar="سكاي جلوبال للمقاولات">سكاي جلوبال للمقاولات</b>
-        </div>
-        <p data-en="A Saudi company delivering construction and development projects to high standards of quality and safety."
-           data-ar="شركة سعودية لتنفيذ المشاريع الإنشائية والتطويرية وفق معايير عالية من الجودة والسلامة.">شركة سعودية لتنفيذ المشاريع الإنشائية والتطويرية.</p>
-      </div>
-      <div>
-        <h4 data-en="Sections" data-ar="الأقسام">الأقسام</h4>
-        <ul>
-          <li><a href="#about" data-en="About Us" data-ar="من نحن">من نحن</a></li>
-          <li><a href="#services" data-en="Services" data-ar="خدماتنا">خدماتنا</a></li>
-          <li><a href="#methodology" data-en="Methodology" data-ar="منهجية العمل">منهجية العمل</a></li>
-          <li><a href="#projects" data-en="Projects" data-ar="المشاريع">المشاريع</a></li>
-          <li><a href="#credentials" data-en="Credentials" data-ar="الاعتمادات">الاعتمادات</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-en="Contact" data-ar="تواصل">تواصل</h4>
-        <ul>
-          <li><a href="tel:+966590550557" class="tnum">+966 59 055 0557</a></li>
-          <li><a href="mailto:info@skyglobalworld.com">info@skyglobalworld.com</a></li>
-          <li><a href="../index.html#companies" data-en="Sky Global Holding" data-ar="سكاي جلوبال القابضة">سكاي جلوبال القابضة</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="sgc-ft-bot">
-      <span data-en="© 2026 Sky Global Contracting — a Sky Global company. All rights reserved." data-ar="© 2026 سكاي جلوبال للمقاولات — شركة من سكاي جلوبال. جميع الحقوق محفوظة.">© 2026 سكاي جلوبال للمقاولات — شركة من سكاي جلوبال.</span>
-      <span data-en="Saudi Arabia" data-ar="المملكة العربية السعودية">المملكة العربية السعودية</span>
-    </div>
-  </div>
-</footer>
+<!-- Shared site footer — single source: assets/footer.js builds it from this config.
+     Editing footer design/structure? Change assets/footer.js once and every page updates. -->
+<div id="ft-mount"></div>
+<script type="application/json" id="ft-config">
+{
+  "nameEn": "Sky Global Real Estate", "nameAr": "سكاي جلوبال العقارية",
+  "companyId": "sgc",
+  "taglineEn": "A Saudi company delivering construction and development projects to high standards of quality and safety.",
+  "taglineAr": "شركة سعودية لتنفيذ المشاريع الإنشائية والتطويرية وفق معايير عالية من الجودة والسلامة.",
+  "logoHTML": "<img src=\"../assets/img/sgc/logo.png\" alt=\"Sky Global Real Estate\" style=\"height:40px;width:auto;display:block;border-radius:8px;background:#fff;padding:4px 8px\" />",
+  "explore": [
+    { "href": "#about", "en": "About Us", "ar": "من نحن" },
+    { "href": "#services", "en": "Services", "ar": "خدماتنا" },
+    { "href": "#methodology", "en": "Methodology", "ar": "منهجية العمل" },
+    { "href": "#projects", "en": "Projects", "ar": "المشاريع" },
+    { "href": "#credentials", "en": "Credentials", "ar": "الاعتمادات" },
+    { "href": "#contact", "en": "Contact", "ar": "تواصل" }
+  ],
+  "contact": {
+    "phone": "+966 59 055 0557", "phoneHref": "tel:+966590550557",
+    "locationEn": "Saudi Arabia", "locationAr": "المملكة العربية السعودية"
+  }
+}
+</script>
+<script src="../assets/footer.js"></script>
 
 <script>
 (function(){
